@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Document Administrator" as ADM
+participant "Document Registry" as REG
+
+ADM -> REG : Remove Metadata Request
+activate REG
+REG --> ADM : Remove Metadata Response
+deactivate REG
+
+
+@enduml

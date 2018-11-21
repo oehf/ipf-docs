@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="149px" preserveAspectRatio="none" style="width:458px;height:149px;" version="1.1" viewBox="0 0 458 149" width="458px" zoomAndPan="magnify"><defs><filter height="300%" id="frfyvpas3lwkt" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#frfyvpas3lwkt)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="373.5" y="89.5703"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="80" x2="80" y1="57.2188" y2="137.9219"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="378" x2="378" y1="57.2188" y2="137.9219"/><rect fill="#FEFECE" filter="url(#frfyvpas3lwkt)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="141" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="127" x="15" y="24.5332">Provider Information</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="46" y="42.1426">Consumer</text><rect fill="#FEFECE" filter="url(#frfyvpas3lwkt)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="141" x="306" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="127" x="313" y="24.5332">Provider Information</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="57" x="348" y="42.1426">Directory</text><rect fill="#FFFFFF" filter="url(#frfyvpas3lwkt)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="373.5" y="89.5703"/><polygon fill="#A80036" points="361.5,85.5703,371.5,89.5703,361.5,93.5703,365.5,89.5703" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="80.5" x2="367.5" y1="89.5703" y2="89.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="259" x="87.5" y="84.7139">Provider Information Delta Download Request</text><polygon fill="#A80036" points="91.5,115.9219,81.5,119.9219,91.5,123.9219,87.5,119.9219" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="85.5" x2="377.5" y1="119.9219" y2="119.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="269" x="97.5" y="115.0654">Provider Information Delta Download Response</text><!--
+@startuml
+hide footbox
+
+participant "Provider Information\nConsumer" as PIC
+participant "Provider Information\nDirectory" as PID
+
+PIC -> PID : Provider Information Delta Download Request
+activate PID
+PID - -> PIC : Provider Information Delta Download Response
+deactivate PID
+
+@enduml
+
+PlantUML version 1.2018.11(Sat Sep 22 18:43:53 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b22
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

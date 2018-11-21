@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Document Consumer" as CON
+participant "Document Registry" as REG
+
+CON -> REG : Registry Stored Query
+activate REG
+REG --> CON : Registry Stored Query Response
+deactivate REG
+
+
+@enduml

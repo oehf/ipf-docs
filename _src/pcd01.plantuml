@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Device Observation\nReporter" as DOR
+participant "Device Observation\nConsumer" as DOC
+
+DOR -> DOC : Communicate PCD Data ORU^R01
+activate DOC
+DOC --> DOR : Acknowledge HL7 ORU^ACK
+deactivate DOC
+
+@enduml

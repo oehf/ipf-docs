@@ -1,0 +1,41 @@
+@startuml
+hide footbox
+
+participant "Patient Demographics\nSource" as PDS
+participant "Patient Demographics\nConsumer" as CON
+
+PDS -> CON : Create Patient HL7 ADT^A28
+activate CON
+CON --> PDS : Acknowledge HL7 ADT^ACK
+deactivate CON
+|||
+PDS -> CON : Update Patient Information HL7 ADT^A31
+activate CON
+CON --> PDS : Acknowledge HL7 ADT^ACK
+deactivate CON
+|||
+PDS -> CON : Change Patient Identifier List HL7 ADT^A47
+activate CON
+CON --> PDS : Acknowledge HL7 ADT^ACK
+deactivate CON
+|||
+group Merge Option only
+    PDS -> CON : Merge two Patients HL7 ADT^A40
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+
+end group
+|||
+group Link/Unlink Option only
+PDS -> CON : Link Patient Information HL7 ADT^A24
+activate CON
+CON --> PDS : Acknowledge HL7 ADT^ACK
+deactivate CON
+|||
+PDS -> CON : Unlink Patient Information HL7 ADT^A37
+activate CON
+CON --> PDS : Acknowledge HL7 ADT^ACK
+deactivate CON
+end group
+@enduml

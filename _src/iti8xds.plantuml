@@ -1,0 +1,17 @@
+@startuml
+hide footbox
+
+participant "Patient Identity\nSource" as PIS
+participant "Document\nRegistry" as REG
+
+PIS -> REG : Admit, Register or Update Patient HL7 ADT^*
+activate REG
+REG --> PIS : Acknowledge HL7 ADT^ACK
+deactivate REG
+|||
+PIS -> REG : Patient Identity Merge HL7 ADT^40
+activate REG
+REG --> PIS : Acknowledge HL7 ADT^ACK
+deactivate REG
+
+@enduml

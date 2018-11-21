@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Patient Identifier\nCross-Reference Consumer" as CON
+participant "Patient Identifier\nCross-Reference Manager" as MPI
+
+CON -> MPI :Get Corresponding Identifiers HL7 QBP^Q23
+activate MPI
+MPI --> CON : Return Corresponding Identifiers HL7 RSP^K23
+deactivate MPI
+
+
+@enduml

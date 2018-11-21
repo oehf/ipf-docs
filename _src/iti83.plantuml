@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Patient Identifier\nCross-Reference Consumer" as CON
+participant "Patient Identifier\nCross-Reference Manager" as MPI
+
+CON -> MPI : Get Corresponding Identifiers \nGET /$ihe-pix
+activate MPI
+MPI --> CON : Query Patient Resource Response \nResource (Parameters)
+deactivate MPI
+
+
+@enduml

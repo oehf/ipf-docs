@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Document Consumer" as C
+participant "Document Responder" as R
+
+C -> R : Find Document Manifests Request
+activate R
+R --> C : Find Document Manifests Response
+deactivate R
+
+
+@enduml

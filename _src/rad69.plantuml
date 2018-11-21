@@ -1,0 +1,25 @@
+@startuml
+hide footbox
+
+participant "Imaging Document Consumer" as CON
+participant "Initiating Imaging Gateway" as IG
+participant "Imaging Document Source" as SRC
+participant "Responding Imaging Gateway" as RG
+
+CON -> IG : Retrieve Imaging Document Set Request
+activate IG
+IG --> CON : Retrieve Imaging Document Set Response
+deactivate IG
+|||
+CON -> SRC : Retrieve Imaging Document Set Request
+activate SRC
+SRC --> CON : Retrieve Imaging Document Set Response
+deactivate SRC
+|||
+RG -> SRC : Retrieve Imaging Document Set Request
+activate SRC
+SRC --> RG : Retrieve Imaging Document Set Response
+deactivate SRC
+
+
+@enduml

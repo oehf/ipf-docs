@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "On-Demand Document Source" as SRC
+participant "Document Registry / Recipient" as REG
+
+SRC -> REG : Register On-Demand Document Entry Request
+activate REG
+REG --> SRC : Register On-Demand Document Entry Response
+deactivate REG
+
+
+@enduml

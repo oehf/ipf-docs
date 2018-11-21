@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Update Initiator" as UPI
+participant "Update Responder" as UPR
+
+UPI -> UPR : Restricted Update Document Set Request
+activate UPR
+UPR --> UPI : Restricted Update Document Set Response
+deactivate UPR
+
+
+@enduml

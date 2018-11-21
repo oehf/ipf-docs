@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Initiating Gateway" as IG
+participant "Responding Gateway" as RG
+
+IG -> RG :Patient Location Query Request
+activate RG
+RG --> IG : Patient Location Query Response
+deactivate RG
+
+@enduml

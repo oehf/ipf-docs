@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Patient Demographics Consumer" as CON
+participant "Patient Demographics Supplier" as SUP
+
+CON -> SUP :Patient Demographics and Visit Query HL7 QBP^ZV1
+activate SUP
+SUP --> CON : Patient Demographics and Visit Response HL7 RSP^ZV2
+deactivate SUP
+
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Document Administrator" as ADM
+participant "Document Registry/Recipient" as REG
+
+ADM -> REG : Update Document Set Request
+activate REG
+REG --> ADM : Update Document Set Response
+deactivate REG
+
+
+@enduml

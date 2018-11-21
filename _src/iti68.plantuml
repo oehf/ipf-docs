@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Document Consumer" as C
+participant "Document Responder" as R
+
+C -> R : Retrieve Document Request
+activate R
+R --> C : Retrieve Document Response
+deactivate R
+
+
+@enduml

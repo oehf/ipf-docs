@@ -1,0 +1,29 @@
+@startuml
+hide footbox
+
+participant "Initiating Gateway" as IG
+participant "Responding Gateway" as RG
+
+group Synchronous Request
+IG -> RG : Cross Gateway Query Request
+activate RG
+RG --> IG : Cross Gateway Query Request Response
+deactivate RG
+end group
+
+group Asynchronous Request
+IG -> RG : Cross Gateway Query Request
+activate IG
+activate RG
+RG --> IG : Cross Gateway Query Request Response
+deactivate IG
+|||
+note right of RG: Handle request
+RG -> IG : Cross Gateway Query Reply
+activate IG
+IG --> RG : Cross Gateway Query Reply Response
+deactivate IG
+deactivate RG
+end group
+
+@enduml

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="132px" preserveAspectRatio="none" style="width:380px;height:132px;" version="1.1" viewBox="0 0 380 132" width="380px" zoomAndPan="magnify"><defs><filter height="300%" id="f1pe3cg04lp6wx" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1pe3cg04lp6wx)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="291.5" y="71.9609"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="72" x2="72" y1="39.6094" y2="120.3125"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="296" x2="296" y1="39.6094" y2="120.3125"/><rect fill="#FEFECE" filter="url(#f1pe3cg04lp6wx)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="125" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="111" x="15" y="24.5332">Initiating Gateway</text><rect fill="#FEFECE" filter="url(#f1pe3cg04lp6wx)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="149" x="220" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="135" x="227" y="24.5332">Responding Gateway</text><rect fill="#FFFFFF" filter="url(#f1pe3cg04lp6wx)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="291.5" y="71.9609"/><polygon fill="#A80036" points="279.5,67.9609,289.5,71.9609,279.5,75.9609,283.5,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="72.5" x2="285.5" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="185" x="79.5" y="67.1045">Patient Location Query Request</text><polygon fill="#A80036" points="83.5,98.3125,73.5,102.3125,83.5,106.3125,79.5,102.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="77.5" x2="295.5" y1="102.3125" y2="102.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="195" x="89.5" y="97.4561">Patient Location Query Response</text><!--
+@startuml
+hide footbox
+
+participant "Initiating Gateway" as IG
+participant "Responding Gateway" as RG
+
+IG -> RG :Patient Location Query Request
+activate RG
+RG - -> IG : Patient Location Query Response
+deactivate RG
+
+@enduml
+
+PlantUML version 1.2018.09(Fri Jul 27 18:58:18 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b8
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

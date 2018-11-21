@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Provider Information\nConsumer" as PIC
+participant "Provider Information\nDirectory" as PID
+
+PIC -> PID : Provider Information Delta Download Request
+activate PID
+PID --> PIC : Provider Information Delta Download Response
+deactivate PID
+
+@enduml

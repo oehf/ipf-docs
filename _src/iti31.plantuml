@@ -1,0 +1,168 @@
+@startuml
+hide footbox
+
+participant "Patient Encounter\nSource" as PDS
+participant "Patient Encounter\nConsumer" as CON
+
+group Basic Option (mandatory)
+    PDS -> CON : Admit Inpatient HL7 ADT^A01
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Discharge Patient HL7 ADT^A03
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Register Outpatient HL7 ADT^A04
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Admit/Visit HL7 ADT^A11
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Discharge HL7 ADT^A13
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+end group
+|||
+group Inpatient/Outpatient Encounter Management Option only
+    PDS -> CON : Preadmit Inpatient HL7 ADT^A05
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Preadmit HL7 ADT^A38
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Change to Inpatient HL7 ADT^A06
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Change to Outpatient HL7 ADT^A07
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Transfer Patient HL7 ADT^A02
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Patient Transfer HL7 ADT^A12
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+end group
+|||
+group Pending Event Management Option only
+    PDS -> CON : Pending Admit of an Inpatient HL7 ADT^A14
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Pending Admit HL7 ADT^A27
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Pending Transfer HL7 ADT^A15
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Pending Transfer HL7 ADT^A26
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Pending Discharge HL7 ADT^A16
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Pending Discharge HL7 ADT^A25
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+end group
+|||
+group Advanced Encounter Management Option only
+    PDS -> CON : Change Attending Doctor HL7 ADT^A54
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Change Attending Doctor HL7 ADT^A55
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Leave of Absence HL7 ADT^A21
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Leave of Absence HL7 ADT^A52
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Return from Leave of Absence HL7 ADT^A22
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Return from Leave of Absence HL7 ADT^A53
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Move Account Information HL7 ADT^A44
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+end group
+|||
+group Temporary Patient Transfers Tracking Option only
+    PDS -> CON : Patient Departing, Tracking HL7 ADT^A09
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Patient Arriving, Tracking HL7 ADT^A55
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Patient Departing, Tracking HL7 ADT^A33
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Cancel Patient Arriving, Tracking HL7 ADT^A32
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+end group
+|||
+group Maintain Demographics Option only
+    PDS -> CON : Update Patient Information HL7 ADT^A08
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+    |||
+    PDS -> CON : Merge Patient Identifier Lists HL7 ADT^A40
+    activate CON
+    CON --> PDS : Acknowledge HL7 ADT^ACK
+    deactivate CON
+end group
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+hide footbox
+
+participant "Patient Demographics\nConsumer" as CON
+participant "Patient Demographics\nSupplier" as SUP
+
+CON -> SUP : Query Patient Resource \nGET /Patient
+activate SUP
+SUP --> CON : Query Patient Resource Response \nBundle (Patient)
+deactivate SUP
+|||
+CON -> SUP : Retrieve Patient Resource \nGET /Patient/<id>
+activate SUP
+SUP --> CON : Retrieve Patient Resource Response \nResource (Patient)
+deactivate SUP
+|||
+
+@enduml

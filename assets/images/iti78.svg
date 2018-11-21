@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="326px" preserveAspectRatio="none" style="width:417px;height:326px;" version="1.1" viewBox="0 0 417 326" width="417px" zoomAndPan="magnify"><defs><filter height="300%" id="ffpvr6fhci06f" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#ffpvr6fhci06f)" height="46.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="326.5" y="105.9219"/><rect fill="#FFFFFF" filter="url(#ffpvr6fhci06f)" height="46.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="326.5" y="224.3281"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="86" x2="86" y1="57.2188" y2="314.0313"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="331" x2="331" y1="57.2188" y2="314.0313"/><rect fill="#FEFECE" filter="url(#ffpvr6fhci06f)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="153" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="15" y="24.5332">Patient Demographics</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="52" y="42.1426">Consumer</text><rect fill="#FEFECE" filter="url(#ffpvr6fhci06f)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="153" x="253" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="139" x="260" y="24.5332">Patient Demographics</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="303.5" y="42.1426">Supplier</text><rect fill="#FFFFFF" filter="url(#ffpvr6fhci06f)" height="46.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="326.5" y="105.9219"/><rect fill="#FFFFFF" filter="url(#ffpvr6fhci06f)" height="46.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="326.5" y="224.3281"/><polygon fill="#A80036" points="314.5,101.9219,324.5,105.9219,314.5,109.9219,318.5,105.9219" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="86.5" x2="320.5" y1="105.9219" y2="105.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="139" x="93.5" y="84.7139">Query Patient Resource</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="75" x="93.5" y="101.0654">GET /Patient</text><polygon fill="#A80036" points="97.5,148.625,87.5,152.625,97.5,156.625,93.5,152.625" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="91.5" x2="330.5" y1="152.625" y2="152.625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="201" x="103.5" y="131.417">Query Patient Resource Response</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="93" x="103.5" y="147.7686">Bundle (Patient)</text><polygon fill="#A80036" points="314.5,220.3281,324.5,224.3281,314.5,228.3281,318.5,224.3281" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="86.5" x2="320.5" y1="224.3281" y2="224.3281"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="150" x="93.5" y="203.1201">Retrieve Patient Resource</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="105" x="93.5" y="219.4717">GET /Patient/&lt;id&gt;</text><polygon fill="#A80036" points="97.5,267.0313,87.5,271.0313,97.5,275.0313,93.5,271.0313" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="91.5" x2="330.5" y1="271.0313" y2="271.0313"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="212" x="103.5" y="249.8232">Retrieve Patient Resource Response</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="108" x="103.5" y="266.1748">Resource (Patient)</text><!--
+@startuml
+hide footbox
+
+participant "Patient Demographics\nConsumer" as CON
+participant "Patient Demographics\nSupplier" as SUP
+
+CON -> SUP : Query Patient Resource \nGET /Patient
+activate SUP
+SUP - -> CON : Query Patient Resource Response \nBundle (Patient)
+deactivate SUP
+|||
+CON -> SUP : Retrieve Patient Resource \nGET /Patient/<id>
+activate SUP
+SUP - -> CON : Retrieve Patient Resource Response \nResource (Patient)
+deactivate SUP
+|||
+
+@enduml
+
+PlantUML version 1.2018.11(Sat Sep 22 18:43:53 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b19
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="433px" preserveAspectRatio="none" style="width:590px;height:433px;" version="1.1" viewBox="0 0 590 433" width="590px" zoomAndPan="magnify"><defs><filter height="300%" id="fc17ci87ruore" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#DDDDDD" height="411.4766" style="stroke: #A80036; stroke-width: 1.0;" width="412" x="88" y="4"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="97" x="245.5" y="17.4951">IPF Application</text><rect fill="#FFFFFF" filter="url(#fc17ci87ruore)" height="91.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="141" y="93.3125"/><rect fill="#FFFFFF" filter="url(#fc17ci87ruore)" height="163.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="141" y="239.7188"/><rect fill="#FFFFFF" filter="url(#fc17ci87ruore)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="278" y="123.6641"/><rect fill="#FFFFFF" filter="url(#fc17ci87ruore)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="426" y="302.7734"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="35" x2="35" y1="60.9609" y2="421.4766"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="146" x2="146" y1="60.9609" y2="421.4766"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="283" x2="283" y1="60.9609" y2="421.4766"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="431" x2="431" y1="60.9609" y2="421.4766"/><rect fill="#FEFECE" filter="url(#fc17ci87ruore)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="50" x="8" y="24.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="15" y="45.8848">Client</text><rect fill="#FEFECE" filter="url(#fc17ci87ruore)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="104" x="92" y="24.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="90" x="99" y="45.8848">IPF Consumer</text><rect fill="#FEFECE" filter="url(#fc17ci87ruore)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="142" x="210" y="24.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="128" x="217" y="45.8848">Server Camel Route</text><rect fill="#FEFECE" filter="url(#fc17ci87ruore)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="126" x="366" y="24.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="112" x="373" y="45.8848">Rejection Handler</text><rect fill="#FFFFFF" filter="url(#fc17ci87ruore)" height="91.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="141" y="93.3125"/><rect fill="#FFFFFF" filter="url(#fc17ci87ruore)" height="163.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="141" y="239.7188"/><rect fill="#FFFFFF" filter="url(#fc17ci87ruore)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="278" y="123.6641"/><rect fill="#FFFFFF" filter="url(#fc17ci87ruore)" height="30" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="426" y="302.7734"/><polygon fill="#A80036" points="129,89.3125,139,93.3125,129,97.3125,133,93.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="35" x2="135" y1="93.3125" y2="93.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="81" x="42" y="88.4561">Valid Request</text><polygon fill="#A80036" points="266,119.6641,276,123.6641,266,127.6641,270,123.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="151" x2="272" y1="123.6641" y2="123.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="81" x="158" y="118.8076">Valid Request</text><polygon fill="#A80036" points="162,150.0156,152,154.0156,162,158.0156,158,154.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="156" x2="282" y1="154.0156" y2="154.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="58" x="168" y="149.1592">Response</text><polygon fill="#A80036" points="46,180.3672,36,184.3672,46,188.3672,42,184.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="40" x2="145" y1="184.3672" y2="184.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="58" x="52" y="179.5107">Response</text><polygon fill="#FF0000" points="129,235.7188,139,239.7188,129,243.7188,133,239.7188" style="stroke: #FF0000; stroke-width: 1.0;"/><line style="stroke: #FF0000; stroke-width: 1.0;" x1="35" x2="135" y1="239.7188" y2="239.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="87" x="42" y="234.8623">Invalid Request</text><polygon fill="#A80036" points="414,298.7734,424,302.7734,414,306.7734,418,302.7734" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="151" x2="420" y1="302.7734" y2="302.7734"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="107" x="158" y="265.2139">Failed request and</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="128" x="158" y="281.5654">its context information</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="84" x="162" y="297.917">(CXF Request)</text><path d="M436,345.7734 L436,371.7734 L578,371.7734 L578,355.7734 L568,345.7734 L436,345.7734 " fill="#FBFB77" filter="url(#fc17ci87ruore)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M568,345.7734 L568,355.7734 L578,355.7734 L568,345.7734 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="121" x="442" y="364.2686">Handle failed request</text><polygon fill="#A80036" points="46,399.4766,36,403.4766,46,407.4766,42,403.4766" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="40" x2="145" y1="403.4766" y2="403.4766"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="27" x="52" y="398.6201">NAK</text><!--
+@startuml
+hide footbox
+
+participant "Client"
+box "IPF Application"
+participant "IPF Consumer" as CON
+participant "Server Camel Route" as SCR
+participant "Rejection Handler" as REJ
+end box
+
+Client -> CON : Valid Request
+activate CON
+CON -> SCR : Valid Request
+activate SCR
+SCR - -> CON : Response
+deactivate SCR
+CON - -> Client : Response
+deactivate CON
+|||
+Client -[#red]> CON : Invalid Request
+activate CON
+CON -> REJ : Failed request and \nits context information\n (CXF Request)
+note right of REJ: Handle failed request
+activate REJ
+deactivate REJ
+CON - -> Client : NAK
+deactivate CON
+
+@enduml
+
+PlantUML version 1.2018.09(Fri Jul 27 18:58:18 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b8
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

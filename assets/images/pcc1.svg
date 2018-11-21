@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="303px" preserveAspectRatio="none" style="width:583px;height:303px;" version="1.1" viewBox="0 0 583 303" width="583px" zoomAndPan="magnify"><defs><filter height="300%" id="f1xzg9dxr5i3zs" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1xzg9dxr5i3zs)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="498" y="71.9609"/><rect fill="#FFFFFF" filter="url(#f1xzg9dxr5i3zs)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="498" y="157.6641"/><rect fill="#FFFFFF" filter="url(#f1xzg9dxr5i3zs)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="498" y="243.3672"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="91" x2="91" y1="39.6094" y2="291.7188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="503" x2="503" y1="39.6094" y2="291.7188"/><rect fill="#FEFECE" filter="url(#f1xzg9dxr5i3zs)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="162" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="148" x="15" y="24.5332">Clinical Data Consumer</text><rect fill="#FEFECE" filter="url(#f1xzg9dxr5i3zs)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="142" x="430" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="128" x="437" y="24.5332">Clinical Data Source</text><rect fill="#FFFFFF" filter="url(#f1xzg9dxr5i3zs)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="498" y="71.9609"/><rect fill="#FFFFFF" filter="url(#f1xzg9dxr5i3zs)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="498" y="157.6641"/><rect fill="#FFFFFF" filter="url(#f1xzg9dxr5i3zs)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="498" y="243.3672"/><polygon fill="#A80036" points="486,67.9609,496,71.9609,486,75.9609,490,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="91" x2="492" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="321" x="98" y="67.1045">Query for Existing Data Request QUPC_IN043100UV01</text><polygon fill="#A80036" points="102,98.3125,92,102.3125,102,106.3125,98,102.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="96" x2="502" y1="102.3125" y2="102.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="383" x="108" y="97.4561">Query for Existing Data Request Response QUPC_IN043200UV01</text><polygon fill="#A80036" points="486,153.6641,496,157.6641,486,161.6641,490,157.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="91" x2="492" y1="157.6641" y2="157.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="371" x="98" y="152.8076">Query for Existing Data Request Continue QUQI_IN000003UV01</text><polygon fill="#A80036" points="102,184.0156,92,188.0156,102,192.0156,98,188.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="96" x2="502" y1="188.0156" y2="188.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="383" x="108" y="183.1592">Query for Existing Data Request Response QUPC_IN043200UV01</text><polygon fill="#A80036" points="486,239.3672,496,243.3672,486,247.3672,490,243.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="91" x2="492" y1="243.3672" y2="243.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="245" x="98" y="238.5107">Cancel Continuation QUQI_IN000003UV01</text><polygon fill="#A80036" points="102,269.7188,92,273.7188,102,277.7188,98,273.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="96" x2="502" y1="273.7188" y2="273.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="235" x="108" y="268.8623">Acknowledgement MCCI_IN000002UV01</text><!--
+@startuml
+hide footbox
+
+participant "Clinical Data Consumer" as CDC
+participant "Clinical Data Source" as CDS
+
+CDC -> CDS :Query for Existing Data Request QUPC_IN043100UV01
+activate CDS
+CDS - -> CDC : Query for Existing Data Request Response QUPC_IN043200UV01
+deactivate CDS
+|||
+CDC -> CDS :Query for Existing Data Request Continue QUQI_IN000003UV01
+activate CDS
+CDS - -> CDC :  Query for Existing Data Request Response QUPC_IN043200UV01
+deactivate CDS
+|||
+CDC -> CDS :Cancel Continuation QUQI_IN000003UV01
+activate CDS
+CDS - -> CDC : Acknowledgement MCCI_IN000002UV01
+deactivate CDS
+@enduml
+
+PlantUML version 1.2018.09(Fri Jul 27 18:58:18 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b8
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

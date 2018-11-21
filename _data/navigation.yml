@@ -1,0 +1,60 @@
+# main links
+main:
+  - title: "Getting Started"
+    url: /getting-started/ 
+  - title: "Documentation"
+    url: /docs/
+  - title: "Project Info"
+    url: /project-info/
+  - title: "Javadocs"
+    url: /apidocs/
+  - title: "News"
+    url: /news/    
+  - title: "Sitemap"
+    url: /sitemap/
+
+sidebar:
+  - title: "Main Documentation"
+    children:
+      - title: "Getting Started"
+        url: /getting-started/    
+      - title: "Documentation"
+        url: /docs/
+      - title: "Project Info"
+        url: /project-info/
+      - title: "Javadocs"
+        url: /apidocs/
+  - title: "IHE Integration Profiles"
+    children:  
+      - title: "Component Overview"
+        url: /docs/ihe/
+      - title: "HL7v2 (MLLP)"
+        url: /docs/ihe/hl7v2/
+      - title: "HL7v3 (SOAP)"
+        url: /docs/ihe/hl7v3/
+      - title: "ebXML (SOAP)"
+        url: /docs/ihe/xds/
+      - title: "FHIR (REST)"
+        url: /docs/ihe/fhir/
+      - title: "DSMLv2 (SOAP)"
+        url: /docs/ihe/hpd/
+      - title: "XACMLv2.0 (SOAP)"
+        url: /docs/ihe/xacml20/
+      - title: "HL7v2 (SOAP)"
+        url: /docs/ihe/pcd01/
+  - title: "HL7 and Groovy"
+    children:  
+      - title: "HL7 Message Processing with Groovy"
+        url: /docs/hl7-groovy/
+      - title: "HL7 Groovy DSL"
+        url: /docs/hl7-groovy-dsl/
+      - title: "Functional Groovy extensions to HAPI"
+        url: /docs/hl7-groovy-extensions/ 
+      - title: "HL7 Message Validation with Groovy"
+        url: /docs/hl7-groovy-validation/
+  - title: "HL7 and Kotlin"
+    children:
+      - title: "HL7 Message Processing with Kotlin"
+        url: /docs/hl7-kotlin/
+      - title: "HL7 Kotlin DSL"
+        url: /docs/hl7-kotlin-dsl/

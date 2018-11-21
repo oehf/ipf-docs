@@ -1,0 +1,17 @@
+@startuml
+hide footbox
+
+participant "Patient Identity\nSource" as PIS
+participant "Patient Identifier\nCross-Reference Manager" as MPI
+
+PIS -> MPI : Admit, Register or Update Patient HL7 ADT^*
+activate MPI
+MPI --> PIS : Acknowledge HL7 ADT^ACK
+deactivate MPI
+|||
+PIS -> MPI : Patient Identity Merge HL7 ADT^40
+activate MPI
+MPI --> PIS : Acknowledge HL7 ADT^ACK
+deactivate MPI
+
+@enduml

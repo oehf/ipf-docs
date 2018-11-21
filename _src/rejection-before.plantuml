@@ -1,0 +1,24 @@
+@startuml
+hide footbox
+
+participant "Client"
+box "IPF Application"
+participant "IPF Consumer" as CON
+participant "Server Camel Route" as SCR
+end box
+
+Client -> CON : Valid Request
+activate CON
+CON -> SCR : Valid Request
+activate SCR
+SCR --> CON : Response
+deactivate SCR
+CON --> Client : Response
+deactivate CON
+|||
+Client -[#red]> CON : Invalid Request
+activate CON
+note right of CON: ???
+CON --> Client : NAK
+deactivate CON
+@enduml

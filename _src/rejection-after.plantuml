@@ -1,0 +1,29 @@
+@startuml
+hide footbox
+
+participant "Client"
+box "IPF Application"
+participant "IPF Consumer" as CON
+participant "Server Camel Route" as SCR
+participant "Rejection Handler" as REJ
+end box
+
+Client -> CON : Valid Request
+activate CON
+CON -> SCR : Valid Request
+activate SCR
+SCR --> CON : Response
+deactivate SCR
+CON --> Client : Response
+deactivate CON
+|||
+Client -[#red]> CON : Invalid Request
+activate CON
+CON -> REJ : Failed request and \nits context information\n (CXF Request)
+note right of REJ: Handle failed request
+activate REJ
+deactivate REJ
+CON --> Client : NAK
+deactivate CON
+
+@enduml

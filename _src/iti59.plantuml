@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Provider Information\nSource" as PIS
+participant "Provider Information\nDirectory" as PID
+
+PIS -> PID : Provider Information Feed Request
+activate PID
+PID --> PIS : Provider Information Feed\nAcknowledgement
+deactivate PID
+
+@enduml

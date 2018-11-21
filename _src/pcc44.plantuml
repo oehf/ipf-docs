@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Clinical Data Consumer" as CDC
+participant "Clinical Data Source" as CDS
+
+CDC -> CDS :Mobile Query for Existing Data Request
+activate CDS
+CDS --> CDC : Mobile Query for Existing Data Request Response
+deactivate CDS
+
+@enduml

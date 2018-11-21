@@ -1,0 +1,34 @@
+@startuml
+hide footbox
+
+
+box "IPF Application"
+participant "Client Camel Route" as Client
+participant "IPF Producer" as PRO
+end box
+participant Server
+
+Client -> PRO: Request
+note left of Client: .to(...)
+activate PRO
+PRO -> Server: Request
+activate Server
+
+loop n-1 times
+    Server --> PRO : Fragment of response
+    PRO -> Server : Request for next fragment
+end
+
+Server --> PRO : Last fragment of response
+deactivate Server
+|||
+PRO -> PRO : Join fragments
+PRO -> Server : Optional Cancel
+activate Server
+Server --> PRO: Cancel Acknowledgement
+deactivate Server
+
+PRO --> Client : Cumulative Response
+deactivate PRO
+
+@enduml

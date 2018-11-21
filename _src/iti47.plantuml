@@ -1,0 +1,21 @@
+@startuml
+hide footbox
+
+participant "Patient Demographics Consumer" as CON
+participant "Patient Demographics Supplier" as SUP
+
+CON -> SUP :Patient Registry Find Candidates Query PRPA_IN201305UV02
+activate SUP
+SUP --> CON : Patient Registry Find Candidates Query Response PRPA_IN201306UV02
+deactivate SUP
+|||
+CON -> SUP :General Query Activate Query Continue QUQI_IN000003UV01
+activate SUP
+SUP --> CON : Patient Registry Find Candidates Query Response PRPA_IN201306UV02
+deactivate SUP
+|||
+CON -> SUP :Cancel Continuation QUQI_IN000003UV01
+activate SUP
+SUP --> CON : Acknowledgement MCCI_IN000002UV01
+deactivate SUP
+@enduml

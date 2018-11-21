@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Policy Consumer" as PC
+participant "Policy Repository" as PR
+
+PC -> PR : XACML PolicyQuery
+activate PR
+PR --> PC : XACML PolicyQuery Response
+deactivate PR
+
+
+@enduml

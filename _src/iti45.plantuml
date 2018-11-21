@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Patient Identity\nCross-Reference Consumer" as PIC
+participant "Patient Identifier\nCross-Reference Manager" as MPI
+
+PIC -> MPI : Patient Registry Get Identifiers Query PRPA_IN201309UV02
+activate MPI
+MPI --> PIC : Patient Registry Get Identifiers Query Response PRPA_IN201310UV02
+deactivate MPI
+
+
+@enduml

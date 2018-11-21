@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Patient Identifier\nCross-Reference Consumer" as CON
+participant "Patient Identifier\nCross-Reference Manager" as MPI
+
+MPI -> CON :Patient Registry Record Revised PRPA_IN201302UV02
+activate CON
+CON --> MPI : Acknowledge
+deactivate CON
+
+
+@enduml

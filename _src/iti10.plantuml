@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Patient Identifier\nCross-Reference Consumer" as CON
+participant "Patient Identifier\nCross-Reference Manager" as MPI
+
+MPI -> CON :Update Person Information HL7 ADT^A31
+activate CON
+CON --> MPI : Acknowledge HL7 ADT^ACK
+deactivate CON
+
+
+@enduml

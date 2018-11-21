@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Provider Information\nConsumer" as PIC
+participant "Provider Information\nDirectory" as PID
+
+PIC -> PID : Provider Information Query Request
+activate PID
+PID --> PIC : Provider Information Query Response
+deactivate PID
+
+@enduml

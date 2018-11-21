@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Content Sender" as CS
+participant "Content Receiver" as CR
+
+CS -> CR : Provide and Register Document Set Request
+activate CR
+CR --> CS : Provide and Register Document Set Response
+deactivate CR
+
+
+@enduml

@@ -1,0 +1,104 @@
+---
+title: pam-iti30 component
+layout: single
+permalink: /docs/ihe/iti30/
+toc: true
+toc_icon: align-left
+toc_sticky: true
+---
+
+{% assign tx = site.data.ihe['iti30'] %}
+
+The {{ tx.component }} component provides interfaces for actors of the *{{ tx.description }}* IHE transaction ({{ tx.transaction }}),
+which is described in the [{{ tx.section }}]({{ tx.section-link }}).
+
+## Actors
+
+The transaction defines the following actors:
+
+{% include figure image_path="/assets/images/iti30.svg" alt="ITI-30 actors" caption="ITI-30 transaction and actors " %}
+
+Producer side corresponds to the *{{ tx.client-actor }}* actor.
+Consumer side corresponds to both *{{ tx.server-actor }}* actor.
+
+## Dependencies
+
+In a Maven-based environment, the following dependency must be registered in `pom.xml`:
+
+```xml
+    <dependency>
+        <groupId>org.openehealth.ipf.platform-camel</groupId>
+        <artifactId>{{ tx.module }}</artifactId>
+        <version>${ipf-version}</version>
+    </dependency>
+```
+
+## Endpoint URI Format
+
+The endpoint URI format of the `{{ tx.component }}` component is identical for producers and consumers:
+
+```
+{{ tx.component }}://hostname:port[?parameters]
+```
+
+where *hostname* is either an IP address or a domain name, and *port* is a number. For the consumer side, the host name
+`0.0.0.0` allows the access from any remote host.
+These two obligatory URI parts represent the address of the {{ tx.transport }} endpoint which is to be served by the given consumer or
+accessed by the given producer. URI parameters controlling the transaction features are described below.
+
+
+## HL7v2 Codec
+
+All HL7v2-based transactions are realized using the [camel-mina2](https://camel.apache.org/mina2.html) and [camel-hl7](https://camel.apache.org/hl7.html)
+components and requires that an [HL7v2 Codec][] is available in the Camel registry.
+
+## Transaction Options
+
+This transaction defines the following options; at least one of them must be chosen to be supported:
+ 
+* `MERGE` (default)
+* `LINK_UNLINK`
+
+The options are represented as enumeration in the class [Iti30Options](../apidocs/org/openehealth/ipf/platform/camel/ihe/mllp/iti30/Iti30Options.html).
+
+Support for one or more options is configured using the optional `options` parameter, followed by a comma-separated list of
+options to be supported. If `options` is provided, the default option (see above) is used.
+The endpoint will reject event types that are outside the scope of the configured option.
+
+## Example
+
+This is an example on how to use the component on the consumer side:
+
+```java
+    from("{{ tx.component }}://0.0.0.0:8777?audit=true&secure=true&options=MERGE,LINK_UNLINK")
+      .process(myProcessor)
+      // process the incoming request and create a response
+```
+
+## Basic Common Component Features
+
+* [ATNA auditing][]
+* [Message validation][]
+
+## Basic MLLP Component Features
+
+* [Message types and exception handling][]
+* [Secure transport][]
+* [File-Based payload logging][]
+
+## Advanced MLLP Component Features
+
+* [Interceptor chain configuration][]
+* [Segment fragmentation][]
+* [Unsolicited request message fragmentation][]
+
+
+[ATNA auditing]: {{ site.baseurl }}{% link _pages/ihe/atna.md %}
+[Message validation]: {{ site.baseurl }}{% link _pages/ihe/messageValidation.md %}
+[HL7v2 Codec]: {{ site.baseurl }}{% link _pages/ihe/mllp/codec.md %}
+[Message types and exception handling]: {{ site.baseurl }}{% link _pages/ihe/mllp/hl7v2MessageTypes.md %}
+[Secure transport]: {{ site.baseurl }}{% link _pages/ihe/mllp/hl7v2SecureTransport.md %}
+[File-Based payload logging]: {{ site.baseurl }}{% link _pages/ihe/mllp/hl7v2PayloadLogging.md %}
+[Interceptor chain configuration]: {{ site.baseurl }}{% link _pages/ihe/mllp/hl7v2InterceptorChain.md %}
+[Segment fragmentation]: {{ site.baseurl }}{% link _pages/ihe/mllp/segmentFragmentation.md %}
+[Unsolicited request message fragmentation]: {{ site.baseurl }}{% link _pages/ihe/mllp/unsolicitedFragmentation.md %}

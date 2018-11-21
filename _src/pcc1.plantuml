@@ -1,0 +1,21 @@
+@startuml
+hide footbox
+
+participant "Clinical Data Consumer" as CDC
+participant "Clinical Data Source" as CDS
+
+CDC -> CDS :Query for Existing Data Request QUPC_IN043100UV01
+activate CDS
+CDS --> CDC : Query for Existing Data Request Response QUPC_IN043200UV01
+deactivate CDS
+|||
+CDC -> CDS :Query for Existing Data Request Continue QUQI_IN000003UV01
+activate CDS
+CDS --> CDC :  Query for Existing Data Request Response QUPC_IN043200UV01
+deactivate CDS
+|||
+CDC -> CDS :Cancel Continuation QUQI_IN000003UV01
+activate CDS
+CDS --> CDC : Acknowledgement MCCI_IN000002UV01
+deactivate CDS
+@enduml

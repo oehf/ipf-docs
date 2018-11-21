@@ -1,0 +1,676 @@
+iti8pix:
+  transaction: ITI-8
+  link: iti8pix
+  profile: PIX
+  description: Patient Identity Feed
+  component: pix-iti8
+  transport: MLLP(S)
+  format: HL7 v2.3.1
+  client-actor: Patient Identity Source
+  server-actor: Patient Identifier Cross-Reference Manager
+  module: ipf-platform-camel-ihe-mllp
+  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.8
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+iti8xds:
+  transaction: ITI-8
+  link: iti8xds
+  profile: XDS
+  description: Patient Identity Feed
+  component: xds-iti8
+  transport: MLLP(S)
+  format: HL7 v2.3.1
+  client-actor: Patient Identity Source
+  server-actor: Document Registry
+  module: ipf-platform-camel-ihe-mllp
+  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.8
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+iti9:
+  transaction: ITI-9
+  link: iti9
+  profile: PIX
+  description: PIX Query
+  component: pix-iti9
+  transport: MLLP(S)
+  format: HL7 v2.5
+  client-actor: Patient Identifier Cross-Reference Consumer
+  server-actor: Patient Identifier Cross-Reference Manager
+  module: ipf-platform-camel-ihe-mllp
+  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.9
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+iti10:
+  transaction: ITI-10
+  link: iti10
+  profile: PIX
+  description: PIX Update Notfication
+  component: pix-iti10
+  transport: MLLP(S)
+  format: HL7 v2.5
+  client-actor: Patient Identifier Cross-Reference Manager
+  server-actor: Patient Identifier Cross-Reference Consumer
+  module: ipf-platform-camel-ihe-mllp
+  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.10
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+iti18:  
+  transaction: ITI-18
+  link: iti18
+  profile: XDS
+  description: Registry Stored Query
+  component: xds-iti18
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Document Consumer
+  server-actor: Document Registry
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.18.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+iti19:  
+  transaction: ITI-19
+  link: iti19
+  profile: ATNA
+  description: Authenticate Node
+  component: n/a
+  transport: n/a
+  format: n/a
+  client-actor: Secure Node
+  server-actor: Secure Node
+  module: ipf-platform-camel-ihe-atna
+  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.19.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+iti20: 
+  transaction: ITI-20
+  link: iti20
+  profile: ATNA
+  description: Record Audit Event
+  component: n/a
+  transport: Syslog/TLS
+  format: DICOM/IHE Audit Message
+  client-actor: Secure Application
+  server-actor: Audit Record Repository
+  module: ipf-platform-camel-ihe-atna
+  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.20.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+iti21:
+  transaction: ITI-21
+  link: iti21
+  profile: PDQ
+  description: Patient Demographics Query
+  component: pdq-iti21
+  transport: MLLP(S)
+  format: HL7 v2.5
+  client-actor: Patient Demographics Consumer
+  server-actor: Patient Demographics Supplier
+  module: ipf-platform-camel-ihe-mllp
+  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.21.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+iti22:
+  transaction: ITI-22
+  link: iti22
+  profile: PDQ
+  description: Patient Demographics and Visit Query
+  component: pdq-iti22
+  transport: MLLP(S)
+  format: HL7 v2.5
+  client-actor: Patient Demographics Consumer
+  server-actor: Patient Demographics Supplier
+  module: ipf-platform-camel-ihe-mllp
+  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.22.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+iti30:
+  transaction: ITI-30
+  link: iti30
+  profile: PAM
+  description: Patient Identity Management
+  component: pam-iti30
+  transport: MLLP(S)
+  format: HL7 v2.5
+  client-actor: Patient Demographics Source
+  server-actor: Patient Demographics Consumer
+  module: ipf-platform-camel-ihe-mllp
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.30.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti31:
+  transaction: ITI-31
+  link: iti31
+  profile: PAM
+  description: Patient Encounter Management
+  component: pam-iti31
+  transport: MLLP(S)
+  format: HL7 v2.5
+  client-actor: Patient Encounter Source
+  server-actor: Patient Encounter Consumer
+  module: ipf-platform-camel-ihe-mllp
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.31.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti38:
+  transaction: ITI-38
+  link: iti38
+  profile: XCA
+  description: Cross-Gateway Query
+  component: xca-iti38
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Initiating Gateway
+  server-actor: Responding Gateway
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.38.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti39:
+  transaction: ITI-39
+  link: iti39
+  profile: XCA
+  description: Cross-Gateway Retrieve
+  component: xca-iti39
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Initiating Gateway
+  server-actor: Responding Gateway
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.39.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti41:
+  transaction: ITI-41
+  link: iti41
+  profile: XDS, XDM, XDR, Continua
+  description: Provide & Register Document Set
+  component: xds-iti41
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Document Source
+  server-actor: Document Repository
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.41.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti42:
+  transaction: ITI-42
+  link: iti42
+  profile: XDS
+  description: Register Document Set
+  component: xds-iti42
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Document Repository
+  server-actor: Document Registry
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.42.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti43:
+  transaction: ITI-43
+  link: iti43
+  profile: XDS
+  description: Retrieve Document Set
+  component: xds-iti43
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Document Consumer
+  server-actor: Document Repository
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.43.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti44pixv3:
+  transaction: ITI-44
+  link: iti44pixv3
+  profile: PIXv3
+  description: Patient Identity Feed v3
+  component: pixv3-iti43
+  transport: SOAP/HTTP(S)
+  format: HL7v3
+  client-actor: Patient Identity Source
+  server-actor: Patient Identifier Cross-Reference Manager
+  module: ipf-platform-camel-ihe-hl7v3
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.44.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti44xds:
+  transaction: ITI-44
+  link: iti44xds
+  profile: XDS
+  description: Patient Identity Feed v3
+  component: xds-iti43
+  transport: SOAP/HTTP(S)
+  format: HL7v3
+  client-actor: Patient Identity Source
+  server-actor: Document Registry
+  module: ipf-platform-camel-ihe-hl7v3
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.44.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti45:
+  transaction: ITI-45
+  link: iti45
+  profile: PIXv3
+  description: PIX Query v3
+  component: pixv3-iti45
+  transport: SOAP/HTTP(S)
+  format: HL7v3
+  client-actor: Patient Identifier Cross-Reference Consumer
+  server-actor: Patient Identifier Cross-Reference Manager
+  module: ipf-platform-camel-ihe-hl7v3
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.45.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti46:
+  transaction: ITI-46
+  link: iti46
+  profile: PIXv3
+  description: PIX Update Notification v3
+  component: pixv3-iti46
+  transport: SOAP/HTTP(S)
+  format: HL7v3
+  client-actor: Patient Identifier Cross-Reference Manager
+  server-actor: Patient Identifier Cross-Reference Consumer
+  module: ipf-platform-camel-ihe-hl7v3
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.46.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti47:
+  transaction: ITI-47
+  link: iti47
+  profile: PDQv3
+  description: Patient Demographics Query (PDQ) v3
+  component: pdqv3-iti47
+  transport: SOAP/HTTP(S)
+  format: HL7v3
+  client-actor: Patient Demographics Consumer
+  server-actor: Patient Demographics Supplier
+  module: ipf-platform-camel-ihe-hl7v3
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.47.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti51:
+  transaction: ITI-51
+  link: iti51
+  profile: XDS
+  description: Multi-Patient Stored Query
+  component: pdqv3-iti47
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Document Consumer
+  server-actor: Document Registry
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.51.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti55:
+  transaction: ITI-55
+  link: iti55
+  profile: XCPD
+  description: Cross-Gateway Patient Discovery
+  component: xcpd-iti55
+  transport: SOAP/HTTP(S)
+  format: HL7v3
+  client-actor: Initiating Gateway
+  server-actor: Responding Gateway
+  module: ipf-platform-camel-ihe-hl7v3
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.55.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti56:
+  transaction: ITI-56
+  link: iti56
+  profile: XCPD
+  description: Cross-Gateway Patient Location Query
+  component: xcpd-iti56
+  transport: SOAP/HTTP(S)
+  format: HL7v3
+  client-actor: Initiating Gateway
+  server-actor: Responding Gateway
+  module: ipf-platform-camel-ihe-hl7v3
+  section:  IHE IT Infrastructure Technical Framework Supplement, Cross-Community Patient Discovery (XCPD) Health Data Locator and Revoke Option, Section 3.56
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_XCPD_HDL_Revoke_Option.pdf
+iti57:
+  transaction: ITI-57
+  link: iti57
+  profile: XDS
+  description: Update Document Set
+  component: xds-iti57
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Document Administrator
+  server-actor: Document Registry
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework Supplement, XDS Metadata Update, Section 3.57.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_XDS_Metadata_Update.pdf
+iti58:
+  transaction: ITI-58
+  link: iti58
+  profile: HPD
+  description: Provider Information Query
+  component: hpd-iti58
+  transport: SOAP/HTTP(S)
+  format: DSMLv2
+  client-actor: Provider Information Consumer
+  server-actor: Provider Information Directory
+  module: ipf-platform-camel-ihe-hpd
+  section:  IHE IT Infrastructure Technical Framework Supplement, Healthcare Provider Directory (HPD), Section 3.58.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_HPD.pdf
+iti59:
+  transaction: ITI-59
+  link: iti59
+  profile: HPD
+  description: Provider Information Feed
+  component: hpd-iti59
+  transport: SOAP/HTTP(S)
+  format: DSMLv2
+  client-actor: Provider Information Source
+  server-actor: Provider Information Directory
+  module: ipf-platform-camel-ihe-hpd
+  section:  IHE IT Infrastructure Technical Framework Supplement, Healthcare Provider Directory (HPD), Section 3.59.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_HPD.pdf
+iti61:
+  transaction: ITI-61
+  link: iti61
+  profile: XDS
+  description: Register On-Demand Document Entry
+  component: xds-iti61
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: On-Demand Document Source
+  server-actor: Document Registry
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.61.
+  section-link: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf
+iti62:
+  transaction: ITI-62
+  link: iti62
+  profile: RMD
+  description: Remove Metadata
+  component: rmd-iti62
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Document Administrator
+  server-actor: Document Registry
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework Supplement, Remove Metadata and Documents (RMD), Section 3.62.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RMD.pdf
+iti63:
+  transaction: ITI-63
+  link: iti63
+  profile: XCF
+  description: Cross-Gateway Fetch
+  component: xcf-iti63
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Initiating Gateway
+  server-actor: Responding Gateway
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework Supplement, Cross-Community Fetch (XCF), Section 3.63.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_XCF.pdf
+iti64:
+  transaction: ITI-64
+  link: iti64
+  profile: XPID
+  description: Notify XAD-PID Link Change
+  component: xpid-iti64
+  transport: MLLP(S)
+  format: HL7 v2.5
+  client-actor: Patient Identity Cross-Reference Manager
+  server-actor: Document Registry
+  module: ipf-platform-camel-ihe-mllp
+  section:  IHE IT Infrastructure Technical Framework Supplement, XAD-PID Change Management (XPID), Section 3.64.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_XPID.pdf
+iti65:
+  transaction: ITI-65
+  link: iti65
+  profile: MHD
+  description: Provide Document Bundle
+  component: mhd-iti65
+  transport: REST/HTTP(S)
+  format: FHIR
+  client-actor: Document Source
+  server-actor: Document Recipient
+  module: ipf-platform-camel-ihe-fhir-stu3-mhd
+  section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.65.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf
+iti66:
+  transaction: ITI-66
+  link: iti66
+  profile: MHD
+  description: Find Document Manifests
+  component: mhd-iti66
+  transport: REST/HTTP(S)
+  format: FHIR
+  client-actor: Document Consumer
+  server-actor: Document Responder
+  module: ipf-platform-camel-ihe-fhir-stu3-mhd
+  section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.66.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf
+iti67:
+  transaction: ITI-67
+  link: iti67
+  profile: MHD
+  description: Find Document References
+  component: mhd-iti67
+  transport: REST/HTTP(S)
+  format: FHIR
+  client-actor: Document Consumer
+  server-actor: Document Responder
+  module: ipf-platform-camel-ihe-fhir-stu3-mhd
+  section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.67.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf
+iti68:
+  transaction: ITI-68
+  link: iti68
+  profile: MHD
+  description: Retrieve Document
+  component: mhd-iti68
+  transport: REST/HTTP(S)
+  format: n/a
+  client-actor: Document Consumer
+  server-actor: Document Responder
+  module: ipf-platform-camel-ihe-fhir-stu3-mhd
+  section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.68.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf
+iti78:
+  transaction: ITI-78
+  link: iti78
+  profile: PDQm
+  description: Patient Demographics Query for Mobile
+  component: pdqm-iti78
+  transport: REST/HTTP(S)
+  format: FHIR
+  client-actor: Patient Demographics Consumer
+  server-actor: Patient Demographics Supplier
+  module: ipf-platform-camel-ihe-fhir-stu3-pixpdq
+  section:  IHE IT Infrastructure Technical Framework Supplement, Patient Demographics Query for Mobile (PDQm), Section 3.78.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf
+iti81:
+  transaction: ITI-81
+  link: iti81
+  profile: ATNA
+  description: Retrieve ATNA Audit Event
+  component: atna-iti81
+  transport: REST/HTTP(S)
+  format: FHIR
+  client-actor: Audit Consumer
+  server-actor: Audit Record Repository
+  module: ipf-platform-camel-ihe-fhir-stu3-audit
+  section:  IHE IT Infrastructure Technical Framework Supplement, Add RESTful Query to ATNA, Section 3.81.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf
+iti83:
+  transaction: ITI-83
+  link: iti83
+  profile: PIXm
+  description: Patient Identifier Cross-reference for Mobile
+  component: pixm-iti83
+  transport: REST/HTTP(S)
+  format: FHIR
+  client-actor: Patient Identifier Cross-Reference Consumer
+  server-actor: Patient Identifier Cross-Reference Manager
+  module: ipf-platform-camel-ihe-fhir-stu3-pixpdq
+  section:  IHE IT Infrastructure Technical Framework Supplement, Patient Identifier Cross-reference for Mobile (PIXm), Section 3.83.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PIXm.pdf
+iti86:
+  transaction: ITI-86
+  link: iti86
+  profile: RMD
+  description: Remove Documents
+  component: rmd-iti86
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Document Administrator
+  server-actor: Document Repository
+  module: ipf-platform-camel-ihe-xds
+  section:  IHE IT Infrastructure Technical Framework Supplement, Remove Metadata and Documents (RMD), Section 3.86.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RMD.pdf
+iti92:
+  transaction: ITI-92
+  link: iti92
+  profile: RMU
+  description: Restricted Update Document Set
+  component: rmu-iti92
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Update Initiator
+  server-actor: Update Responder
+  module: ipf-platform-camel-ihe-xds
+  section:  (pending)
+  section-link: (pending)
+rad69xdsi:
+  transaction: RAD-69
+  link: rad69xdsi
+  profile: XDS-I
+  description: Retrieve Imaging Document Set
+  component: xdsi-rad69
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Imaging Document Consumer
+  server-actor: Imaging Document Source
+  module: ipf-platform-camel-ihe-xds
+  section:   IHE Radiology (RAD) Technical Framework, Vol. 3, Section 4.69
+  section-link: https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol3.pdf
+rad69xcai:
+  transaction: RAD-69
+  link: rad69xcai
+  profile: XCA-I
+  description: Retrieve Imaging Document Set
+  component: xcai-rad69
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Initiating Imaging Gateway
+  server-actor: Initiating Imaging Responder
+  module: ipf-platform-camel-ihe-xds
+  section:   IHE Radiology (RAD) Technical Framework, Vol. 3, Section 4.69
+  section-link: https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol3.pdf
+rad75:
+  transaction: RAD-75
+  link: rad75
+  profile: XCA-I
+  description: Cross-Gateway Retrieve Imaging Document Set
+  component: xcai-rad75
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Initiating Imaging Gateway
+  server-actor: Initiating Imaging Responder
+  module: ipf-platform-camel-ihe-xds
+  section:   IHE Radiology (RAD) Technical Framework, Vol. 3, Section 4.75
+  section-link: https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol3.pdf
+pcc1:
+  transaction: PCC-1
+  link: pcc1
+  profile: QED
+  description: Query for Existing Data
+  component: qed-pcc1
+  transport: SOAP/HTTP(S)
+  format: HL7v3
+  client-actor: Clinical Data Consumer
+  server-actor: Clinical Data Source
+  module: ipf-platform-camel-ihe-hl7v3
+  section:   IHE Patient Care Coordination Technical Framework Supplement, Query for Existing Data (QED), Section 3.2.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_QED.pdf
+pcc44:
+  transaction: PCC-44
+  link: pcc44
+  profile: QEDm
+  description: Mobile Query Existing Data
+  component: qedm-pcc44
+  transport: REST/HTTP(S)
+  format: FHIR
+  client-actor: Clinical Data Consumer
+  server-actor: Clinical Data Source
+  module: ipf-platform-camel-ihe-fhir-stu3-qedm
+  section:   IHE Patient Care Coordination Technical Framework Supplement, Query for Existing Data Mobile (QEDm), Section 3.44.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_QEDm.pdf
+pcd01:
+  transaction: PCD-01
+  link: pcd01
+  profile: PCD
+  description: Communicate Patient Care Device (PCD) Data
+  component: pcd-pcd01
+  transport: SOAP/HTTP(S)
+  format: HL7 v2.6
+  client-actor: Device Observation Reporter
+  server-actor: Device Observation Consumer
+  module: ipf-platform-camel-ihe-hl7v2ws
+  section:   IHE Patient Care Device Technical Framework, Volume 2, Section 3.
+  section-link: https://www.ihe.net/Technical_Framework/upload/IHE_PCD_TF_Vol2.pdf
+chpidd:
+  transaction: CH-PIDD
+  link: chpidd
+  profile: CH:HPD
+  description: Provider Information Delta Download
+  component: ch-pidd
+  transport: SOAP/HTTP(S)
+  format: DSMLv2
+  client-actor: Provider Information Consumer
+  server-actor: Provider Information Directory
+  module: ipf-platform-camel-ihe-hpd
+  section:   Swiss national extensions to the IHE Technical Framework
+  section-link: https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/SR%20816.111.1_ergaenzung-1-Anhang-5.pdf.download.pdf/SR%20816.111.1_Ergaenzung%201%20Anhang%205_DE.pdf
+chppq1:
+  transaction: CH-PPQ-1
+  link: chppq1
+  profile: CH:PPQ
+  description: Privacy Policy Feed
+  component: ch-ppq1
+  transport: SOAP/HTTP(S)
+  format: XACML 2.0
+  client-actor: Policy Source
+  server-actor: Policy Repository
+  module: ipf-platform-camel-ihe-xacml20
+  section:   Swiss national extensions to the IHE Technical Framework
+  section-link: https://www.e-health-suisse.ch/gemeinschaften-umsetzung/umsetzung/programmierhilfen.html
+chppq2:
+  transaction: CH-PPQ-2
+  link: chppq2
+  profile: CH:PPQ
+  description: Privacy Policy Retrieve
+  component: ch-ppq2
+  transport: SOAP/HTTP(S)
+  format: XACML 2.0
+  client-actor: Policy Consumer
+  server-actor: Policy Repository
+  module: ipf-platform-camel-ihe-xacml20
+  section:   Swiss national extensions to the IHE Technical Framework, (revision from March 2018, section 3.4 in "Ergänzung 2 zu Anhang 5 der EPDV-EDI")
+  section-link: https://www.e-health-suisse.ch/gemeinschaften-umsetzung/umsetzung/programmierhilfen.html
+fhir:
+  transaction: custom FHIR Based
+  link: fhir
+  profile: n/a
+  description: Accept requests for custom FHIR-based transactions
+  component: fhir
+  transport: REST/HTTP(S)
+  format: FHIR
+  client-actor: n/a
+  server-actor: n/a
+  module: ipf-platform-camel-ihe-fhir-core
+  section:  n/a
+  section-link: n/a
+mllp:
+  transaction: custom MLLP Based
+  link: mllp
+  profile: n/a
+  description: Accept requests for custom MLLP-based transactions
+  component: mllp
+  transport: MLLP(S)
+  format: HL7v2
+  client-actor: n/a
+  server-actor: n/a
+  module: ipf-platform-camel-ihe-mllp
+  section:  n/a
+  section-link: n/a
+mllpdispatch:
+  transaction: all MLLP Based
+  link: mllpdispatch
+  profile: n/a
+  description: Accept requests for multiple MLLP-based transactions through a single TCP port
+  component: mllp-dispatch
+  transport: MLLP(S)
+  format: HL7v2
+  client-actor: n/a
+  server-actor: n/a
+  module: ipf-platform-camel-ihe-mllp
+  section:  n/a
+  section-link: n/a

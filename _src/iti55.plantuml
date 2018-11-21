@@ -1,0 +1,24 @@
+@startuml
+hide footbox
+
+participant "Initiating Gateway" as IG
+participant "Responding Gateway" as RG
+
+IG -> RG :Cross Gateway Patient Discovery Request PRPA_IN201305UV02
+activate RG
+RG --> IG : Cross Gateway Patient Discovery Response PRPA_IN201306UV02
+deactivate RG
+|||
+group Deferred Response Option only
+    IG -> RG : Cross Gateway Patient Discovery Request PRPA_IN201305UV02
+    activate RG
+    RG --> IG : Request Application Acknowledgement MCCI_IN000002UV01
+    |||
+    RG -> IG : Cross Gateway Patient Discovery Response PRPA_IN201306UV02
+    activate IG
+    IG --> RG : Response Application Acknowledgement MCCI_IN000002UV01
+    deactivate IG
+    deactivate RG
+end group
+
+@enduml

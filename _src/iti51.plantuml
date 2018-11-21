@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Document Consumer" as CON
+participant "Document Registry" as REG
+
+CON -> REG : Multi-Patient Stored Query Request
+activate REG
+REG --> CON : Multi-Patient Stored Query Response
+deactivate REG
+
+
+@enduml

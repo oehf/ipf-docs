@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Document Consumer" as CON
+participant "Document Repository\nInitiating Gateway\nOnDemand Document Source" as REP
+
+CON -> REP : Retrieve Document Set Request
+activate REP
+REP --> CON : Retrieve Document Set Response
+deactivate REP
+
+@enduml

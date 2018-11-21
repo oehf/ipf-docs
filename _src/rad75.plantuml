@@ -1,0 +1,29 @@
+@startuml
+hide footbox
+
+participant "Initiating Imaging Gateway" as IG
+participant "Responding Imaging Gateway" as RG
+
+group Synchronous Request
+IG -> RG : Cross Gateway Retrieve Imaging Document Set Request
+activate RG
+RG --> IG : Cross Gateway Retrieve Imaging Document Set Response
+deactivate RG
+end group
+
+group Asynchronous Request
+IG -> RG : Cross Gateway Retrieve Imaging Document Set Request
+activate IG
+activate RG
+RG --> IG : Cross Gateway Retrieve Imaging Document Set Request Response
+deactivate IG
+|||
+note right of RG: Handle request
+RG -> IG : Cross Gateway Retrieve Imaging Document Set Reply
+activate IG
+IG --> RG : Cross Gateway Retrieve Imaging Document Set Reply Response
+deactivate IG
+deactivate RG
+end group
+
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+hide footbox
+
+participant "Client"
+box "IPF Application"
+participant "IPF Consumer" as CON
+participant "Server Camel Route" as SCR
+end box
+
+loop n-1 times
+    Client -> CON : Fragment of Request
+    activate CON
+    CON --> Client : Fragment of Acknowledgement
+    deactivate CON
+end
+|||
+
+Client -> CON : Last Fragment of Request
+activate CON
+CON -> CON: Join fragments
+CON -> SCR: Unfragmented Request
+activate SCR
+note right of SCR: .from()
+SCR --> CON: Response
+deactivate SCR
+CON -> Client: Unfragmented Request
+deactivate CON
+
+@enduml

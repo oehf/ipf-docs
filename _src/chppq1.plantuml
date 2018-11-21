@@ -1,0 +1,22 @@
+@startuml
+hide footbox
+
+participant "Policy Source" as PS
+participant "Policy Repository" as PR
+
+PS -> PR : AddPolicy Request
+activate PR
+PR --> PS : AddPolicy Request Response
+deactivate PR
+|||
+PS -> PR : UpdatePolicy Request
+activate PR
+PR --> PS : UpdatePolicy Request Response
+deactivate PR
+|||
+PS -> PR : DeletePolicy Request
+activate PR
+PR --> PS : DeletePolicy Request Response
+deactivate PR
+
+@enduml

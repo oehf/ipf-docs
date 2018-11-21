@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="132px" preserveAspectRatio="none" style="width:535px;height:132px;" version="1.1" viewBox="0 0 535 132" width="535px" zoomAndPan="magnify"><defs><filter height="300%" id="f12mcjm9bc5a8d" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f12mcjm9bc5a8d)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="419" y="71.9609"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="114" x2="114" y1="39.6094" y2="120.3125"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="423.5" x2="423.5" y1="39.6094" y2="120.3125"/><rect fill="#FEFECE" filter="url(#f12mcjm9bc5a8d)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="208" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="194" x="15" y="24.5332">On-Demand Document Source</text><rect fill="#FEFECE" filter="url(#f12mcjm9bc5a8d)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="205" x="319.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="191" x="326.5" y="24.5332">Document Registry / Recipient</text><rect fill="#FFFFFF" filter="url(#f12mcjm9bc5a8d)" height="30.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="419" y="71.9609"/><polygon fill="#A80036" points="407,67.9609,417,71.9609,407,75.9609,411,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="114" x2="413" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="271" x="121" y="67.1045">Register On-Demand Document Entry Request</text><polygon fill="#A80036" points="125,98.3125,115,102.3125,125,106.3125,121,102.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="119" x2="423" y1="102.3125" y2="102.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="281" x="131" y="97.4561">Register On-Demand Document Entry Response</text><!--
+@startuml
+hide footbox
+
+participant "On-Demand Document Source" as SRC
+participant "Document Registry / Recipient" as REG
+
+SRC -> REG : Register On-Demand Document Entry Request
+activate REG
+REG - -> SRC : Register On-Demand Document Entry Response
+deactivate REG
+
+
+@enduml
+
+PlantUML version 1.2018.11(Sat Sep 22 18:43:53 CEST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_152-release-1248-b19
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>
