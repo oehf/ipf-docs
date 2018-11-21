@@ -1,11 +1,13 @@
 # main links
 main:
   - title: "Getting Started"
-    url: /getting-started/ 
-  - title: "Documentation"
-    url: /docs/
+    url: /getting-started/
   - title: "Project Info"
     url: /project-info/
+  - title: "Documentation"
+    url: /docs/
+  - title: "Development"
+    url: /development/
   - title: "Javadocs"
     url: /apidocs/
   - title: "News"
