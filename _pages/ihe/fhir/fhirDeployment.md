@@ -33,7 +33,7 @@ Here is an example:
         <servlet>
             <servlet-name>FhirServlet</servlet-name>
             <servlet-class>org.openehealth.ipf.commons.ihe.fhir.IpfFhirServlet</servlet-class>
-            <!-- FHIR version to be used: DSTU2_HL7ORG, DSTU3 -->
+            <!-- FHIR version to be used: DSTU3, R4 -->
             <init-param>
                 <param-name>fhirVersion</param-name>
                 <param-value>DSTU3</param-value>
@@ -103,8 +103,8 @@ The servlet definition above would match the following consumer endpoint:
 ### Embedded in Spring Boot
 
 Container deployments embedded in [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-embedded-servlet-containers.html)
-can be easily achieved by depending on [ipf-fhir-stu3-spring-boot-starter](../ipf-fhir-stu3-spring-boot-starter/index.html)
-
+can be easily achieved by depending on [ipf-fhir-stu3-spring-boot-starter] or
+and [ipf-fhir-r4-spring-boot-starter].
 This starter module along with `camel-servlet-starter` sets up the necessary servlets and the servlet init parameters are mapped to
 application properties.
 
@@ -112,3 +112,5 @@ Note that Spring Boot supports Tomcat, Jetty and Undertow as servlet implementat
 
 
 [paging requests]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirCachingAndPaging.md %}
+[ipf-fhir-stu3-spring-boot-starter]: {{ site.baseurl }}{% link _pages/boot/boot-fhir.md %}
+[ipf-fhir-r4-spring-boot-starter]: {{ site.baseurl }}{% link _pages/boot/boot-fhir.md %}

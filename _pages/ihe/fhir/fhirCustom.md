@@ -113,10 +113,11 @@ In the route definition, they can be used like this:
 * [ATNA auditing][]
 * [Resource validation][Message validation]
 
-## Basic FHIR Component Features
+## FHIR Component Features
 
 * [Message types and exception handling][]
 * [Security][]
+* [Advanced FHIR Parameters][]
 
 ## Connection-related FHIR Component Features
 
@@ -128,4 +129,5 @@ In the route definition, they can be used like this:
 [Message types and exception handling]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirMessageTypes.md %}
 [Security]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirSecurity.md %}
 [Connection Parameters]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirConnection.md %}
+[Advanced FHIR Parameters]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirAdvanced.md %}
 [deployment container]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirDeployment.md %}

@@ -7,17 +7,26 @@ classes: wide
 
 `ipf-fhir-spring-boot-starter` sets up the infrastructure for FHIR-based IHE transactions
  
-The dependency on the IPF [Spring Boot] IHE FHIR starter module is:
+The dependency on the IPF [Spring Boot] IHE FHIR starter module is for FHIR STU3:
 
 ```xml
     <dependency>
         <groupId>org.openehealth.ipf.boot</groupId>
-        <artifactId>ipf-fhir-spring-boot-starter</artifactId>
+        <artifactId>ipf-fhir-dstu3-spring-boot-starter</artifactId>
+    </dependency>
+```
+
+and for FHIR R4:
+
+```xml
+    <dependency>
+        <groupId>org.openehealth.ipf.boot</groupId>
+        <artifactId>ipf-fhir-r4-spring-boot-starter</artifactId>
     </dependency>
 ```
 
 
-`ipf-fhir-spring-boot-starter` auto-configures:
+Both `ipf-fhir-spring-boot-starter modules auto-configures:
  
 * the FHIR Servlet
 * a `org.openehealth.ipf.commons.ihe.fhir.NamingSystemService` instance
@@ -28,20 +37,20 @@ property `ipf.fhir.caching` is set to true, the following caching storage beans 
 
 * `pagingProvider` for [paging results](http://hapifhir.io/doc_rest_server.html#Paging_Providers)
 
-`ipf-fhir-spring-boot-starter` does *not*  transitively depend on the respective Camel-dependent IHE FHIR
-modules as these have been split into support for MHD, PIXm/PDQm and RESTful ATNA. So, e.g. in order to
-provide MHD endpoints, you have to include
+`ipf-fhir-spring-boot-starter` modules do *not*  transitively depend on the respective Camel-dependent IHE FHIR
+modules as these have been split into support for IHE MHD, PIXm/PDQm, QEDm and RESTful ATNA, respectively. 
+So, e.g. in order to provide STU3 MHD endpoints, you have to include
 
 ```xml
         <dependency>
             <groupId>org.openehealth.ipf.platform-camel</groupId>
-            <artifactId>ipf-platform-camel-ihe-fhir-mhd</artifactId>
+            <artifactId>ipf-platform-camel-ihe-fhir-stu3-mhd</artifactId>
         </dependency>
 ```
 
 into your project descriptor.
 
-`ipf-fhir-spring-boot-starter` provides the following application properties:
+`ipf-fhir-spring-boot-starter` modules provides the following application properties:
 
 | Property (`ipf.fhir.`)     | Default                | Description                                        |
 |----------------------------|-----------------------|-----------------------------------------------------|

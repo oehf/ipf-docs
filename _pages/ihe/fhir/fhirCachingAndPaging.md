@@ -2,7 +2,7 @@
 title: Caching and Paging FHIR endpoint parameters
 layout: single
 permalink: /docs/ihe/fhirCachingAndPaging/
-classe: wide
+classes: wide
 ---
 
 ## Caching and Paging FHIR endpoint parameters
@@ -20,6 +20,8 @@ regarding _eager_ or _lazy_ fetching of result subsets.
 By default, the [FHIR servlet] is configured to return in pages containing 20 resources. The client may demand for smaller or larger pages
 by specifying the `_count` parameter, but the maximum is by default 100.
 
+#### lazyLoadBundles
+
 If `lazyLoadBundles` is false, the request must be treated as if no paging is in effect, i.e. the service returns all matching results.
 IPF cares about caching the results as well as the result size and delivers them back to the caller in the requested chunks. Repeating
 requests are served from this cache rather than being forwarded into the consumer route.
@@ -33,9 +35,10 @@ the overall result size as integer value.
 * `subset` request: IPF adds two message headers called `FhirFromIndex` and `FhirToIndex` to the exchange, containing the lower and upper
 bound of the request result subset. The route is expected to return the corresponding list of results.
 
+#### cacheBundles
+
 By default, the results are _not_ cached unless `cacheBundles` is set to true. In this case already returned results are cached and reused
 on repeating requests, if possible.
-
 
 In the example below, only two entries per page were requested. As the total result size is three, the response bundle contains a link to the
 next page. Note that the URL is specific to the underlying FHIR library and must be treated as atomic unit.

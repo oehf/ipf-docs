@@ -83,10 +83,11 @@ This is an example on how to use the component on the consumer side:
 * [ATNA auditing][]
 * [Resource validation][Message validation]
 
-## Basic FHIR Component Features
+## FHIR Component Features
 
 * [Message types and exception handling][]
 * [Security][]
+* [Advanced FHIR Parameters][]
 
 ## Connection-related FHIR Component Features
 
@@ -99,3 +100,4 @@ This is an example on how to use the component on the consumer side:
 [Security]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirSecurity.md %}
 [Connection Parameters]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirConnection.md %}
 [deployment container]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirDeployment.md %}
+[Advanced FHIR Parameters]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirAdvanced.md %}
