@@ -637,7 +637,7 @@ chppq2:
   section-link: https://www.e-health-suisse.ch/gemeinschaften-umsetzung/umsetzung/programmierhilfen.html
 fhir:
   transaction: custom FHIR Based
-  link: fhir
+  link: fhirCustom
   profile: n/a
   description: Accept requests for custom FHIR-based transactions
   component: fhir
@@ -650,7 +650,7 @@ fhir:
   section-link: n/a
 mllp:
   transaction: custom MLLP Based
-  link: mllp
+  link: mllpCustom
   profile: n/a
   description: Accept requests for custom MLLP-based transactions
   component: mllp

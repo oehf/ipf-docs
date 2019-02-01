@@ -18,3 +18,4 @@ npm-debug.log*
 /.idea/vcs.xml
 /.idea/workspace.xml
 /ipf-docs.iml
+/.idea/encodings.xml
