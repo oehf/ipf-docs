@@ -40,6 +40,7 @@ as described [here]({{ site.baseurl }}{% link _pages/ihe/atna.md %}).
 | `audit-queue-class`            | `org.openehealth.ipf.commons.audit.queue.SynchronousAuditMessageQueue` | Queue implementation for auditing |
 | `audit-sender-class`           | as indicated by `audit-repository-transport` | ATNA sender implementation |
 | `audit-exception-handler-class`| `org.openehealth.ipf.commons.audit.handler.LoggingAuditExceptionHandler`| Exception handler impleemntation |
+| `audit-value-if-missing`       | `UNKNOWN`             | Value used for mandatory audit attributes that are not set |
 
 
 [Spring Boot]: https://projects.spring.io/spring-boot/

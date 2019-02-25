@@ -75,7 +75,7 @@ This is an example on how to use the component on the consumer side:
 
 * [ATNA auditing][]
 
-The ITI-68 endpoint forwards a preliminary [Iti68AuditDataset](../apidocs/org/openehealth/ipf/commons/ihe/fhir/iti68/Iti68AuditDataset.html) 
+The ITI-68 endpoint forwards a preliminary [Iti68AuditDataset](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/iti68/Iti68AuditDataset.html) 
 instance in a Camel message header named `AuditDataset`. The Camel consumer route has the possibility adding 
 the unique document ID, and, if applicable in scenarios involving XDS, an optional patient ID, repository ID 
 and home community ID in order to populate this AuditDataset with more information. This is because the 

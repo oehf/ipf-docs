@@ -80,8 +80,8 @@ Additional URI parameters are optional and control special features as described
 
 Messages exchanged in the `ch-ppq2` transaction are defined in XACML 2.0 standard:
 
- * Request message -- [`XACMLPolicyQueryType`](../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/xacml20/saml/protocol/XACMLPolicyQueryType.html) or 
- * Response message -- [`ResponseType`](../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/saml20/protocol/ResponseType.html)
+ * Request message -- [`XACMLPolicyQueryType`](../../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/xacml20/saml/protocol/XACMLPolicyQueryType.html) or 
+ * Response message -- [`ResponseType`](../../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/saml20/protocol/ResponseType.html)
  
 ### Example
 

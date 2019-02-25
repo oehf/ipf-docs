@@ -59,7 +59,7 @@ This transaction defines the following options; at least one of them must be cho
 * `MERGE` (default)
 * `LINK_UNLINK`
 
-The options are represented as enumeration in the class [Iti30Options](../apidocs/org/openehealth/ipf/platform/camel/ihe/mllp/iti30/Iti30Options.html).
+The options are represented as enumeration in the class [Iti30Options](../../apidocs/org/openehealth/ipf/platform/camel/ihe/mllp/iti30/Iti30Options.html).
 
 Support for one or more options is configured using the optional `options` parameter, followed by a comma-separated list of
 options to be supported. If `options` is provided, the default option (see above) is used.

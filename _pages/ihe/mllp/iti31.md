@@ -64,7 +64,7 @@ This transaction defines the following options; at least one of them must be cho
 * `HISTORIC_MOVEMENT_MANAGEMENT`
 * `MAINTAIN_DEMOGRAPHICS`
             
-The options are represented as enumeration in the class [Iti31Options](../apidocs/org/openehealth/ipf/platform/camel/ihe/mllp/iti31/Iti31Options.html).
+The options are represented as enumeration in the class [Iti31Options](../../apidocs/org/openehealth/ipf/platform/camel/ihe/mllp/iti31/Iti31Options.html).
 
 Support for one or more options is configured using the optional `options` parameter, followed by a comma-separated list of
 options to be supported. If `options` is provided, the default option (see above) is used.

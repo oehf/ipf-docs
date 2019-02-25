@@ -85,7 +85,7 @@ This transaction defines the following options; at least one of them must be cho
 *Note*: the PROVENANCE option is not yet supported
 {: .notice--info}
 
-The options are represented as enumeration in the class [Pcc44Options](../apidocs/org/openehealth/ipf/platform/camel/ihe/fhir/pcc44/Pcc44Options.html).
+The options are represented as enumeration in the class [Pcc44Options](../../apidocs/org/openehealth/ipf/platform/camel/ihe/fhir/pcc44/Pcc44Options.html).
 
 Support for one or more options is configured using the optional `options` parameter, followed by a comma-separated list of
 options to be supported. If `options` is provided, the default option (see above) is used.

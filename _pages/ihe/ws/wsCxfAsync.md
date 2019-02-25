@@ -34,7 +34,7 @@ corresponding requests (which is necessary in particular for ATNA auditing). Mor
 to associate a user-defined key to a group of asynchronous requests in order to efficiently aggregate responses.
 
 The user has to define an instance of a class which implements the
-[`org.openehealth.ipf.commons.ihe.ws.correlation.AsynchronyCorrelator`](../apidocs/org/openehealth/ipf/commons/ihe/ws/correlation/AsynchronyCorrelator.html) interface.
+[`org.openehealth.ipf.commons.ihe.ws.correlation.AsynchronyCorrelator`](../../apidocs/org/openehealth/ipf/commons/ihe/ws/correlation/AsynchronyCorrelator.html) interface.
 An [Ehcache](http://ehcache.org/)-based correlator implementation is provided by the IPF out-of-box, so in the simplest
 case the instantiation will look like (supposed that `wsCorrelationCache` is defined in Ehcache descriptor):
 

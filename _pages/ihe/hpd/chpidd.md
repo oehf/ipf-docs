@@ -80,8 +80,8 @@ Additional URI parameters are optional and control special features as described
 
 The {{ tx.component }} component produces and consumes objects based on the [DSMLv2](https://www.oasis-open.org/standards#dsmlv2) data model:
 
-* Request message -- [`DownloadRequest`](../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/chpidd/DownloadRequest.html)
-* Response message -- [`DownloadResponse`](../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/chpidd/DownloadResponse.html)
+* Request message -- [`DownloadRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/chpidd/DownloadRequest.html)
+* Response message -- [`DownloadResponse`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/chpidd/DownloadResponse.html)
 
 ### Example
 

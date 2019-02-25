@@ -83,10 +83,10 @@ Messages exchanged in the `ch-ppq1` transaction are defined in the XML Schema
 by eHealth Suisse, which also references data types from SAML 2.0 and XACML 2.0 standards:
 
 * Request message -- either 
-[`AddPolicyRequest`](../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/ehealthswiss/AddPolicyRequest.html) or 
-[`UpdatePolicyRequest`](../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/ehealthswiss/UpdatePolicyRequest.html) or
-[`DeletePolicyRequest`](../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/ehealthswiss/DeletePolicyRequest.html)
-* Response message -- [`EprPolicyRepositoryResponse`](../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/ehealthswiss/EprPolicyRepositoryResponse.html)
+[`AddPolicyRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/ehealthswiss/AddPolicyRequest.html) or 
+[`UpdatePolicyRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/ehealthswiss/UpdatePolicyRequest.html) or
+[`DeletePolicyRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/ehealthswiss/DeletePolicyRequest.html)
+* Response message -- [`EprPolicyRepositoryResponse`](../../apidocs/org/openehealth/ipf/commons/ihe/xacml20/stub/ehealthswiss/EprPolicyRepositoryResponse.html)
 
 ### Example
 

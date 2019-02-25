@@ -44,12 +44,12 @@ These two obligatory URI parts represent the address of the MLLP endpoint which 
 accessed by the given producer.
 
 Additionally, the URI parameter *hl7TransactionConfig* references a bean of type
-[`org.openehealth.ipf.commons.ihe.hl7v2.Hl7v2TransactionConfiguration`](../apidocs/org/openehealth/ipf/commons/ihe/hl7v2/Hl7v2TransactionConfiguration.html)
+[`org.openehealth.ipf.commons.ihe.hl7v2.Hl7v2TransactionConfiguration`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v2/Hl7v2TransactionConfiguration.html)
 that defines the contract of the transaction.
 
 The *clientAuditStrategy* and *serverAuditStrategy* within that *hl7TransactionConfig* transaction contract are mandatory unless [ATNA auditing]
 is disabled in the endpoints. The audit strategies must reference an instance of type
-[`org.openehealth.ipf.commons.ihe.core.atna.AuditStrategy`](../apidocs/org/openehealth/ipf/commons/ihe/core/atna/MllpAuditStrategy.html).
+[`org.openehealth.ipf.commons.ihe.core.atna.AuditStrategy`](../../apidocs/org/openehealth/ipf/commons/ihe/core/atna/MllpAuditStrategy.html).
 
 
 ## HL7v2 Codec

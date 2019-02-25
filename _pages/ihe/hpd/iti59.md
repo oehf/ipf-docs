@@ -80,8 +80,8 @@ Additional URI parameters are optional and control special features as described
 
 The {{ tx.component }} component produces and consumes objects of the [DSMLv2](https://www.oasis-open.org/standards#dsmlv2) data model:
 
-* Request message -- [`BatchRequest`](../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/dsmlv2/BatchRequest.html)
-* Response message -- [`BatchResponse`](../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/dsmlv2/BatchResponse.html)
+* Request message -- [`BatchRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/dsmlv2/BatchRequest.html)
+* Response message -- [`BatchResponse`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/dsmlv2/BatchResponse.html)
 
 ### Example
 
