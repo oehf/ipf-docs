@@ -91,6 +91,13 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
         <property name="includeParticipantsFromResponse" value="true" />
          -->
 
+        <!-- Sometimes, request parts that are mandatory for auditing are not present, e.g. due to
+             bad or incomplete request data. IPF always tries to write proper audit events and
+             fills up missing audit attributes with this value
+             
+        <property name="auditValueIfMissing" value="UNKNOWN" />
+         -->
+         
     </bean>
 </beans>    
 ```

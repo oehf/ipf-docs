@@ -31,10 +31,12 @@ Git repository on [GitHub][ipf-github] and provide some good pull requests!
 
 ## What's New
 
-The current version of IPF is 3.5.3.
+The current version of IPF is 3.5.4.
 
 See the list of fixed Github issues for an overview:
 
+* Fixes for upcoming [3.6.0](https://github.com/oehf/ipf/milestone/17?closed=1)
+* Fixes for [3.5.4](https://github.com/oehf/ipf/milestone/18?closed=1)
 * Fixes for [3.5.3](https://github.com/oehf/ipf/milestone/16?closed=1)
 * Fixes for [3.5.2](https://github.com/oehf/ipf/milestone/15?closed=1)
 * Fixes for [3.5.1](https://github.com/oehf/ipf/milestone/14?closed=1)
@@ -52,30 +54,30 @@ If you are using previous versions of IPF and want to update:
 
 ## Removed functionality
 
-As XDS.a transactions have been retired by IHE, all functionality related with ITI-14, ITI-15, ITI-16 and ITI-17
-have been removed. This includes the ebXML/ebRS 2.x model classes.
+IPF 3.6.0 removed the following modules (and submodules thereof):
+
+ * `ipf-commons-ihe-fhir-dstu2`
+ * `ipf-platform-camel-ihe-fhir-dstu2`
 {: .notice--warning}
  
 ## Added modules
 
-IPF 3.5.1 added the modules listed below:
+IPF 3.6.0 added the modules (and submodules thereof) as listed below:
 
- * `ipf-commons-ihe-xacml20`
- * `ipf-platform-camel-ihe-xacml20`
+ * `ipf-commons-ihe-fhir-r4`
+ * `ipf-platform-camel-ihe-fhir-r4`
  
 ## Deprecated modules
 
-IPF 3.5.1 deprecates the following modules:
 
- * `ipf-commons-ihe-fhir-dstu2`
- * `ipf-platform-camel-ihe-fhir-dstu2`
+
 
 ## Issue Tracking
 
 Issue tracking is done in github. For current issues check [https://github.com/oehf/ipf/issues](https://github.com/oehf/ipf/issues).
 Questions? Please direct your issues to the [IPF User Google Group](https://groups.google.com/forum/#!forum/ipf-user). 
 
-These modules will be removed as soon as FHIR r4 support has been included.
+
 
 ## Javadocs
 
@@ -92,3 +94,4 @@ The javadocs can be obtained [here](apidocs/index.html).
 [3.2 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.2.md %}
 [3.4 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.4.md %}
 [3.5 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.5.md %}
+[3.5 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.6.md %}

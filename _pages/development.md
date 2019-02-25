@@ -29,9 +29,9 @@ It may be released independently and is located at [https://github.com/oehf/ipf-
 ## Building
 
 IPF requires Java 8 for both compile time and runtime.
-IPF does not yet support Java 9+.
+IPF does not yet support Java 9+, this is aimed for with IPF 4.0.
 
-IPF builds using Maven 3.5.x. IPF is available at [Maven Central], so no custom repositories need to
+IPF builds using Maven 3.6.0. IPF is available at [Maven Central], so no custom repositories need to
 be added to the `settings.xml` configuration file.
 
 Before building, adjust the `MAVEN_OPTS` environment variable to assign Maven more heap space.
@@ -50,8 +50,14 @@ sources must be generated for proper Javadoc creation during the `site` phase.
     set MAVEN_OPTS=-Xmx1024m
     mvn -Pgenerate-stubs generate-sources 
     mvn site (-DskipTests)
-    mvn site:stage
 ```
+
+Documentation is maintained in Markdown in the `ipf-docs` repository. Pushing changes to github will
+automatically render the documentation at `https://oehf.github.io/ipf-docs`.
+
+Javadocs artifacts are uploaded to Maven Central, which makes them also available online under
+https://www.javadocs.io.
+
 
 ## IDE
 
@@ -67,8 +73,6 @@ IPF is continuously built on [Travis](https://travis-ci.org/oehf). Snapshot arti
 
 Issue tracking is done in github. For current issues check [https://github.com/oehf/ipf/issues](https://github.com/oehf/ipf/issues).
 Questions? Please direct your issues to the [IPF Development Google Group](https://groups.google.com/forum/#!forum/ipf-dev). 
-
-We'll care.
 
 
 [Maven Central]: https://search.maven.org

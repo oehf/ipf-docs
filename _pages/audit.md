@@ -128,7 +128,7 @@ the transmission protocol. It also allows to setup strategies for serialization,
 | `serializationStrategy`     | Instance of `Current` (i.e. DICOM2017c)    | Serialization implementation                                 |
 | `auditMessagePostProcessor` | no-op                                      | Audit Message Postprocessing, called before audit message is dispatched |
 | `auditExceptionHandler`     | instance of `LoggingAuditExceptionHandler` | Handler to be called if the delivery of audit message to the audit repository has failed |
-
+| `auditValueIfMissing`       | `MISSING`                                  | Value used if a mandatory audit attribute is not present
 
 The default setup is to send Audit Messages via UDP to `localhost:514`, and handle delivery errors by just logging them.
 For production usage, it is usually required to configure a TLS connection to a remote Audit Repository and
