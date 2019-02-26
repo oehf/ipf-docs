@@ -26,16 +26,36 @@ and for FHIR R4:
 ```
 
 
-Both `ipf-fhir-spring-boot-starter modules auto-configures:
+Both `ipf-fhir-spring-boot-starter` modules auto-configure by default:
  
-* the FHIR Servlet
-* a `org.openehealth.ipf.commons.ihe.fhir.NamingSystemService` instance
+* the FHIR Servlet ([`IpfFhirServlet`](../apidocs/org/openehealth/ipf/boot/fhir/IpfBootFhirServlet.html) )
+* a [`NamingSystemService`](../apidocs/org/openehealth/ipf/commons/ihe/fhir/support/DefaultNamingSystemServiceImpl.html) instance
 * mappings for translating FHIR requests into PIX Query or PDQ requests and vice versa
+
+You can define your own beans of this type in order to override the defaults.
+
+The modules define a mandatory instance of [`ca.uhn.fhir.context.FhirContext`](https://hapifhir.io/apidocs/ca/uhn/fhir/context/FhirContext.html) 
+in the correct FHIR version. The instance can, however, be customized by providing a 
+[`FhirContextCustomizer`](../apidocs/org/openehealth/ipf/boot/fhir/FhirContextCustomizer.html) bean:
+
+```java
+
+    @Bean
+    public FhirContextCustomizer fhirContextCustomizer() {
+        return new FhirContextCustomizer() {
+            
+            public void customizeFhirContext(FhirContext fhirContext) {
+                // configure FhirContext here
+            }
+        }
+    }
+```
 
 Furthermore, if a single `org.springframework.cache.CacheManager` bean is available and the application
 property `ipf.fhir.caching` is set to true, the following caching storage beans are set up:
 
-* `pagingProvider` for [paging results](http://hapifhir.io/doc_rest_server.html#Paging_Providers)
+* a `IPagingProvider` for [paging results](http://hapifhir.io/doc_rest_server.html#Paging_Providers)
+
 
 `ipf-fhir-spring-boot-starter` modules do *not*  transitively depend on the respective Camel-dependent IHE FHIR
 modules as these have been split into support for IHE MHD, PIXm/PDQm, QEDm and RESTful ATNA, respectively. 
@@ -50,12 +70,14 @@ So, e.g. in order to provide STU3 MHD endpoints, you have to include
 
 into your project descriptor.
 
+
 `ipf-fhir-spring-boot-starter` modules provides the following application properties:
 
 | Property (`ipf.fhir.`)                | Default         | Description                                        |
 |---------------------------------------|-----------------|----------------------------------------------------|
 | `caching`                             | false           | Whether to set up a cache for paging |
 | `path`                                | /fhir           | Path that serves as the base URI for the FHIR services |
+| `fhir-version`                        | (depends on module) | FHIR Version | 
 | `identifier-naming-systems`           |                 | Resource containing a bundle of FHIR NamingSystem resources used for mapping from FHIR URIs to OIDs and namespaces |
 | `servlet.init`                        |                 | init parameters for the FHIR servlet |
 | `servlet.load-on-startup`             | 1               | Load on startup priority of the FHIR servlet |
@@ -71,6 +93,7 @@ into your project descriptor.
 
 
 See [ipf-spring-boot-starter] and [ipf-atna-spring-boot-starter] for additional properties.
+
 
 The starter module does *not* set up a Camel servlet for serving MHD ITI-68 (Retrieve Document) transactions.
 Camel provides a Spring boot starter module for this:

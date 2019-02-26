@@ -46,6 +46,7 @@ See the list of fixed Github issues for an overview:
 
 If you are using previous versions of IPF and want to update:
 
+* IPF 3.6.x comes with a few minor changes. Read the [3.6 Update Instructions] for how to update from IPF 3.5.x
 * IPF 3.5.x comes with some changes that must be considered when upgrading from IPF 3.4.x. Read the [3.5 Update Instructions] for how to update from IPF 3.4.x
 * IPF 3.4.x comes with some changes that must be considered when upgrading from IPF 3.2.x or IPF 3.3.x to IPF 3.4.x Read the [3.4 Update Instructions] for how to update from IPF 3.1.x
 * IPF 3.2.x comes with some changes that must be considered when upgrading from IPF 3.1.x to IPF 3.2.x Read the [3.2 Update Instructions] for how to update from IPF 3.1.x
@@ -55,7 +56,6 @@ If you are using previous versions of IPF and want to update:
 ## Removed functionality
 
 IPF 3.6.0 removed the following modules (and submodules thereof):
-
  * `ipf-commons-ihe-fhir-dstu2`
  * `ipf-platform-camel-ihe-fhir-dstu2`
 {: .notice--warning}
@@ -67,7 +67,6 @@ IPF 3.6.0 added the modules (and submodules thereof) as listed below:
  * `ipf-commons-ihe-fhir-r4`
  * `ipf-platform-camel-ihe-fhir-r4`
  
-## Deprecated modules
 
 
 
@@ -94,4 +93,4 @@ The javadocs can be obtained [here](apidocs/index.html).
 [3.2 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.2.md %}
 [3.4 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.4.md %}
 [3.5 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.5.md %}
-[3.5 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.6.md %}
+[3.6 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.6.md %}

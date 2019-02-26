@@ -16,13 +16,37 @@ The dependency on the IPF [Spring Boot] ATNA starter module is:
     </dependency>
 ```
 
-Note: all IHE-related Spring boot starter modules depend on this starter module, so you normally do not have to
+All IHE-related Spring boot starter modules depend on this starter module, so if you use one of those you do not have to
 explicitly depend on `ipf-atna-spring-boot-starter`.
+{: .notice--info}
 
-`ipf-atna-spring-boot-starter` auto-configures:
+In case want to explicitly depend on `ipf-atna-spring-boot-starter` without using Apache Camel (e.g. without using any
+of the provided IHE components) or other IPF features, you can exclude the transitive dependency on 
+`ipf-spring-boot-starter`:
 
-* `org.openehealth.ipf.commons.audit.AuditContext` bean
-* a basic listeners that write ATNA audit events upon application startup and shutdown, and authentication events
+```xml
+    <dependency>
+        <groupId>org.openehealth.ipf.boot</groupId>
+        <artifactId>ipf-atna-spring-boot-starter</artifactId>
+        <exclusions>
+           <exclusion>
+              <groupId>org.openehealth.ipf.boot</groupId>
+              <artifactId>ipf-spring-boot-starter</artifactId>          
+           </exclusion>
+        </exclusions>
+    </dependency>
+```
+
+
+`ipf-atna-spring-boot-starter` auto-configures by default:
+
+* a configurable [`AuditContext`](../apidocs/org/openehealth/ipf/commons/audit/DefaultAuditContext.html) bean
+* a basic listeners that write ATNA audit events upon application startup and shutdown 
+  ([`ApplicationStartEventListener`](../apidocs/org/openehealth/ipf/boot/atna/ApplicationStartEventListener.html) 
+  and [`ApplicationStopEventListener`](../apidocs/org/openehealth/ipf/boot/atna/ApplicationStopEventListener.html))
+* a basic listener for login events if Spring Security is on the classpath ([`AuthenticationListener`](../apidocs/org/openehealth/ipf/boot/atna/AuthenticationListener.html)) 
+
+You can define your own beans of this type in order to override the defaults.
 
 `ipf-atna-spring-boot-starter` provides the following application properties that configures the `AuditContext`
 as described [here]({{ site.baseurl }}{% link _pages/ihe/atna.md %}).
