@@ -17,6 +17,7 @@ IPF uses [git](https://git-scm.com/) for source code management. The IPF git rep
 
 Additionally, there are the following support projects:
 
+* `ipf-docs`, which is the source of this documentation. It is located at [https://github.com/oehf/ipf-docs](https://github.com/oehf/ipf-docs).
 * `ipf-gazelle`, which provides conformance profiles for HL7v2 based IHE transactions.
 It may be released independently and is located at [https://github.com/oehf/ipf-gazelle](https://github.com/oehf/ipf-gazelle).
 * `ipf-oht-atna`, which provides infrastructure for IHE audit trails and node authentication via TLS.
