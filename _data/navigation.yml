@@ -9,7 +9,7 @@ main:
   - title: "Development"
     url: /development/
   - title: "Javadocs"
-    url: /apidocs/
+    url: /_pages/apidocs/
   - title: "News"
     url: /news/    
   - title: "Sitemap"
@@ -25,7 +25,7 @@ sidebar:
       - title: "Project Info"
         url: /project-info/
       - title: "Javadocs"
-        url: /apidocs/
+        url: /_pages/apidocs/
   - title: "IHE Integration Profiles"
     children:  
       - title: "Component Overview"
