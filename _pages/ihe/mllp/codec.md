@@ -6,8 +6,9 @@ classes: wide
 ---
 
 Some parameters defined in [camel-mina2][] have fixed values in MLLP-based IPF IHE components. 
-This means that these parameters are actually not configurable by the user any more; 
+This means that these parameters are actually not configurable by the user anymore; 
 values provided via endpoint URIs will be silently ignored. 
+
 These parameters are:
 
 ## MINA Parameters
@@ -23,10 +24,10 @@ All other URI parameters defined in [camel-mina2][] remain fully functional and 
 
 ## HL7 Codec Parameters
 
-[camel-mina2][] defines a parameter named `codec`, which is expected to contain the name of a bean that corresponds to an codec factory 
+[camel-mina2][] defines a parameter named `codec`, which is expected to contain the name of a bean that references a codec factory 
 that translates the network stream into a suitable application protocol and vice versa. 
-[camel-hl7][] comes with an implementation of an HL7 codec factory. MLLP-based IPF IHE components set `#hl7codec` as a default value for this parameter. 
-The corresponding bean must always be defined:
+[camel-hl7][] comes with an implementation of an MLLP codec factory. MLLP-based IPF IHE components set `#hl7codec` as a default value 
+for this parameter. The corresponding bean must always be defined:
 
 ```xml
     <bean id="hl7codec" class="org.apache.camel.component.hl7.HL7MLLPCodec">
@@ -43,9 +44,9 @@ In case you need to set a custom `HapiContext` on the codec, you need to use the
     </bean>
 ```
 
-The character set name set up for the HL7 codec factory will be automatically:
+The character set name for the HL7 codec factory will be automatically:
 
-* propagated to the Camel component (see parameter encoding in the table above)
+* propagated to the Camel component (see parameter `encoding` in the table above)
 * stored in the `Exchange.CHARSET_NAME` property of each Camel exchange
 * used in all data transformation activities
 

@@ -12,8 +12,8 @@ on top ot their HL7 v2 counterparts and to avoid redundancy in that way.
 
 Currently supported transaction pairs are
 
-* PIX Query ([ITI-9]/[ITI-83])
-* PDQ       ([ITI-21]/[ITI-78])
+* PIX(m) Query ([ITI-9]/[ITI-83])
+* PDQ(m)       ([ITI-21]/[ITI-78])
 
 ## Dependencies
 
@@ -45,13 +45,14 @@ This depends transitively on the required module:
 
 ## Configuring the URI Mapper
 
-For translation of FHIR messages, an instance of `org.openehealth.ipf.commons.ihe.fhir.translation.UriMapper` is required
-in order to map FHIR URIs into OIDs and vice versa. IPF provides an implementation (`org.openehealth.ipf.commons.ihe.fhir.translation.NamingSystemUriMapper`)
-that uses an instance of `org.openehealth.ipf.commons.ihe.fhir.NamingSystemService` under the hood. 
+For translation of FHIR messages, an instance of [`UriMapper`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/UriMapper.html) is required
+in order to map FHIR URIs into OIDs and vice versa. IPF provides an implementation ([`NamingSystemUriMapper`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/NamingSystemUriMapper.html))
+that uses an instance of [`NamingSystemService`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/NamingSystemService.html) under the hood. 
 
-The default implementation is `org.openehealth.ipf.commons.ihe.fhir.DefaultNamingSystemServiceImpl`, which expects a Bundle of FHIR [NamingSystem resources].
+The default implementation is [`DefaultNamingSystemServiceImpl`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/DefaultNamingSystemServiceImpl.html), 
+which expects a Bundle of FHIR [NamingSystem resources].
 In addition, for code system mapping, a [Mapping Service] bean must be available.
-Here is a snippet of the required Spring-based configuration:
+Here is a snippet of the required Spring XML configuration:
 
 ```xml
 
@@ -80,6 +81,7 @@ Here is a snippet of the required Spring-based configuration:
 ```
 
 Note that Spring Boot applications can depend on `ipf-fhir-spring-boot-starter`, which already auto-configures these beans for you. 
+{: .notice--info}
 
 An example for a bundle of [NamingSystem resources] (referenced to be contained in the `identifiers.xml` file in the example above)
 looks like this:
@@ -167,8 +169,8 @@ From a *Patient identity Cross Reference Manager* 's perspective, there are **in
 
 | FHIR transaction       | FHIR-to-HL7v2 request                   | HL7v2-Transaction   | HL7v2-to-FHIR response
 | -----------------------|-----------------------------------------|---------------------|----------------------------------
-| PDQm [ITI-78]          | `iti78.PdqmRequestToPdqQueryTranslator` | PDQ       [ITI-21]  | `iti78.PdqResponseToPdqmResponseTranslator`
-| PIXm [ITI-83]          | `iti83.PixmRequestToPixQueryTranslator` | PIX Query [ITI-9]   | `iti83.PixQueryResponseToPixmResponseTranslator`
+| PDQm [ITI-78]          | [`iti78.PdqmRequestToPdqQueryTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti78/PdqmRequestToPdqQueryTranslator.html) | PDQ       [ITI-21]  | [`iti78.PdqResponseToPdqmResponseTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti78/PdqResponseToPdqmResponseTranslator.html)
+| PIXm [ITI-83]          | [`iti83.PixmRequestToPixQueryTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti83/PixmRequestToPixQueryTranslator.html) | PIX Query [ITI-9]   | [`iti83.PixQueryResponseToPixmResponseTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti83/PixQueryResponseToPixmResponseTranslator.html)
 
 
 Each translator has a set of configurable properties. Their descriptions can be taken from javadoc of the
@@ -183,7 +185,7 @@ corresponding classes. Below there's an example of a Spring application context 
     <property name="uriMapper" ref="uriMapper" />
 </bean>
 
-<bean name="pixmResposneTranslator"
+<bean name="pixmResponseTranslator"
       class="org.openehealth.ipf.commons.ihe.fhir.translation.iti83.PixQueryResponseToPixmResponseTranslator">
     <property name="uriMapper" ref="uriMapper" />
 </bean>

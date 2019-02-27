@@ -9,7 +9,7 @@ classes: wide
 ATNA auditing functionality is fully integrated into the corresponding IPF IHE components and controlled by the 
 `auditContext` endpoint URI parameter. This parameters references a bean of type `AuditContext` with the given name
 that bundles all relevant details around ATNA auditing (e.g. whether auditing is enabled, where the Audit Repository 
-is located, which wire protocol to be used, etc.) 
+is located, which wire protocol is to be used, etc.) 
 
 | Parameter name | Values                     | Behavior                                      |  Default | Example |
 |:---------------|:---------------------------|:----------------------------------------------|:---------|:---------- |
@@ -18,12 +18,14 @@ is located, which wire protocol to be used, etc.)
 
 You can have as many `AuditContext` beans as you wish (for auditing being turned on/off, using different queue implementations, etc.).
 In this case, you _must_ use the `auditContext` parameter. 
+If you only have one `AuditContext` bean, you can omit the `auditContext` parameter as this unique instance is
+obtained from the context.
 
 
 ## Auditor Configuration
 
-As of IPF 3.5, all details regarding ATNA auditing is contained the the respective IHE transaction modules. The only
-configuration required is the `AuditContext`:
+As of IPF 3.5, all details regarding ATNA auditing is configured with the `AuditContext`. This is how it
+looks like in a Spring XML file:
 
 
 ```xml
@@ -102,32 +104,37 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 </beans>    
 ```
 
+Spring Boot support in [ipf-atna-spring-boot-starter] instantiates an `AuditContext` which can be configured.
+{: .notice--info}
+
 ## Configure custom audit event queueing
 
-The delivery queue that is used as channel for the audit sender can be customized , i.e. by using a different implementation 
-of the interface `org.openehealth.ipf.commons.audit.queue.AuditMessageQueue`. There are implementations for synchronous and 
-asynchronous delivery of string-serialized audit messages as well as a queue for sending the `AuditingMessage` object to 
-a Camel Endpoint as described below.
+The delivery queue that is used as channel for the audit sender can be customized by using a different implementation 
+of the interface [`AuditMessageQueue`](../../apidocs/org/openehealth/ipf/commons/audit/queue/AuditMessageQueue.html). 
+There are implementations for synchronous and asynchronous delivery of string-serialized audit messages as well as a 
+queues for logging an `AuditingMessage` to a file or sending it to a Camel Endpoint (as described below).
 
 ## Configure custom audit event exception handling
 
-The exception handler that is called when transmitting audit records fails can be customized , i.e. by using a different implementation 
-of the interface `org.openehealth.ipf.commons.audit.handler.AuditExceptionHandler`. The only existing implementations is to
-log the exception, but you can implement more elaborate solutions, e.g. resending, or using a fallback transmission protocol.
+The exception handler that is called when transmitting audit records fails can be customized by using a different implementation 
+of the interface [`AuditExceptionHandler`](../../apidocs/org/openehealth/ipf/commons/audit/handler/AuditExceptionHandler.html). 
+The only existing implementation is to log the exception, but you can implement more elaborate solutions, 
+e.g. resending, or using a fallback transmission protocol.
 
 ## Specifiying a DICOM version
 
 [DICOM is versioned](http://www.dclunie.com/dicom-status/status.html), and each year a couple of updates are published. 
-Some updates also affect the way Audit messages are serialized (as specified in 
+Some updates also affect the way Audit messages are serialized (as specified in DICOM
 [Part15](http://dicom.nema.org/medical/dicom/current/output/html/part15.html)).
 
 As IHE ATNA does not reference a specific DICOM version, in the past there have been interoperability issues where
-the Application Node sent ATNA events that the repository actor was not yet capable to consume. To ensure
+the Application Node sends ATNA events that the repository actor was not (yet) capable to consume. To ensure
 a certain degree of backwards compatibility, the `serializationStrategy` can be configured to use a certain
-implementation version, where `org.openehealth.ipf.commons.audit.marshal.dicom.Current` always references the latest
-relevant version.
+implementation version, where [`Current`](../../apidocs/org/openehealth/ipf/commons/audit/marshal/dicom/Current.html) 
+always references the latest relevant version.
 You can also provide a custom implementation of `org.openehealth.ipf.commons.audit.marshal.SerializationStrategy`
-that creates other representations of an `AuditMessage` (e.g. a JSON-serialized `AuditEvent` FHIR resource).    
+that creates other representations of an `AuditMessage` (there is e.g. an implementation creating JSON-serialized 
+`AuditEvent` FHIR resources).    
 
 ## Configuring TLS details
 
@@ -185,9 +192,8 @@ Now an instance of `CamelEndpointSender` can be configured in the application co
     </beans>
 ```
 
-The `CamelEndpointSender` instance is configured to send audit message objects to the `direct:input` endpoint that is registered 
-in the Camel context. The audit message is sent as In-Only exchange to the endpoint where the message body contains the `AuditMessage` 
-instance.. 
+The `CamelEndpointSender` instance is configured to send audit message objects to the `direct:input` endpoint of a Camel route. 
+The audit message is sent as In-Only exchange to the endpoint, the message body contains the `AuditMessage` instance.
 Additionally the following Camel message headers are populated:
 
 * `org.openehealth.ipf.platform.camel.ihe.atna.datetime`: date and time when the audit event was generated
@@ -201,11 +207,12 @@ ATNA audit routines of Web Service-based eHealth components expect to find a pre
 CXF request message context property defined in `org.openehealth.ipf.commons.ihe.ws.cxf.audit.AbstractAuditInterceptor#DATASET_CONTEXT_KEY`, 
 which is supposed to be set by project-specific mechanisms (not defined in IPF).
 
-When no such property exists, IPF tries to determine the XUA user name by means of processing the SAML2 assertion contained in the WS-Security SOAP header of the request message.
+When no such property exists, IPF tries to determine the XUA user name by means of processing the SAML2 assertion contained in the 
+WS-Security SOAP header of the request message.
 
-Note that when the XUA user name cannot be determined IPF does neither throw any exceptions nor performs any validation of SAML2 assertions. 
-In other words, the support for XUA is restricted to filling the corresponding field in ATNA audit records.
+Note that when the XUA user name cannot be determined, IPF does neither throw any exceptions nor performs any validation of SAML2 assertions. 
+In other words, the support for XUA is restricted to filling in the corresponding field in ATNA audit records.
+{: .notice--warning}
 
-
-
+[ipf-atna-spring-boot-starter]: {{ site.baseurl }}{% link _pages/boot/boot-atna.md %}
 [JSSE system properties]:   https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html#InstallationAndCustomization

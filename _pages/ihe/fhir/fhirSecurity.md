@@ -24,7 +24,7 @@ See e.g. SSL How-To for [Tomcat 8](https://tomcat.apache.org/tomcat-8.5-doc/ssl-
 
 ### Producer
 
-TLS-related aspects for Client-side FHIR endpoints (i.e. producers) are controlled by the following URI parameters:
+TLS-related aspects for client-side FHIR endpoints (i.e. producers) are controlled by the following URI parameters:
 
 | Parameter name         | Type                     | Default value | Short description                                                                    |
 |:-----------------------|:-------------------------|:--------------|:-------------------------------------------------------------------------------------|
@@ -34,7 +34,7 @@ TLS-related aspects for Client-side FHIR endpoints (i.e. producers) are controll
 
 If `secure` is set to true but no `sslContextParameters` are provided, the Camel registry is looked up for 
 a unique `sslContextParameters` bean instance to be used. If none is found, a default SSL Context (optionally controlled by the system environment) 
-is instantiated. If more than one is found, an exception is thrown.
+is instantiated. If more than one `sslContextParameters` bean instance is found, an exception is thrown.
 
 
 [SslContextParameters] can be configured as shown in the example below. In this case, the FHIR producer URI requires 

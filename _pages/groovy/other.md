@@ -7,7 +7,7 @@ toc_icon: align-left
 ---
 
 
-Some other DSL extensions, mostly for convenience.
+There are also some other DSL extensions, mostly for convenience.
 
 ## Error Handler
 

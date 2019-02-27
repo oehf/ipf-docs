@@ -35,7 +35,7 @@ Both `ipf-fhir-spring-boot-starter` modules auto-configure by default:
 You can define your own beans of this type in order to override the defaults.
 
 The modules define a mandatory instance of [`ca.uhn.fhir.context.FhirContext`](https://hapifhir.io/apidocs/ca/uhn/fhir/context/FhirContext.html) 
-in the correct FHIR version. The instance can, however, be customized by providing a 
+in the correct FHIR version, the bean name is `fhirContext`. The instance can, however, be customized by providing a 
 [`FhirContextCustomizer`](../apidocs/org/openehealth/ipf/boot/fhir/FhirContextCustomizer.html) bean:
 
 ```java
@@ -95,7 +95,7 @@ into your project descriptor.
 See [ipf-spring-boot-starter] and [ipf-atna-spring-boot-starter] for additional properties.
 
 
-The starter module does *not* set up a Camel servlet for serving MHD ITI-68 (Retrieve Document) transactions.
+The starter module does *not* set up a Camel servlet for serving MHD [ITI-68] (Retrieve Document) transactions.
 Camel provides a Spring boot starter module for this:
 
 ```xml
@@ -105,7 +105,7 @@ Camel provides a Spring boot starter module for this:
         </dependency>
 ```
 
-`camel-servlet-starter` provides the following application properties:
+[camel-servlet-starter] provides the following application properties:
 
 | Property (`camel.component.servlet.mapping.`) | Default                | Description                                        |
 |-----------------------------------------------|------------------------|----------------------------------------------------|
@@ -117,3 +117,5 @@ Camel provides a Spring boot starter module for this:
 [Spring Boot]: https://projects.spring.io/spring-boot/
 [ipf-spring-boot-starter]: {{ site.baseurl }}{% link _pages/boot/boot.md %}
 [ipf-atna-spring-boot-starter]: {{ site.baseurl }}{% link _pages/boot/boot-atna.md %}
+[ITI-68]: {{ site.baseurl }}{% link _pages/ihe/fhir/iti68.md %}
+[camel-servlet-starter]: https://github.com/apache/camel/blob/master/components/camel-servlet/src/main/docs/servlet-component.adoc

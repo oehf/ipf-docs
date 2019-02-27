@@ -7,7 +7,7 @@ classes: wide
 
 Some more FHIR endpoint parameters are not required in all scenarios. 
 
-All parameters are usually set on the FhirTransactionConfiguration (i.e. per
+All parameters are usually set on the `FhirTransactionConfiguration` (i.e. per
 FHIR component type), but you may wish to overwrite these settings in your
 endpoint URI.
 
@@ -20,11 +20,13 @@ endpoint URI.
 | `clientRequestFactory` | ClientRequestFactory | n/a           | reference to a custom ClientRequestFactory
 | `consumerSelector`     | Predicate            | () -> true    | reference to a Predicate that selects a FhirConsumer
 
+
 ### fhirContext
 
 The most commonly used of these is `fhirContext` (e.g. `?fhirContext=#fhirContext`), 
-which allows to reference a global FHIR Context instance. This is useful if you
-expose several FHIR endpoints and want to use the same configured context.
+which allows to reference a global FHIR Context instance like the one provided by the 
+[IPF Spring Boot FHIR starter]. This is useful if you expose several FHIR endpoints that 
+shall all use same configured context.
 
 ### resourceProvider
 
@@ -99,3 +101,6 @@ public class BundleProfileSelector implements Predicate<Object> {
     }
 }
 ```
+
+
+[IPF Spring Boot FHIR starter]: {{ site.baseurl }}{% link _pages/boot/boot-fhir.md %}

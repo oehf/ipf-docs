@@ -72,12 +72,13 @@ The following servlet init parameters are supported:
 | `maximumPageSize`    | Integer         | 100           | maximum page size of returned resources |
 
 
-A special case is the ITI-68 transaction. This is not a FHIR
+A special case is the [ITI-68] transaction. This is not a FHIR
 transaction as such but just a HTTP(S) download. Therefore, instead of being routed over the `FhirServlet`
-this transaction is served by a `CamelServlet` as provided by Camel's [Servlet component](https://camel.apache.org/servlet.html):
+this transaction is served by a `CamelServlet` as provided by Camel's [Servlet component](https://camel.apache.org/servlet.html).
+
+A `web.xml` snippet would look like this:
 
 ```
-
 <servlet>
    <servlet-name>CamelServlet</servlet-name>
    <display-name>Camel Http Transport Servlet</display-name>
@@ -99,13 +100,12 @@ The servlet definition above would match the following consumer endpoint:
 ```
 
 
-
 ### Embedded in Spring Boot
 
 Container deployments embedded in [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-embedded-servlet-containers.html)
 can be easily achieved by depending on [ipf-fhir-stu3-spring-boot-starter] or
 and [ipf-fhir-r4-spring-boot-starter].
-This starter module along with `camel-servlet-starter` sets up the necessary servlets and the servlet init parameters are mapped to
+This starter module along with [camel-servlet-starter] sets up the necessary servlets and the servlet init parameters are mapped to
 application properties.
 
 Note that Spring Boot supports Tomcat, Jetty and Undertow as servlet implementations.
@@ -114,3 +114,5 @@ Note that Spring Boot supports Tomcat, Jetty and Undertow as servlet implementat
 [paging requests]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirCachingAndPaging.md %}
 [ipf-fhir-stu3-spring-boot-starter]: {{ site.baseurl }}{% link _pages/boot/boot-fhir.md %}
 [ipf-fhir-r4-spring-boot-starter]: {{ site.baseurl }}{% link _pages/boot/boot-fhir.md %}
+[ITI-68]: {{ site.baseurl }}{% link _pages/ihe/fhir/iti68.md %}
+[camel-servlet-starter]: https://github.com/apache/camel/blob/master/components/camel-servlet/src/main/docs/servlet-component.adoc

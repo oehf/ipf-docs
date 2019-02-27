@@ -48,7 +48,7 @@ This depends transitively on the required module:
 ### Configuring the Mapping Service
 
 For translation of PIX Feed and PDQ messages, the IPF [Mapping Service] must be activated and configured to use the mapping
-provided by IPF (which can be accessed as a classpath resource). Here is a snippet of Spring-based configuration:
+provided by IPF (which can be accessed as a classpath resource). Here is a snippet of a Spring XML configuration:
 
 ```
 <bean id="mappingService" class="org.openehealth.ipf.commons.spring.map.SpringBidiMappingService">
@@ -71,22 +71,22 @@ From a *Patient identity Cross Reference Manager* 's perspective, there are **in
 
 | HL7v3-Transaction      | HL7v3-to-HL7v2 request             | HL7v2-Transaction   | HL7v2-to-HL7v3 response
 | -----------------------|------------------------------------|---------------------|----------------------------------
-| PIX Feed V3 [ITI-44]   | `PixFeedRequest3to2Translator`     | PIX Feed [ITI-8]    | `PixFeedAck2to3Translator`
-| PIX Query v3 [ITI-45]  | `PixQueryRequest3to2Translator`    | PIX Query [ITI-9]   | `PixQueryResponse2to3Translator`
-| PDQ V3 [ITI-47]        | `PdqRequest3to2Translator`         | PDQ [ITI-21]        | `PdqResponse2to3Translator`
+| PIX Feed V3 [ITI-44]   | [`PixFeedRequest3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixFeedRequest3to2Translator.html)     | PIX Feed [ITI-8]    | [`PixFeedAck2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixFeedAck2to3Translator.html)
+| PIX Query v3 [ITI-45]  | [`PixQueryRequest3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixQueryRequest3to2Translator.html)    | PIX Query [ITI-9]   | [`PixQueryResponse2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixQueryResponse2to3Translator.html)
+| PDQ V3 [ITI-47]        | [`PdqRequest3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PdqRequest3to2Translator.html)         | PDQ [ITI-21]        | [`PdqResponse2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PdqResponse2to3Translator.html)
 
 ... and **outbound** translators:
 
 | HL7v2-Transaction      | HL7v2-to-HL7v3 request                | HL7v3-Transaction     | HL7v3-to-HL7v2 response
 | -----------------------|---------------------------------------|-----------------------|--------------------------
-| PIX Feed [ITI-8]       | `PixFeedRequest2to3Translator`        | PIX Feed V3 [ITI-44]  | `PixAck3to2Translator`
-| PIX Update [ITI-10]    | `PixUpdateNotification2to3Translator` | PIX Update V3 [ITI-46]| `PixAck3to2Translator`
+| PIX Feed [ITI-8]       | [`PixFeedRequest2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixFeedRequest2to3Translator.html)        | PIX Feed V3 [ITI-44]  | [`PixAck3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixAck3to2Translator.html)
+| PIX Update [ITI-10]    | [`PixUpdateNotification2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixUpdateNotification2to3Translator.html) | PIX Update V3 [ITI-46]| [`PixAck3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixAck3to2Translator.html)
 
 Note that currently only the [ITI-8]/[ITI-44] pair is provided for both directions.
 
 
 Each translator has a set of configurable properties. Their descriptions can be currently taken from javadoc of the
-corresponding classes. There are reasonable default values, therefore the explicite configuration (see <property> items
+corresponding classes. There are reasonable default values, therefore the explicit configuration (see <property> items
 in the example below) can be omitted in many cases.
 
 ```xml

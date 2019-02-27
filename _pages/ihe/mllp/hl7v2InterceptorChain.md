@@ -98,7 +98,7 @@ Example:
                      ConsumerRequestDefragmenterInterceptor.class.getName());
             addBefore(ConsumerMarshalInterceptor.class.getName());
         }
-        .....
+        ...
     }
 ```
 
@@ -117,7 +117,7 @@ together with the *interceptorFactories* parameter:
 
 ```java
     from("pdq-iti21://0.0.0.0:18214?interceptorFactories=#myInterceptorFactory,#authenticationInterceptorFactory")
-       ....
+       ...
 ```
 
 Each `InterceptorFactory` must implement the `getNewInstance()` method so that for each call a new instance 

@@ -36,8 +36,8 @@ Interaction steps performed by the consumer are shown on the diagram below:
 
 Fragments are stored internally, whereby the user must provide a storage via the `continuationStorage`
 URI parameter of the consumer endpoint. This bean must implement the interface
-[`org.openehealth.ipf.commons.ihe.hl7v3.storage.Hl7v3ContinuationStorage`].
-An Ehcache-based implementation is provided by the IPF.
+[`org.openehealth.ipf.commons.ihe.hl7v3.storage.Hl7v3ContinuationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/storage/Hl7v3ContinuationStorage.html).
+An [Ehcache-based implementation](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/storage/EhcacheHl7v3ContinuationStorage.html) is provided by the IPF.
 
 Here is an example of how to configure the Spring context descriptor, supposed that "interactiveContinuationCache" is defined in Ehcache configuration file:
 
@@ -59,11 +59,12 @@ The consumer endpoint URI can then contain parameters `"&supportContinuation=tru
 Obsolete fragment chains can be removed from the storage either by means of a corresponding cancel message `QUQI_IN000003UV01`
 sent by the client (as usual, such messages are automatically served by the IPF) or by proprietary mechanisms of the storage, if available.
 
+
 ### Producer
 
-A WebService-based IPF IHE producer with enabled interactive continuation will automatically send Query Continue (QUQI_IN000003UV01)
-requests after having received the first response if there are results left to be fetched. This step will be repeated for all subsequent fragments until 
-the last fragment of the chain has arrived.
+A Web Service-based IPF IHE producer with enabled interactive continuation will automatically send Query Continue (`QUQI_IN000003UV01`)
+requests after having received the first response if there are results left to be fetched. 
+This step will be repeated for all subsequent fragments until the last fragment of the chain has arrived.
 After that, the producer joins all collected data records together (using the same transaction-specific rules as the consumer used)
 and delivers the cumulative response to the caller.
 

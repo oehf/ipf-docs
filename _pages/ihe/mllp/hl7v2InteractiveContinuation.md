@@ -51,7 +51,8 @@ URI parameter of the consumer endpoint. This bean must implement the interface
 [`org.openehealth.ipf.commons.ihe.hl7v2.storage.InteractiveContinuationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v2/storage/InteractiveContinuationStorage.html).
 An Ehcache-based implementation is provided by the IPF.
 
-Here is an example of how to configure the Spring context descriptor, supposed that "interactiveContinuationCache" is defined in Ehcache configuration file:
+Here is an example of how to configure the Spring context descriptor, supposed that `interactiveContinuationCache` is a defined cache in 
+the Ehcache configuration file:
 
 ```xml
     <bean id="ehcacheManager" class="net.sf.ehcache.CacheManager" factory-method="create" />

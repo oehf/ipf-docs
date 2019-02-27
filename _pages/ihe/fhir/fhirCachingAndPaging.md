@@ -18,30 +18,35 @@ regarding _eager_ or _lazy_ fetching of result subsets.
 | `cacheBundles`       | Boolean    | false         | whether result pages are cached (only effective if `lazyLoadBundles` is true) |
 
 By default, the [FHIR servlet] is configured to return in pages containing 20 resources. The client may demand for smaller or larger pages
-by specifying the `_count` parameter, but the maximum is by default 100.
+by specifying the `_count` parameter, but the maximum page size is by default 100.
 
 #### lazyLoadBundles
 
-If `lazyLoadBundles` is false, the request must be treated as if no paging is in effect, i.e. the service returns all matching results.
-IPF cares about caching the results as well as the result size and delivers them back to the caller in the requested chunks. Repeating
+If `lazyLoadBundles` is false, the request must be treated as if _no paging_ is in effect, i.e. your service implementation returns all 
+matching results to the [FHIR servlet].
+IPF can care about caching the results as well as the result size and delivers them back to the caller in the requested chunks. Repeating
 requests are served from this cache rather than being forwarded into the consumer route.
 
-This behavior can get inefficient if the overall result set is usually much bigger compared to the requested result subset, particularly
-when the backend service has no upper result limit. In this case, `lazyLoadBundles` can be set to true, which causes IPF to delegate
-paging into the consumer route. The route is now responsible of handling the following two cases:
+This behavior can get inefficient if the overall result set for your service implementation is usually much bigger compared to the requested 
+result subset, particularly when the service has no upper result limit. In this case, `lazyLoadBundles` should be set to true, which causes 
+IPF to delegate paging into the consumer route. Your Camel route is now responsible of handling the following two cases:
 
 * `size` request: IPF adds a message header called `FhirRequestSizeOnly` to the exchange, which indicates that the route must only return 
-the overall result size as integer value.
+the overall result size as integer value in the body.
 * `subset` request: IPF adds two message headers called `FhirFromIndex` and `FhirToIndex` to the exchange, containing the lower and upper
 bound of the request result subset. The route is expected to return the corresponding list of results.
 
 #### cacheBundles
 
 By default, the results are _not_ cached unless `cacheBundles` is set to true. In this case already returned results are cached and reused
-on repeating requests, if possible.
+on repeating requests, if possible. This is particularly useful if `lazyLoadBundles` is true as well; otherwise clients browsing back and
+forth in the result set would cause a potentially expensive request to the service imlpementation although the result subset has been fetched
+before. 
+
+#### Example
 
 In the example below, only two entries per page were requested. As the total result size is three, the response bundle contains a link to the
-next page. Note that the URL is specific to the underlying FHIR library and must be treated as atomic unit.
+next page. Note that the URL is specific to the underlying HAPI FHIR library and must be treated as atomic unit.
 
 ```xml
     <Bundle xmlns="http://hl7.org/fhir">
