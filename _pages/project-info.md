@@ -31,11 +31,11 @@ Git repository on [GitHub][ipf-github] and provide some good pull requests!
 
 ## What's New
 
-The current version of IPF is 3.5.4.
+The current version of IPF is 3.6.0.
 
 See the list of fixed Github issues for an overview:
 
-* Fixes for upcoming [3.6.0](https://github.com/oehf/ipf/milestone/17?closed=1)
+* Fixes for [3.6.0](https://github.com/oehf/ipf/milestone/17?closed=1)
 * Fixes for [3.5.4](https://github.com/oehf/ipf/milestone/18?closed=1)
 * Fixes for [3.5.3](https://github.com/oehf/ipf/milestone/16?closed=1)
 * Fixes for [3.5.2](https://github.com/oehf/ipf/milestone/15?closed=1)
@@ -56,9 +56,11 @@ If you are using previous versions of IPF and want to update:
 ## Removed functionality
 
 IPF 3.6.0 removed the following modules (and submodules thereof):
+{: .notice--warning}
+
  * `ipf-commons-ihe-fhir-dstu2`
  * `ipf-platform-camel-ihe-fhir-dstu2`
-{: .notice--warning}
+
  
 ## Added modules
 
@@ -68,14 +70,10 @@ IPF 3.6.0 added the modules (and submodules thereof) as listed below:
  * `ipf-platform-camel-ihe-fhir-r4`
  
 
-
-
-
 ## Issue Tracking
 
 Issue tracking is done in github. For current issues check [https://github.com/oehf/ipf/issues](https://github.com/oehf/ipf/issues).
 Questions? Please direct your issues to the [IPF User Google Group](https://groups.google.com/forum/#!forum/ipf-user). 
-
 
 
 ## Javadocs
