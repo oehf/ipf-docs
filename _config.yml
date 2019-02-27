@@ -233,6 +233,7 @@ plugins:
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-algolia
   - jekyll-gist
   - jekyll-feed
   - jemoji
