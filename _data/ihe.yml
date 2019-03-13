@@ -447,7 +447,7 @@ iti68:
   description: Retrieve Document
   component: mhd-iti68
   transport: REST/HTTP(S)
-  format: n/a
+  format: FHIR
   client-actor: Document Consumer
   server-actor: Document Responder
   module: ipf-platform-camel-ihe-fhir-stu3-mhd
