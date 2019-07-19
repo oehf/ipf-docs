@@ -76,6 +76,7 @@ This is an example on how to use the component on the consumer side:
 * [Message types and exception handling][]
 * [Secure transport][]
 * [File-Based payload logging][]
+* [Mina options][HL7v2 Codec]
 
 ## Advanced MLLP Component Features
 

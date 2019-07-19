@@ -21,6 +21,14 @@ These parameters are:
 | `encoding`            | String     | corresponds to the charset name configured for the HL7 codec factory, as described below |
 
 All other URI parameters defined in [camel-mina2][] remain fully functional and configurable by the user.
+Of particular interest are the following parameters:
+
+| Parameter name        | Type       | Default        | Description                                                                                 |
+|:----------------------|:-----------|:---------------|:--------------------------------------------------------------------------------------------|
+| `disconnect`          | boolean    | false          | (producer,consumer): disconnect(close) from Mina session right after use. 
+| `minaLogger`          | boolean    | false          | (producer,consumer): enable Apache MINA slf4j logging at INFO level to log all I/O.
+| `timeout`             | long (ms)  | 30000          | (producer,consumer): timeout that specifies how long to wait for a response from a remote server
+| `writeTimeout`        | long (ms)  | 10000          | (producer,consumer): maximum amount of time it should take to send data to the MINA session
 
 ## HL7 Codec Parameters
 

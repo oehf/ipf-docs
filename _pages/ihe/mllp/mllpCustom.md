@@ -113,6 +113,7 @@ In the route definition, they can be used like this:
 * [Message types and exception handling][]
 * [Secure transport][]
 * [File-Based payload logging][]
+* [Mina options][HL7v2 Codec]
 
 ## Advanced MLLP Component Features
 
