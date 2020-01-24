@@ -1,7 +1,7 @@
 ---
 title: mllp component
 layout: single
-permalink: /docs/ihe/mllp/
+permalink: /docs/ihe/mllpcustom/
 toc: true
 toc_icon: align-left
 toc_sticky: true

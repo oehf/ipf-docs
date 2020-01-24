@@ -650,7 +650,7 @@ fhir:
   section-link: n/a
 mllp:
   transaction: custom MLLP Based
-  link: mllpCustom
+  link: mllpcustom
   profile: n/a
   description: Accept requests for custom MLLP-based transactions
   component: mllp
