@@ -13,7 +13,10 @@ IPF adds support for a subset of these profiles by providing Camel components (h
  implementation details on transport level) and translators, e.g. between the FHIR and HL7 v2 message models.
 
 While the FHIR transactions in IHE ITI revision 13 (2016/2017) was based on FHIR [DSTU2](https://hl7.org/fhir/DSTU2/index.html),
-the transactions have been migrated to [STU3](https://hl7.org/fhir/index.html) as of IHE ITI revision 14 (2017/2018).
+the transactions have been migrated to [STU3](https://hl7.org/fhir/STU3/index.html) as of IHE ITI revision 14 (2017/2018) 
+and further to [R4](https://hl7.org/fhir/R4/index.html) as of IHE ITI revision 16 (2019/2020). Note that all FHIR transactions
+are still in trial implementation state.
+
 {: .notice--info}
 
 The following IHE transactions for FHIR are currently supported:

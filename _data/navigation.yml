@@ -60,3 +60,7 @@ sidebar:
         url: /docs/hl7-kotlin/
       - title: "HL7 Kotlin DSL"
         url: /docs/hl7-kotlin-dsl/
+  - title: "Spring Boot support"
+    children:
+      - title: "Overview"
+        url: /docs/boot/

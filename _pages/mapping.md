@@ -111,8 +111,8 @@ mappings = {
 )
 
    messageType(
-      'ADT^A01' : 'PRPA_IN402001'
-     (ELSE) : { throw new HL7Exception("Invalid message type", 207) }
+      'ADT^A01' : 'PRPA_IN402001',
+      (ELSE) : { throw new HL7Exception("Invalid message type", 207) }
    )
 }
 
@@ -187,7 +187,7 @@ mappings = {
     key       : 'value',
     (ELSE)    : 'unknownKey',
     // backwards default mapping to an existing key without conflict:
-    { 'key' } : (ELSE)
+    ({'key'}) : (ELSE)
   )
 }
 ```

@@ -5,8 +5,8 @@ permalink: /docs/hl7-groovy/
 classes: wide
 ---
 
-HL7's Version 2.x messaging standard is the workhorse of electronic data exchange in the clinical domain and arguably the most widely i
-mplemented standard for healthcare in the world.
+HL7's Version 2.x messaging standard is the workhorse of electronic data exchange in the clinical domain and arguably the most widely
+implemented standard for healthcare in the world.
 
 The HL7 Standard covers messages that exchange information in the general areas of Patient Demographics, Patient Charges and Accounting, Clinical Observations, Medical Records Document Management, and many more.
 

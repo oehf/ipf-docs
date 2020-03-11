@@ -30,7 +30,7 @@ is between Actor 1 and Actor 3.
 ![Abstract IHE Profile]({{ "/assets/images/ihe.png" | relative_url }})
 
 With IPF, these IHE concepts are mapped to [Camel components](https://camel.apache.org/component.html), partly by reusing
-or extended existing Camel components or by providing [custom components](https://camel.apache.org/writing-components.html).
+or extending existing Camel components or by providing [custom components](https://camel.apache.org/writing-components.html).
 
 | Concept          | Mapping to the IPF/Camel programming model |
 |------------------|----------------------------------------------------------------------|
