@@ -20,23 +20,9 @@ All IHE-related Spring boot starter modules depend on this starter module, so if
 explicitly depend on `ipf-atna-spring-boot-starter`.
 {: .notice--info}
 
-In case want to explicitly depend on `ipf-atna-spring-boot-starter` without using Apache Camel (e.g. without using any
-of the provided IHE components) or other IPF features, you can exclude the transitive dependency on 
-`ipf-spring-boot-starter`:
-
-```xml
-    <dependency>
-        <groupId>org.openehealth.ipf.boot</groupId>
-        <artifactId>ipf-atna-spring-boot-starter</artifactId>
-        <exclusions>
-           <exclusion>
-              <groupId>org.openehealth.ipf.boot</groupId>
-              <artifactId>ipf-spring-boot-starter</artifactId>          
-           </exclusion>
-        </exclusions>
-    </dependency>
-```
-
+As of IPF 3.7, `ipf-atna-spring-boot-starter` does not depend on `ipf-spring-boot-starter` anymore. This makes it
+usable in scenarios where no other IPF modules are used and does not drag in 3rd party dependencies like Apache Camel
+or Groovy anymore.
 
 `ipf-atna-spring-boot-starter` auto-configures by default:
 
@@ -46,7 +32,7 @@ of the provided IHE components) or other IPF features, you can exclude the trans
   and [`ApplicationStopEventListener`](../apidocs/org/openehealth/ipf/boot/atna/ApplicationStopEventListener.html))
 * a basic listener for login events if Spring Security is on the classpath ([`AuthenticationListener`](../apidocs/org/openehealth/ipf/boot/atna/AuthenticationListener.html)) 
 
-You can define your own beans of this type in order to override the defaults.
+You can define your own @Beans of this type in order to override the defaults.
 
 `ipf-atna-spring-boot-starter` provides the following application properties that configures the `AuditContext`
 as described [here]({{ site.baseurl }}{% link _pages/ihe/atna.md %}).
@@ -66,5 +52,7 @@ as described [here]({{ site.baseurl }}{% link _pages/ihe/atna.md %}).
 | `audit-exception-handler-class`| `org.openehealth.ipf.commons.audit.handler.LoggingAuditExceptionHandler`| Exception handler impleemntation |
 | `audit-value-if-missing`       | `UNKNOWN`             | Value used for mandatory audit attributes that are not set |
 
+As of IPF 3.7, you can also provide your own @Beans returning an instance of `AuditMessageQueue`, `AuditMessagePostProcessor`,
+`AuditTransmissionProtocol`, `AuditMetadataProvider`, `AuditExceptionHandler` and `TlsParameters`.
 
 [Spring Boot]: https://projects.spring.io/spring-boot/

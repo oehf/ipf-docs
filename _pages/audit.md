@@ -98,7 +98,7 @@ runtime information like process ID, current user, local host and IP address.
 
 The `AuditContext` interface (and its [DefaultAuditContext](../apidocs/org/openehealth/ipf/commons/audit/DefaultAuditContext.html) implementation) 
 is the only place to configure static details for auditing, e.g. whether auditing is activated, the location of the Audit Repository, or 
-the transmission protocol. It also allows to setup strategies for serialization, whether to send synchronously or  asynchronously, and how errors are handled.
+the transmission protocol. It also allows to setup strategies for serialization, whether to send synchronously or asynchronously, and how errors are handled.
 
 ### Generic properties
 
@@ -107,7 +107,8 @@ the transmission protocol. It also allows to setup strategies for serialization,
 | `auditEnabled`             | false     | Whether audit is sent to the repository or not               |
 | `auditRepositoryHost`      | localhost | Host name of the audit repository where audit records are sent to |
 | `auditRepositoryPort`      | 514       | Port of the the audit repository where audit records are sent to |
-| `auditRepositoryTransport` | UDP       | Transport protocol. One of UDP, TLS. Experimental: NIO-TLS (requires Vert.x lib dependency) |
+| `auditRepositoryTransport` | UDP       | Transport protocol. See info about Audit Transmission Protocols below. |
+
 
 ### Content properties
 
@@ -121,18 +122,60 @@ the transmission protocol. It also allows to setup strategies for serialization,
 
 ### Advanced properties
 
-| Property                    | Default                                    | Description                                                  |
-| --------------------------- | :----------------------------------------- | ------------------------------------------------------------ |
-| `auditTransmissionProtocol` | Instance of `UDPSyslogSenderImpl`          | Transport implementation. Overrules `auditRepositoryTransport` |
-| `auditMessageQueue`         | Instance of `SynchronousAuditMessageQueue` | Audit message dispatcher implementation                      |
-| `serializationStrategy`     | Instance of `Current` (i.e. DICOM2017c)    | Serialization implementation                                 |
-| `auditMessagePostProcessor` | no-op                                      | Audit Message Postprocessing, called before audit message is dispatched |
-| `auditExceptionHandler`     | instance of `LoggingAuditExceptionHandler` | Handler to be called if the delivery of audit message to the audit repository has failed |
-| `auditValueIfMissing`       | `MISSING`                                  | Value used if a mandatory audit attribute is not present
+| Property                      | Default                                    | Description                                                  |
+| ---------------------------   | :----------------------------------------- | ------------------------------------------------------------ |
+| `auditTransmissionProtocol`   | Instance of `UDPSyslogSenderImpl`          | Transport implementation. Overrules `auditRepositoryTransport` |
+| `auditMessageQueue`           | Instance of `SynchronousAuditMessageQueue` | Audit message dispatcher implementation                      |
+| `serializationStrategy`       | Instance of `Current` (i.e. DICOM2017c)    | Serialization implementation                                 |
+| `tlsParameters` (3.7)         | using system defaults                      | Parameters used for TLS-based transmission                   |
+| `auditMetadataProvider` (3.7) | Instance of DefaultAuditMetadataProvider   | Provider for header data used for SYSLOG-based transmission  |
+| `auditMessagePostProcessor`   | no-op                                      | Audit Message Postprocessing, called before audit message is dispatched |
+| `auditExceptionHandler`       | Instance of `LoggingAuditExceptionHandler` | Handler to be called if the delivery of audit message to the audit repository has failed |
+| `auditValueIfMissing`         | `MISSING`                                  | Value used if a mandatory audit attribute is not present
 
 The default setup is to send Audit Messages via UDP to `localhost:514`, and handle delivery errors by just logging them.
-For production usage, it is usually required to configure a TLS connection to a remote Audit Repository and
-some decent strategy for handling failed connections to the Audit Repository.
+For production usage, it is usually required to configure:
+
+* a TLS connection to a remote Audit Record Repository
+* some decent strategy for handling failed connections
+
+
+### Audit Transmission Protocols
+
+The transmission protocol determines the network protocol used for sending an audit record to the Audit Record Repository.
+
+| `auditRepositoryTransport`  | `auditTransmissionProtocol` class          | Description                                                  |
+| --------------------------- | :----------------------------------------- | ------------------------------------------------------------ |
+| `UDP`                       | `UDPSyslogSenderImpl`                      | UDP transport as SYSLOG record without delivery guarantee. Failed delivery is ignored.
+| `TLS`                       | `TLSSyslogSenderImpl`                      | Blocking TLS transport as SYSLOG record
+| `NIO-TLS` or `NETTY-TLS`    | `NettyTLSSyslogSenderImpl`                 | Non-blocking TLS transport as SYSLOG record. Requires Netty library on the classpath
+| `VERTX-TLS`                 | `VertxTLSSyslogSenderImpl`                 | Non-blocking TLS transport as SYSLOG record. Requires Vertx library on the classpath
+
+
+### Audit Message Queues
+
+There are a couple of implementations for "how" IPF handles audit records. Some implementations circumvent the 
+Audit Transmission Protocol
+
+| `auditMessageQueue` class          |  Description                                                  |
+| ---------------------------        |  ------------------------------------------------------------ |
+| `SynchronousAuditMessageQueue`     |  Synchronously pass the audit record to the `auditTransmissionProtocol` instance
+| `AsynchronousAuditMessageQueue`    |  Asynchronously pass the audit record to the `auditTransmissionProtocol` instance. Must be initialized with an `ExecutorService`
+| `JMSAuditMessageQueue`             |  Send the audit record to a JMS queue. SYSLOG header data is sent as JMS properties. Requires JMS API library.
+| `BasicHttpAuditMessageQueue` (3.7) |  Send the audit record to a HTTP service. SYSLOG header data is sent as HTTP properties.
+| `LoggingAuditMessageQueue`         |  Just log the audit record to an SLF4J logger
+| `CamelAuditMessageQueue`           |  Send the audit record via a Camel producer. SYSLOG header data is sent as Camel headers.
+| `CompositeAuditMessageQueue`       |  Send the audit record sequentially using one of the implementations listed above
+
+
+### TLS Parameters (3.7)
+
+With TLS-based audit transmission, the default TLS parameters (as passed using the `javax.net.ssl.*` system properties)
+are used. However, sometimes the TLS Audit connection requires a different TLS configuration. In this case, an instance
+of `org.openehealth.ipf.commons.audit.CustomTlsParameters` can be used to specifically assign a different TLS setup
+to the `AuditContext`.
+
+
 
 
 [DICOM]: https://dicom.nema.org/medical/dicom/current/output/html/part15.html#sect_A.5

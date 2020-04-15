@@ -32,8 +32,8 @@ It may be released independently and is located at [https://github.com/oehf/ipf-
 IPF requires Java 8 for both compile time and runtime.
 IPF does not yet support Java 9+, this is aimed for with IPF 4.0.
 
-IPF builds using Maven 3.6.0. IPF is available at [Maven Central], so no custom repositories need to
-be added to the `settings.xml` configuration file.
+IPF builds using Maven 3.6. IPF and its dependencies are available at [Maven Central], 
+except for the MDHT dependencies that are provided at [https://projects.suisse-open-exchange.healthcare/artifactory/releases](https://projects.suisse-open-exchange.healthcare/artifactory/releases).
 
 Before building, adjust the `MAVEN_OPTS` environment variable to assign Maven more heap space.
 
@@ -50,11 +50,12 @@ sources must be generated for proper Javadoc creation during the `site` phase.
 ```
     set MAVEN_OPTS=-Xmx1024m
     mvn -Pgenerate-stubs generate-sources 
-    mvn site (-DskipTests)
+    mvn site (-DskipTests) -rf :ipf
 ```
 
 Documentation is maintained in Markdown in the `ipf-docs` repository. Pushing changes to github will
-automatically render the documentation at `https://oehf.github.io/ipf-docs`.
+automatically render the documentation at `https://oehf.github.io/ipf-docs`. The generated Javadoc
+must be copied into the _pages/apidocs directory.
 
 Javadocs artifacts are uploaded to Maven Central, which makes them also available online under
 https://www.javadocs.io.
