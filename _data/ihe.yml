@@ -596,6 +596,19 @@ pcd01:
   module: ipf-platform-camel-ihe-hl7v2ws
   section:   IHE Patient Care Device Technical Framework, Volume 2, Section 3.
   section-link: https://www.ihe.net/Technical_Framework/upload/IHE_PCD_TF_Vol2.pdf
+pharm1:
+  transaction: PHARM-1
+  link: pharm1
+  profile: CMPD
+  description: Query Pharmacy Documents
+  component: cmpd-pharm1
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Querying Actor
+  server-actor: Community Pharmacy Manager
+  module: ipf-platform-camel-ihe-xds
+  section: IHE Pharmacy Technical Framework Supplement Community Medication Prescription and Dispense, Section 3.1
+  section-link: https://www.ihe.net/uploadedFiles/Documents/Pharmacy/IHE_Pharmacy_Suppl_CMPD.pdf
 chpidd:
   transaction: CH-PIDD
   link: chpidd

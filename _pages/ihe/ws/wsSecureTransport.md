@@ -19,7 +19,7 @@ Client-side endpoints (i.e. producers) can be configured with Basic Authenticati
 ### Consumer
 
 SSL support for IPF IHE consumers side must be configured in their [deployment container](deployment.html).
-See e.g. SSL How-To for [Tomcat 8](https://tomcat.apache.org/tomcat-8.0-doc/ssl-howto.html).
+See e.g. SSL How-To for [Tomcat 9](https://tomcat.apache.org/tomcat-9.0-doc/ssl-howto.html).
 
 ### Producer
 

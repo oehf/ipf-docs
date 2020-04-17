@@ -55,7 +55,7 @@ Here is an example:
 
 ### Embedded in Spring Boot
 
-Container deployments embedded in [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-embedded-servlet-containers.html)
+Container deployments embedded in [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-embedded-web-servers)
 can be easily achieved by depending on [ipf-xds-spring-boot-starter] or [ipf-hl7v3-spring-boot-starter].
 This starter module sets up the necessary servlets and the servlet init parameters are mapped to application properties.
 
