@@ -1,5 +1,5 @@
 ---
-title: IPF 3.6 Migration Guide
+title: IPF 3.7 Migration Guide
 layout: single
 permalink: /docs/migration-3.7/
 toc: true
