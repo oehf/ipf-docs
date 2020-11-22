@@ -25,6 +25,7 @@ The following specific values can be used in the expressions:
 |:--------------------|:-----------|:----------------------------------------------------------------|
 | `processId`         | String     | Identifier of the current OS process, consisting from the process number and the host name, divided by a dash, e.g. "31415-ipfSuperMainframe" |
 | `sequenceId`        | String     | Internally generated sequence number |
+| `interactionId`     | String     | Identifier of the interaction to which the message belongs |
 | `date('format')`    | String     | Current date and time, formatted using [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html) according to the given specification |
 
 The file name pattern configured for an interceptor can be changed at any time using the corresponding setter method. 

@@ -621,7 +621,7 @@ chpidd:
   server-actor: Provider Information Directory
   module: ipf-platform-camel-ihe-hpd
   section:   Swiss national extensions to the IHE Technical Framework
-  section-link: https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/SR%20816.111.1_ergaenzung-1-Anhang-5.pdf.download.pdf/SR%20816.111.1_Ergaenzung%201%20Anhang%205_DE.pdf
+  section-link: https://www.e-health-suisse.ch/technik-semantik/epd-projectathon/programmierhilfen-epd/relevante-spezifikationen.html
 chppq1:
   transaction: CH-PPQ-1
   link: chppq1
@@ -634,7 +634,7 @@ chppq1:
   server-actor: Policy Repository
   module: ipf-platform-camel-ihe-xacml20
   section:   Swiss national extensions to the IHE Technical Framework
-  section-link: https://www.e-health-suisse.ch/gemeinschaften-umsetzung/umsetzung/programmierhilfen.html
+  section-link: https://www.e-health-suisse.ch/technik-semantik/epd-projectathon/programmierhilfen-epd/relevante-spezifikationen.html
 chppq2:
   transaction: CH-PPQ-2
   link: chppq2
@@ -646,8 +646,8 @@ chppq2:
   client-actor: Policy Consumer
   server-actor: Policy Repository
   module: ipf-platform-camel-ihe-xacml20
-  section:   Swiss national extensions to the IHE Technical Framework, (revision from March 2018, section 3.4 in "Ergänzung 2 zu Anhang 5 der EPDV-EDI")
-  section-link: https://www.e-health-suisse.ch/gemeinschaften-umsetzung/umsetzung/programmierhilfen.html
+  section:   Swiss national extensions to the IHE Technical Framework
+  section-link: https://www.e-health-suisse.ch/technik-semantik/epd-projectathon/programmierhilfen-epd/relevante-spezifikationen.html
 fhir:
   transaction: custom FHIR Based
   link: fhirCustom
@@ -687,3 +687,29 @@ mllpdispatch:
   module: ipf-platform-camel-ihe-mllp
   section:  n/a
   section-link: n/a
+chciq:
+  transaction: CH-CIQ
+  link: chciq
+  profile: CH:CPI
+  description: Community Information Query
+  component: ch-ciq
+  transport: SOAP/HTTP(S)
+  format: DSMLv2
+  client-actor: Community Information Consumer
+  server-actor: Community Information Provider
+  module: ipf-platform-camel-ihe-hpd
+  section: Swiss national integration profiles
+  section-link: https://www.e-health-suisse.ch/technik-semantik/epd-projectathon/programmierhilfen-epd/relevante-spezifikationen.html
+chcidd:
+  transaction: CH-CIDD
+  link: chcidd
+  profile: CH:CPI
+  description: Community Information Delta Download
+  component: ch-cidd
+  transport: SOAP/HTTP(S)
+  format: DSMLv2
+  client-actor: Community Information Consumer
+  server-actor: Community Information Provider
+  module: ipf-platform-camel-ihe-hpd
+  section: Swiss national integration profiles
+  section-link: https://www.e-health-suisse.ch/technik-semantik/epd-projectathon/programmierhilfen-epd/relevante-spezifikationen.html
