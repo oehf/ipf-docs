@@ -56,6 +56,8 @@ The standard producer-side chain is shown in the figure below:
 
 | Package name part | `<Function>` (class name part) | Optionality  | Processing outgoing requests | Processing incoming responses
 |:----------------- |:-------------------------------|:-------------|:---------------------------- |:-----------------------------
+| `mllp.core` | `OutputPayloadLogger` | only when explicitly configured, see [payload logging] | n/a | logs response message
+| `mllp.core` | `InputPayloadLogger` | only when explicitly configured, see [payload logging] | logs request message | n/a
 | `mllp.core` | `StringProcessing` | always | performs [segment fragmentation], when necessary  | converts message received from the network to String and performs [segment defragmentation], when necessary
 | `mllp.core` | `RequestFragmenter` | only when [unsolicited request fragmentation] is enabled  | when corresponding conditions are met, plays out the scenario described in Section 2.10.2.2 of the HL7 v.2.5 specification  | n/a
 | `hl7v2` | `Marshal` | only when [interactive response continuation] is disabled  | converts message to String  | converts message into ca.uhn.hl7v2.model.Message
@@ -73,6 +75,9 @@ The standard producer-side chain is shown in the figure below:
 
 | Package name part | `<Function>` (class name part) | Optionality | Processing incoming requests | Processing outgoing responses
 |:----------------- |:-------------------------------|:------------|:-----------------------------|:-----------------------------
+| `mllp.core` | `RequestInteractionSetter` | always | populates interaction ID as a Camel message header | n/a
+| `mllp.core` | `InputPayloadLogger` | only when explicitly configured, see [payload logging] | logs request message | n/a
+| `mllp.core` | `OutputPayloadLogger` | only when explicitly configured, see [payload logging] | n/a | logs response message
 | `mllp.core` | `StringProcessing` | always | converts message received from the network to String and performs [segment defragmentation], when necessary | performs [segment fragmentation], when necessary |
 | `mllp.core` | `RequestDefragmenter` | only when [unsolicited request fragmentation] is enabled | when corresponding conditions are met, plays out the scenario described in Section 2.10.2.2 of the HL7 v.2.5 specification | n/a |
 | `hl7v2` | `Marshal` | always | converts message to `ca.uhn.hl7v2.model.Message` | converts message to String |
@@ -130,3 +135,4 @@ that takes the interceptor class as constructor parameter and instantiates inter
 [segment fragmentation]: {{ site.baseurl }}{% link _pages/ihe/mllp/segmentFragmentation.md %}
 [segment defragmentation]: {{ site.baseurl }}{% link _pages/ihe/mllp/segmentFragmentation.md %}
 [ATNA auditing]: {{ site.baseurl }}{% link _pages/ihe/atna.md %}
+[payload logging]: {{ site.baseurl }}{% link _pages/ihe/payloadLogging.md %}
