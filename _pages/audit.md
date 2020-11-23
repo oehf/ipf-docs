@@ -51,7 +51,7 @@ The DICOM serialization strategies produce XML files that validate against the s
 For more details on the API, please study the [javadocs](../apidocs/org/openehealth/ipf/commons/audit/package-frame.html).
 
 
-## Example
+### Example
 
 Auditing an application start event
 
@@ -88,13 +88,13 @@ new SecurityAlertBuilder(EventOutcomeIndicator.Success, null, EventTypeCode.User
 );
 ```
 
-## Hints
+### Hints
 
 The `org.openehealth.ipf.commons.audit.utils.AuditUtils` class contains static methods to obtain
 runtime information like process ID, current user, local host and IP address.
 
 
-## Configuration
+## Configuration of the AuditContext
 
 The `AuditContext` interface (and its [DefaultAuditContext](../apidocs/org/openehealth/ipf/commons/audit/DefaultAuditContext.html) implementation) 
 is the only place to configure static details for auditing, e.g. whether auditing is activated, the location of the Audit Repository, or 
@@ -176,7 +176,96 @@ of [CustomTlsParameters]((../apidocs/org/openehealth/ipf/commons/audit/CustomTls
 to the `AuditContext`.
 
 
+## TLS/UDP Syslog Server (4.0)
+
+As of IPF 4.0, the `ipf-commons-audit` module comes with a server-side component that implements a
+Syslog server for each of the [RFC 5425] (TLS transport) and [RFC 5426] (UDP transport) specifications.
+
+These servers are primarily meant for integration testing of functionality that emits ATNA audit records,
+but can also be used as standalone applications. Note that only the interfaces and some parsers are
+provided, however, the library doesn't include a persistence layer or any production-level features.
+
+
+
+TLS (TlsSyslogServer) and UDP (UdpSyslogServer) servers are used very similarly, so the following examples primarily 
+cover the TLS server.
+
+### Required dependencies
+
+Two optional Maven dependencies need to be included (versions can be imported from the `dependencies` module):
+
+```xml
+        <dependency>
+            <groupId>io.projectreactor.netty</groupId>
+            <artifactId>reactor-netty-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.palindromicity</groupId>
+            <artifactId>simple-syslog-5424</artifactId>
+        </dependency>
+```
+
+### Instantiation and Start
+
+The Syslog servers parses an incoming syslog record into a `Map<String, Object>` of its attributes.
+A SyslogServer instance is initialized with
+
+* a regular consumer the processes this map
+* an error consumer that processes any Exception that may have occurred during parsing
+* an instance of `TlsParameters`
+
+and is `start`ed with 
+
+* a host (`localhost` for local access, `0.0.0.0` for external access)  
+* a port (the RFCs define 6514 for TLS and 514 for UDP)
+
+The number of connections per remote host is not restricted.
+ 
+The regular consumer defines what happens with the syslog record. We provide one consumer
+(`org.openehealth.ipf.commons.audit.server.support.SyslogEventCollector`) that simply collects
+the records in memory and can be configured with some expectations for unit tests. See the
+following snippet for a potential unit test:
+
+```java
+        var defaultTls = TlsParameters.getDefault();
+        auditContext.setTlsParameters(defaultTls);
+        auditContext.setAuditRepositoryTransport("TLS");
+        var count = 100;
+        var consumer = SyslogEventCollector.newInstance()
+            .withExpectation(count)  // expecting count records to arrive
+            .withDelay(100);         // artificial delay of 100ms for handling a record  
+
+        try (var ignored = new TlsSyslogServer(consumer, Throwable::printStackTrace, defaultTls)
+                .start("localhost", port))  // For a real server you would have to block here.
+        { 
+            IntStream.range(0, count).forEach(i -> sendAudit());  // send out "count" records via AuditContext#audit
+            assertTrue(consumer.await(5, TimeUnit.SECONDS));      // wait max. 5 seconds for all records to arrive
+        }  // SyslogServers are AutoCloseable!
+
+```
+
+The consumer executes asynchronously using a variable number of threads (depending on producer/consumer load)
+rather than in the receiver thread,  so that the test finishes within 5 seconds even though consuming 
+sleeps for 100ms for each of the 100 messages.
+
+### ATNA unmarshaller
+
+IPF also provides an unmarshaller (`org.openehealth.ipf.commons.audit.unmarshal.dicom.DICOMAuditParser`) that
+allows to parse syslog XML payload following the current [DICOM] specification (used by the IHE ATNA profile) 
+back into an instance of `org.openehealth.ipf.commons.audit.model.AuditMessage` while optionally validating 
+the XML content against corresponding the XML schema.
+
+This would allow to write an ATNA Consumer for the Syslog Server that extracts structured data from the
+ATNA payload, e.g. for offering detailed queries to retrieve specific records. 
+
+### Beta disclaimer
+
+The Syslog server is a new feature and, while being stable enough for "happy case" usage, it may still require
+improvement and configuration possibilities, particularly to handle edge cases. You are invited to give it a test drive and report and findings
+or suggestions. Thank you!
 
 
 [DICOM]: https://dicom.nema.org/medical/dicom/current/output/html/part15.html#sect_A.5
-[ATNA]: http://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+[ATNA]: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+[RFC 5425]: https://tools.ietf.org/html/rfc5425
+[RFC 5426]: https://tools.ietf.org/html/rfc5426
