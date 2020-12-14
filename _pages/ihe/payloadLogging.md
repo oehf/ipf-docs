@@ -23,6 +23,7 @@ The following specific values can be used in the expressions:
 
 | Value Name          | Value Type | Description |
 |:--------------------|:-----------|:----------------------------------------------------------------|
+| `applicationId`     | String     | Identifier of the application, can be configured via `org.openehealth.ipf.commons.ihe.core.payload.PayloadLoggingContext#setApplicationId()` &mdash; e.g. at the application start.  Default value is "ipf".   |
 | `processId`         | String     | Identifier of the current OS process, consisting from the process number and the host name, divided by a dash, e.g. "31415-ipfSuperMainframe" |
 | `sequenceId`        | String     | Internally generated sequence number |
 | `interactionId`     | String     | Identifier of the interaction to which the message belongs |
