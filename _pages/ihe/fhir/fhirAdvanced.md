@@ -15,7 +15,7 @@ endpoint URI.
 
 | Parameter name         | Type                 | Default value | Short description                                                                    |
 |:-----------------------|:---------------------|:--------------|:-------------------------------------------------------------------------------------|
-| `fhirContext`          | FhirContext          | DSTU3 or R4   | Reference to a global HAPI FHIR Context. Otherwise a default FHIR contxt is used.
+| `fhirContext`          | FhirContext          | STU3 or R4    | Reference to a global HAPI FHIR Context. Otherwise a default FHIR contxt is used.
 | `resourceProvider`     | FhirProvider         | n/a           | Reference to a custom resource provider, configurable per endpoint.
 | `clientRequestFactory` | ClientRequestFactory | n/a           | reference to a custom ClientRequestFactory
 | `consumerSelector`     | Predicate            | () -> true    | reference to a Predicate that selects a FhirConsumer

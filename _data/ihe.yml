@@ -411,7 +411,7 @@ iti65:
   format: FHIR
   client-actor: Document Source
   server-actor: Document Recipient
-  module: ipf-platform-camel-ihe-fhir-stu3-mhd
+  module: ipf-platform-camel-ihe-fhir-r4-mhd
   section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.65.
   section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf
 iti66:
@@ -424,7 +424,7 @@ iti66:
   format: FHIR
   client-actor: Document Consumer
   server-actor: Document Responder
-  module: ipf-platform-camel-ihe-fhir-stu3-mhd
+  module: ipf-platform-camel-ihe-fhir-r4-mhd
   section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.66.
   section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf
 iti67:
@@ -437,7 +437,7 @@ iti67:
   format: FHIR
   client-actor: Document Consumer
   server-actor: Document Responder
-  module: ipf-platform-camel-ihe-fhir-stu3-mhd
+  module: ipf-platform-camel-ihe-fhir-r4-mhd
   section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.67.
   section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf
 iti68:
@@ -450,7 +450,7 @@ iti68:
   format: FHIR
   client-actor: Document Consumer
   server-actor: Document Responder
-  module: ipf-platform-camel-ihe-fhir-stu3-mhd
+  module: ipf-platform-camel-ihe-fhir-r4-mhd
   section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.68.
   section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf
 iti78:
@@ -463,7 +463,7 @@ iti78:
   format: FHIR
   client-actor: Patient Demographics Consumer
   server-actor: Patient Demographics Supplier
-  module: ipf-platform-camel-ihe-fhir-stu3-pixpdq
+  module: ipf-platform-camel-ihe-fhir-r4-pixpdq
   section:  IHE IT Infrastructure Technical Framework Supplement, Patient Demographics Query for Mobile (PDQm), Section 3.78.
   section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf
 iti81:
@@ -476,7 +476,7 @@ iti81:
   format: FHIR
   client-actor: Audit Consumer
   server-actor: Audit Record Repository
-  module: ipf-platform-camel-ihe-fhir-stu3-audit
+  module: ipf-platform-camel-ihe-fhir-r4-audit
   section:  IHE IT Infrastructure Technical Framework Supplement, Add RESTful Query to ATNA, Section 3.81.
   section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf
 iti83:
@@ -489,7 +489,7 @@ iti83:
   format: FHIR
   client-actor: Patient Identifier Cross-Reference Consumer
   server-actor: Patient Identifier Cross-Reference Manager
-  module: ipf-platform-camel-ihe-fhir-stu3-pixpdq
+  module: ipf-platform-camel-ihe-fhir-r4-pixpdq
   section:  IHE IT Infrastructure Technical Framework Supplement, Patient Identifier Cross-reference for Mobile (PIXm), Section 3.83.
   section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PIXm.pdf
 iti86:
@@ -580,7 +580,7 @@ pcc44:
   format: FHIR
   client-actor: Clinical Data Consumer
   server-actor: Clinical Data Source
-  module: ipf-platform-camel-ihe-fhir-stu3-qedm
+  module: ipf-platform-camel-ihe-fhir-r4-qedm
   section:   IHE Patient Care Coordination Technical Framework Supplement, Query for Existing Data Mobile (QEDm), Section 3.44.
   section-link: https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_QEDm.pdf
 pcd01:

@@ -36,7 +36,7 @@ Here is an example:
             <!-- FHIR version to be used: DSTU3, R4 -->
             <init-param>
                 <param-name>fhirVersion</param-name>
-                <param-value>DSTU3</param-value>
+                <param-value>R4</param-value>
             </init-param>
             <init-param>
                 <param-name>logging</param-name>
@@ -63,7 +63,7 @@ The following servlet init parameters are supported:
 
 | Parameter name       | Type            | Default value | Short description                                                                    |
 |:---------------------|:----------------|:--------------|:-------------------------------------------------------------------------------------|
-| `fhirVersion`        | FhirVersionEnum | -             | which FHIR version to be used: DSTU2_HL7ORG or DSTU3 |
+| `fhirVersion`        | FhirVersionEnum | -             | which FHIR version to be used: STU3 or R4 |
 | `logging`            | Boolean         | false         | writes incoming requests into the log |
 | `highlight`          | Boolean         | false         | whether responses to requests from browsers are (syntax-)highlighted |
 | `pretty`             | Boolean         | false         | whether responses are indented |

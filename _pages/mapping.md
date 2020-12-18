@@ -137,10 +137,7 @@ def x = mappingService.get('encounterType', 'E')
 // more concise: using the dynamic map method on a string instance
 def y = 'E'.map('encounterType')
 
-// even more concise
-def z = 'E'.mapEncounterType()
-
-// x == y == z == 'EMER'
+// x == y  == 'EMER'
 
 ```
 
@@ -167,10 +164,7 @@ def x = mappingService.getKey('vip', 'VIP')
 // more concise: using the dynamic map method on a string instance
 def y = 'VIP'.mapReverse('vip')
 
-// even more concise
-def z = 'VIP'.mapReverseVip()
-
-// x == y == z == 'Y'
+// x == y == 'Y'
 ```
 
 `ELSE` is also allowed in mapping in the backward direction:

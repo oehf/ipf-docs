@@ -19,3 +19,4 @@ npm-debug.log*
 /.idea/workspace.xml
 /ipf-docs.iml
 /.idea/encodings.xml
+/.idea/PipelineViewerConfig.xml

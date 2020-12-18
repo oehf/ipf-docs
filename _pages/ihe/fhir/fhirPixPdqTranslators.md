@@ -27,9 +27,18 @@ In a Maven-based environment, the following dependencies should be registered in
 </dependency>
 <dependency>
     <groupId>org.openehealth.ipf.platform-camel</groupId>
+    <artifactId>ipf-platform-camel-ihe-fhir-r4-pixpdq</artifactId>
+    <version>${ipf-version}</version>
+</dependency>
+
+<!-- when using FHIR STU3 -->
+<!--
+<dependency>
+    <groupId>org.openehealth.ipf.platform-camel</groupId>
     <artifactId>ipf-platform-camel-ihe-fhir-stu3-pixpdq</artifactId>
     <version>${ipf-version}</version>
 </dependency>
+-->
 ```
 
 This depends transitively on the required module:
@@ -37,7 +46,7 @@ This depends transitively on the required module:
 ```xml
 <dependency>
     <groupId>org.openehealth.ipf.commons</groupId>
-    <artifactId>ipf-commons-ihe-fhir-stu3-pixpdq</artifactId>
+    <artifactId>ipf-commons-ihe-fhir-r4-pixpdq</artifactId>
     <version>${ipf-version}</version>
 </dependency>
 ```
@@ -56,7 +65,7 @@ Here is a snippet of the required Spring XML configuration:
 
 ```xml
 
-    <bean id="fhirContext" class="ca.uhn.fhir.context.FhirContext" factory-method="forDstu3"/>
+    <bean id="fhirContext" class="ca.uhn.fhir.context.FhirContext" factory-method="forR4"/>
 
     <bean id="mappingService" class="org.openehealth.ipf.commons.spring.map.SpringBidiMappingService">
         <property name="mappingResources">
