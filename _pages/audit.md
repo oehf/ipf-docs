@@ -26,7 +26,7 @@ can create and use as many `AuditContext` configuration beans as you wish.
 ## Constructing an Audit Message
 
 All of the IHE components implemented by IPF automatically use the audit support of this module
-for ATNA auditing. You only need to configure an [AuditContext](../apidocs/org/openehealth/ipf/commons/audit/AuditContext.html) bean.
+for ATNA auditing. You only need to configure an [AuditContext](apidocs/org/openehealth/ipf/commons/audit/AuditContext.html) bean.
 When you use one of the Spring Boot starter modules, this bean is already provided for you. 
 
 In order to create and submit your own Audit Message, perform the following steps
@@ -48,7 +48,7 @@ The `AuditMessageBuilder` implementations are modelled corresponding to the defi
 
 The DICOM serialization strategies produce XML files that validate against the schema of the respective revision of the [DICOM Audit Message Schema](http://dicom.nema.org/medical/dicom/current/output/html/part15.html#sect_A.5.1).
 
-For more details on the API, please study the [javadocs](../apidocs/org/openehealth/ipf/commons/audit/package-frame.html).
+For more details on the API, please study the [javadocs](apidocs/org/openehealth/ipf/commons/audit/package-frame.html).
 
 
 ### Example
@@ -96,7 +96,7 @@ runtime information like process ID, current user, local host and IP address.
 
 ## Configuration of the AuditContext
 
-The `AuditContext` interface (and its [DefaultAuditContext](../apidocs/org/openehealth/ipf/commons/audit/DefaultAuditContext.html) implementation) 
+The `AuditContext` interface (and its [DefaultAuditContext](apidocs/org/openehealth/ipf/commons/audit/DefaultAuditContext.html) implementation) 
 is the only place to configure static details for auditing, e.g. whether auditing is activated, the location of the Audit Repository, or 
 the transmission protocol. It also allows to setup strategies for serialization, whether to send synchronously or asynchronously, and how errors are handled.
 
@@ -146,10 +146,11 @@ The transmission protocol determines the network protocol used for sending an au
 
 | `auditRepositoryTransport`  | `auditTransmissionProtocol` class          | Description                                                  |
 | --------------------------- | :----------------------------------------- | ------------------------------------------------------------ |
-| `UDP`                       | [UDPSyslogSenderImpl](../apidocs/org/openehealth/ipf/commons/audit/protocol/UDPSyslogSenderImpl.html)           | UDP transport as SYSLOG record without delivery guarantee. Failed delivery is ignored.
-| `TLS`                       | [TLSSyslogSenderImpl](../apidocs/org/openehealth/ipf/commons/audit/protocol/TLSSyslogSenderImpl.html)           | Blocking TLS transport as SYSLOG record
-| `NIO-TLS` or `NETTY-TLS`    | [NettyTLSSyslogSenderImpl](../apidocs/org/openehealth/ipf/commons/audit/protocol/NettyTLSSyslogSenderImpl.html) | Non-blocking TLS transport as SYSLOG record. Requires Netty library on the classpath
-| `VERTX-TLS`                 | [VertxTLSSyslogSenderImpl](../apidocs/org/openehealth/ipf/commons/audit/protocol/VertxTLSSyslogSenderImpl.html) | Non-blocking TLS transport as SYSLOG record. Requires Vertx library on the classpath
+| `UDP`                       | [UDPSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/UDPSyslogSenderImpl.html)           | UDP transport as SYSLOG record without delivery guarantee. Failed delivery is ignored.
+| `TLS`                       | [TLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/TLSSyslogSenderImpl.html)           | Blocking TLS transport as SYSLOG record
+| `NIO-TLS` or `NETTY-TLS`    | [NettyTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/NettyTLSSyslogSenderImpl.html) | Non-blocking TLS transport as SYSLOG record. Requires Netty library on the classpath
+| `REACTOR-NETTY-TLS`         | [ReactorNettyTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/ReactorNettyTLSSyslogSenderImpl.html) | Reactive TLS transport as SYSLOG record. Requires Reactor-Netty library on the classpath
+| `VERTX-TLS` (deprecated)    | [VertxTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/VertxTLSSyslogSenderImpl.html) | Non-blocking TLS transport as SYSLOG record. Requires Vertx library on the classpath
 
 
 ### Audit Message Queues
@@ -159,32 +160,31 @@ Audit Transmission Protocol.
 
 | `auditMessageQueue` class          |  Description                                                  |
 | ---------------------------        |  ------------------------------------------------------------ |
-| [SynchronousAuditMessageQueue](../apidocs/org/openehealth/ipf/commons/audit/queue/SynchronousAuditMessageQueue.html)     |  Synchronously pass the audit record to the `auditTransmissionProtocol` instance
-| [AsynchronousAuditMessageQueue](../apidocs/org/openehealth/ipf/commons/audit/queue/AsynchronousAuditMessageQueue.html)   |  Asynchronously pass the audit record to the `auditTransmissionProtocol` instance. Must be initialized with an `ExecutorService`
-| [JMSAuditMessageQueue](../apidocs/org/openehealth/ipf/commons/audit/queue/JMSAuditMessageQueue.html)                     |  Send the audit record to a JMS queue. SYSLOG header data is sent as JMS properties. Requires JMS API library.
-| [BasicHttpAuditMessageQueue](../apidocs/org/openehealth/ipf/commons/audit/queue/BasicHttpAuditMessageQueue.html) (3.7)   |  Send the audit record to a HTTP service. SYSLOG header data is sent as HTTP properties.
-| [LoggingAuditMessageQueue](../apidocs/org/openehealth/ipf/commons/audit/queue/LoggingAuditMessageQueue.html)             |  Just log the audit record to an SLF4J logger
-| [CamelAuditMessageQueue](../apidocs/org/openehealth/ipf/commons/audit/queue/CamelAuditMessageQueue.html)                 |  Send the audit record via a Camel producer. SYSLOG header data is sent as Camel headers.
-| [CompositeAuditMessageQueue](../apidocs/org/openehealth/ipf/commons/audit/queue/CompositeAuditMessageQueue.html)         |  Send the audit record sequentially using one of the implementations listed above
+| [SynchronousAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/SynchronousAuditMessageQueue.html)     |  Synchronously pass the audit record to the `auditTransmissionProtocol` instance
+| [AsynchronousAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/AsynchronousAuditMessageQueue.html)   |  Asynchronously pass the audit record to the `auditTransmissionProtocol` instance. Must be initialized with an `ExecutorService`
+| [JMSAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/JMSAuditMessageQueue.html)                     |  Send the audit record to a JMS queue. SYSLOG header data is sent as JMS properties. Requires JMS API library.
+| [BasicHttpAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/BasicHttpAuditMessageQueue.html) (3.7)   |  Send the audit record to a HTTP service. SYSLOG header data is sent as HTTP properties.
+| [LoggingAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/LoggingAuditMessageQueue.html)             |  Just log the audit record to an SLF4J logger
+| [CamelAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/CamelAuditMessageQueue.html)                 |  Send the audit record via a Camel producer. SYSLOG header data is sent as Camel headers.
+| [CompositeAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/CompositeAuditMessageQueue.html)         |  Send the audit record sequentially using one of the implementations listed above
 
 
 ### TLS Parameters (3.7)
 
 With TLS-based audit transmission, the default TLS parameters (as passed using the `javax.net.ssl.*` system properties)
 are used. However, sometimes the TLS Audit connection requires a different TLS configuration. In this case, an instance
-of [CustomTlsParameters]((../apidocs/org/openehealth/ipf/commons/audit/CustomTlsParameters.html)) can be used to specifically assign a different TLS setup
+of [CustomTlsParameters]((apidocs/org/openehealth/ipf/commons/audit/CustomTlsParameters.html)) can be used to specifically assign a different TLS setup
 to the `AuditContext`.
 
 
 ## TLS/UDP Syslog Server (4.0)
 
 As of IPF 4.0, the `ipf-commons-audit` module comes with a server-side component that implements a
-Syslog server for each of the [RFC 5425] (TLS transport) and [RFC 5426] (UDP transport) specifications.
+Syslog server for both the [RFC 5425] (TLS transport) and [RFC 5426] (UDP transport) specifications.
 
 These servers are primarily meant for integration testing of functionality that emits ATNA audit records,
-but can also be used as standalone applications. Note that only the interfaces and some parsers are
-provided, however, the library doesn't include a persistence layer or any production-level features.
-
+but can also be used as basis for standalone applications. Note that only the Syslog endpoints and some parsers are
+provided, however, the library doesn't include a persistence layer or any other production-level features.
 
 
 TLS (TlsSyslogServer) and UDP (UdpSyslogServer) servers are used very similarly, so the following examples primarily 
@@ -261,8 +261,7 @@ ATNA payload, e.g. for offering detailed queries to retrieve specific records.
 ### Beta disclaimer
 
 The Syslog server is a new feature and, while being stable enough for "happy case" usage, it may still require
-improvement and configuration possibilities, particularly to handle edge cases. You are invited to give it a test drive and report and findings
-or suggestions. Thank you!
+improvement and configuration possibilities, particularly to handle edge cases. You are invited to give it a test drive and report and findings or suggestions. Thank you!
 
 
 [DICOM]: https://dicom.nema.org/medical/dicom/current/output/html/part15.html#sect_A.5

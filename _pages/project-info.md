@@ -31,10 +31,13 @@ Git repository on [GitHub][ipf-github] and provide some good pull requests!
 
 ## What's New
 
-The current version of IPF is 3.7.0.
+The current version of IPF is 4.0.0
 
 See the list of fixed Github issues for an overview:
 
+* Fixes for [4.0.0](https://github.com/oehf/ipf/milestone/13?closed=1)
+* Fixes for [3.7.2](https://github.com/oehf/ipf/milestone/26?closed=1)
+* Fixes for [3.7.1](https://github.com/oehf/ipf/milestone/25?closed=1)
 * Fixes for [3.7.0](https://github.com/oehf/ipf/milestone/20?closed=1)
 * Fixes for [3.6.5](https://github.com/oehf/ipf/milestone/23?closed=1)
 * Fixes for [3.6.4](https://github.com/oehf/ipf/milestone/23?closed=1)
@@ -48,7 +51,7 @@ See the list of fixed Github issues for an overview:
 * Fixes for [3.5.1](https://github.com/oehf/ipf/milestone/14?closed=1)
 * Fixes for [3.5](https://github.com/oehf/ipf/milestone/12?closed=1)
 
-The upcoming IPF 4.x will support Java 11 and up, as well as Camel 3.x. Major new features will be developed
+IPF 4.x supports Java 11 and up, as well as Camel 3.7. Major new features will be developed
 primarily for IPF 4.
 
 IPF 3.7.x is the last branch that supports Java 8 and Camel 2.x. We will support this branch for some more
@@ -60,13 +63,17 @@ patch releases to support the folks that are not able (yet) to upgrade to a rece
 
 If you are using previous versions of IPF and want to update:
 
+* IPF 4.x is not backwards-compatible with IPF 3.x. However, there is most likely not much to be changed, and this is mostly due to the JDK and Camel upgrades. Read the [4.0 Update Instructions] for how to update from IPF 3.7.x
 * IPF 3.7.x comes with a few minor changes. Read the [3.7 Update Instructions] for how to update from IPF 3.6.x
-* IPF 3.6.x comes with a few minor changes. Read the [3.6 Update Instructions] for how to update from IPF 3.5.x
-* IPF 3.5.x comes with some changes that must be considered when upgrading from IPF 3.4.x. Read the [3.5 Update Instructions] for how to update from IPF 3.4.x
-* IPF 3.4.x comes with some changes that must be considered when upgrading from IPF 3.2.x or IPF 3.3.x to IPF 3.4.x Read the [3.4 Update Instructions] for how to update from IPF 3.1.x
-* IPF 3.2.x comes with some changes that must be considered when upgrading from IPF 3.1.x to IPF 3.2.x Read the [3.2 Update Instructions] for how to update from IPF 3.1.x
-* IPF 3.1.x introduces a few minor incompatibilities compared to IPF 3.0.x due to having less mandatory dependencies on the Spring framework. Read the [3.1 Update Instructions] for how to update from IPF 3.0.x
-* IPF 3.0.x is not backwards-compatible with IPF 2.x. Read the [Migration Instructions] for how to migrate a IPF 2.x-based integration solution.
+  
+### Older update instructions
+
+* Read the [3.6 Update Instructions] for how to update from IPF 3.5.x
+* Read the [3.5 Update Instructions] for how to update from IPF 3.4.x
+* Read the [3.4 Update Instructions] for how to update from IPF 3.3.x
+* Read the [3.2 Update Instructions] for how to update from IPF 3.1.x
+* Read the [3.1 Update Instructions] for how to update from IPF 3.0.x
+* Read the [Migration Instructions] for how to migrate a IPF 2.x-based integration solution to IPF 3.0
  
 
 ## Issue Tracking
@@ -92,3 +99,4 @@ The javadocs can be obtained [here](apidocs/index.html).
 [3.5 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.5.md %}
 [3.6 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.6.md %}
 [3.7 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-3.7.md %}
+[4.0 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-4.0.md %}

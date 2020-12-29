@@ -29,8 +29,8 @@ It may be released independently and is located at [https://github.com/oehf/ipf-
 
 ## Building
 
-IPF requires Java 8 for both compile time and runtime.
-IPF does not yet support Java 9+, this is aimed for with IPF 4.0.
+IPF 4.x builds with Java 11 for both compile time and runtime.
+IPF 3.x requires Java 8 for both compile time and runtime.
 
 IPF builds using Maven 3.6. IPF and its dependencies are available at [Maven Central], 
 except for the MDHT dependencies that are provided at [https://projects.suisse-open-exchange.healthcare/artifactory/releases](https://projects.suisse-open-exchange.healthcare/artifactory/releases).
@@ -55,11 +55,28 @@ sources must be generated for proper Javadoc creation during the `site` phase.
 
 Documentation is maintained in Markdown in the `ipf-docs` repository. Pushing changes to github will
 automatically render the documentation at `https://oehf.github.io/ipf-docs`. The generated Javadoc
-must be copied into the _pages/apidocs directory.
+must be copied from `target/site/apidocs` into the `_pages/apidocs` directory.
 
 Javadocs artifacts are uploaded to Maven Central, which makes them also available online under
-https://www.javadocs.io.
+https://www.javadoc.io. The javadocs are located under `https://www.javadoc.io/<maven-group-id>/<maven-artifact-id>/<version>`, e.g.
+[https://javadoc.io/doc/org.openehealth.ipf.commons/ipf-commons-audit/4.0.0/index.html](https://javadoc.io/doc/org.openehealth.ipf.commons/ipf-commons-audit/4.0.0).
 
+
+### How to build and test the documentation locally
+
+* Install Ruby and Jekyll as described [here](https://jekyllrb.com/docs/installation/)
+* Clone the [ipf-docs](https://github.com/oehf/ipf-docs) repository
+* Install `bundler`: `gem install bundler`  
+* In the project root directory, run `bundle install` to download and install all dependencies
+* Run `bundle exec jekyll serve`
+
+You can now browse the documentation at [http://127.0.0.1:4000/ipf-docs/](http://127.0.0.1:4000/ipf-docs/). If you update one of the
+Markdown files of the project, the server regenerates its content on the fly.
+
+
+### How to upload the documentation to github
+
+* Simply commit the changes. Github Pages will regenerate the docs automatically
 
 ## IDE
 

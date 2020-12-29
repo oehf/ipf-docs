@@ -23,7 +23,7 @@ IPF 4.0 comes with some major changes that must be considered when upgrading fro
 ## Other notable changes
 
 * It is not possible anymore to map a string using the `String.mapXXX()` or `String.mapReverseXXX()` metaclass extensions 
-  (where `XXX` is the mapping key). Use the `String.map('XXX')` or `String.mapReverse('XXX')`instead.
+  (where `XXX` is the mapping key). Use `String.map('XXX')` or `String.mapReverse('XXX')`instead.
 * `FhirConsumer#test` does not expect the FHIR resource but an instance of `RequestDetails` as parameter
 
 
