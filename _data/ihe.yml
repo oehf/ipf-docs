@@ -211,7 +211,7 @@ iti44pixv3:
   link: iti44pixv3
   profile: PIXv3
   description: Patient Identity Feed v3
-  component: pixv3-iti43
+  component: pixv3-iti44
   transport: SOAP/HTTP(S)
   format: HL7v3
   client-actor: Patient Identity Source
@@ -224,7 +224,7 @@ iti44xds:
   link: iti44xds
   profile: XDS
   description: Patient Identity Feed v3
-  component: xds-iti43
+  component: xds-iti44
   transport: SOAP/HTTP(S)
   format: HL7v3
   client-actor: Patient Identity Source
@@ -276,7 +276,7 @@ iti51:
   link: iti51
   profile: XDS
   description: Multi-Patient Stored Query
-  component: pdqv3-iti47
+  component: xds-iti51
   transport: SOAP/HTTP(S)
   format: ebXML
   client-actor: Document Consumer
