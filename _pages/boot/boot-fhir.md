@@ -12,7 +12,7 @@ The dependency on the IPF [Spring Boot] IHE FHIR starter module is for FHIR STU3
 ```xml
     <dependency>
         <groupId>org.openehealth.ipf.boot</groupId>
-        <artifactId>ipf-fhir-dstu3-spring-boot-starter</artifactId>
+        <artifactId>ipf-fhir-stu3-spring-boot-starter</artifactId>
     </dependency>
 ```
 
