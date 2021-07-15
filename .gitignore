@@ -12,12 +12,5 @@ example/_site
 Gemfile.lock
 node_modules
 npm-debug.log*
-/.idea/checkstyle-idea.xml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/vcs.xml
-/.idea/workspace.xml
-/ipf-docs.iml
-/.idea/encodings.xml
-/.idea/PipelineViewerConfig.xml
-/.idea/
+/.idea/*
+*.iml
