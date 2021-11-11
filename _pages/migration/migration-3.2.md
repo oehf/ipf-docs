@@ -81,7 +81,7 @@ All outgoing TLS connections as well as incoming MLLPS connections can now be co
 * by customizing the system properties listed in the [JSSE documentation](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html#InstallationAndCustomization)
 * by providing a [Camel](https://camel.apache.org/camel-configuration-utilities.html) `sslContextParameters` reference in the endpoint URL
 * by directly providing an `sslContext` reference in the endpoint URL
-* by stating `secure=true` in the endpoint URL. In this case, the Camel registry is looked up for a unique bean of type `org.apache.camel.util.jsse.SSLContextParameters`. 
+* by stating `secure=true` in the endpoint URL. In this case, the Camel registry is looked up for a unique bean of type `org.apache.camel.support.jsse.SSLContextParameters`. 
 If none is found, a default SSL Context (controlled by the system properties) is instantiated. If more than one is found, an exception is thrown.
 
 

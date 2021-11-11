@@ -24,7 +24,7 @@ a unique `sslContextParameters` bean instance to be used. If none is found, a de
 (optionally controlled by the system environment) is instantiated. If more than one is found, an exception is thrown.
 `clientAuth`, `sslProtocols` and `sslCiphers` override the corresponding settings in `sslContext` or `sslContextParameters`
 
-[SslContextParameters][] can be configured as shown in the example below. In this case, the MLLP producer URI requires 
+[SslContextParameters] can be configured as shown in the example below. In this case, the MLLP producer URI requires 
 the parameter `sslContextParameters=#myContext`.
 
 ```xml
