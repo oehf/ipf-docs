@@ -29,7 +29,7 @@ TLS-related aspects for client-side FHIR endpoints (i.e. producers) are controll
 | Parameter name         | Type                     | Default value | Short description                                                                    |
 |:-----------------------|:-------------------------|:--------------|:-------------------------------------------------------------------------------------|
 | `secure`               | boolean                  | false         | enables transport-level encryption for the given endpoint |
-| `sslContextParameters` | [SslContextParameters]   | n/a           | enables transport-level encryption and determines the SSL parameters that shall be applied to the endpoint |
+| `sslContextParameters` | [SSLContextParameters]   | n/a           | enables transport-level encryption and determines the SSL parameters that shall be applied to the endpoint |
 | `hostnameVerifier`     | [HostnameVerifier]       | n/a           | strategy for host name verification |
 
 If `secure` is set to true but no `sslContextParameters` are provided, the Camel registry is looked up for 
@@ -37,7 +37,7 @@ a unique `sslContextParameters` bean instance to be used. If none is found, a de
 is instantiated. If more than one `sslContextParameters` bean instance is found, an exception is thrown.
 
 
-[SslContextParameters] can be configured as shown in the example below. In this case, the FHIR producer URI requires 
+[SSLContextParameters] can be configured as shown in the example below. In this case, the FHIR producer URI requires 
 the parameter `sslContextParameters=#myContext`.
 
 ```xml

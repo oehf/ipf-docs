@@ -28,14 +28,14 @@ TLS-related aspects of Web Service-based transactions are controlled by the foll
 | Parameter name         | Type                   | Default value  | Short description
 |:-----------------------|:-----------------------|:-------|:---------------------------------------------
 | `secure`               | boolean                | false  | enabled transport-level encryption for the given endpoint
-| `sslContextParameters` | [SslContextParameters] | n/a    | enables transport-level encryption and determines the SSL parameters that shall be applied to the endpoint
+| `sslContextParameters` | [SSLContextParameters] | n/a    | enables transport-level encryption and determines the SSL parameters that shall be applied to the endpoint
 | `hostnameVerifier`     | [HostnameVerifier]     | n/a    | strategy for host name verification
 
 If `secure` is set to true but no `sslContextParameters` are provided, the Camel registry is looked up for 
 a unique `sslContextParameters` bean instance to be used. If none is found, the matching CXF HttpConduit (see below, optionally controlled by the system environment) 
 is instantiated. If more than one `sslContextParameters` bean instance is found, an exception is thrown.
 
-[SslContextParameters] can be configured as shown in the example below. In this case, the WS producer URI requires 
+[SSLContextParameters] can be configured as shown in the example below. In this case, the WS producer URI requires 
 the parameter `sslContextParameters=#myContext`.
 
 ```xml
@@ -70,7 +70,7 @@ the parameter `sslContextParameters=#myContext`.
      
  ```
 
-If [sslContextParameters][SslContextParameters] are not provided, [CXF](https://cxf.apache.org)'s HTTP client can be configured accordingly.
+If [sslContextParameters][SSLContextParameters] are not provided, [CXF](https://cxf.apache.org)'s HTTP client can be configured accordingly.
 This is done within the String context as detailed in the
 [CXF documentation](https://cxf.apache.org/docs/client-http-transport-including-ssl-support.html).
 

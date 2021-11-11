@@ -55,7 +55,7 @@ See [here]({{ site.baseurl }}{% link _pages/dynamic.md %}) for details on Custom
 
 The starter further sets up a bean of type `org.openehealth.ipf.commons.core.config.SpringRegistry`.
 
-In addition, if the properties `server.ssl.enabled` and `ipf.commons.reuse-ssl-config` are set to `true`, a bean of type `org.apache.camel.util.jsse.SslContextParameters` with name `bootSslContextParameters` is provided, so you can reuse the Spring Boot security configuration for [FHIR](../ipf-platform-camel-ihe-fhir-core/security.html), [MLLP](../ipf-platform-camel-ihe-mllp/secureTransport.html) and [Web Service](../ipf-platform-camel-ihe-ws/secureTransport.html) IHE transaction endpoints supported by IPF.
+In addition, if the properties `server.ssl.enabled` and `ipf.commons.reuse-ssl-config` are set to `true`, a bean of type `org.apache.camel.support.jsse.SSLContextParameters` with name `bootSslContextParameters` is provided, so you can reuse the Spring Boot security configuration for [FHIR](../ipf-platform-camel-ihe-fhir-core/security.html), [MLLP](../ipf-platform-camel-ihe-mllp/secureTransport.html) and [Web Service](../ipf-platform-camel-ihe-ws/secureTransport.html) IHE transaction endpoints supported by IPF.
 
 `ipf-spring-boot-starter` provides the following application properties:
 
