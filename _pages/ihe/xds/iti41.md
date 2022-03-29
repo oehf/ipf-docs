@@ -118,6 +118,7 @@ which can be used to configure this content caching.
 * [Deploying custom CXF interceptors]
 * [Handling automatically rejected messages]
 * [Using CXF features]
+* [Asynchronous Web Service exchange option]
 
 ### Advanced XDS Component Features
 
