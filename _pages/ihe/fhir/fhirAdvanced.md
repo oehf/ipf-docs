@@ -19,7 +19,7 @@ endpoint URI.
 | `resourceProvider`     | FhirProvider         | n/a           | Reference to a custom resource provider, configurable per endpoint.
 | `clientRequestFactory` | ClientRequestFactory | n/a           | reference to a custom ClientRequestFactory
 | `consumerSelector`     | Predicate            | () -> true    | reference to a Predicate that selects a FhirConsumer
-
+| `consumerSelector`     | Boolean              | false         | whether the endpoint shall try to sort a search result if requested by the client
 
 ### fhirContext
 
@@ -101,5 +101,35 @@ public class BundleProfileSelector implements Predicate<Object> {
 }
 ```
 
+### sort
+
+This parameter can be set to true if the FHIR consumer endpoint shall attempt server-side orting if the client requests to do so. Sorting must be explicitly supported by the FHIR endpoint's `FhirSearchParameters` implementation - it must extend `FhirSearchAndSortParameters` and implement the `comparatorFor(String)` method that returns a `Comparator` object for the provided sort parameter.
+
+For demonstration purposes, here is the implementation of `Iti78SearchParameters` that supports selected sorting parameters:
+
+```java
+
+public class Iti78SearchParameters extends FhirSearchAndSortParameters<PdqPatient> {
+
+....
+
+    @Override
+    public Optional<Comparator<PdqPatient>> comparatorFor(String paramName) {
+        switch (paramName) {
+            case PdqPatient.SP_BIRTHDATE: return Optional.of(CP_DATE);
+            case PdqPatient.SP_FAMILY: return Optional.of(CP_FAMILY);
+            case PdqPatient.SP_GIVEN: return Optional.of(CP_GIVEN);
+        }
+        return Optional.empty();
+    }
+
+    private static final Comparator<PdqPatient> CP_DATE = nullsLast(comparing(PdqPatient::getBirthDate));
+    private static final Comparator<PdqPatient> CP_FAMILY = nullsLast(comparing(patient -> patient.getNameFirstRep().getFamily()));
+    private static final Comparator<PdqPatient> CP_GIVEN = nullsLast(comparing(patient -> patient.getNameFirstRep().getGivenAsSingleString()));
+    
+}
+```
+
+Any "unknown" sorting parameters are ignored. The returned `Comparator`s must be capable of handling null values - in this case they are ordered after all non-null values.
 
 [IPF Spring Boot FHIR starter]: {{ site.baseurl }}{% link _pages/boot/boot-fhir.md %}
