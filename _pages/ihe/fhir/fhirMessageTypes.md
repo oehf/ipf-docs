@@ -28,6 +28,7 @@ If unmarshalling fails, an FHIR response automatically generated and passed back
 | ITI-81 	       | n/a                   | Query Parameters          |
 | ITI-83 	       | n/a                   | Query Parameters          |
 | PCC-44 	       | n/a                   | Query Parameters          |
+| PHARM-5          | n/a                   | Query Parameters          |
 
 The following Camel headers are set by the consumer:
 
@@ -68,6 +69,7 @@ is transformed into a HAPI FHIR resource. When unmarshalling fails, an exception
 | ITI-81 (get)    | `AuditEvent` resource                                     |
 | ITI-83          | `Parameters` containing matching identifiers              |
 | PCC-44 (search) | `Bundle` containing resources, depending on IHE option    |
+| PHARM-5         | `Bundle` containing `DocumentReference` resources         |
 
 
 ### Consumer-side responses
@@ -96,6 +98,7 @@ Data types for the *request* message of the supported transactions on producer (
 | ITI-81 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string     |
 | ITI-83          | `org.hl7.fhir.instance.model.Parameters`                |
 | PCC-44 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string     |
+| PHARM-5         | Pharm5SearchParameters in the FhirRequestParameters header; `org.hl7.fhir.r4.model.Parameters` in the body and Pharm5Operations in the OPERATION_HEADER header |
 
 The URL string may be complete (e.g. `http://example.com/base/Patient?family=smith`) in which case the client's base URL will be ignored. 
 Or it can be relative (e.g. `Patient?family=smith`) in which case the client's base URL will be used.
