@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="129px" preserveAspectRatio="none" style="width:558px;height:129px;background:#FFFFFF;" version="1.1" viewBox="0 0 558 129" width="558px" zoomAndPan="magnify"><defs><filter height="300%" id="f3t9juefgk8sl" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f3t9juefgk8sl)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="433.5" y="73.9609"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="120" x2="120" y1="41.6094" y2="122.3125"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="438" x2="438" y1="41.6094" y2="122.3125"/><rect fill="#FEFECE" filter="url(#f3t9juefgk8sl)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="227" x="5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="213" x="12" y="26.5332">Community Information Consumer</text><rect fill="#FEFECE" filter="url(#f3t9juefgk8sl)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="215" x="329" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="336" y="26.5332">Community Information Provider</text><rect fill="#FFFFFF" filter="url(#f3t9juefgk8sl)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="433.5" y="73.9609"/><polygon fill="#A80036" points="421.5,69.9609,431.5,73.9609,421.5,77.9609,425.5,73.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="120.5" x2="427.5" y1="73.9609" y2="73.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="279" x="127.5" y="69.1045">Community Information Delta Download Request</text><polygon fill="#A80036" points="131.5,100.3125,121.5,104.3125,131.5,108.3125,127.5,104.3125" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="125.5" x2="437.5" y1="104.3125" y2="104.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="289" x="137.5" y="99.4561">Community Information Delta Download Response</text><!--MD5=[722786729f9d46a40de659be9327753e]
+@startuml
+hide footbox
+
+participant "Community Information Consumer" as Consumer
+participant "Community Information Provider" as Provider
+
+Consumer -> Provider : Community Information Delta Download Request
+activate Provider
+Provider - -> Consumer : Community Information Delta Download Response
+deactivate Provider
+
+@enduml
+
+PlantUML version 1.2022.1(Tue Feb 01 19:19:58 CET 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: de
+Country: CH
+--></g></svg>
