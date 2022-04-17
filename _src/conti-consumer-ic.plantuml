@@ -21,9 +21,13 @@ loop n-1 times
 end
 |||
 CON --> Client : Last response fragment
-Client -> CON : Cancel
-CON -> CON: Delete interactive fragment chain
-CON --> Client : Cancel Acknowledgement
+
+opt
+    Client -> CON : Cancel
+    CON -> CON: Delete interactive fragment chain
+    CON --> Client : Cancel Acknowledgement
+end
+
 deactivate CON
 
 @enduml

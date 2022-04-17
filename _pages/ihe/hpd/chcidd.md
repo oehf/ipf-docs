@@ -1,13 +1,13 @@
 ---
-title: hpd-iti58 component
+title: ch-cidd component
 layout: single
-permalink: /docs/ihe/iti58/
+permalink: /docs/ihe/chcidd/
 toc: true
 toc_icon: align-left
 toc_sticky: true
 ---
 
-{% assign tx = site.data.ihe["iti58"] %}
+{% assign tx = site.data.ihe["chcidd"] %}
 
 The {{ tx.component }} component provides interfaces for actors of the *{{ tx.description }}* IHE transaction ({{ tx.transaction }}),
 which is described in the [{{ tx.section }}]({{ tx.section-link }}).
@@ -21,7 +21,7 @@ The transaction defines the following actors:
 /assets/images/{{tx.link}}.svg
 {% endcapture %}
 
-{% include figure image_path="/assets/images/iti58.svg" alt="ITI-58 actors" caption="ITI-58 transaction and actors " %}
+{% include figure image_path="/assets/images/chcidd.svg" alt="CH-CIDD actors" caption="CH-CIDD transaction and actors " %}
 
 Producer side corresponds to the *{{ tx.client-actor }}* actor.
 Consumer side corresponds to both *{{ tx.server-actor }}* actor.
@@ -67,21 +67,21 @@ For example, when a Tomcat container on the host `eHealth.server.org` is configu
 
 ```
 port = 8888
-contextPath = /IHE
-servletPath = /hpd/*
+contextPath = /ZAD
+servletPath = /cpi/*
 ```
 
 and serviceName equals to `{{ tx.link }}`, then the {{ tx.component }} consumer will be available for external clients under the URL
-`http://eHealth.server.org:8888/IHE/hpd/{{ tx.link }}`
+`http://eHealth.server.org:8888/ZAD/cpi/{{ tx.link }}`
 
 Additional URI parameters are optional and control special features as described in the corresponding section below.
 
 ### Data Types
 
-The {{ tx.component }} component produces and consumes objects of the [DSMLv2](https://www.oasis-open.org/standards#dsmlv2) data model:
+The {{ tx.component }} component produces and consumes objects based on the [DSMLv2](https://www.oasis-open.org/standards#dsmlv2) data model:
 
-* Request message -- [`BatchRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/dsmlv2/BatchRequest.html)
-* Response message -- [`BatchResponse`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/dsmlv2/BatchResponse.html)
+* Request message -- [`DownloadRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/chcidd/DownloadRequest.html)
+* Response message -- [`DownloadResponse`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/chcidd/DownloadResponse.html)
 
 ### Example
 
@@ -96,7 +96,7 @@ This is an example on how to use the component on the consumer side:
 
 ### Basic Common Component Features
 
-* [ATNA auditing]
+* ATNA auditing is not defined this component
 * [Message validation]
 
 ### Basic Web Service Component Features
@@ -110,7 +110,6 @@ This is an example on how to use the component on the consumer side:
 * [Deploying custom CXF interceptors]
 * [Handling automatically rejected messages]
 * [Using CXF features]
-* [Server-side sorting and paging of search results]
 
 
 
@@ -126,4 +125,5 @@ This is an example on how to use the component on the consumer side:
 [Handling automatically rejected messages]: {{ site.baseurl }}{% link _pages/ihe/ws/wsHandlingRejected.md %}
 [Using CXF features]: {{ site.baseurl }}{% link _pages/ihe/ws/wsCxfFeatures.md %}
 
-[Server-side sorting and paging of search results]: {{ site.baseurl }}{% link _pages/ihe/hpd/hpdQueryControls.md %}
+
+

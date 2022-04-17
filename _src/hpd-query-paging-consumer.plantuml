@@ -1,0 +1,30 @@
+@startuml
+hide footbox
+
+participant "Client"
+box "IPF Application"
+participant "IPF Consumer" as CON
+participant "Server Camel Route" as SCR
+end box
+
+Client -> CON : Request with a Paging control containing\npage size and no cookie
+activate CON
+CON -> SCR : Request
+activate SCR
+note right of SCR: .from()
+SCR --> CON : Response
+deactivate SCR
+
+|||
+loop As long as more than one response page is left
+    CON --> Client: Response page with a Paging control containing a cookie
+|||
+    Client -> CON: Request for a next page with a Paging control containing\npage size and the cookie obtained from the server
+end
+
+|||
+CON --> Client: Last response page with Paging control containing\noverall entries count and no cookie
+
+deactivate CON
+
+@enduml

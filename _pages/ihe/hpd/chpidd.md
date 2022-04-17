@@ -67,12 +67,12 @@ For example, when a Tomcat container on the host `eHealth.server.org` is configu
 
 ```
 port = 8888
-contextPath = /IHE
+contextPath = /ZAD
 servletPath = /hpd/*
 ```
 
 and serviceName equals to `{{ tx.link }}`, then the {{ tx.component }} consumer will be available for external clients under the URL
-`http://eHealth.server.org:8888/IHE/hpd/{{ tx.link }}`
+`http://eHealth.server.org:8888/ZAD/hpd/{{ tx.link }}`
 
 Additional URI parameters are optional and control special features as described in the corresponding section below.
 

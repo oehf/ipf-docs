@@ -1,0 +1,27 @@
+@startuml
+hide footbox
+
+participant "Client"
+box "IPF Application"
+participant "IPF Consumer" as CON
+participant "Server Camel Route" as SCR
+end box
+
+Client -> CON : Request with Sorting control
+activate CON
+CON -> SCR : Request
+activate SCR
+note right of SCR: .from()
+SCR --> CON : Response
+deactivate SCR
+
+|||
+
+CON ->> CON: Sort values of the specified attribute\nin each search result entry
+CON ->> CON: Sort search result entries based on \nthe first values of the specified attribute
+
+CON --> Client : Response
+
+deactivate CON
+
+@enduml

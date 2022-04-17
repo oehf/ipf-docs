@@ -1,13 +1,13 @@
 ---
-title: hpd-iti58 component
+title: ch-ciq component
 layout: single
-permalink: /docs/ihe/iti58/
+permalink: /docs/ihe/chciq/
 toc: true
 toc_icon: align-left
 toc_sticky: true
 ---
 
-{% assign tx = site.data.ihe["iti58"] %}
+{% assign tx = site.data.ihe["chciq"] %}
 
 The {{ tx.component }} component provides interfaces for actors of the *{{ tx.description }}* IHE transaction ({{ tx.transaction }}),
 which is described in the [{{ tx.section }}]({{ tx.section-link }}).
@@ -21,7 +21,7 @@ The transaction defines the following actors:
 /assets/images/{{tx.link}}.svg
 {% endcapture %}
 
-{% include figure image_path="/assets/images/iti58.svg" alt="ITI-58 actors" caption="ITI-58 transaction and actors " %}
+{% include figure image_path="/assets/images/chciq.svg" alt="CH-CIQ actors" caption="CH-CIQ transaction and actors " %}
 
 Producer side corresponds to the *{{ tx.client-actor }}* actor.
 Consumer side corresponds to both *{{ tx.server-actor }}* actor.
@@ -67,12 +67,12 @@ For example, when a Tomcat container on the host `eHealth.server.org` is configu
 
 ```
 port = 8888
-contextPath = /IHE
-servletPath = /hpd/*
+contextPath = /ZAD
+servletPath = /cpi/*
 ```
 
 and serviceName equals to `{{ tx.link }}`, then the {{ tx.component }} consumer will be available for external clients under the URL
-`http://eHealth.server.org:8888/IHE/hpd/{{ tx.link }}`
+`http://eHealth.server.org:8888/ZAD/cpi/{{ tx.link }}`
 
 Additional URI parameters are optional and control special features as described in the corresponding section below.
 

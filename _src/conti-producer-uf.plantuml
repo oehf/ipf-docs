@@ -14,14 +14,14 @@ activate PRO
 loop n-1 times
     PRO -> Server : Fragment of Request
     activate Server
-    Server --> PRO : Fragment of Acknowledgement
+    Server --> PRO : Fragment Acknowledgement
     deactivate Server
 end
 |||
 
 PRO -> Server : Last Fragment of Request
 activate Server
-Server --> PRO: Transaction-specific Response
+Server --> PRO: Response
 deactivate Server
 
 PRO --> Client : Response

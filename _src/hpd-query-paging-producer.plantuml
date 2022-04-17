@@ -1,0 +1,33 @@
+@startuml
+hide footbox
+
+box "IPF Application"
+participant "Client Camel Route" as Route
+participant "IPF Producer" as Producer
+end box
+
+participant "Server"
+
+activate Route
+Route -> Producer: Request with a Paging control
+note left of Route: .to(...)
+activate Producer
+Producer -> Server : Request with a Paging control
+
+|||
+loop As long as more than one response page is left
+    Server --> Producer: Response page with a Paging control containing\noverall entries count and a cookie
+|||
+    Producer ->> Producer: Store the page
+    Producer -> Server: Request for a next page with a Paging control containing\npage size and the cookie obtained from the server
+end
+
+|||
+Server --> Producer: Last response page with Paging control containing\noverall entries count and no cookie
+Producer ->> Producer: Aggregate all collected pages
+Producer --> Route: Response
+
+deactivate Producer
+deactivate Route
+
+@enduml

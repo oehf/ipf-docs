@@ -22,13 +22,16 @@ end
 Server --> PRO : Last fragment of response
 deactivate Server
 |||
-PRO -> PRO : Join fragments
-PRO -> Server : Optional Cancel
-activate Server
-Server --> PRO: Cancel Acknowledgement
-deactivate Server
+PRO -> PRO : Join response fragments
 
-PRO --> Client : Cumulative Response
+opt
+    PRO -> Server : Cancel
+    activate Server
+    Server --> PRO: Cancel Acknowledgement
+    deactivate Server
+end
+
+PRO --> Client : Aggregated Response
 deactivate PRO
 
 @enduml

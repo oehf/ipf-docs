@@ -10,7 +10,7 @@ end box
 loop n-1 times
     Client -> CON : Fragment of Request
     activate CON
-    CON --> Client : Fragment of Acknowledgement
+    CON --> Client : Fragment Acknowledgement
     deactivate CON
 end
 |||
@@ -23,7 +23,7 @@ activate SCR
 note right of SCR: .from()
 SCR --> CON: Response
 deactivate SCR
-CON -> Client: Unfragmented Request
+CON -> Client: Response
 deactivate CON
 
 @enduml

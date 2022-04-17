@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Community Information Consumer" as Consumer
+participant "Community Information Provider" as Provider
+
+Consumer -> Provider : Community Information Query
+activate Provider
+Provider --> Consumer : Community Information Query Response
+deactivate Provider
+
+@enduml
