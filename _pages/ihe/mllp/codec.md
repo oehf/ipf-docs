@@ -1,11 +1,11 @@
 ---
-title: HL7v2 Codec
+title: HL7v2 Mina Codec
 layout: single
 permalink: /docs/ihe/codec/
 classes: wide
 ---
 
-Some parameters defined in [camel-mina2][] have fixed values in MLLP-based IPF IHE components. 
+Some parameters defined in [camel-mina][] have fixed values in MLLP-based IPF IHE components. 
 This means that these parameters are actually not configurable by the user anymore; 
 values provided via endpoint URIs will be silently ignored. 
 
@@ -20,7 +20,7 @@ These parameters are:
 | `transferExchange`    | boolean    | false          | 
 | `encoding`            | String     | corresponds to the charset name configured for the HL7 codec factory, as described below |
 
-All other URI parameters defined in [camel-mina2][] remain fully functional and configurable by the user.
+All other URI parameters defined in [camel-mina][] remain fully functional and configurable by the user.
 Of particular interest are the following parameters:
 
 | Parameter name        | Type       | Default        | Description                                                                                 |
@@ -32,7 +32,7 @@ Of particular interest are the following parameters:
 
 ## HL7 Codec Parameters
 
-[camel-mina2][] defines a parameter named `codec`, which is expected to contain the name of a bean that references a codec factory 
+[camel-mina][] defines a parameter named `codec`, which is expected to contain the name of a bean that references a codec factory 
 that translates the network stream into a suitable application protocol and vice versa. 
 [camel-hl7][] comes with an implementation of an MLLP codec factory. MLLP-based IPF IHE components set `#hl7codec` as a default value 
 for this parameter. The corresponding bean must always be defined:
@@ -59,5 +59,5 @@ The character set name for the HL7 codec factory will be automatically:
 * used in all data transformation activities
 
 
-[camel-mina2]: https://camel.apache.org/mina2.html
+[camel-mina]: https://camel.apache.org/mina.html
 [camel-hl7]: https://camel.apache.org/hl7.html

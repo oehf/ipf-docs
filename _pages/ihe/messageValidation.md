@@ -75,7 +75,7 @@ An example of using validating processors is given below:
 
 The consumer side of IPF MLLP transaction endpoints receiving HL7v2 messages from clients is aware of the
 IHE transaction context. The consumer endpoint can therefore initialize an [`HapiContext`](https://hapifhir.github.io/hapi-hl7v2/base/apidocs/ca/uhn/hl7v2/HapiContext.html)
-that is passed into the route by the [HL7 Codec]. This context also contains the appropriate 
+that is passed into the route by the [HL7 Mina Codec] or [HL7 Netty Codec]. This context also contains the appropriate 
 [`ValidationContext`](https://hapifhir.github.io/hapi-hl7v2/base/apidocs/ca/uhn/hl7v2/validation/ValidationContext.html) that is initialized with the HL7 conformance
 profile matching the transaction.
 As a result, no explicit validation processor must be provided anymore:
@@ -136,4 +136,5 @@ based of user-defined properties and/or make it configurable e.g. via JMX.
 
 Please be aware that the aforementioned Camel message header will remain untouched and deactivate subsequent validation steps as well.
 
-[HL7 Codec]: {{ site.baseurl }}{% link _pages/ihe/mllp/codec.md %}
+[HL7 Mina Codec]: {{ site.baseurl }}{% link _pages/ihe/mllp/codec.md %}
+[HL7 Netty Codec]: {{ site.baseurl }}{% link _pages/ihe/mllp/nettycodec.md %}

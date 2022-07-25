@@ -54,8 +54,11 @@ is disabled in the endpoints. The audit strategies must reference an instance of
 
 ## HL7v2 Codec
 
-All HL7v2-based transactions are realized using the [camel-mina2](https://camel.apache.org/mina2.html) and [camel-hl7](https://camel.apache.org/hl7.html)
-components and requires that an [HL7v2 Codec](codec.html) is available in the Camel registry.
+Until IPF 4.3.x, all HL7v2-based transactions are realized using the [camel-mina](https://camel.apache.org/mina.html) and [camel-hl7](https://camel.apache.org/hl7.html)
+components and requires that an [HL7v2 Mina Codec][] is available in the Camel registry.
+
+As of IPF 4.4.x, all HL7v2-based transactions are realized using the [camel-netty](https://camel.apache.org/netty.html) and [camel-hl7](https://camel.apache.org/hl7.html)
+components and requires that an [HL7v2 Netty Codec][] is available in the Camel registry.
 
 
 ## Example
@@ -113,7 +116,8 @@ In the route definition, they can be used like this:
 * [Message types and exception handling][]
 * [Secure transport][]
 * [File-Based payload logging][]
-* [Mina options][HL7v2 Codec]
+* [Mina options][HL7v2 Mina Codec] (until IPF 4.3.x)
+* [Netty options][HL7v2 Netty Codec] (as of IPF 4.4.x)
 
 ## Advanced MLLP Component Features
 
@@ -124,7 +128,8 @@ In the route definition, they can be used like this:
 
 [ATNA auditing]: {{ site.baseurl }}{% link _pages/ihe/atna.md %}
 [Message validation]: {{ site.baseurl }}{% link _pages/ihe/messageValidation.md %}
-[HL7v2 Codec]: {{ site.baseurl }}{% link _pages/ihe/mllp/codec.md %}
+[HL7v2 Mina Codec]: {{ site.baseurl }}{% link _pages/ihe/mllp/codec.md %}
+[HL7v2 Netty Codec]: {{ site.baseurl }}{% link _pages/ihe/mllp/nettycodec.md %}
 [Message types and exception handling]: {{ site.baseurl }}{% link _pages/ihe/mllp/hl7v2MessageTypes.md %}
 [Secure transport]: {{ site.baseurl }}{% link _pages/ihe/mllp/hl7v2SecureTransport.md %}
 [File-Based payload logging]: {{ site.baseurl }}{% link _pages/ihe/mllp/hl7v2PayloadLogging.md %}
