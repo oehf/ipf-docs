@@ -5,12 +5,12 @@ permalink: /docs/ihe/hl7v2InterceptorChain/
 classes: wide
 ---
 
-MLLP components are built on top of [camel-mina2](https://camel.apache.org/mina2.html), and their additional eHealth-specific functionality is implemented
+MLLP components are built on top of [camel-mina](https://camel.apache.org/mina.html) (starting with IPF 4.4 [camel-netty](https://camel.apache.org/netty.html), and their additional eHealth-specific functionality is implemented
 in form of interceptors. Each MLLP interceptor is a [Camel processor](https://camel.apache.org/processor.html) that wraps another processor.
 The latter can either be one of
 
 * another MLLP interceptor 
-* standard camel-mina2 producer 
+* standard Camel producer 
 * consumer instance
 
 Each interceptor is responsible for calling the wrapped processor by itself — there is no chain execution entity. 
@@ -54,18 +54,18 @@ The standard producer-side chain is shown in the figure below:
 
 ![Standard Producer-side Chain]({{ "/assets/images/mllp-producer-interceptors.png" | relative_url }})
 
-| Package name part | `<Function>` (class name part) | Optionality  | Processing outgoing requests | Processing incoming responses
-|:----------------- |:-------------------------------|:-------------|:---------------------------- |:-----------------------------
-| `mllp.core` | `OutputPayloadLogger` | only when explicitly configured, see [payload logging] | n/a | logs response message
-| `mllp.core` | `InputPayloadLogger` | only when explicitly configured, see [payload logging] | logs request message | n/a
-| `mllp.core` | `StringProcessing` | always | performs [segment fragmentation], when necessary  | converts message received from the network to String and performs [segment defragmentation], when necessary
-| `mllp.core` | `RequestFragmenter` | only when [unsolicited request fragmentation] is enabled  | when corresponding conditions are met, plays out the scenario described in Section 2.10.2.2 of the HL7 v.2.5 specification  | n/a
-| `hl7v2` | `Marshal` | only when [interactive response continuation] is disabled  | converts message to String  | converts message into ca.uhn.hl7v2.model.Message
-| `mllp.core`  | `MarshalAndInteractive ResponseReceiver` | only when [interactive response continuation] is enabled  | converts message to String  | when corresponding conditions are met, plays out the scenario described in Section 5.6.3 of the HL7 v.2.5 specification, then converts the aggregated message to ca.uhn.hl7v2.model.Message
-| `hl7v2`  | `ResponseAcceptance`  | always  | n/a | checks whether the message is of acceptable type and version
-| `mllp.core` | `Audit` | only when [ATNA auditing] is enabled | creates and pre-fills an ATNA audit record  | enriches the ATNA audit record and sends it out
-| `hl7v2` | `RequestAcceptance` | always  | checks whether the message is of acceptable type and version  | n/a
-| `hl7v2` | `Adapting` | always  | converts message received from the Camel route to a ca.uhn.hl7v2.model.Message | n/a
+| Package name part | `<Function>` (class name part) | Optionality  | Processing outgoing requests | Processing incoming responses |
+|:----------------- |:-------------------------------|:-------------|:---------------------------- |:-----------------------------|
+| `mllp.core` | `OutputPayloadLogger` | only when explicitly configured, see [payload logging] | n/a | logs response message |
+| `mllp.core` | `InputPayloadLogger` | only when explicitly configured, see [payload logging] | logs request message | n/a |
+| `mllp.core` | `StringProcessing` | always | performs [segment fragmentation], when necessary  | converts message received from the network to String and performs [segment defragmentation], when necessary |
+| `mllp.core` | `RequestFragmenter` | only when [unsolicited request fragmentation] is enabled  | when corresponding conditions are met, plays out the scenario described in Section 2.10.2.2 of the HL7 v.2.5 specification  | n/a |
+| `hl7v2` | `Marshal` | only when [interactive response continuation] is disabled  | converts message to String  | converts message into ca.uhn.hl7v2.model.Message |
+| `mllp.core`  | `MarshalAndInteractive ResponseReceiver` | only when [interactive response continuation] is enabled  | converts message to String  | when corresponding conditions are met, plays out the scenario described in Section 5.6.3 of the HL7 v.2.5 specification, then converts the aggregated message to ca.uhn.hl7v2.model.Message |
+| `hl7v2`  | `ResponseAcceptance`  | always  | n/a | checks whether the message is of acceptable type and version |
+| `mllp.core` | `Audit` | only when [ATNA auditing] is enabled | creates and pre-fills an ATNA audit record  | enriches the ATNA audit record and sends it out |
+| `hl7v2` | `RequestAcceptance` | always  | checks whether the message is of acceptable type and version  | n/a |
+| `hl7v2` | `Adapting` | always  | converts message received from the Camel route to a ca.uhn.hl7v2.model.Message | n/a |
 
 ### Standard Consumer-side Chain
 
@@ -73,11 +73,11 @@ The standard producer-side chain is shown in the figure below:
 
 ![Standard Consumer-side Chain]({{ "/assets/images/mllp-consumer-interceptors.png" | relative_url }})
 
-| Package name part | `<Function>` (class name part) | Optionality | Processing incoming requests | Processing outgoing responses
-|:----------------- |:-------------------------------|:------------|:-----------------------------|:-----------------------------
-| `mllp.core` | `RequestInteractionSetter` | always | populates interaction ID as a Camel message header | n/a
-| `mllp.core` | `InputPayloadLogger` | only when explicitly configured, see [payload logging] | logs request message | n/a
-| `mllp.core` | `OutputPayloadLogger` | only when explicitly configured, see [payload logging] | n/a | logs response message
+| Package name part | `<Function>` (class name part) | Optionality | Processing incoming requests | Processing outgoing responses |
+|:----------------- |:-------------------------------|:------------|:-----------------------------|:----------------------------- |
+| `mllp.core` | `RequestInteractionSetter` | always | populates interaction ID as a Camel message header | n/a |
+| `mllp.core` | `InputPayloadLogger` | only when explicitly configured, see [payload logging] | logs request message | n/a |
+| `mllp.core` | `OutputPayloadLogger` | only when explicitly configured, see [payload logging] | n/a | logs response message |
 | `mllp.core` | `StringProcessing` | always | converts message received from the network to String and performs [segment defragmentation], when necessary | performs [segment fragmentation], when necessary |
 | `mllp.core` | `RequestDefragmenter` | only when [unsolicited request fragmentation] is enabled | when corresponding conditions are met, plays out the scenario described in Section 2.10.2.2 of the HL7 v.2.5 specification | n/a |
 | `hl7v2` | `Marshal` | always | converts message to `ca.uhn.hl7v2.model.Message` | converts message to String |

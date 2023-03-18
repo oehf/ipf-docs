@@ -96,7 +96,7 @@ The endpoint will reject resource types that are outside the scope of the config
 This is an example on how to use the component on the consumer side:
 
 ```java
-    from("{{ tx.component }}://service?audit=true&options=OBSERVATIONS")
+    from("{{ tx.component }}://service?audit=true&iheOptions=OBSERVATIONS")
       .process(myProcessor)
       // process the incoming request and create a response
 ```
