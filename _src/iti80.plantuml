@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Initiating Gateway" as IG
+participant "Responding Gateway" as RG
+
+IG -> RG : Cross Gateway Document Provide Request
+activate RG
+RG --> IG : Cross Gateway Document Provide Response
+deactivate RG
+
+@enduml

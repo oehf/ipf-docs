@@ -466,6 +466,19 @@ iti78:
   module: ipf-platform-camel-ihe-fhir-r4-pixpdq
   section:  IHE IT Infrastructure Technical Framework Supplement, Patient Demographics Query for Mobile (PDQm), Section 3.78.
   section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf
+iti80:
+  transaction: ITI-80
+  link: iti80
+  profile: XCDR
+  description: Cross-Gateway Document Provide
+  component: xcdr-iti80
+  transport: SOAP/HTTP(S)
+  format: ebXML
+  client-actor: Initiating Gateway
+  server-actor: Responding Gateway
+  module: ipf-platform-camel-ihe-xds
+  section: IHE IT Infrastructure Technical Framework Supplement, Cross-Community Document Reliable Interchange, Section 3.80.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_XCDR.pdf
 iti81:
   transaction: ITI-81
   link: iti81
