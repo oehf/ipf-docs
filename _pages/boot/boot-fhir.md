@@ -107,11 +107,11 @@ Camel provides a Spring boot starter module for this:
 
 [camel-servlet-starter] provides the following application properties:
 
-| Property (`camel.component.servlet.mapping.`) | Default                | Description                                        |
-|-----------------------------------------------|------------------------|----------------------------------------------------|
-| `enabled`                                     | true                   | Enables the automatic mapping of the servlet component into the Spring web context |
-| `contextPath`                                 | /camel/*               | Context path used by the servlet component for automatic mapping |
-| `servletName`                                 | CamelServlet           | The name of the Camel servlet |
+| Property (`camel.servlet.mapping.`)| Default                | Description                                                      |
+|------------------------------------|------------------------|------------------------------------------------------------------|
+| `enabled`                          | true                   | Enables the automatic mapping of the servlet component into the Spring web context |
+| `contextPath`                      | /camel/*               | Context path used by the servlet component for automatic mapping |
+| `servletName`                      | CamelServlet           | The name of the Camel servlet |
 
 
 [Spring Boot]: https://projects.spring.io/spring-boot/
