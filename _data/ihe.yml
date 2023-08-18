@@ -687,19 +687,19 @@ chppq4:
   module: ipf-platform-camel-ihe-fhir-r4-chppqm
   section: Swiss national EPR FHIR implementation guide
   section-link: http://fhir.ch/ig/ch-epr-ppqm/index.html
-  chppq3:
-    transaction: CH-PPQ-5
-    link: chppq5
-    profile: CH:PPQm
-    description: Mobile Privacy Policy Retrieve
-    component: ch-ppq5
-    transport: FEST/HTTP(S)
-    format: FHIR
-    client-actor: Policy Consumer
-    server-actor: Policy Repository
-    module: ipf-platform-camel-ihe-fhir-r4-chppqm
-    section: Swiss national EPR FHIR implementation guide
-    section-link: http://fhir.ch/ig/ch-epr-ppqm/index.html
+chppq5:
+  transaction: CH-PPQ-5
+  link: chppq5
+  profile: CH:PPQm
+  description: Mobile Privacy Policy Retrieve
+  component: ch-ppq5
+  transport: FEST/HTTP(S)
+  format: FHIR
+  client-actor: Policy Consumer
+  server-actor: Policy Repository
+  module: ipf-platform-camel-ihe-fhir-r4-chppqm
+  section: Swiss national EPR FHIR implementation guide
+  section-link: http://fhir.ch/ig/ch-epr-ppqm/index.html
 fhir:
   transaction: custom FHIR Based
   link: fhirCustom

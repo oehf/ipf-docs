@@ -78,6 +78,10 @@ This is an example on how to use the component on the consumer side:
       // process the incoming request and create a response
 ```
 
+## Translation between CH:PPQm and CH:PPQ messages
+
+IPF comes with [translators] to translate ITI-78 requests into ITI-21 requests and vice versa for the responses.
+
 ## Basic Common Component Features
 
 * [ATNA auditing][]
@@ -99,6 +103,6 @@ This is an example on how to use the component on the consumer side:
 [Message types and exception handling]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirMessageTypes.md %}
 [Security]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirSecurity.md %}
 [Connection Parameters]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirConnection.md %}
-[Deployment container]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirDeployment.md %}
-[Translators]: {{ site.baseurl }}{% link _pages/ihe/fhir/ppqmTranslators.md %}
+[deployment container]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirDeployment.md %}
+[translators]: {{ site.baseurl }}{% link _pages/ihe/fhir/ppqmTranslators.md %}
 [Advanced FHIR Parameters]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirAdvanced.md %}
