@@ -8,7 +8,7 @@ toc_sticky: true
 ---
 
 IPF provides utilities for translation between FHIR and HL7v2, thus giving the possibility to implement FHIR-based [IHE] transactions
-on top ot their HL7 v2 counterparts and to avoid redundancy in that way.
+on top of their HL7 v2 counterparts and to avoid redundancy in that way.
 
 Currently supported transaction pairs are
 

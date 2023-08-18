@@ -661,6 +661,45 @@ chppq2:
   module: ipf-platform-camel-ihe-xacml20
   section:   Swiss national extensions to the IHE Technical Framework
   section-link: https://www.e-health-suisse.ch/technik-semantik/epd-projectathon/programmierhilfen-epd/relevante-spezifikationen.html
+chppq3:
+  transaction: CH-PPQ-3
+  link: chppq3
+  profile: CH:PPQm
+  description: Mobile Privacy Policy Feed
+  component: ch-ppq3
+  transport: FEST/HTTP(S)
+  format: FHIR
+  client-actor: Policy Source
+  server-actor: Policy Repository
+  module: ipf-platform-camel-ihe-fhir-r4-chppqm
+  section: Swiss national EPR FHIR implementation guide
+  section-link: http://fhir.ch/ig/ch-epr-ppqm/index.html
+chppq4:
+  transaction: CH-PPQ-4
+  link: chppq4
+  profile: CH:PPQm
+  description: Mobile Privacy Policy Bundle Feed
+  component: ch-ppq4
+  transport: FEST/HTTP(S)
+  format: FHIR
+  client-actor: Policy Source
+  server-actor: Policy Repository
+  module: ipf-platform-camel-ihe-fhir-r4-chppqm
+  section: Swiss national EPR FHIR implementation guide
+  section-link: http://fhir.ch/ig/ch-epr-ppqm/index.html
+  chppq3:
+    transaction: CH-PPQ-5
+    link: chppq5
+    profile: CH:PPQm
+    description: Mobile Privacy Policy Retrieve
+    component: ch-ppq5
+    transport: FEST/HTTP(S)
+    format: FHIR
+    client-actor: Policy Consumer
+    server-actor: Policy Repository
+    module: ipf-platform-camel-ihe-fhir-r4-chppqm
+    section: Swiss national EPR FHIR implementation guide
+    section-link: http://fhir.ch/ig/ch-epr-ppqm/index.html
 fhir:
   transaction: custom FHIR Based
   link: fhirCustom
