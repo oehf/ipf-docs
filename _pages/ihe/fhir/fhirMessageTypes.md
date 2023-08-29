@@ -46,7 +46,7 @@ The following Camel headers are set by the consumer:
 | `HTTP_CLIENT_IP_ADDRESS`                        | FhirHttpClientIpAddress   | `httpServletRequest.getRemoteAddr()`                                                        |
 | `HTTP_LOCALES`                                  | FhirHttpAcceptLanguage    | `Collections.list(httpServletRequest.getLocales())`                                         |
 | `HTTP_USER`                                     | FhirHttpUserPrincipal     | `httpServletRequest.getUserPrincipal()`                                                     |
-| `HTTP_HEADERS`                                  | FhirHttpHeaders           | `Map<String, List<String>>` of HTTP headers                                                 |
+| `HTTP_INCOMING_HEADERS`                         | FhirHttpHeaders           | `Map<String, List<String>>` of HTTP headers                                                 |
 | `HTTP_X509_CERTIFICATES`                        | FhirHttpCertificates      | `httpServletRequest.getAttribute(X509Certificate.class.getName())`                          |
 | `FHIR_REQUEST_PARAMETERS`                       | FhirRequestParameters     | for Queries: Subclass of `FhirSearchParameters`, containing all populated search parameters |
 | `FHIR_REQUEST_DETAILS`                          | FhirRequestDetails        | HAPI FHIR `RequestDetails` object                                                           |
@@ -107,3 +107,7 @@ Data types for the *request* message of the supported transactions on producer (
 
 The URL string may be complete (e.g. `http://example.com/base/Patient?family=smith`) in which case the client's base URL will be ignored. 
 Or it can be relative (e.g. `Patient?family=smith`) in which case the client's base URL will be used.
+
+Additional outgoing HTTP headers may be set by providing a Camel message header with the 
+name `org.openehealth.ipf.commons.ihe.fhir.Constants.HTTP_OUTGOING_HEADERS`.  
+It shall contain a map from header names to lists of values, i.e. `Map<String, List<String>>`.
