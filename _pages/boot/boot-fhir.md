@@ -100,7 +100,7 @@ Camel provides a Spring boot starter module for this:
 
 ```xml
         <dependency>
-            <groupId>org.apache.camel</groupId>
+            <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-servlet-starter</artifactId>
         </dependency>
 ```
