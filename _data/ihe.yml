@@ -531,9 +531,9 @@ iti92:
   module: ipf-platform-camel-ihe-xds
   section:  (pending)
   section-link: (pending)
-rad69xdsi:
+rad69:
   transaction: RAD-69
-  link: rad69xdsi
+  link: rad69
   profile: XDS-I
   description: Retrieve Imaging Document Set
   component: xdsi-rad69
@@ -541,19 +541,6 @@ rad69xdsi:
   format: ebXML
   client-actor: Imaging Document Consumer
   server-actor: Imaging Document Source
-  module: ipf-platform-camel-ihe-xds
-  section:   IHE Radiology (RAD) Technical Framework, Vol. 3, Section 4.69
-  section-link: https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol3.pdf
-rad69xcai:
-  transaction: RAD-69
-  link: rad69xcai
-  profile: XCA-I
-  description: Retrieve Imaging Document Set
-  component: xcai-rad69
-  transport: SOAP/HTTP(S)
-  format: ebXML
-  client-actor: Initiating Imaging Gateway
-  server-actor: Initiating Imaging Responder
   module: ipf-platform-camel-ihe-xds
   section:   IHE Radiology (RAD) Technical Framework, Vol. 3, Section 4.69
   section-link: https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol3.pdf
