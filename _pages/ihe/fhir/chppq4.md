@@ -80,7 +80,7 @@ This is an example on how to use the component on the consumer side:
 
 ## Translation between CH:PPQm and CH:PPQ messages
 
-IPF comes with [translators] to translate ITI-78 requests into ITI-21 requests and vice versa for the responses.
+IPF comes with [translators] to translate PPQ-4 requests into PPQ-1 requests and vice versa for the responses.
 
 ## Basic Common Component Features
 
