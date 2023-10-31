@@ -60,6 +60,9 @@ The endpoint URI format of `{{ tx.component }}` component consumers is:
 {{ tx.component }}:serviceName[?parameters]
 ```
 
+Starting from IPF 4.8, the parameter `homeCommunityId` is required on consumer side,
+e.g. `&homeCommunityId=urn:oid:1.2.3.4.5`.
+
 The resulting URL of the exposed IHE Web Service endpoint depends on both the configuration of the [deployment container]
 and the serviceName parameter provided in the Camel endpoint URI.
 
