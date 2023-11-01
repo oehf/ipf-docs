@@ -60,8 +60,11 @@ The endpoint URI format of `{{ tx.component }}` component consumers is:
 {{ tx.component }}:serviceName[?parameters]
 ```
 
-Starting from IPF 4.8, the parameter `homeCommunityId` is required on consumer side,
-e.g. `&homeCommunityId=urn:oid:1.2.3.4.5`.
+For automatic creation of error messages in case of exceptions occurred in the Camel route, the home community ID 
+must be known.  It can be specified statically using the URL parameter `homeCommunityId` 
+(e.g. `&homeCommunityId=urn:oid:1.2.3.4.5`), or dynamically — either in the Camel message header named
+[`HomeCommunityUtils.HOME_COMMUNITY_ID_NAME`](../../apidocs/org/openehealth/ipf/platform/camel/ihe/core/HomeCommunityUtils.html#HOME_COMMUNITY_ID_NAME), 
+or in the Camel exchange property with the same name.
 
 The resulting URL of the exposed IHE Web Service endpoint depends on both the configuration of the [deployment container]
 and the serviceName parameter provided in the Camel endpoint URI.
