@@ -622,7 +622,7 @@ chpidd:
   module: ipf-platform-camel-ihe-hpd
   section:   Swiss national extensions to the IHE Technical Framework
   section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
-iti-79:
+iti79:
   transaction: ITI-79
   link: iti79
   profile: SeR
