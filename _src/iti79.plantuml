@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Authorization Decision Verifier" as V
+participant "Authorization Decision Manager" as M
+
+V -> M: Authorization Decisions Query
+activate M
+M --> V: Authorization Decisions Query Response
+deactivate M
+
+@enduml

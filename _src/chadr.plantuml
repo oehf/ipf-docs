@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Authorization Decision Consumer" as C
+participant "Authorization Decision Producer" as P
+
+C -> P: Authorization Decision Request
+activate P
+P --> C: Authorization Decision Response
+deactivate P
+
+@enduml

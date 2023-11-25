@@ -621,7 +621,33 @@ chpidd:
   server-actor: Provider Information Directory
   module: ipf-platform-camel-ihe-hpd
   section:   Swiss national extensions to the IHE Technical Framework
-  section-link: https://www.e-health-suisse.ch/technik-semantik/epd-projectathon/programmierhilfen-epd/relevante-spezifikationen.html
+  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
+iti-79:
+  transaction: ITI-79
+  link: iti79
+  profile: SeR
+  description: Authorization Decisions Query
+  component: ser-iti79
+  transport: SOAP/HTTP(S)
+  format: XACML 2.0
+  client-actor: Authorization Decisions Verifier
+  server-actor: Authorization Decisions Manager
+  module: ipf-platform-camel-ihe-xacml20
+  section: IHE ITI TF Supplement for Trial Implementation "Secure Retrieve (SeR)"
+  section-link: https://profiles.ihe.net/ITI/SeR/index.html
+chadr:
+  transaction: CH-ADR
+  link: chadr
+  profile: CH:ADT
+  description: Authorization Decision Request
+  component: ch-adr
+  transport: SOAP/HTTP(S)
+  format: XACML 2.0
+  client-actor: Authorization Decision Consumer
+  server-actor: Authorization Decision Producer
+  module: ipf-platform-camel-ihe-xacml20
+  section: Swiss national extensions to the IHE Technical Framework
+  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
 chppq1:
   transaction: CH-PPQ-1
   link: chppq1
@@ -634,7 +660,7 @@ chppq1:
   server-actor: Policy Repository
   module: ipf-platform-camel-ihe-xacml20
   section:   Swiss national extensions to the IHE Technical Framework
-  section-link: https://www.e-health-suisse.ch/technik-semantik/epd-projectathon/programmierhilfen-epd/relevante-spezifikationen.html
+  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
 chppq2:
   transaction: CH-PPQ-2
   link: chppq2
@@ -647,7 +673,7 @@ chppq2:
   server-actor: Policy Repository
   module: ipf-platform-camel-ihe-xacml20
   section:   Swiss national extensions to the IHE Technical Framework
-  section-link: https://www.e-health-suisse.ch/technik-semantik/epd-projectathon/programmierhilfen-epd/relevante-spezifikationen.html
+  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
 chppq3:
   transaction: CH-PPQ-3
   link: chppq3
@@ -738,7 +764,7 @@ chciq:
   server-actor: Community Information Provider
   module: ipf-platform-camel-ihe-hpd
   section: Swiss national integration profiles
-  section-link: https://www.e-health-suisse.ch/technik-semantik/epd-projectathon/programmierhilfen-epd/relevante-spezifikationen.html
+  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
 chcidd:
   transaction: CH-CIDD
   link: chcidd
@@ -751,4 +777,4 @@ chcidd:
   server-actor: Community Information Provider
   module: ipf-platform-camel-ihe-hpd
   section: Swiss national integration profiles
-  section-link: https://www.e-health-suisse.ch/technik-semantik/epd-projectathon/programmierhilfen-epd/relevante-spezifikationen.html
+  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
