@@ -24,7 +24,7 @@ The transaction defines the following actors:
 {% include figure image_path="/assets/images/iti44xds.svg" alt="ITI-44 actors" caption="ITI-44 transaction and actors " %}
 
 Producer side corresponds to the *{{ tx.client-actor }}* actor.
-Consumer side corresponds to both *{{ tx.server-actor }}* actor.
+Consumer side corresponds to the *{{ tx.server-actor }}* actor.
 
 ### Dependencies
 

@@ -19,7 +19,7 @@ The transaction defines the following actors:
 {% include figure image_path="/assets/images/iti78.svg" alt="ITI-78 actors" caption="ITI-78 transaction and actors " %}
 
 Producer side corresponds to the *{{ tx.client-actor }}* actor.
-Consumer side corresponds to both *{{ tx.server-actor }}* actor.
+Consumer side corresponds to the *{{ tx.server-actor }}* actor.
 
 ## Dependencies
 
