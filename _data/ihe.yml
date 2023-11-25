@@ -638,7 +638,7 @@ chpidd:
 chadr:
   transaction: CH-ADR
   link: chadr
-  profile: CH:ADT
+  profile: CH:ADR
   description: Authorization Decision Request
   component: ch-adr
   transport: SOAP/HTTP(S)
