@@ -466,6 +466,19 @@ iti78:
   module: ipf-platform-camel-ihe-fhir-r4-pixpdq
   section:  IHE IT Infrastructure Technical Framework Supplement, Patient Demographics Query for Mobile (PDQm), Section 3.78.
   section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf
+iti79:
+  transaction: ITI-79
+  link: iti79
+  profile: SeR
+  description: Authorization Decisions Query
+  component: ser-iti79
+  transport: SOAP/HTTP(S)
+  format: XACML 2.0
+  client-actor: Authorization Decisions Verifier
+  server-actor: Authorization Decisions Manager
+  module: ipf-platform-camel-ihe-xacml20
+  section: IHE ITI TF Supplement for Trial Implementation "Secure Retrieve (SeR)"
+  section-link: https://profiles.ihe.net/ITI/SeR/index.html
 iti80:
   transaction: ITI-80
   link: iti80
@@ -622,19 +635,6 @@ chpidd:
   module: ipf-platform-camel-ihe-hpd
   section:   Swiss national extensions to the IHE Technical Framework
   section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
-iti79:
-  transaction: ITI-79
-  link: iti79
-  profile: SeR
-  description: Authorization Decisions Query
-  component: ser-iti79
-  transport: SOAP/HTTP(S)
-  format: XACML 2.0
-  client-actor: Authorization Decisions Verifier
-  server-actor: Authorization Decisions Manager
-  module: ipf-platform-camel-ihe-xacml20
-  section: IHE ITI TF Supplement for Trial Implementation "Secure Retrieve (SeR)"
-  section-link: https://profiles.ihe.net/ITI/SeR/index.html
 chadr:
   transaction: CH-ADR
   link: chadr
