@@ -21,9 +21,9 @@ Normative reference: [RFC 2891 "LDAP Control Extension for Server Side Sorting o
 
 The only thing a client application must do to request server-side sorting of search result entries, 
 is to put an instance of 
-[`SortControl2`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/sorting/SortControl2),
+[`SortControl2`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/sorting/SortControl2.html),
 rendered as DSMLv2, into the list field `control`of 
-[`SearchRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/dsmlv2/SearchRequest), e.g.:
+[`SearchRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/dsmlv2/SearchRequest.html), e.g.:
 
 ```groovy
 BatchRequest batchRequest = new BatchRequest(
@@ -51,7 +51,7 @@ from('hpd-iti58:hpd-service?...&supportSorting=true&...')
 ```
 
 The current implementation supports only one sorting key in request controls
-([`SortControl2`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/sorting/SortControl2)).
+([`SortControl2`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/sorting/SortControl2.html)).
 
 Moreover, the sorting rule specified by the client must be supported by the IPF application.
 The following sorting rules are supported out-of-the box:
@@ -65,7 +65,7 @@ The following sorting rules are supported out-of-the box:
 
 Application developers may extend this list by adding instances of `java.util.Comparator<String>` 
 into the static map `COMPARATORS` of
-[`SearchResponseSorter`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/sorting/SearchResponseSorter),
+[`SearchResponseSorter`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/sorting/SearchResponseSorter.html),
 with sorting rule names as keys.
 
 It is not required that all Search Requests of a Batch Request contain the same Sort Control or contain one at all.  
@@ -93,7 +93,7 @@ On the producer side, the server endpoint URI parameter `supportPagination` shal
 
 Furthermore, an instance of `javax.naming.ldap.PagedResultsControl` rendered as DSMLv2, shall be inserted 
 into the list field `control`of
-[`SearchRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/dsmlv2/SearchRequest), e.g.:
+[`SearchRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/dsmlv2/SearchRequest.html), e.g.:
 
 ```groovy
 BatchRequest batchRequest = new BatchRequest(
@@ -121,16 +121,16 @@ caption="Producer-side support for paging of HPD search result entries" %}
 
 To enable automatic paging of search result entries, the URI of the consumer endpoint shall contain two parameters —
 `supportPagination` set to `true`, and `paginationStorage` set to the name of a bean implementing the interface
-[`PaginationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/pagination/PaginationStorage).
+[`PaginationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/pagination/PaginationStorage.html).
 For example:
 
 ```groovy
 from('hpd-iti58:hpd-service?...&supportPagination=true&paginationStorage=#myStorage&...')
 ```
 IPF provides an implementation of
-[`PaginationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/pagination/PaginationStorage) —
+[`PaginationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/pagination/PaginationStorage.html) —
 the class
-[`EhcachePaginationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/pagination/EhcachePaginationStorage),
+[`EhcachePaginationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/pagination/EhcachePaginationStorage.html),
 which is backed up by Ehcache or any other javax.cache API (JSR-107) implementation and optionally 
 supports JAXB serialization of DSMLv2 Search Result Entries which is required for persistent caches.
 
