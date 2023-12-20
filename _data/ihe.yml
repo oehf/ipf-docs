@@ -544,6 +544,19 @@ iti92:
   module: ipf-platform-camel-ihe-xds
   section:  (pending)
   section-link: (pending)
+iti105:
+  transaction: ITI-105
+  link: iti105
+  profile: MHD
+  description: Simplified Publish
+  component: mhd-iti105
+  transport: REST/HTTP(S)
+  format: FHIR
+  client-actor: Document Source
+  server-actor: Document Recipient
+  module: ipf-platform-camel-ihe-fhir-r4-mhd
+  section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.105.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf
 rad69:
   transaction: RAD-69
   link: rad69
