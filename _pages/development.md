@@ -20,19 +20,14 @@ Additionally, there are the following support projects:
 * `ipf-docs`, which is the source of this documentation. It is located at [https://github.com/oehf/ipf-docs](https://github.com/oehf/ipf-docs).
 * `ipf-gazelle`, which provides conformance profiles for HL7v2 based IHE transactions.
 It may be released independently and is located at [https://github.com/oehf/ipf-gazelle](https://github.com/oehf/ipf-gazelle).
-* `ipf-oht-atna`, which provides infrastructure for IHE audit trails and node authentication via TLS.
-It may be released independently and is located at [https://github.com/oehf/ipf-oht-atna](https://github.com/oehf/ipf-oht-atna).
-
-**Watch out!** `ipf-oht-atna` libraries have been deprecated, and IPF has removed all dependencies targeting at `ipf-oht-atna`.
-{: .notice--warning}
-
 
 ## Building
 
+IPF 5.x will require Java 17 for both compile time and runtime.
 IPF 4.x builds with Java 11 for both compile time and runtime.
 IPF 3.x requires Java 8 for both compile time and runtime.
 
-IPF builds using Maven 3.6. IPF and its dependencies are available at [Maven Central], 
+IPF builds using Maven 3.x. IPF and its dependencies are available at [Maven Central], 
 except for the MDHT dependencies that are provided at [https://projects.suisse-open-exchange.healthcare/artifactory/releases](https://projects.suisse-open-exchange.healthcare/artifactory/releases).
 
 Before building, adjust the `MAVEN_OPTS` environment variable to assign Maven more heap space.
@@ -59,7 +54,7 @@ must be copied from `target/site/apidocs` into the `_pages/apidocs` directory.
 
 Javadocs artifacts are uploaded to Maven Central, which makes them also available online under
 https://www.javadoc.io. The javadocs are located under `https://www.javadoc.io/<maven-group-id>/<maven-artifact-id>/<version>`, e.g.
-[https://javadoc.io/doc/org.openehealth.ipf.commons/ipf-commons-audit/4.0.0/index.html](https://javadoc.io/doc/org.openehealth.ipf.commons/ipf-commons-audit/4.0.0).
+[https://javadoc.io/doc/org.openehealth.ipf.commons/ipf-commons-audit/4.8.0/index.html](https://javadoc.io/doc/org.openehealth.ipf.commons/ipf-commons-audit/4.0.0).
 
 
 ### How to build and test the documentation locally

@@ -144,13 +144,13 @@ For production usage, it is usually required to configure:
 
 The transmission protocol determines the network protocol used for sending an audit record to the Audit Record Repository.
 
-| `auditRepositoryTransport`  | `auditTransmissionProtocol` class          | Description                                                  |
-| --------------------------- | :----------------------------------------- | ------------------------------------------------------------ |
-| `UDP`                       | [UDPSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/UDPSyslogSenderImpl.html)           | UDP transport as SYSLOG record without delivery guarantee. Failed delivery is ignored.
-| `TLS`                       | [TLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/TLSSyslogSenderImpl.html)           | Blocking TLS transport as SYSLOG record
-| `NIO-TLS` or `NETTY-TLS`    | [NettyTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/NettyTLSSyslogSenderImpl.html) | Non-blocking TLS transport as SYSLOG record. Requires Netty library on the classpath
-| `REACTOR-NETTY-TLS`         | [ReactorNettyTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/ReactorNettyTLSSyslogSenderImpl.html) | Reactive TLS transport as SYSLOG record. Requires Reactor-Netty library on the classpath
-| `VERTX-TLS` (deprecated)    | [VertxTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/VertxTLSSyslogSenderImpl.html) | Non-blocking TLS transport as SYSLOG record. Requires Vertx library on the classpath
+| `auditRepositoryTransport`        | `auditTransmissionProtocol` class                                                                                                         | Description                                                  |
+|-----------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------------ |
+| `UDP`                             | [UDPSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/UDPSyslogSenderImpl.html)                                        | UDP transport as SYSLOG record without delivery guarantee. Failed delivery is ignored.
+| `TLS`                             | [TLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/TLSSyslogSenderImpl.html)                                        | Blocking TLS transport as SYSLOG record
+| `NIO-TLS` or `NETTY-TLS`          | [NettyTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/NettyTLSSyslogSenderImpl.html)                              | Non-blocking TLS transport as SYSLOG record. Requires Netty library on the classpath
+| `REACTOR-NETTY-TLS`               | [ReactorNettyTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/ReactorNettyTLSSyslogSenderImpl.html)                | Reactive TLS transport as SYSLOG record. Requires Reactor-Netty library on the classpath
+| `FHIR_REST-TLS`  | [ApacheFhirRestTLSAuditRecordSender](apidocs/org/openehealth/ipf/commons/ihe/fhir/audit/protocol/ApacheFhirRestTLSAuditRecordSender.html) | *as of IPF 4.8.0*: Blocking HTTPS transport as FHIR R4 AuditEvent resource
 
 
 ### Audit Message Queues

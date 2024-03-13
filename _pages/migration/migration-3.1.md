@@ -38,9 +38,8 @@ See [Mapping Service] for details.
 
 ## MLLP custom interceptors
 
-The MLLP-based IHE endpoints offer the possibility to add custom interceptors. The *interceptors* parameter
-has been removed due to its dependency on the Spring framework. as of IPF 3.1, use the *interceptorFactories*
-parameter instead. See [Custom Interceptors] for details.
+The MLLP-based IHE endpoints offer the possibility to add custom interceptors, using the *interceptorFactories*
+parameter. See [Custom Interceptors] for details.
 
 ## Logging Interceptors
 

@@ -6,8 +6,7 @@ toc: true
 toc_icon: align-left
 ---
 
-In previous IPF versions, Camel DSL elements have been extended to accept Groovy closures as arguments.
-As of IPF 3, these extensions are provided directly by the [camel-groovy] DSL of Apache Camel.
+The [camel-groovy] module of Apache Camel extended to accept Groovy closures as arguments to the Camel DSL.
 
 To include [camel-groovy], add the following dependency to the `pom.xml` file:
 

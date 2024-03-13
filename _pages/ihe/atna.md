@@ -11,10 +11,10 @@ ATNA auditing functionality is fully integrated into the corresponding IPF IHE c
 that bundles all relevant details around ATNA auditing (e.g. whether auditing is enabled, where the Audit Repository 
 is located, which wire protocol is to be used, etc.) 
 
-| Parameter name | Values                     | Behavior                                      |  Default | Example |
-|:---------------|:---------------------------|:----------------------------------------------|:---------|:---------- |
-| `auditContext` | `AuditContext` reference   | uses the referenced AuditContext for auditing | n/a      |`?auditContext=#myAuditContext` |
-| `audit`        | `true` or `false`          | if true, uses a unique AuditContext bean for auditing    | `true`   | `?audit=false` |
+| Parameter name | Values                     | Behavior                                      |  Default | Example                         |
+|:---------------|:---------------------------|:----------------------------------------------|:---------|:--------------------------------|
+| `auditContext` | `AuditContext` reference   | uses the referenced AuditContext for auditing | n/a      | `?auditContext=#myAuditContext` |
+| `audit`        | `true` or `false`          | if true, uses a unique AuditContext bean for auditing    | `true`   | `?audit=false`                  |
 
 You can have as many `AuditContext` beans as you wish (for auditing being turned on/off, using different queue implementations, etc.).
 In this case, you _must_ use the `auditContext` parameter. 
@@ -24,7 +24,7 @@ obtained from the context.
 
 ## Auditor Configuration
 
-As of IPF 3.5, all details regarding ATNA auditing is configured with the `AuditContext`. This is how it
+All details regarding ATNA auditing is configured with the `AuditContext`. This is how it
 looks like in a Spring XML file:
 
 
@@ -214,5 +214,14 @@ Note that when the XUA user name cannot be determined, IPF does neither throw an
 In other words, the support for XUA is restricted to filling in the corresponding field in ATNA audit records.
 {: .notice--warning}
 
+## FHIR Basic Audit Log Patterns [BALP] support
+
+As of IPF 4.8.0, support for IHE [BALP] has been added:
+
+* `DefaultBalpAuditContext` was added as subclass of `DefaultAuditContext`. This context class carries some more audit-related configuration properties that are necessary for REST-based FHIR auditing
+* `BalpJsonSerializationStrategy` and `BalpXmlSerializationStrategy` have been added as implementation of `SerializationStrategy`. This converts the DICOM-based audit data model into its serialized FHIR `AuditEvent` equivalent.
+* `ApacheFhirRestTLSAuditRecordSender` and `MethanolFhirRestTLSAuditRecordSender` have been added as implementation of `AuditTransmissionProtocol`. This uses the configured Restful sender in HAPI FHIR context for sending the serialized `AuditEvent` to a FHIR repository.
+
 [ipf-atna-spring-boot-starter]: {{ site.baseurl }}{% link _pages/boot/boot-atna.md %}
 [JSSE system properties]:   https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html#InstallationAndCustomization
+[BALP]:   https://profiles.ihe.net/ITI/BALP/

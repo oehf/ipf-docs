@@ -64,7 +64,7 @@ So, e.g. in order to provide STU3 MHD endpoints, you have to include
 ```xml
         <dependency>
             <groupId>org.openehealth.ipf.platform-camel</groupId>
-            <artifactId>ipf-platform-camel-ihe-fhir-stu3-mhd</artifactId>
+            <artifactId>ipf-platform-camel-ihe-fhir-r4-mhd</artifactId>
         </dependency>
 ```
 
@@ -73,25 +73,30 @@ into your project descriptor.
 
 `ipf-fhir-spring-boot-starter` modules provides the following application properties:
 
-| Property (`ipf.fhir.`)                | Default         | Description                                        |
-|---------------------------------------|-----------------|----------------------------------------------------|
-| `caching`                             | false           | Whether to set up a cache for paging |
-| `path`                                | /fhir           | Path that serves as the base URI for the FHIR services |
-| `fhir-version`                        | (depends on module) | FHIR Version | 
-| `identifier-naming-systems`           |                 | Resource containing a bundle of FHIR NamingSystem resources used for mapping from FHIR URIs to OIDs and namespaces |
-| `servlet.init`                        |                 | init parameters for the FHIR servlet |
-| `servlet.load-on-startup`             | 1               | Load on startup priority of the FHIR servlet |
-| `servlet.name`                        | FhirServlet     | Name of the FHIR servlet |
-| `servlet.paging-requests`             | 50              | Number of concurrent paging requests that can be handled |
-| `servlet.default-page-size`           | 50              | Default number of result entries to be returned if no _count parameter is specified in a search |
-| `servlet.max-page-size`               | 100             | Maximum number of result entries to be returned even if the _count parameter of a search demands for more |
-| `servlet.distributed-paging-provider` | false  | Whether the Paging Provider cache is expected to be distributed, so that serialization of result bundles is necessary. In this case, FHIR endpoints must not use lazy-loading of results. |
-| `servlet.logging`                     | false           | Whether server-side request logging is enabled |
-| `servlet.pretty-print`                | true            | Whether pretty-printing responses is enabled |
-| `servlet.response-highlighting`       | true            | Whether color-coding responses queried from a Web Browser is enabled |
-| `servlet.strict`                      | false           | Whether FHIR resource parsing is strict |
-
-
+| Property (`ipf.fhir.`)                | Default             | Description                                                                                                                                                                               |
+|---------------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `caching`                             | false               | Whether to set up a cache for paging                                                                                                                                                      |
+| `path`                                | /fhir               | Path that serves as the base URI for the FHIR services                                                                                                                                    |
+| `fhir-version`                        | (depends on module) | FHIR Version                                                                                                                                                                              | 
+| `identifier-naming-systems`           |                     | Resource containing a bundle of FHIR NamingSystem resources used for mapping from FHIR URIs to OIDs and namespaces                                                                        |
+| `servlet.init`                        |                     | init parameters for the FHIR servlet                                                                                                                                                      |
+| `servlet.load-on-startup`             | 1                   | Load on startup priority of the FHIR servlet                                                                                                                                              |
+| `servlet.name`                        | FhirServlet         | Name of the FHIR servlet                                                                                                                                                                  |
+| `servlet.paging-requests`             | 50                  | Number of concurrent paging requests that can be handled                                                                                                                                  |
+| `servlet.default-page-size`           | 50                  | Default number of result entries to be returned if no _count parameter is specified in a search                                                                                           |
+| `servlet.max-page-size`               | 100                 | Maximum number of result entries to be returned even if the _count parameter of a search demands for more                                                                                 |
+| `servlet.distributed-paging-provider` | false               | Whether the Paging Provider cache is expected to be distributed, so that serialization of result bundles is necessary. In this case, FHIR endpoints must not use lazy-loading of results. |
+| `servlet.logging`                     | false               | Whether server-side request logging is enabled                                                                                                                                            |
+| `servlet.pretty-print`                | true                | Whether pretty-printing responses is enabled                                                                                                                                              |
+| `servlet.response-highlighting`       | true                | Whether color-coding responses queried from a Web Browser is enabled                                                                                                                      |
+| `servlet.strict`                      | false               | Whether FHIR resource parsing is strict                                                                                                                                                   |
+| `cors.allowed-origins`                |                     | A list of origins for which cross-origin requests are allowed. Values may be a specific domain, e.g. "https://domain1.com", or the CORS defined special value "*" for all origins.        | 
+| `cors.allowed-origin-patterns`        |                     | Alternative to setAllowedOrigins that supports more flexible origins patterns with "*" anywhere in the host name in addition to port lists                                                | 
+| `cors.allowed-methods`                |                     | The HTTP methods to allow, e.g. "GET", "POST", "PUT", etc. The special value "*" allows all methods.                                                                                      | 
+| `cors.allowed-headers`                |                     | The list of headers that a pre-flight request can list as allowed for use during an actual request. The special value "*" allows actual requests to send any header.                      | 
+| `cors.exposed-headers`                |                     | The list of response headers that an actual response might have and can be exposed to the client. The special value "*" allows all headers to be exposed.                                 | 
+| `cors.allow-credentials`              |                     | Whether user credentials are supported. Setting this property has an impact on how origins, originPatterns, allowedMethods and allowedHeaders are processed,                              | 
+| `cors.max-age`                        |                     | How long, as a duration, the response from a pre-flight request can be cached by clients.                                                                                                 | 
 See [ipf-spring-boot-starter] and [ipf-atna-spring-boot-starter] for additional properties.
 
 

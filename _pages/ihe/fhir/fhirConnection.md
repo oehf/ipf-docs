@@ -12,8 +12,11 @@ the HTTP client is configured. In this case, the other parameters have no effect
 
 ## Parameters
 
-| Parameter name       | Type       | Default value | Short description                                                                    |
-|:---------------------|:-----------|:--------------|:-------------------------------------------------------------------------------------|
-| `connectionTimeout`  | Integer    | 10000         | initial connection timeout in milliseconds
-| `timeout`            | Integer    | 10000         | socket timeout for read/write operations in milliseconds
-| `httpClientBuilder`  | String     | n/a           | reference to a HttpClientBuilder instance in the Camel registry
+| Parameter name             | Type        | Default value | Short description                                                              |
+|:---------------------------|:------------|:--------------|:-------------------------------------------------------------------------------|
+| `connectionTimeout`        | Integer     | 10000         | initial connection timeout in milliseconds                                     |
+| `connectionRequestTimeout` | Integer     | 10000         | initial connection timeout in milliseconds                                     |
+| `timeout`                  | Integer     | 10000         | socket timeout for read/write operations in milliseconds                       |   
+| `poolMax`                  | Integer     | 20            | initial connection timeout in milliseconds                                     |
+| `disableServerValidation`  | boolean     | false         | whether the FHIR client shall not obtain a CapabilityStatement from the server |
+| `httpClientBuilder`        | String      | n/a           | reference to a HttpClientBuilder instance in the Camel registry                |

@@ -13,13 +13,15 @@ endpoint URI.
 
 ## Parameters
 
-| Parameter name         | Type                 | Default value | Short description                                                                    |
-|:-----------------------|:---------------------|:--------------|:-------------------------------------------------------------------------------------|
-| `fhirContext`          | FhirContext          | STU3 or R4    | Reference to a global HAPI FHIR Context. Otherwise a default FHIR contxt is used.
-| `resourceProvider`     | FhirProvider         | n/a           | Reference to a custom resource provider, configurable per endpoint.
-| `clientRequestFactory` | ClientRequestFactory | n/a           | reference to a custom ClientRequestFactory
-| `consumerSelector`     | Predicate            | () -> true    | reference to a Predicate that selects a FhirConsumer
-| `consumerSelector`     | Boolean              | false         | whether the endpoint shall try to sort a search result if requested by the client
+| Parameter name                   | Type                         | Default value | Short description                                                                 |
+|:---------------------------------|:-----------------------------|:--------------|:----------------------------------------------------------------------------------|
+| `fhirContext`                    | FhirContext                  | STU3 or R4    | Reference to a global HAPI FHIR Context. Otherwise a default FHIR contxt is used. |
+| `resourceProvider`               | FhirProvider                 | n/a           | Reference to a custom resource provider, configurable per endpoint.               |
+| `clientRequestFactory`           | ClientRequestFactory         | n/a           | reference to a custom ClientRequestFactory                                        |
+| `hapiClientInterceptorFactories` | HapiClientInterceptorFactory | n/a           | reference to custom client interceptor factories                                  |
+| `hapiServerInterceptorFactories` | HapiServerInterceptorFactory | n/a           | reference to custom server interceptor factories                                  |
+| `consumerSelector`               | Predicate                    | () -> true    | reference to a Predicate that selects a FhirConsumer                              |
+| `sort`                           | Boolean                      | false         | whether the endpoint shall try to sort a search result if requested by the client |
 
 ### fhirContext
 
@@ -49,8 +51,7 @@ you can choose what type shall be handled by this endpoint.
 
 Example:
 
-MHD ITI-65 is a transaction request containing DocumentManifest, DocumentReference and Binary
-resources. The request is defined with a `Bundle.meta.profile` value set to `http://ihe.net/fhir/tag/iti-65`,
+MHD ITI-65 is a transaction request containing DocumentManifest (MHD 3.2), List, DocumentReference and Binary resources. The request is defined with a dedicated `Bundle.meta.profile` value (depending on the MHD version),
 so the transaction definition of ITI-65 statically configures
 `org.openehealth.ipf.commons.ihe.fhir.support.BundleProfileSelector` so that ITI-65 consumer endpoints
 receive these requests:
@@ -66,7 +67,13 @@ receive these requests:
                 BatchTransactionResourceProvider.getInstance(),      // Consumer side. accept registrations
                 BatchTransactionClientRequestFactory.getInstance(),  // Formulate requests
                 new Iti65Validator());
-        setStaticConsumerSelector(new BundleProfileSelector(Iti65Constants.ITI65_PROFILE));
+    setStaticConsumerSelector(new BundleProfileSelector(
+            ITI65_LEGACY_METADATA_PROFILE,
+            ITI65_COMPREHENSIVE_METADATA_PROFILE,
+            ITI65_MINIMAL_METADATA_PROFILE,
+            ITI65_COMPREHENSIVE_BUNDLE_PROFILE,
+            ITI65_MINIMAL_BUNDLE_PROFILE,
+            ITI65_UNCONTAINED_COMPREHENSIVE_BUNDLE_PROFILE));
 ```
 
 If you need to alter this behavior (using a different or no profile for your ITI-65 endpoint), you
