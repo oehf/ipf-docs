@@ -95,3 +95,4 @@ The javadocs can be obtained [here](apidocs/index.html).
 [4.0 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-4.0.md %}
 [4.4 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-4.4.md %}
 [4.8 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-4.8.md %}
+[5.0 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-5.0.md %}
