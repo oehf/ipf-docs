@@ -131,7 +131,9 @@ the transmission protocol. It also allows to setup strategies for serialization,
 | `auditMetadataProvider` (3.7) | Instance of DefaultAuditMetadataProvider   | Provider for header data used for SYSLOG-based transmission  |
 | `auditMessagePostProcessor`   | no-op                                      | Audit Message Postprocessing, called before audit message is dispatched |
 | `auditExceptionHandler`       | Instance of `LoggingAuditExceptionHandler` | Handler to be called if the delivery of audit message to the audit repository has failed |
-| `auditValueIfMissing`         | `MISSING`                                  | Value used if a mandatory audit attribute is not present
+| `auditValueIfMissing`         | `UNKNOWN`                                  | Value used if a mandatory audit attribute is not present                                 |
+| `wsAuditDatasetEnricher`      | no-op                                      | Audit dataset enricher for Web Service based transactions (IPF 5.0+)                     |                                       
+| `fhirAuditDatasetEnricher`    | no-op                                      | Audit dataset enricher for FHIR based transactions (IPF 5.0+)                                      |                                       
 
 The default setup is to send Audit Messages via UDP to `localhost:514`, and handle delivery errors by just logging them.
 For production usage, it is usually required to configure:
@@ -146,11 +148,11 @@ The transmission protocol determines the network protocol used for sending an au
 
 | `auditRepositoryTransport`        | `auditTransmissionProtocol` class                                                                                                         | Description                                                  |
 |-----------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------------ |
-| `UDP`                             | [UDPSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/UDPSyslogSenderImpl.html)                                        | UDP transport as SYSLOG record without delivery guarantee. Failed delivery is ignored.
-| `TLS`                             | [TLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/TLSSyslogSenderImpl.html)                                        | Blocking TLS transport as SYSLOG record
-| `NIO-TLS` or `NETTY-TLS`          | [NettyTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/NettyTLSSyslogSenderImpl.html)                              | Non-blocking TLS transport as SYSLOG record. Requires Netty library on the classpath
-| `REACTOR-NETTY-TLS`               | [ReactorNettyTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/ReactorNettyTLSSyslogSenderImpl.html)                | Reactive TLS transport as SYSLOG record. Requires Reactor-Netty library on the classpath
-| `FHIR_REST-TLS`  | [ApacheFhirRestTLSAuditRecordSender](apidocs/org/openehealth/ipf/commons/ihe/fhir/audit/protocol/ApacheFhirRestTLSAuditRecordSender.html) | *as of IPF 4.8.0*: Blocking HTTPS transport as FHIR R4 AuditEvent resource
+| `UDP`                             | [UDPSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/UDPSyslogSenderImpl.html)                                        | UDP transport as SYSLOG record without delivery guarantee. Failed delivery is ignored. |
+| `TLS`                             | [TLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/TLSSyslogSenderImpl.html)                                        | Blocking TLS transport as SYSLOG record |
+| `NIO-TLS` or `NETTY-TLS`          | [NettyTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/NettyTLSSyslogSenderImpl.html)                              | Non-blocking TLS transport as SYSLOG record. Requires Netty library on the classpath |
+| `REACTOR-NETTY-TLS`               | [ReactorNettyTLSSyslogSenderImpl](apidocs/org/openehealth/ipf/commons/audit/protocol/ReactorNettyTLSSyslogSenderImpl.html)                | Reactive TLS transport as SYSLOG record. Requires Reactor-Netty library on the classpath |
+| `FHIR_REST-TLS`  | [ApacheFhirRestTLSAuditRecordSender](apidocs/org/openehealth/ipf/commons/ihe/fhir/audit/protocol/ApacheFhirRestTLSAuditRecordSender.html) | *as of IPF 4.8.0*: Blocking HTTPS transport as FHIR R4 AuditEvent resource |
 
 
 ### Audit Message Queues
@@ -160,13 +162,31 @@ Audit Transmission Protocol.
 
 | `auditMessageQueue` class          |  Description                                                  |
 | ---------------------------        |  ------------------------------------------------------------ |
-| [SynchronousAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/SynchronousAuditMessageQueue.html)     |  Synchronously pass the audit record to the `auditTransmissionProtocol` instance
-| [AsynchronousAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/AsynchronousAuditMessageQueue.html)   |  Asynchronously pass the audit record to the `auditTransmissionProtocol` instance. Must be initialized with an `ExecutorService`
-| [JMSAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/JMSAuditMessageQueue.html)                     |  Send the audit record to a JMS queue. SYSLOG header data is sent as JMS properties. Requires JMS API library.
-| [BasicHttpAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/BasicHttpAuditMessageQueue.html) (3.7)   |  Send the audit record to a HTTP service. SYSLOG header data is sent as HTTP properties.
-| [LoggingAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/LoggingAuditMessageQueue.html)             |  Just log the audit record to an SLF4J logger
-| [CamelAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/CamelAuditMessageQueue.html)                 |  Send the audit record via a Camel producer. SYSLOG header data is sent as Camel headers.
-| [CompositeAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/CompositeAuditMessageQueue.html)         |  Send the audit record sequentially using one of the implementations listed above
+| [SynchronousAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/SynchronousAuditMessageQueue.html)     |  Synchronously pass the audit record to the `auditTransmissionProtocol` instance |
+| [AsynchronousAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/AsynchronousAuditMessageQueue.html)   |  Asynchronously pass the audit record to the `auditTransmissionProtocol` instance. Must be initialized with an `ExecutorService` |
+| [JMSAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/JMSAuditMessageQueue.html)                     |  Send the audit record to a JMS queue. SYSLOG header data is sent as JMS properties. Requires JMS API library. |
+| [BasicHttpAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/BasicHttpAuditMessageQueue.html) (3.7)   |  Send the audit record to a HTTP service. SYSLOG header data is sent as HTTP properties. |
+| [LoggingAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/LoggingAuditMessageQueue.html)             |  Just log the audit record to an SLF4J logger |
+| [CamelAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/CamelAuditMessageQueue.html)                 |  Send the audit record via a Camel producer. SYSLOG header data is sent as Camel headers. |
+| [CompositeAuditMessageQueue](apidocs/org/openehealth/ipf/commons/audit/queue/CompositeAuditMessageQueue.html)         |  Send the audit record sequentially using one of the implementations listed above |
+
+
+### Audit Dataset Enrichers (5.0)
+
+The following enrichers are provided out of the box.
+
+Enrichers for Web Service based transactions (implementations of [WsAuditDatasetEnricher](apidocs/org/openehealth/ipf/commons/ihe/ws/cxf/audit/WsAuditDatasetEnricher.html)): 
+
+| Audit dataset enricher class                                                                                               | Description                                                                                         |
+|----------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| [XuaWsAuditDatasetEnricher](apidocs/org/openehealth/ipf/commons/ihe/ws/cxf/audit/XuaWsAuditDatasetEnricher.html)           | Fulfills requirements of the IHE [XUA](https://profiles.ihe.net/ITI/TF/Volume2/ITI-40.html) profile |
+| [SwissEprWsAuditDatasetEnricher](apidocs/org/openehealth/ipf/commons/ihe/ws/cxf/audit/SwissEprWsAuditDatasetEnricher.html) | Fulfills both IHE XUA requirements and the requirements of the [Swiss Electronic Patient Record](https://www.e-health-suisse.ch/en/technique/technical-interoperability/specifications-for-the-epr-implementation) |
+
+Enrichers for FHIR based transactions (implementations of [FhirAuditDatasetEnricher](apidocs/org/openehealth/ipf/commons/ihe/fhir/audit/FhirAuditDatasetEnricher.html)):
+
+| Audit dataset enricher class                                                                                               | Description                                                                                                                                                                          |
+|----------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [SwissEprFhirAuditDatasetEnricher](apidocs/org/openehealth/ipf/commons/ihe/fhir/audit/SwissEprWsAuditDatasetEnricher.html) | Fulfills the requirements of the [Swiss Electronic Patient Record](https://www.e-health-suisse.ch/en/technique/technical-interoperability/specifications-for-the-epr-implementation) |
 
 
 ### TLS Parameters (3.7)

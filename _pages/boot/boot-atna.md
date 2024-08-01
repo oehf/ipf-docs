@@ -51,9 +51,13 @@ as described [here]({{ site.baseurl }}{% link _pages/ihe/atna.md %}).
 | `audit-sender-class`           | as indicated by `audit-repository-transport` | ATNA sender implementation                                            |
 | `audit-exception-handler-class`| `org.openehealth.ipf.commons.audit.handler.LoggingAuditExceptionHandler`| Exception handler impleemntation                                      |
 | `audit-value-if-missing`       | `UNKNOWN`             | Value used for mandatory audit attributes that are not set            |
+| `audit-message-post-processor-class` | none | Class of the audit message post-processor | 
+| `ws-audit-dataset-enricher-class`    | none | Class of the audit dataset enricher for Web Service based transactions (IPF 5.0+) |  
+| `fhir-audit-dataset-enricher-class`  | none | Class of the audit dataset enricher for FHIR based transactions (IPF 5.0+) |
 
-As of IPF 3.7, you can also provide your own @Beans returning an instance of `AuditMessageQueue`, `AuditMessagePostProcessor`,
-`AuditTransmissionProtocol`, `AuditMetadataProvider`, `AuditExceptionHandler` and `TlsParameters`.
+Instead of specifying class names in configuration properties, you can provide Spring @Beans of the types `AuditMessageQueue`, 
+`AuditMessagePostProcessor`, `AuditTransmissionProtocol`, `AuditMetadataProvider`, `AuditExceptionHandler`, `WsAuditDatasetEnricher`, 
+and `FhirAuditDatasetEnricjer`.  Moreover, you can provide an own bean of the type `TlsParameters`.
 
 As of IPF 4.8.0, you can audit following the IHE Basic Audit Log Patterns (BALP). By setting `ipf.atna.balp` properties you can enable FHIR-based auditing.
 
