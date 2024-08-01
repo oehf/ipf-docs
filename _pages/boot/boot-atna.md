@@ -57,7 +57,7 @@ as described [here]({{ site.baseurl }}{% link _pages/ihe/atna.md %}).
 
 Instead of specifying class names in configuration properties, you can provide Spring @Beans of the types `AuditMessageQueue`, 
 `AuditMessagePostProcessor`, `AuditTransmissionProtocol`, `AuditMetadataProvider`, `AuditExceptionHandler`, `WsAuditDatasetEnricher`, 
-and `FhirAuditDatasetEnricjer`.  Moreover, you can provide an own bean of the type `TlsParameters`.
+and `FhirAuditDatasetEnricher`.  Moreover, you can provide an own bean of the type `TlsParameters`.
 
 As of IPF 4.8.0, you can audit following the IHE Basic Audit Log Patterns (BALP). By setting `ipf.atna.balp` properties you can enable FHIR-based auditing.
 
