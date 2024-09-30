@@ -4,14 +4,19 @@ hide footbox
 participant "Patient Identity\nSource" as PIS
 participant "Patient Identifier\nCross-Reference Manager" as MPI
 
-PIS -> MPI : Patient Registry Record Added PRPA_IN201301UV02 \nPatient Registry Record Updated PRPA_IN201302UV02
+PIS -> MPI : Patient Registry Record Added PRPA_IN201301UV02
 activate MPI
-MPI --> PIS : Send Application Acknowledgement MCCI_MT000300UV01
+MPI --> PIS : Send Application Acknowledgement MCCI_IN000002UV01
+deactivate MPI
+|||
+PIS -> MPI : Patient Registry Record Updated PRPA_IN201302UV02
+activate MPI
+MPI --> PIS : Send Application Acknowledgement MCCI_IN000002UV01
 deactivate MPI
 |||
 PIS -> MPI : Patient Registry Duplicates Resolved PRPA_IN201304UV02
 activate MPI
-MPI --> PIS : Send Application Acknowledgement MCCI_MT000300UV01
+MPI --> PIS : Send Application Acknowledgement MCCI_IN000002UV01
 deactivate MPI
 
 @enduml

@@ -4,14 +4,19 @@ hide footbox
 participant "Patient Identity\nSource" as PIS
 participant "Document\nRegistry" as REG
 
-PIS -> REG : Patient Registry Record Added PRPA_IN201301UV02 \nPatient Registry Record Updated PRPA_IN201302UV02
+PIS -> REG : Patient Registry Record Added PRPA_IN201301UV02
 activate REG
-REG --> PIS : Send Application Acknowledgement MCCI_MT000300UV01
+REG --> PIS : Send Application Acknowledgement MCCI_IN000002UV01
+deactivate REG
+|||
+PIS -> REG : Patient Registry Record Updated PRPA_IN201302UV02
+activate REG
+REG --> PIS : Send Application Acknowledgement MCCI_IN000002UV01
 deactivate REG
 |||
 PIS -> REG : Patient Registry Duplicates Resolved PRPA_IN201304UV02
 activate REG
-REG --> PIS : Send Application Acknowledgement MCCI_MT000300UV01
+REG --> PIS : Send Application Acknowledgement MCCI_IN000002UV01
 deactivate REG
 
 @enduml

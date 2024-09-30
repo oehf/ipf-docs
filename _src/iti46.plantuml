@@ -6,7 +6,7 @@ participant "Patient Identifier\nCross-Reference Manager" as MPI
 
 MPI -> CON :Patient Registry Record Revised PRPA_IN201302UV02
 activate CON
-CON --> MPI : Acknowledge
+CON --> MPI : Send Application Acknowledgement MCCI_IN000002UV01
 deactivate CON
 
 

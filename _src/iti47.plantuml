@@ -14,7 +14,7 @@ activate SUP
 SUP --> CON : Patient Registry Find Candidates Query Response PRPA_IN201306UV02
 deactivate SUP
 |||
-CON -> SUP :Cancel Continuation QUQI_IN000003UV01
+CON -> SUP :Cancel Continuation QUQI_IN000003UV01_Cancel
 activate SUP
 SUP --> CON : Acknowledgement MCCI_IN000002UV01
 deactivate SUP
