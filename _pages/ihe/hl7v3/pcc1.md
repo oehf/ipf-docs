@@ -1,7 +1,7 @@
 ---
 title: qed-pcc1 component
 layout: single
-permalink: /docs/qed/pcc1/
+permalink: /docs/ihe/pcc1/
 toc: true
 toc_icon: align-left
 toc_sticky: true
