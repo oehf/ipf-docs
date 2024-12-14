@@ -61,15 +61,15 @@ Here is an example:
 
 The following servlet init parameters are supported:
 
-| Parameter name       | Type            | Default value | Short description                                                                    |
-|:---------------------|:----------------|:--------------|:-------------------------------------------------------------------------------------|
-| `fhirVersion`        | FhirVersionEnum | -             | which FHIR version to be used: STU3 or R4 |
-| `logging`            | Boolean         | false         | writes incoming requests into the log |
+| Parameter name       | Type            | Default value | Short description                                                    |
+|:---------------------|:----------------|:--------------|:---------------------------------------------------------------------|
+| `fhirVersion`        | FhirVersionEnum | -             | which FHIR version to be used: STU3 or R4                            |
+| `logging`            | Boolean         | false         | writes incoming requests into the log                                |
 | `highlight`          | Boolean         | false         | whether responses to requests from browsers are (syntax-)highlighted |
-| `pretty`             | Boolean         | false         | whether responses are indented |
-| `pagingProviderSize` | Integer         | 50            | amount of [paging requests] being maintained concurrently |
-| `defaultPageSize`    | Integer         | 20            | default page size of returned resources |
-| `maximumPageSize`    | Integer         | 100           | maximum page size of returned resources |
+| `pretty`             | Boolean         | false         | whether responses are indented                                       |
+| `pagingProviderSize` | Integer         | 50            | amount of [paging requests] being maintained concurrently            |
+| `defaultPageSize`    | Integer         | 20            | default page size of returned resources                              |
+| `maximumPageSize`    | Integer         | 100           | maximum page size of returned resources                              |
 
 
 A special case is the [ITI-68] transaction. This is not a FHIR

@@ -11,10 +11,10 @@ ATNA auditing functionality is fully integrated into the corresponding IPF IHE c
 that bundles all relevant details around ATNA auditing (e.g. whether auditing is enabled, where the Audit Repository 
 is located, which wire protocol is to be used, etc.) 
 
-| Parameter name | Values                     | Behavior                                      |  Default | Example                         |
-|:---------------|:---------------------------|:----------------------------------------------|:---------|:--------------------------------|
-| `auditContext` | `AuditContext` reference   | uses the referenced AuditContext for auditing | n/a      | `?auditContext=#myAuditContext` |
-| `audit`        | `true` or `false`          | if true, uses a unique AuditContext bean for auditing    | `true`   | `?audit=false`                  |
+| Parameter name | Values                   | Behavior                                              | Default | Example                         |
+|:---------------|:-------------------------|:------------------------------------------------------|:--------|:--------------------------------|
+| `auditContext` | `AuditContext` reference | uses the referenced AuditContext for auditing         | n/a     | `?auditContext=#myAuditContext` |
+| `audit`        | `true` or `false`        | if true, uses a unique AuditContext bean for auditing | `true`  | `?audit=false`                  |
 
 You can have as many `AuditContext` beans as you wish (for auditing being turned on/off, using different queue implementations, etc.).
 In this case, you _must_ use the `auditContext` parameter. 
