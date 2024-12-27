@@ -570,6 +570,19 @@ iti119:
   module: ipf-platform-camel-ihe-fhir-r4-mhd
   section: IHE IT Infrastructure Technical Framework Supplement, Patient Demographics Match (PDQm), Section 3.78.
   section-link: https://profiles.ihe.net/ITI/MHD/index.html
+iti119:
+  transaction: PHARM-5
+  link: pharm5
+  profile: PHARM
+  description: Query Pharmacy Documents over MHD
+  component: cmpd-pharm5
+  transport: REST/HTTP(S)
+  format: FHIR
+  client-actor: Querying Actor
+  server-actor: Community Pharmacy Manager
+  module: ipf-platform-camel-ihe-fhir-r4-mhd
+  section: IHE Pharmacy Technical Framework Supplement, Community Medication Prescription and Dispense, Section 3.2.
+  section-link: https://www.ihe.net/uploadedFiles/Documents/Pharmacy/IHE_Pharmacy_Suppl_CMPD.pdf
 rad69:
   transaction: RAD-69
   link: rad69

@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "Audit Consumer" as AC
+participant "Audit Record Repository" as ARR
+
+AC -> ARR : Retrieve ATNA Audit Events
+activate ARR
+ARR --> AC : Retrieve ATNA Audit Event Response
+deactivate AC
+
+@enduml

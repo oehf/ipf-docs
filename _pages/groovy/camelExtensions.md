@@ -15,22 +15,6 @@ To include [camel-groovy], add the following dependency to the `pom.xml` file:
         <groupId>org.apache.camel</groupId>
         <artifactId>camel-groovy</artifactId>
         <version>${camel-version}</version>
-        <!-- Exclude Groovy bundle in favor of a explicit groovy dependency -->
-        <!-- in order to avoid version conflicts -->
-        <exclusions>
-            <exclusion>
-                <groupId>org.codehaus.groovy</groupId>
-                <artifactId>groovy-all</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>com.sun.xml.bind</groupId>
-                <artifactId>jaxb-impl</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>com.sun.xml.bind</groupId>
-                <artifactId>jaxb-core</artifactId>
-            </exclusion>
-        </exclusions>
     </dependency>
 ```
 

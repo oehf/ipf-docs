@@ -13,7 +13,9 @@ IPF 5.0 comes with some changes that should be considered when upgrading from ea
 
 IPF 5.x requires Java 17 and buids upon Jakarta EE 10. This primarily means moving from `javax.*` to
 `jakarta.*` packages, including upgrades of almost all relevant dependencies.
-Therefore, expect considerable migration effort. Migration instructions for individual libraries include:
+Therefore, expect considerable migration effort. 
+
+Migration instructions for individual libraries include:
 
 * Camel 4: [here](https://camel.apache.org/manual/camel-4-migration-guide.html) and [here](https://camel.apache.org/manual/camel-4x-upgrade-guide.html)
 * [Spring 6](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x)

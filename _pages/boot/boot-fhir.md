@@ -47,7 +47,7 @@ in the correct FHIR version, the bean name is `fhirContext`. The instance can, h
             public void customizeFhirContext(FhirContext fhirContext) {
                 // configure FhirContext here
             }
-        }
+        };
     }
 ```
 

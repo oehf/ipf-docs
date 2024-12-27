@@ -19,4 +19,4 @@ the HTTP client is configured. In this case, the other parameters have no effect
 | `timeout`                  | Integer     | 10000         | socket timeout for read/write operations in milliseconds                       |   
 | `poolMax`                  | Integer     | 20            | initial connection timeout in milliseconds                                     |
 | `disableServerValidation`  | boolean     | false         | whether the FHIR client shall not obtain a CapabilityStatement from the server |
-| `httpClientBuilder`        | String      | n/a           | reference to a HttpClientBuilder instance in the Camel registry                |
+| `httpClient`               | String      | n/a           | HTTP Client implementation to be used (`apache5`, `apache`, `methanol`)        |

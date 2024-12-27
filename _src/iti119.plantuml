@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Patient Demographics Consumer" as S
+participant "Patient Demographics Supplier" as R
+
+S -> R : Match Patient Resource
+activate R
+R --> S : Match Patient Resource Response
+deactivate R
+
+
+@enduml

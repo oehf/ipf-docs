@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Querying Actor" as QA
+participant "Community Pharmacy Manager" as CPM
+
+QA -> CPM : Query Pharmacy Documents
+activate CPM
+CPM --> QA : Query Pharmacy Documents Response
+deactivate CPM
+
+
+@enduml

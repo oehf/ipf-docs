@@ -69,18 +69,18 @@ translate between corresponding IHE transactions.
 
 From a *Patient identity Cross Reference Manager* 's perspective, there are **inbound** translators:
 
-| HL7v3-Transaction      | HL7v3-to-HL7v2 request             | HL7v2-Transaction   | HL7v2-to-HL7v3 response
-| -----------------------|------------------------------------|---------------------|----------------------------------
-| PIX Feed V3 [ITI-44]   | [`PixFeedRequest3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixFeedRequest3to2Translator.html)     | PIX Feed [ITI-8]    | [`PixFeedAck2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixFeedAck2to3Translator.html)
-| PIX Query v3 [ITI-45]  | [`PixQueryRequest3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixQueryRequest3to2Translator.html)    | PIX Query [ITI-9]   | [`PixQueryResponse2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixQueryResponse2to3Translator.html)
-| PDQ V3 [ITI-47]        | [`PdqRequest3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PdqRequest3to2Translator.html)         | PDQ [ITI-21]        | [`PdqResponse2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PdqResponse2to3Translator.html)
+| HL7v3-Transaction     | HL7v3-to-HL7v2 request                                                                                                                | HL7v2-Transaction | HL7v2-to-HL7v3 response                                                                                                                 |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| PIX Feed V3 [ITI-44]  | [`PixFeedRequest3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixFeedRequest3to2Translator.html)   | PIX Feed [ITI-8]  | [`PixFeedAck2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixFeedAck2to3Translator.html)             |
+| PIX Query v3 [ITI-45] | [`PixQueryRequest3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixQueryRequest3to2Translator.html) | PIX Query [ITI-9] | [`PixQueryResponse2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixQueryResponse2to3Translator.html) |
+| PDQ V3 [ITI-47]       | [`PdqRequest3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PdqRequest3to2Translator.html)           | PDQ [ITI-21]      | [`PdqResponse2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PdqResponse2to3Translator.html)           |
 
 ... and **outbound** translators:
 
-| HL7v2-Transaction      | HL7v2-to-HL7v3 request                | HL7v3-Transaction     | HL7v3-to-HL7v2 response
-| -----------------------|---------------------------------------|-----------------------|--------------------------
-| PIX Feed [ITI-8]       | [`PixFeedRequest2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixFeedRequest2to3Translator.html)        | PIX Feed V3 [ITI-44]  | [`PixAck3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixAck3to2Translator.html)
-| PIX Update [ITI-10]    | [`PixUpdateNotification2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixUpdateNotification2to3Translator.html) | PIX Update V3 [ITI-46]| [`PixAck3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixAck3to2Translator.html)
+| HL7v2-Transaction   | HL7v2-to-HL7v3 request                                                                                                                            | HL7v3-Transaction      | HL7v3-to-HL7v2 response                                                                                             |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------|
+| PIX Feed [ITI-8]    | [`PixFeedRequest2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixFeedRequest2to3Translator.html)               | PIX Feed V3 [ITI-44]   | [`PixAck3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixAck3to2Translator.html) |
+| PIX Update [ITI-10] | [`PixUpdateNotification2to3Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixUpdateNotification2to3Translator.html) | PIX Update V3 [ITI-46] | [`PixAck3to2Translator`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/translation/PixAck3to2Translator.html) |
 
 Note that currently only the [ITI-8]/[ITI-44] pair is provided for both directions.
 
@@ -161,7 +161,7 @@ class BridgeRouteBuilder extends SpringRouteBuilder {
     ...
 
     // Probably the shortest possible HL7v3 PIX Manager implementation ;-)
-    public void configure() throws Exception {
+    void configure() throws Exception {
         from("pixv3-iti44:iti44service")
             .onException(Exception.class)
             .maximumRedeliveries(0)

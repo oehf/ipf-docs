@@ -18,19 +18,19 @@ is transformed into a HAPI FHIR resource object (for write operations) or into m
  (for search operations).
 If unmarshalling fails, an FHIR response automatically generated and passed back to the sender.
 
-| Transaction | Request Message Type                                                                            | Request Message Headers |
-|-------------|-------------------------------------------------------------------------------------------------|-------------------------|
-| ITI-65      | `Bundle` containing `DocumentManifest`, `DocumentReference` and `Binary` resources              | n/a                     |
-| ITI-66 	    | n/a                                                                                             | Query Parameters        |
-| ITI-67      | n/a                                                                                             | Query Parameters        |
-| ITI-68 	    | n/a                                                                                             | n/a                     |
-| ITI-78      | n/a                                                                                             | Query Parameters        |
-| ITI-81 	    | n/a                                                                                             | Query Parameters        |
-| ITI-83 	    | n/a                                                                                             | Query Parameters        |
-| PCC-44 	    | n/a                                                                                             | Query Parameters        |
-| CH:PPQ-3    | - for POST and PUT -- `Consent` resource<br/>- for DELETE -- identifier of a `Consent` resource |                         | 
-| CH:PPQ-4    | Transaction `Bundle` containing `Consent` resources or identifiers of `Consent` resources       |                         |
-| CH:PPQ-5    | `ChPpq5SearchParameters`                                                                        |                         |
+| Transaction | Request Message Type                                                                                      | Request Message Headers |
+|-------------|-----------------------------------------------------------------------------------------------------------|-------------------------|
+| ITI-65      | `Bundle` containing `DocumentManifest` (only MHD 3.2), `List`, `DocumentReference` and `Binary` resources | n/a                     |
+| ITI-66 	    | n/a                                                                                                       | Query Parameters        |
+| ITI-67      | n/a                                                                                                       | Query Parameters        |
+| ITI-68 	    | n/a                                                                                                       | n/a                     |
+| ITI-78      | n/a                                                                                                       | Query Parameters        |
+| ITI-81 	    | n/a                                                                                                       | Query Parameters        |
+| ITI-83 	    | n/a                                                                                                       | Query Parameters        |
+| PCC-44 	    | n/a                                                                                                       | Query Parameters        |
+| CH:PPQ-3    | - for POST and PUT -- `Consent` resource<br/>- for DELETE -- identifier of a `Consent` resource           |                         | 
+| CH:PPQ-4    | Transaction `Bundle` containing `Consent` resources or identifiers of `Consent` resources                 |                         |
+| CH:PPQ-5    | `ChPpq5SearchParameters`                                                                                  |                         |
 
 The following Camel headers are set by the consumer:
 
@@ -58,22 +58,22 @@ The following Camel headers are set by the consumer:
 Producer-side responses are automatically unmarshalled, i.e. the incoming message stream returned by the server 
 is transformed into a HAPI FHIR resource. When unmarshalling fails, an exception will be thrown.
 
-| Transaction     | Response Message Type                                  |
-|-----------------|--------------------------------------------------------|
-| ITI-65          | `Bundle`                                               |
-| ITI-66 (search) | `Bundle` containing `DocumentManifest` resources       |
-| ITI-66 (get)    | `DocumentManifest` resource                            |
-| ITI-67 (search) | `Bundle` containing `DocumentReference` resources      |
-| ITI-67 (get)    | `DocumentReference` resource                           |
-| ITI-68 	        | binary content (usually via an `InputStream`)          |
-| ITI-78 (search) | `Bundle` containing matching `Patient` resources       |
-| ITI-78 (get)    | `Patient` resource                                     |
-| ITI-81 (get)    | `AuditEvent` resource                                  |
-| ITI-83          | `Parameters` containing matching identifiers           |
-| PCC-44 (search) | `Bundle` containing resources, depending on IHE option |
-| CH:PPQ-3        | `MethodOutcome`                                        |
-| CH:PPQ-4        | `Bundle` containing transaction results                |
-| CH:PPQ-5        | `Bundle` containing found `Consent` resources          |
+| Transaction     | Response Message Type                                                          |
+|-----------------|--------------------------------------------------------------------------------|
+| ITI-65          | `Bundle`                                                                       |
+| ITI-66 (search) | `Bundle` containing `DocumentManifest` (MHD 3.2) or `List` (MHD 4.2) resources |
+| ITI-66 (get)    | `DocumentManifest` (MHD 3.2) or `List` (MHD 4.2) resource                      |
+| ITI-67 (search) | `Bundle` containing `DocumentReference` resources                              |
+| ITI-67 (get)    | `DocumentReference` resource                                                   |
+| ITI-68 	        | binary content (usually via an `InputStream`)                                  |
+| ITI-78 (search) | `Bundle` containing matching `Patient` resources                               |
+| ITI-78 (get)    | `Patient` resource                                                             |
+| ITI-81 (get)    | `AuditEvent` resource                                                          |
+| ITI-83          | `Parameters` containing matching identifiers                                   |
+| PCC-44 (search) | `Bundle` containing resources, depending on IHE option                         |
+| CH:PPQ-3        | `MethodOutcome`                                                                |
+| CH:PPQ-4        | `Bundle` containing transaction results                                        |
+| CH:PPQ-5        | `Bundle` containing found `Consent` resources                                  |
 
 ### Consumer-side responses
 
@@ -92,7 +92,7 @@ Data types for the *request* message of the supported transactions on producer (
 |-----------------|-------------------------------------------------------------------------------------------------| 
 | ITI-65          | `Bundle`                                                                                        |
 | ITI-66 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                             |
-| ITI-66 (get)    | String with the DocumentManifest resource identifier                                            |
+| ITI-66 (get)    | String with the DocumentManifest (MHD 3.2) or List (MHD 4.2)  resource identifier               |
 | ITI-67 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                             |
 | ITI-67 (get)    | String with the DocumentReference resource identifier                                           |
 | ITI-68 	        | URL string                                                                                      |

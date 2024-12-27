@@ -30,15 +30,6 @@ In a Maven-based environment, the following dependencies should be registered in
     <artifactId>ipf-platform-camel-ihe-fhir-r4-pixpdq</artifactId>
     <version>${ipf-version}</version>
 </dependency>
-
-<!-- when using FHIR STU3 -->
-<!--
-<dependency>
-    <groupId>org.openehealth.ipf.platform-camel</groupId>
-    <artifactId>ipf-platform-camel-ihe-fhir-stu3-pixpdq</artifactId>
-    <version>${ipf-version}</version>
-</dependency>
--->
 ```
 
 This depends transitively on the required module:
@@ -176,11 +167,10 @@ translate between corresponding IHE transactions.
 
 From a *Patient identity Cross Reference Manager* 's perspective, there are **inbound** translators:
 
-| FHIR transaction       | FHIR-to-HL7v2 request                   | HL7v2-Transaction   | HL7v2-to-FHIR response
-| -----------------------|-----------------------------------------|---------------------|----------------------------------
-| PDQm [ITI-78]          | [`iti78.PdqmRequestToPdqQueryTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti78/PdqmRequestToPdqQueryTranslator.html) | PDQ       [ITI-21]  | [`iti78.PdqResponseToPdqmResponseTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti78/PdqResponseToPdqmResponseTranslator.html)
-| PIXm [ITI-83]          | [`iti83.PixmRequestToPixQueryTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti83/PixmRequestToPixQueryTranslator.html) | PIX Query [ITI-9]   | [`iti83.PixQueryResponseToPixmResponseTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti83/PixQueryResponseToPixmResponseTranslator.html)
-
+| FHIR transaction | FHIR-to-HL7v2 request                                                                                                                                | HL7v2-Transaction  | HL7v2-to-FHIR response                                                                                                                                                 |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PDQm [ITI-78]    | [`iti78.PdqmRequestToPdqQueryTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti78/PdqmRequestToPdqQueryTranslator.html) | PDQ       [ITI-21] | [`iti78.PdqResponseToPdqmResponseTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti78/PdqResponseToPdqmResponseTranslator.html)           |
+| PIXm [ITI-83]    | [`iti83.PixmRequestToPixQueryTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti83/PixmRequestToPixQueryTranslator.html) | PIX Query [ITI-9]  | [`iti83.PixQueryResponseToPixmResponseTranslator`](../../apidocs/org/openehealth/ipf/commons/ihe/fhir/translation/iti83/PixQueryResponseToPixmResponseTranslator.html) |
 
 Each translator has a set of configurable properties. Their descriptions can be taken from javadoc of the
 corresponding classes. Below there's an example of a Spring application context defining translator beans: 

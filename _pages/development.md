@@ -80,7 +80,7 @@ Depending on the choice of your IDE, you may need to install corresponding plugi
 
 ## Continuous Integration
 
-IPF is continuously built on [Travis](https://travis-ci.org/oehf). Snapshot artifacts are uploaded to the 
+IPF is continuously built using github actions. Snapshot artifacts are uploaded to the 
 [Sonatype](https://oss.sonatype.org/content/repositories/snapshots/org/openehealth/ipf/) snapshot repository.
 
 ## Issue Tracking

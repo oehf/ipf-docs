@@ -32,6 +32,21 @@ or Groovy anymore.
   and [`ApplicationStopEventListener`](../apidocs/org/openehealth/ipf/boot/atna/ApplicationStopEventListener.html))
 * a basic listener for login events if Spring Security is on the classpath ([`AuthenticationListener`](../apidocs/org/openehealth/ipf/boot/atna/AuthenticationListener.html)) 
 
+The `AuditContext` instance can be customized by providing a [`AuditContextCustomizer`](../apidocs/org/openehealth/ipf/boot/atna/AuditContextCustomizer.html) bean:
+
+```java
+
+    @Bean
+    public AuditContextCustomizer auditContextCustomizer() {
+        return new AuditContextCustomizer() {
+            
+            public void customizeAuditContext(AuditContext auditContext) {
+                // configure AuditContext here
+            }
+        };
+    }
+```
+
 You can define your own @Beans of this type in order to override the defaults.
 
 `ipf-atna-spring-boot-starter` provides the following application properties that configures the `AuditContext`

@@ -14,7 +14,20 @@ handle and prepare request and response messages.
 
 In addition, starting with the version 4.1.0, IPF introduces model classes for request and response messages of 
 selected HL7v3 transactions (ongoing work), as well as [Camel type converters](https://camel.apache.org/type-converter.html) 
-for transforming instances of these classes into Strings and back again.  Currently, the following model classes are available:
+for transforming instances of these classes into Strings and back again.  
+
+In a Maven-based environment, the following dependency must be registered in `pom.xml`:
+
+```xml
+    <dependency>
+        <groupId>org.openehealth.ipf.commons</groupId>
+        <artifactId>ipf-commons-ihe-hl7v3model</artifactId>
+        <version>${ipf-version}</version>
+    </dependency>
+```
+
+
+Currently, the following model classes are available:
 
 | Message          | Model class
 |------------------|--------------------------------------------------------------------------------------------------

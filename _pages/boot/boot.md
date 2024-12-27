@@ -34,14 +34,15 @@ IHE XDS starter:
 
 Apart from `ipf-spring-boot-starter`, the available starter modules are:
 
-| Starter module                                  | Purpose                               |
-| ----------------------------------------------- | ------------------------------------- |
-| [ipf-atna-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-atna.md %})   | set up ATNA infrastructure            |
-| [ipf-hl7-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-hl7.md %})     | for HL7v2/MLLP-based IHE transactions |
-| [ipf-hl7v3-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-hl7v3.md %}) | for HL7v3/SOAP-based IHE transactions |
-| [ipf-xds-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-xds.md %})     | for XDS/SOAP-based IHE transactions   |
-| [ipf-fhir-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-fhir.md %})   | for FHIR/REST-based IHE transactions  |
-| [ipf-hpd-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-hpd.md %})     | for DSML/SOAP-based IHE transactions  |
+| Starter module                                                                              | Purpose                               |
+|---------------------------------------------------------------------------------------------|---------------------------------------|
+| [ipf-atna-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-atna.md %})       | set up ATNA infrastructure            |
+| [ipf-hl7-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-hl7.md %})         | for HL7v2/MLLP-based IHE transactions |
+| [ipf-hl7v3-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-hl7v3.md %})     | for HL7v3/SOAP-based IHE transactions |
+| [ipf-xds-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-xds.md %})         | for XDS/SOAP-based IHE transactions   |
+| [ipf-fhir-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-fhir.md %})       | for FHIR/REST-based IHE transactions  |
+| [ipf-hpd-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-hpd.md %})         | for DSML/SOAP-based IHE transactions  |
+| [ipf-xacml20-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-xacml20.md %}) | for XACML20-based IHE transactions    |
 
 These IPF starter modules transitively depend on `ipf-spring-boot-starter`, so there is no need to explicitly
 depend on this module. 
