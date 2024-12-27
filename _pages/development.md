@@ -43,7 +43,7 @@ In order to generate the site documentation, Java stubs from Groovy and Lombok
 sources must be generated for proper Javadoc creation during the `site` phase.
 
 ```
-    set MAVEN_OPTS=-Xmx1024m
+    set MAVEN_OPTS=-Xmx4096m
     mvn -Pgenerate-stubs generate-sources 
     mvn site (-DskipTests) -rf :ipf
 ```
@@ -54,7 +54,7 @@ must be copied from `target/site/apidocs` into the `_pages/apidocs` directory.
 
 Javadocs artifacts are uploaded to Maven Central, which makes them also available online under
 https://www.javadoc.io. The javadocs are located under `https://www.javadoc.io/<maven-group-id>/<maven-artifact-id>/<version>`, e.g.
-[https://javadoc.io/doc/org.openehealth.ipf.commons/ipf-commons-audit/4.8.0/index.html](https://javadoc.io/doc/org.openehealth.ipf.commons/ipf-commons-audit/4.0.0).
+[https://javadoc.io/doc/org.openehealth.ipf.commons/ipf-commons-audit/5.0.0/index.html](https://javadoc.io/doc/org.openehealth.ipf.commons/ipf-commons-audit/5.0.0).
 
 
 ### How to build and test the documentation locally
