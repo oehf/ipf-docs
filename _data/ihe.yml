@@ -570,7 +570,7 @@ iti119:
   module: ipf-platform-camel-ihe-fhir-r4-mhd
   section: IHE IT Infrastructure Technical Framework Supplement, Patient Demographics Match (PDQm), Section 3.78.
   section-link: https://profiles.ihe.net/ITI/MHD/index.html
-iti119:
+pharm5:
   transaction: PHARM-5
   link: pharm5
   profile: PHARM
