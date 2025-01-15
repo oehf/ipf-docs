@@ -17,4 +17,4 @@ Detailed configuration instructions are given [here][DICOM auditng], as well as
 
 [ATNA auditing]: {{ site.baseurl }}{% link _pages/ihe/atna.md %}
 [DICOM auditing]: {{ site.baseurl }}{% link _pages/audit.md %}
-[Spring Boot ATNA] : {{ site.baseurl }}{% link _pages/boot-atna.md %}
+[Spring Boot ATNA]: {{ site.baseurl }}{% link _pages/boot-atna.md %}
