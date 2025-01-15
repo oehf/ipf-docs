@@ -11,7 +11,7 @@ toc_sticky: true
 
 IPF Camel components are able to send audit records out-of-the box, and allow a flexible configuration
 of this mechanism, as described in the [corresponding section][ATNA auditing].
-Detailed configuration instructions are given [here][DICOM auditng], as well as
+Detailed configuration instructions are given [here][DICOM auditing], as well as
 [here][Spring Boot ATNA] for Spring Boot applications.
 
 
