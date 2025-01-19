@@ -1,26 +1,26 @@
 ---
-title: Spring Boot HPD support
+title: Spring Boot support for SVS transactions
 layout: single
-permalink: /docs/boot-hpd/
+permalink: /docs/boot-svs/
 classes: wide
 ---
 
-`ipf-hpd-spring-boot-starter` sets up the infrastructure for [HPD-based IHE transactions].
- 
-The dependency on the IPF [Spring Boot] IHE HPD starter module is:
+`ipf-svs-spring-boot-starter` sets up the infrastructure for [SVS-based IHE transactions].
+
+The dependency on the IPF [Spring Boot] IHE SVS starter module is:
 
 ```xml
     <dependency>
         <groupId>org.openehealth.ipf.boot</groupId>
-        <artifactId>ipf-hpd-spring-boot-starter</artifactId>
+        <artifactId>ipf-svs-spring-boot-starter</artifactId>
     </dependency>
 ```
 
-`ipf-hpd-spring-boot-starter` provides the following application properties:
+`ipf-svs-spring-boot-starter` provides the following application properties:
 
-| Property (`ipf.hpd.`)     | Default        | Description |
-|---------------------------|----------------|-------------|
-|                           |                |             |            
+| Property (`ipf.svs.`) | Default | Description |
+|-----------------------|---------|-------------|
+|                       |         |             |
 
 See [ipf-spring-boot-starter] and [ipf-atna-spring-boot-starter] for additional properties.
 
@@ -39,4 +39,4 @@ web service stack including the Camel CXF servlet, so you don't have to care abo
 [ipf-spring-boot-starter]: {{ site.baseurl }}{% link _pages/boot/boot.md %}
 [ipf-atna-spring-boot-starter]: {{ site.baseurl }}{% link _pages/boot/boot-atna.md %}
 [cxf-spring-boot-starter-jaxws]: https://cxf.apache.org/docs/springboot.html
-[HPD-based IHE transactions]: {{ site.baseurl }}{% link _pages/ihe/hpd/hpd.md %}
+[SVS-based IHE transactions]: {{ site.baseurl }}{% link _pages/ihe/svs/svs.md %}

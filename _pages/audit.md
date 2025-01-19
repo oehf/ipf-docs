@@ -44,7 +44,7 @@ Every Audit Message and Audit Message builder also has a `validate` method that 
 restrictions defined by DICOM or IHE.
 
 The `AuditMessageBuilder` implementations are modelled corresponding to the definitions of the
-[DICOM Specific Audit Messages](http://dicom.nema.org/medical/dicom/current/output/html/part15.html#sect_A.5.3). The delegate builder class `IHEAuditMessageBuilder` has builder sub classes that correspond with the IHE [ITI specification, Volume 2a](https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html#3.20.4), section 3.20.4.1. 
+[DICOM Specific Audit Messages](http://dicom.nema.org/medical/dicom/current/output/html/part15.html#sect_A.5.3). The delegate builder class `IHEAuditMessageBuilder` has builder sub classes that correspond with the IHE [ITI specification, Volume 2](https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html#3.20.4), section 3.20.4.1. 
 
 The DICOM serialization strategies produce XML files that validate against the schema of the respective revision of the [DICOM Audit Message Schema](http://dicom.nema.org/medical/dicom/current/output/html/part15.html#sect_A.5.1).
 
@@ -288,6 +288,6 @@ improvement and configuration possibilities, particularly to handle edge cases. 
 
 
 [DICOM]: https://dicom.nema.org/medical/dicom/current/output/html/part15.html#sect_A.5
-[ATNA]: https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf
+[ATNA]: https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html
 [RFC 5425]: https://tools.ietf.org/html/rfc5425
 [RFC 5426]: https://tools.ietf.org/html/rfc5426

@@ -56,7 +56,7 @@ This field is a map from slot names (`String`) to instances of
 [`QueryList`](../../apidocs/org/openehealth/ipf/commons/ihe/xds/core/requests/query/QueryList.html).
 
 In that way, AND/OR semantics of parameter values can be expressed by means of multiple slots with the same name,
-with multiple values in each (see IHE IT Infrastructure Technical Framework, Volume 2a , section 3.18.4.1.2.3.5).
+with multiple values in each (see IHE IT Infrastructure Technical Framework, Volume 2, section 3.18.4.1.2.3.5).
 
 According to the ebXML Specification, parameter names shall start with the dollar character `$`.
 Moreover, they shall not collide with names of standard parameters defined by IHE.

@@ -44,6 +44,8 @@ sidebar:
         url: /docs/ihe/xacml20/
       - title: "HL7v2 (SOAP)"
         url: /docs/ihe/pcd01/
+      - title: "SVS (SOAP)"
+        url: /docs/ihe/svs/
   - title: "HL7 and Groovy"
     children:  
       - title: "HL7 Message Processing with Groovy"

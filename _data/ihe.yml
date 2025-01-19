@@ -9,7 +9,7 @@ iti8pix:
   client-actor: Patient Identity Source
   server-actor: Patient Identifier Cross-Reference Manager
   module: ipf-platform-camel-ihe-mllp
-  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.8
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.8
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-8.html
 iti8xds:
   transaction: ITI-8
@@ -22,7 +22,7 @@ iti8xds:
   client-actor: Patient Identity Source
   server-actor: Document Registry
   module: ipf-platform-camel-ihe-mllp
-  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.8
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.8
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-8.html
 iti9:
   transaction: ITI-9
@@ -35,7 +35,7 @@ iti9:
   client-actor: Patient Identifier Cross-Reference Consumer
   server-actor: Patient Identifier Cross-Reference Manager
   module: ipf-platform-camel-ihe-mllp
-  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.9
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.9
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-9.html
 iti10:
   transaction: ITI-10
@@ -48,9 +48,9 @@ iti10:
   client-actor: Patient Identifier Cross-Reference Manager
   server-actor: Patient Identifier Cross-Reference Consumer
   module: ipf-platform-camel-ihe-mllp
-  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.10
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.10
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-10.html
-iti18:  
+iti18:
   transaction: ITI-18
   link: iti18
   profile: XDS
@@ -61,9 +61,9 @@ iti18:
   client-actor: Document Consumer
   server-actor: Document Registry
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.18.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.18.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html
-iti19:  
+iti19:
   transaction: ITI-19
   link: iti19
   profile: ATNA
@@ -74,9 +74,9 @@ iti19:
   client-actor: Secure Node
   server-actor: Secure Node
   module: ipf-platform-camel-ihe-atna
-  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.19.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.19.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-19.html
-iti20: 
+iti20:
   transaction: ITI-20
   link: iti20
   profile: ATNA
@@ -87,7 +87,7 @@ iti20:
   client-actor: Secure Application
   server-actor: Audit Record Repository
   module: ipf-platform-camel-ihe-atna
-  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.20.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.20.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html
 iti21:
   transaction: ITI-21
@@ -100,7 +100,7 @@ iti21:
   client-actor: Patient Demographics Consumer
   server-actor: Patient Demographics Supplier
   module: ipf-platform-camel-ihe-mllp
-  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.21.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.21.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-21.html
 iti22:
   transaction: ITI-22
@@ -113,7 +113,7 @@ iti22:
   client-actor: Patient Demographics Consumer
   server-actor: Patient Demographics Supplier
   module: ipf-platform-camel-ihe-mllp
-  section:  IHE IT Infrastructure Technical Framework, Volume 2a , Section 3.22.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.22.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-22.html
 iti30:
   transaction: ITI-30
@@ -126,7 +126,7 @@ iti30:
   client-actor: Patient Demographics Source
   server-actor: Patient Demographics Consumer
   module: ipf-platform-camel-ihe-mllp
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.30.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.30.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-30.html
 iti31:
   transaction: ITI-31
@@ -139,7 +139,7 @@ iti31:
   client-actor: Patient Encounter Source
   server-actor: Patient Encounter Consumer
   module: ipf-platform-camel-ihe-mllp
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.31.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.31.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-31.html
 iti38:
   transaction: ITI-38
@@ -152,7 +152,7 @@ iti38:
   client-actor: Initiating Gateway
   server-actor: Responding Gateway
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.38.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.38.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-38.html
 iti39:
   transaction: ITI-39
@@ -165,7 +165,7 @@ iti39:
   client-actor: Initiating Gateway
   server-actor: Responding Gateway
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.39.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.39.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-39.html
 iti41:
   transaction: ITI-41
@@ -178,7 +178,7 @@ iti41:
   client-actor: Document Source
   server-actor: Document Repository
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.41.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.41.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html
 iti42:
   transaction: ITI-42
@@ -191,7 +191,7 @@ iti42:
   client-actor: Document Repository
   server-actor: Document Registry
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.42.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.42.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-42.html
 iti43:
   transaction: ITI-43
@@ -204,7 +204,7 @@ iti43:
   client-actor: Document Consumer
   server-actor: Document Repository
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.43.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.43.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-43.html
 iti44pixv3:
   transaction: ITI-44
@@ -217,7 +217,7 @@ iti44pixv3:
   client-actor: Patient Identity Source
   server-actor: Patient Identifier Cross-Reference Manager
   module: ipf-platform-camel-ihe-hl7v3
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.44.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.44.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-44.html
 iti44xds:
   transaction: ITI-44
@@ -230,7 +230,7 @@ iti44xds:
   client-actor: Patient Identity Source
   server-actor: Document Registry
   module: ipf-platform-camel-ihe-hl7v3
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.44.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.44.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-44.html
 iti45:
   transaction: ITI-45
@@ -243,7 +243,7 @@ iti45:
   client-actor: Patient Identifier Cross-Reference Consumer
   server-actor: Patient Identifier Cross-Reference Manager
   module: ipf-platform-camel-ihe-hl7v3
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.45.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.45.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-45.html
 iti46:
   transaction: ITI-46
@@ -256,7 +256,7 @@ iti46:
   client-actor: Patient Identifier Cross-Reference Manager
   server-actor: Patient Identifier Cross-Reference Consumer
   module: ipf-platform-camel-ihe-hl7v3
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.46.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.46.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-46.html
 iti47:
   transaction: ITI-47
@@ -269,8 +269,21 @@ iti47:
   client-actor: Patient Demographics Consumer
   server-actor: Patient Demographics Supplier
   module: ipf-platform-camel-ihe-hl7v3
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.47.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.47.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-47.html
+iti48:
+  transaction: ITI-48
+  link: iti48
+  profile: SVS
+  description: Retrieve Value Set
+  component: svs-iti48
+  transport: SOAP/HTTP(S)
+  format: SVS
+  client-actor: Value Set Consumer
+  server-actor: Value Set Repository
+  module: ipf-platform-camel-ihe-svs
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.48.
+  section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-48.html
 iti51:
   transaction: ITI-51
   link: iti51
@@ -282,7 +295,7 @@ iti51:
   client-actor: Document Consumer
   server-actor: Document Registry
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.51.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.51.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-51.html
 iti55:
   transaction: ITI-55
@@ -295,7 +308,7 @@ iti55:
   client-actor: Initiating Gateway
   server-actor: Responding Gateway
   module: ipf-platform-camel-ihe-hl7v3
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.55.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.55.
   section-link: hhttps://profiles.ihe.net/ITI/TF/Volume2/ITI-55.html
 iti56:
   transaction: ITI-56
@@ -308,7 +321,7 @@ iti56:
   client-actor: Initiating Gateway
   server-actor: Responding Gateway
   module: ipf-platform-camel-ihe-hl7v3
-  section:  IHE IT Infrastructure Technical Framework Supplement, Cross-Community Patient Discovery (XCPD) Health Data Locator and Revoke Option, Section 3.56
+  section: IHE IT Infrastructure Technical Framework Supplement, Cross-Community Patient Discovery (XCPD) Health Data Locator and Revoke Option, Section 3.56
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-56.html
 iti57:
   transaction: ITI-57
@@ -321,7 +334,7 @@ iti57:
   client-actor: Document Administrator
   server-actor: Document Registry
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework Supplement, XDS Metadata Update, Section 3.57.
+  section: IHE IT Infrastructure Technical Framework Supplement, XDS Metadata Update, Section 3.57.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-57.html
 iti58:
   transaction: ITI-58
@@ -334,7 +347,7 @@ iti58:
   client-actor: Provider Information Consumer
   server-actor: Provider Information Directory
   module: ipf-platform-camel-ihe-hpd
-  section:  IHE IT Infrastructure Technical Framework Supplement, Healthcare Provider Directory (HPD), Section 3.58.
+  section: IHE IT Infrastructure Technical Framework Supplement, Healthcare Provider Directory (HPD), Section 3.58.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-58.html
 iti59:
   transaction: ITI-59
@@ -347,7 +360,7 @@ iti59:
   client-actor: Provider Information Source
   server-actor: Provider Information Directory
   module: ipf-platform-camel-ihe-hpd
-  section:  IHE IT Infrastructure Technical Framework Supplement, Healthcare Provider Directory (HPD), Section 3.59.
+  section: IHE IT Infrastructure Technical Framework Supplement, Healthcare Provider Directory (HPD), Section 3.59.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-59.html
 iti61:
   transaction: ITI-61
@@ -360,7 +373,7 @@ iti61:
   client-actor: On-Demand Document Source
   server-actor: Document Registry
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework, Volume 2b , Section 3.61.
+  section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.61.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-61.html
 iti62:
   transaction: ITI-62
@@ -373,7 +386,7 @@ iti62:
   client-actor: Document Administrator
   server-actor: Document Registry
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework Supplement, Remove Metadata and Documents (RMD), Section 3.62.
+  section: IHE IT Infrastructure Technical Framework Supplement, Remove Metadata and Documents (RMD), Section 3.62.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-62.html
 iti63:
   transaction: ITI-63
@@ -386,7 +399,7 @@ iti63:
   client-actor: Initiating Gateway
   server-actor: Responding Gateway
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework Supplement, Cross-Community Fetch (XCF), Section 3.63.
+  section: IHE IT Infrastructure Technical Framework Supplement, Cross-Community Fetch (XCF), Section 3.63.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-63.html
 iti64:
   transaction: ITI-64
@@ -399,7 +412,7 @@ iti64:
   client-actor: Patient Identity Cross-Reference Manager
   server-actor: Document Registry
   module: ipf-platform-camel-ihe-mllp
-  section:  IHE IT Infrastructure Technical Framework Supplement, XAD-PID Change Management (XPID), Section 3.64.
+  section: IHE IT Infrastructure Technical Framework Supplement, XAD-PID Change Management (XPID), Section 3.64.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-64.html
 iti65:
   transaction: ITI-65
@@ -412,7 +425,7 @@ iti65:
   client-actor: Document Source
   server-actor: Document Recipient
   module: ipf-platform-camel-ihe-fhir-r4-mhd
-  section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.65.
+  section: IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.65.
   section-link: https://profiles.ihe.net/ITI/MHD/index.html
 iti66:
   transaction: ITI-66
@@ -425,7 +438,7 @@ iti66:
   client-actor: Document Consumer
   server-actor: Document Responder
   module: ipf-platform-camel-ihe-fhir-r4-mhd
-  section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.66.
+  section: IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.66.
   section-link: https://profiles.ihe.net/ITI/MHD/index.html
 iti67:
   transaction: ITI-67
@@ -438,7 +451,7 @@ iti67:
   client-actor: Document Consumer
   server-actor: Document Responder
   module: ipf-platform-camel-ihe-fhir-r4-mhd
-  section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.67.
+  section: IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.67.
   section-link: https://profiles.ihe.net/ITI/MHD/index.html
 iti68:
   transaction: ITI-68
@@ -451,7 +464,7 @@ iti68:
   client-actor: Document Consumer
   server-actor: Document Responder
   module: ipf-platform-camel-ihe-fhir-r4-mhd
-  section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.68.
+  section: IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.68.
   section-link: https://profiles.ihe.net/ITI/MHD/index.html
 iti78:
   transaction: ITI-78
@@ -464,7 +477,7 @@ iti78:
   client-actor: Patient Demographics Consumer
   server-actor: Patient Demographics Supplier
   module: ipf-platform-camel-ihe-fhir-r4-pixpdq
-  section:  IHE IT Infrastructure Technical Framework Supplement, Patient Demographics Query for Mobile (PDQm), Section 3.78.
+  section: IHE IT Infrastructure Technical Framework Supplement, Patient Demographics Query for Mobile (PDQm), Section 3.78.
   section-link: https://profiles.ihe.net/ITI/PDQm/index.html
 iti79:
   transaction: ITI-79
@@ -503,7 +516,7 @@ iti81:
   client-actor: Audit Consumer
   server-actor: Audit Record Repository
   module: ipf-platform-camel-ihe-fhir-r4-audit
-  section:  IHE IT Infrastructure Technical Framework Supplement, Add RESTful Query to ATNA, Section 3.81.
+  section: IHE IT Infrastructure Technical Framework Supplement, Add RESTful Query to ATNA, Section 3.81.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-81.html
 iti83:
   transaction: ITI-83
@@ -516,7 +529,7 @@ iti83:
   client-actor: Patient Identifier Cross-Reference Consumer
   server-actor: Patient Identifier Cross-Reference Manager
   module: ipf-platform-camel-ihe-fhir-r4-pixpdq
-  section:  IHE IT Infrastructure Technical Framework Supplement, Patient Identifier Cross-reference for Mobile (PIXm), Section 3.83.
+  section: IHE IT Infrastructure Technical Framework Supplement, Patient Identifier Cross-reference for Mobile (PIXm), Section 3.83.
   section-link: https://profiles.ihe.net/ITI/PIXm/index.html
 iti86:
   transaction: ITI-86
@@ -529,7 +542,7 @@ iti86:
   client-actor: Document Administrator
   server-actor: Document Repository
   module: ipf-platform-camel-ihe-xds
-  section:  IHE IT Infrastructure Technical Framework Supplement, Remove Metadata and Documents (RMD), Section 3.86.
+  section: IHE IT Infrastructure Technical Framework Supplement, Remove Metadata and Documents (RMD), Section 3.86.
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-86.html
 iti92:
   transaction: ITI-92
@@ -542,7 +555,7 @@ iti92:
   client-actor: Update Initiator
   server-actor: Update Responder
   module: ipf-platform-camel-ihe-xds
-  section:  (pending)
+  section: (pending)
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-92.html
 iti105:
   transaction: ITI-105
@@ -555,7 +568,7 @@ iti105:
   client-actor: Document Source
   server-actor: Document Recipient
   module: ipf-platform-camel-ihe-fhir-r4-mhd
-  section:  IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.105.
+  section: IHE IT Infrastructure Technical Framework Supplement, Mobile Access to Health Documents (MHD), Section 3.105.
   section-link: https://profiles.ihe.net/ITI/MHD/index.html
 iti119:
   transaction: ITI-119
@@ -594,7 +607,7 @@ rad69:
   client-actor: Imaging Document Consumer
   server-actor: Imaging Document Source
   module: ipf-platform-camel-ihe-xds
-  section:   IHE Radiology (RAD) Technical Framework, Vol. 3, Section 4.69
+  section: IHE Radiology (RAD) Technical Framework, Vol. 3, Section 4.69
   section-link: https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol3.pdf
 rad75:
   transaction: RAD-75
@@ -607,7 +620,7 @@ rad75:
   client-actor: Initiating Imaging Gateway
   server-actor: Initiating Imaging Responder
   module: ipf-platform-camel-ihe-xds
-  section:   IHE Radiology (RAD) Technical Framework, Vol. 3, Section 4.75
+  section: IHE Radiology (RAD) Technical Framework, Vol. 3, Section 4.75
   section-link: https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol3.pdf
 pcc1:
   transaction: PCC-1
@@ -620,7 +633,7 @@ pcc1:
   client-actor: Clinical Data Consumer
   server-actor: Clinical Data Source
   module: ipf-platform-camel-ihe-hl7v3
-  section:   IHE Patient Care Coordination Technical Framework Supplement, Query for Existing Data (QED), Section 3.2.
+  section: IHE Patient Care Coordination Technical Framework Supplement, Query for Existing Data (QED), Section 3.2.
   section-link: https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_QED.pdf
 pcc44:
   transaction: PCC-44
@@ -633,7 +646,7 @@ pcc44:
   client-actor: Clinical Data Consumer
   server-actor: Clinical Data Source
   module: ipf-platform-camel-ihe-fhir-r4-qedm
-  section:   IHE Patient Care Coordination Technical Framework Supplement, Query for Existing Data Mobile (QEDm), Section 3.44.
+  section: IHE Patient Care Coordination Technical Framework Supplement, Query for Existing Data Mobile (QEDm), Section 3.44.
   section-link: https://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_QEDm.pdf
 pcd01:
   transaction: PCD-01
@@ -646,7 +659,7 @@ pcd01:
   client-actor: Device Observation Reporter
   server-actor: Device Observation Consumer
   module: ipf-platform-camel-ihe-hl7v2ws
-  section:   IHE Patient Care Device Technical Framework, Volume 2, Section 3.
+  section: IHE Patient Care Device Technical Framework, Volume 2, Section 3.
   section-link: https://www.ihe.net/Technical_Framework/upload/IHE_PCD_TF_Vol2.pdf
 pharm1:
   transaction: PHARM-1
@@ -672,7 +685,7 @@ chpidd:
   client-actor: Provider Information Consumer
   server-actor: Provider Information Directory
   module: ipf-platform-camel-ihe-hpd
-  section:   Swiss national extensions to the IHE Technical Framework
+  section: Swiss national extensions to the IHE Technical Framework
   section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
 chadr:
   transaction: CH-ADR
@@ -698,7 +711,7 @@ chppq1:
   client-actor: Policy Source
   server-actor: Policy Repository
   module: ipf-platform-camel-ihe-xacml20
-  section:   Swiss national extensions to the IHE Technical Framework
+  section: Swiss national extensions to the IHE Technical Framework
   section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
 chppq2:
   transaction: CH-PPQ-2
@@ -711,7 +724,7 @@ chppq2:
   client-actor: Policy Consumer
   server-actor: Policy Repository
   module: ipf-platform-camel-ihe-xacml20
-  section:   Swiss national extensions to the IHE Technical Framework
+  section: Swiss national extensions to the IHE Technical Framework
   section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
 chppq3:
   transaction: CH-PPQ-3
@@ -763,7 +776,7 @@ fhir:
   client-actor: n/a
   server-actor: n/a
   module: ipf-platform-camel-ihe-fhir-core
-  section:  n/a
+  section: n/a
   section-link: n/a
 mllp:
   transaction: custom MLLP Based
@@ -776,7 +789,7 @@ mllp:
   client-actor: n/a
   server-actor: n/a
   module: ipf-platform-camel-ihe-mllp
-  section:  n/a
+  section: n/a
   section-link: n/a
 mllpdispatch:
   transaction: all MLLP Based
@@ -789,7 +802,7 @@ mllpdispatch:
   client-actor: n/a
   server-actor: n/a
   module: ipf-platform-camel-ihe-mllp
-  section:  n/a
+  section: n/a
   section-link: n/a
 chciq:
   transaction: CH-CIQ

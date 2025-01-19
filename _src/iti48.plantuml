@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+participant "Value Set Consumer" as CON
+participant "Value Set Registry" as REG
+
+CON -> REG : Retrieve Value Set Request
+activate REG
+REG --> CON : Retrieve Value Set Response
+deactivate REG
+
+
+@enduml
