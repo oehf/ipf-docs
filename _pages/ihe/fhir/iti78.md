@@ -10,7 +10,7 @@ toc_sticky: true
 {% assign tx = site.data.ihe['iti78'] %}
 
 The {{ tx.component }} component provides interfaces for actors of the *{{ tx.description }}* IHE transaction ({{ tx.transaction }}),
-which is described in the [{{ tx.section }}]({{ tx.section-link }})
+which is described in the [{{ tx.section }}]({{ tx.section-link }}).
 
 ## Actors
 
