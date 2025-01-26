@@ -555,7 +555,7 @@ iti92:
   client-actor: Update Initiator
   server-actor: Update Responder
   module: ipf-platform-camel-ihe-xds
-  section: (pending)
+  section: IHE IT Infrastructure Technical Framework Supplement, Restricted Metadata Update (RMU), Section 3.92
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-92.html
 iti105:
   transaction: ITI-105
