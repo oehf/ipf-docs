@@ -21,16 +21,17 @@ If unmarshalling fails, an FHIR response automatically generated and passed back
 | Transaction | Request Message Type                                                                                      | Request Message Headers |
 |-------------|-----------------------------------------------------------------------------------------------------------|-------------------------|
 | ITI-65      | `Bundle` containing `DocumentManifest` (only MHD 3.2), `List`, `DocumentReference` and `Binary` resources | n/a                     |
-| ITI-66 	    | n/a                                                                                                       | Query Parameters        |
+| ITI-66      | n/a                                                                                                       | Query Parameters        |
 | ITI-67      | n/a                                                                                                       | Query Parameters        |
-| ITI-68 	    | n/a                                                                                                       | n/a                     |
+| ITI-68      | n/a                                                                                                       | n/a                     |
 | ITI-78      | n/a                                                                                                       | Query Parameters        |
-| ITI-81 	    | n/a                                                                                                       | Query Parameters        |
-| ITI-83 	    | n/a                                                                                                       | Query Parameters        |
-| PCC-44 	    | n/a                                                                                                       | Query Parameters        |
+| ITI-81      | n/a                                                                                                       | Query Parameters        |
+| ITI-83      | n/a                                                                                                       | Query Parameters        |
+| PCC-44      | n/a                                                                                                       | Query Parameters        |
 | CH:PPQ-3    | - for POST and PUT -- `Consent` resource<br/>- for DELETE -- identifier of a `Consent` resource           |                         | 
 | CH:PPQ-4    | Transaction `Bundle` containing `Consent` resources or identifiers of `Consent` resources                 |                         |
 | CH:PPQ-5    | `ChPpq5SearchParameters`                                                                                  |                         |
+| PHARM-5     | n/a                                                                                                       | Query Parameters        |
 
 The following Camel headers are set by the consumer:
 
@@ -65,7 +66,7 @@ is transformed into a HAPI FHIR resource. When unmarshalling fails, an exception
 | ITI-66 (get)    | `DocumentManifest` (MHD 3.2) or `List` (MHD 4.2) resource                      |
 | ITI-67 (search) | `Bundle` containing `DocumentReference` resources                              |
 | ITI-67 (get)    | `DocumentReference` resource                                                   |
-| ITI-68 	        | binary content (usually via an `InputStream`)                                  |
+| ITI-68          | binary content (usually via an `InputStream`)                                  |
 | ITI-78 (search) | `Bundle` containing matching `Patient` resources                               |
 | ITI-78 (get)    | `Patient` resource                                                             |
 | ITI-81 (get)    | `AuditEvent` resource                                                          |
@@ -74,6 +75,7 @@ is transformed into a HAPI FHIR resource. When unmarshalling fails, an exception
 | CH:PPQ-3        | `MethodOutcome`                                                                |
 | CH:PPQ-4        | `Bundle` containing transaction results                                        |
 | CH:PPQ-5        | `Bundle` containing found `Consent` resources                                  |
+| PHARM-5         | `Bundle` containing `DocumentReference` resources                              |
 
 ### Consumer-side responses
 
@@ -88,22 +90,23 @@ for details.
 
 Data types for the *request* message of the supported transactions on producer (i.e. client) side are listed in the table below:
 
-| Transaction     | Request Message Type                                                                            |
-|-----------------|-------------------------------------------------------------------------------------------------| 
-| ITI-65          | `Bundle`                                                                                        |
-| ITI-66 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                             |
-| ITI-66 (get)    | String with the DocumentManifest (MHD 3.2) or List (MHD 4.2)  resource identifier               |
-| ITI-67 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                             |
-| ITI-67 (get)    | String with the DocumentReference resource identifier                                           |
-| ITI-68 	        | URL string                                                                                      |
-| ITI-78 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                             |
-| ITI-78 (get)    | String with the Patient resource identifier                                                     |
-| ITI-81 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                             |
-| ITI-83          | `org.hl7.fhir.instance.model.Parameters`                                                        |
-| PCC-44 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                             |
-| CH:PPQ-3        | - for POST and PUT -- `Consent` resource<br/>- for DELETE -- identifier of a `Consent` resource |
-| CH:PPQ-4        | Transaction `Bundle` containing `Consent` resources or identifiers of `Consent` resources       |
-| CH:PPQ-5        | Array of ICriterion<?>                                                                          |
+| Transaction     | Request Message Type                                                                                                                                             |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
+| ITI-65          | `Bundle`                                                                                                                                                         |
+| ITI-66 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                                                                                              |
+| ITI-66 (get)    | String with the DocumentManifest (MHD 3.2) or List (MHD 4.2)  resource identifier                                                                                |
+| ITI-67 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                                                                                              |
+| ITI-67 (get)    | String with the DocumentReference resource identifier                                                                                                            |
+| ITI-68          | URL string                                                                                                                                                       |
+| ITI-78 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                                                                                              |
+| ITI-78 (get)    | String with the Patient resource identifier                                                                                                                      |
+| ITI-81 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                                                                                              |
+| ITI-83          | `org.hl7.fhir.instance.model.Parameters`                                                                                                                         |
+| PCC-44 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                                                                                              |
+| CH:PPQ-3        | - for POST and PUT -- `Consent` resource<br/>- for DELETE -- identifier of a `Consent` resource                                                                  |
+| CH:PPQ-4        | Transaction `Bundle` containing `Consent` resources or identifiers of `Consent` resources                                                                        |
+| CH:PPQ-5        | Array of ICriterion<?>                                                                                                                                           |
+| PHARM-5         | Pharm5SearchParameters in the FhirRequestParameters header; `org.hl7.fhir.r4.model.Parameters` in the body and `Pharm5Operations` in the OPERATION_HEADER header |
 
 The URL string may be complete (e.g. `http://example.com/base/Patient?family=smith`) in which case the client's base URL will be ignored. 
 Or it can be relative (e.g. `Patient?family=smith`) in which case the client's base URL will be used.

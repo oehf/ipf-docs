@@ -16,7 +16,7 @@ which is described in the [{{ tx.section }}]({{ tx.section-link }}).
 
 The transaction defines the following actors:
 
-{% include figure image_path="/assets/images/iti65.svg" alt="ITI-65 actors" caption="ITI-65 transaction and actors " %}
+{% include figure image_path="/assets/images/pharm5.svg" alt="PHARM-5 actors" caption="PHARM-5 transaction and actors " %}
 
 Producer side corresponds to the *{{ tx.client-actor }}* actor.
 Consumer side corresponds to the *{{ tx.server-actor }}* actor.

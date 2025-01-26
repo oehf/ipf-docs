@@ -97,6 +97,7 @@ into your project descriptor.
 | `cors.exposed-headers`                |                     | The list of response headers that an actual response might have and can be exposed to the client. The special value "*" allows all headers to be exposed.                                 | 
 | `cors.allow-credentials`              |                     | Whether user credentials are supported. Setting this property has an impact on how origins, originPatterns, allowedMethods and allowedHeaders are processed,                              | 
 | `cors.max-age`                        |                     | How long, as a duration, the response from a pre-flight request can be cached by clients.                                                                                                 | 
+
 See [ipf-spring-boot-starter] and [ipf-atna-spring-boot-starter] for additional properties.
 
 
@@ -112,12 +113,11 @@ Camel provides a Spring boot starter module for this:
 
 [camel-servlet-starter] provides the following application properties:
 
-| Property (`camel.servlet.mapping.`)| Default                | Description                                                      |
-|------------------------------------|------------------------|------------------------------------------------------------------|
-| `enabled`                          | true                   | Enables the automatic mapping of the servlet component into the Spring web context |
-| `contextPath`                      | /camel/*               | Context path used by the servlet component for automatic mapping |
-| `servletName`                      | CamelServlet           | The name of the Camel servlet |
-
+| Property (`camel.servlet.mapping.`) | Default      | Description                                                                        |
+|-------------------------------------|--------------|------------------------------------------------------------------------------------|
+| `enabled`                           | true         | Enables the automatic mapping of the servlet component into the Spring web context |
+| `context-path`                      | /camel/*     | Context path used by the servlet component for automatic mapping                   |
+| `servlet-name`                      | CamelServlet | The name of the Camel servlet                                                      |
 
 [Spring Boot]: https://projects.spring.io/spring-boot/
 [ipf-spring-boot-starter]: {{ site.baseurl }}{% link _pages/boot/boot.md %}
