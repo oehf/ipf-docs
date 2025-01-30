@@ -17,6 +17,6 @@ the HTTP client is configured. In this case, the other parameters have no effect
 | `connectionTimeout`        | Integer     | 10000         | initial connection timeout in milliseconds                                     |
 | `connectionRequestTimeout` | Integer     | 10000         | initial connection timeout in milliseconds                                     |
 | `timeout`                  | Integer     | 10000         | socket timeout for read/write operations in milliseconds                       |   
-| `poolMax`                  | Integer     | 20            | initial connection timeout in milliseconds                                     |
+| `poolMax`                  | Integer     | 20            | maximum allowed number of connections per route                                |
 | `disableServerValidation`  | boolean     | false         | whether the FHIR client shall not obtain a CapabilityStatement from the server |
 | `httpClient`               | String      | n/a           | HTTP Client implementation to be used (`apache5`, `apache`, `methanol`)        |
