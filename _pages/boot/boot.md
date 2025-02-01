@@ -45,8 +45,7 @@ Apart from `ipf-spring-boot-starter`, the available starter modules are:
 | [ipf-xacml20-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-xacml20.md %}) | for XACML20-based IHE transactions    |
 
 These IPF starter modules transitively depend on `ipf-spring-boot-starter`, so there is no need to explicitly
-depend on this module. 
-IPF 3.7 removed this dependency for `ipf-atna-spring-boot-starter`.
+depend on this module.
 
 `ipf-spring-boot-starter` auto-configures `org.openehealth.ipf.commons.spring.map.SpringBidiMappingService` and provides
 Spring beans for picking up any `org.openehealth.ipf.commons.map.config.CustomMappings`. 
