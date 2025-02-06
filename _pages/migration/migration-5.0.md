@@ -40,6 +40,10 @@ for Web Service based and FHIR based transactions. See
 [here]({{ site.baseurl }}{% link _pages/audit.md %}) and 
 [here]({{ site.baseurl }}{% link _pages/boot/boot-atna.md %}) for details.
 
+## Changes in FHIR Request Consumer
+
+`org.openehealth.ipf.commons.ihe.fhir.RequestConsumer`'s handleXXX methods have an additional Map parameter to be able to set response HTTP headers. WHen in doubt, pass in a `new HasMap()`.
+
 ## HL7v3 models
 
 HL7v3 models have been upgraded to the Jakarta XML Bind namespace and moved to the
