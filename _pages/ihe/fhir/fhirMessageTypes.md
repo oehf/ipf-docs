@@ -27,6 +27,7 @@ If unmarshalling fails, an FHIR response automatically generated and passed back
 | ITI-78      | n/a                                                                                                       | Query Parameters        |
 | ITI-81      | n/a                                                                                                       | Query Parameters        |
 | ITI-83      | n/a                                                                                                       | Query Parameters        |
+| ITI-119     | `Parameters` resource                                                                                     |                         | 
 | PCC-44      | n/a                                                                                                       | Query Parameters        |
 | CH:PPQ-3    | - for POST and PUT -- `Consent` resource<br/>- for DELETE -- identifier of a `Consent` resource           |                         | 
 | CH:PPQ-4    | Transaction `Bundle` containing `Consent` resources or identifiers of `Consent` resources                 |                         |
@@ -71,6 +72,7 @@ is transformed into a HAPI FHIR resource. When unmarshalling fails, an exception
 | ITI-78 (get)    | `Patient` resource                                                             |
 | ITI-81 (get)    | `AuditEvent` resource                                                          |
 | ITI-83          | `Parameters` containing matching identifiers                                   |
+| ITI-119         | `Bundle` containing matching `Patient` resources                               |
 | PCC-44 (search) | `Bundle` containing resources, depending on IHE option                         |
 | CH:PPQ-3        | `MethodOutcome`                                                                |
 | CH:PPQ-4        | `Bundle` containing transaction results                                        |
@@ -102,6 +104,7 @@ Data types for the *request* message of the supported transactions on producer (
 | ITI-78 (get)    | String with the Patient resource identifier                                                                                                                      |
 | ITI-81 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                                                                                              |
 | ITI-83          | `org.hl7.fhir.instance.model.Parameters`                                                                                                                         |
+| ITI-119         | `Parameters` resource                                                                                                                                            |
 | PCC-44 (search) | `ca.uhn.fhir.rest.gclient.ICriterion` or URL string                                                                                                              |
 | CH:PPQ-3        | - for POST and PUT -- `Consent` resource<br/>- for DELETE -- identifier of a `Consent` resource                                                                  |
 | CH:PPQ-4        | Transaction `Bundle` containing `Consent` resources or identifiers of `Consent` resources                                                                        |
