@@ -17,7 +17,7 @@ is transformed into a HAPI Message object.
 When unmarshalling fails, an HL7 NAK response will be automatically generated and passed back to the sender.
 
 Unmarshalling may also fail already earlier during reception of the MLLP byte stream (particularly when invalid 
-characters are encountered due to misconfigured character set). You have the following two possiblities to
+characters are encountered due to misconfigured character set). You have the following two possibilities to
 handle these kind of errors:
 
 * add a parameter `consumer.exceptionHandler=#myExceptionHandler` where the configured exception handler must
