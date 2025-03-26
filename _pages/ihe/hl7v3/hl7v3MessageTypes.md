@@ -23,8 +23,8 @@ input stream, stream reader, DOM document, XSLT source, model class instance, et
 
 Starting with the version 4.1.0, IPF contains model classes for requests and responses of selected HL7v3 transactions,
 divided into two categories:
-* stub classes, whose structures resemble generic HL7v3 definitions and whose names correspond
-  to root XML elements of HL7v3 messages, e.g. `PRPAIN201309UV02Type` for ITI-45 request.
+* stub classes (originating from Gazelle), whose structures resemble generic HL7v3 definitions and whose names
+  correspond to root XML elements of HL7v3 messages, e.g. `PRPAIN201309UV02Type` for ITI-45 request.
 * simplified model classes tailored to a particular IHE transaction, e.g. `PixV3QueryRequest` for ITI-45 request.
 
 For the conversion between these two categories of model classes, as well as between them and XML strings, 
