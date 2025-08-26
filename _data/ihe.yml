@@ -573,16 +573,16 @@ iti105:
 iti119:
   transaction: ITI-119
   link: iti119
-  profile: MHD
+  profile: PDQm
   description: Patient Demographics Match
   component: pdqm-iti119
   transport: REST/HTTP(S)
   format: FHIR
   client-actor: Patient Demographics Consumer
   server-actor: Patient Demographics Supplier
-  module: ipf-platform-camel-ihe-fhir-r4-mhd
+  module: ipf-platform-camel-ihe-fhir-r4-pixpdq
   section: IHE IT Infrastructure Technical Framework Supplement, Patient Demographics Match (PDQm), Section 3.78
-  section-link: https://profiles.ihe.net/ITI/MHD/index.html
+  section-link: https://profiles.ihe.net/ITI/PDQm/index.html
 pharm5:
   transaction: PHARM-5
   link: pharm5
