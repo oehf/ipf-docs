@@ -15,21 +15,26 @@ to insert additional protocol headers into outgoing messages.
 
 From within the route, headers of the current incoming Web Service message can be accessed as Camel message headers:
 
-| Protocol  | Camel header name                           | Type
-|:----------|:--------------------------------------------|:---------------------------------------------
-| HTTP      | `AbstractWsEndpoint#INCOMING_HTTP_HEADERS`  | `Map<String, String>` with keys corresponding to header names
-| SOAP      | `AbstractWsEndpoint#INCOMING_SOAP_HEADERS`  | `Map<QName, org.apache.cxf.headers.Header>` with keys corresponding to header names
+| Protocol | Camel header name                          | Type                                                                                |
+|:---------|:-------------------------------------------|:------------------------------------------------------------------------------------|
+| HTTP     | `AbstractWsEndpoint#INCOMING_HTTP_HEADERS` | `Map<String, String>` with keys corresponding to header names                       |
+| SOAP     | `AbstractWsEndpoint#INCOMING_SOAP_HEADERS` | `Map<QName, org.apache.cxf.headers.Header>` with keys corresponding to header names |
 
+Starting from IPF 5.2, the class `org.openehealth.ipf.platform.camel.ihe.ws.HeaderUtils` provides convenience methods 
+`getIncomingHttpHeaders()` and `getIncomingSoapHeaders()`.
 
 ## Setting additional protocol headers of outgoing messages
 
 To add custom HTTP and/or SOAP headers to an outgoing message, a corresponding data structure
 must be made available through corresponding Camel message header:
 
-| Protocol  | Camel header name                           | Type
-|:----------|:--------------------------------------------|:---------------------------------------------
-| HTTP      | `AbstractWsEndpoint#OUTGOING_HTTP_HEADERS`  | `Map<String, String>` with keys corresponding to header names
-| SOAP      | `AbstractWsEndpoint#OUTGOING_SOAP_HEADERS`  | `Collection<org.apache.cxf.headers.Header>` or `Map<QName, org.apache.cxf.headers.Header>` (keys will be ignored)
+| Protocol | Camel header name                          | Type                                                                                                              |
+|:---------|:-------------------------------------------|:------------------------------------------------------------------------------------------------------------------|
+| HTTP     | `AbstractWsEndpoint#OUTGOING_HTTP_HEADERS` | `Map<String, String>` with keys corresponding to header names                                                     |
+| SOAP     | `AbstractWsEndpoint#OUTGOING_SOAP_HEADERS` | `Collection<org.apache.cxf.headers.Header>` or `Map<QName, org.apache.cxf.headers.Header>` (keys will be ignored) |
+
+Starting from IPF 5.2, the class `org.openehealth.ipf.platform.camel.ihe.ws.HeaderUtils` provides convenience methods
+`addOutgoingHttpHeaders()` and `addOutgoingSoapHeaders()`.
 
 
 ## Example of configuring a simple custom SOAP header with plain text content
@@ -38,6 +43,7 @@ must be made available through corresponding Camel message header:
 
     import static AbstractWsEndpoint.*
 
+    // IPF versions before 5.2
     .process {
         def headerName = new QName('urn:ihe:iti:ihe:2007', 'CustomXdsHeader')
         def header = new Header(headerName, "simple contents", new JAXBDataBinding(String.class))
@@ -45,6 +51,13 @@ must be made available through corresponding Camel message header:
             it.in.headers[OUTGOING_SOAP_HEADERS] = []
         }
         it.in.headers[OUTGOING_SOAP_HEADERS] << header
+    }
+
+    // IPF versions 5.2+
+    .process {
+        def headerName = new QName('urn:ihe:iti:ihe:2007', 'CustomXdsHeader')
+        def header = new Header(headerName, "simple contents", new JAXBDataBinding(String.class))
+        HeaderUtils.addOutgoingSoapHeaders(it, header)
     }
 
 ```
@@ -55,13 +68,22 @@ must be made available through corresponding Camel message header:
     
     import static AbstractWsEndpoint.*
 
+    // IPF versions before 5.2
     .process {
-       def myRequestHeader = it.in.headers[INCOMING_HTTP_HEADERS]['MyRequestHeader']
-       if (! it.in.headers.containsKey(OUTGOING_HTTP_HEADERS)) {
-           it.in.headers[OUTGOING_HTTP_HEADERS] = [:]
-       }
-       it.in.headers[OUTGOING_HTTP_HEADERS]['SAMLToken'] = '...'
-       it.in.headers[OUTGOING_HTTP_HEADERS]['MyResponseHeader'] = 'Re: ' + myRequestHeader
+        def myRequestHeader = it.in.headers[INCOMING_HTTP_HEADERS]['MyRequestHeader']
+        if (! it.in.headers.containsKey(OUTGOING_HTTP_HEADERS)) {
+            it.in.headers[OUTGOING_HTTP_HEADERS] = [:]
+        }
+        it.in.headers[OUTGOING_HTTP_HEADERS]['SAMLToken'] = '...'
+        it.in.headers[OUTGOING_HTTP_HEADERS]['MyResponseHeader'] = 'Re: ' + myRequestHeader
+    }
+
+    // IPF versions 5.2+
+    .process {
+        def myRequestHeader = HeaderUtils.getIncomingHttpHeaders(it)['MyRequestHeader']
+        HttpUtils.addOutgoingHttpHeaders(it,
+                'SAMLToken',        '...',
+                'MyResponseHeader', 'Re: ' + myRequestHeader)
     }
 
 ```
