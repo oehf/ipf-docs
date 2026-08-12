@@ -46,6 +46,8 @@ sidebar:
         url: /docs/ihe/pcd01/
       - title: "SVS (SOAP)"
         url: /docs/ihe/svs/
+      - title: "eCH (SOAP)"
+        url: /docs/ihe/ech/
   - title: "HL7 and Groovy"
     children:  
       - title: "HL7 Message Processing with Groovy"
@@ -66,3 +68,39 @@ sidebar:
     children:
       - title: "Overview"
         url: /docs/boot/
+  - title: "Migration Guides"
+    children:
+      - title: "IPF 5.3"
+        url: /docs/migration-5.3/
+      - title: "IPF 5.2"
+        url: /docs/migration-5.2/
+      - title: "IPF 5.1"
+        url: /docs/migration-5.1/
+      - title: "IPF 5.0"
+        url: /docs/migration-5.0/
+      - title: "IPF 4.8"
+        url: /docs/migration-4.8/
+      - title: "IPF 4.4"
+        url: /docs/migration-4.4/
+      - title: "IPF 4.3"
+        url: /docs/migration-4.3/
+      - title: "IPF 4.2"
+        url: /docs/migration-4.2/
+      - title: "IPF 4.1"
+        url: /docs/migration-4.1/
+      - title: "IPF 4.0"
+        url: /docs/migration-4.0/
+      - title: "IPF 3.7"
+        url: /docs/migration-3.7/
+      - title: "IPF 3.6"
+        url: /docs/migration-3.6/
+      - title: "IPF 3.5"
+        url: /docs/migration-3.5/
+      - title: "IPF 3.4"
+        url: /docs/migration-3.4/
+      - title: "IPF 3.2"
+        url: /docs/migration-3.2/
+      - title: "IPF 3.1"
+        url: /docs/migration-3.1/
+      - title: "IPF 3.0"
+        url: /docs/migration-3.0/

@@ -16,6 +16,12 @@ The dependency on the IPF [Spring Boot] IHE FHIR starter module is for FHIR STU3
     </dependency>
 ```
 
+**Deprecation**
+`ipf-fhir-stu3-spring-boot-starter` and all other FHIR STU3 modules are deprecated as of IPF 5.3 and will be
+removed in IPF 6.0. Use `ipf-fhir-r4-spring-boot-starter` for new applications; see the
+[5.3 Migration Guide]({{ site.baseurl }}{% link _pages/migration/migration-5.3.md %}).
+{: .notice--warning}
+
 and for FHIR R4:
 
 ```xml

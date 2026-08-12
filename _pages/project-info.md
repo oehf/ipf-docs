@@ -31,10 +31,11 @@ Git repository on [GitHub][ipf-github] and provide some good pull requests!
 
 ## What's New
 
-The current version of IPF is 5.0.0
+The current version of IPF is 5.2.0
 
 See the list of fixed Github issues for an overview:
 
+* Fixes for [5.2.0](https://github.com/oehf/ipf/releases/tag/ipf-5.2.0)
 * Fixes for [5.1.0](https://github.com/oehf/ipf/releases/tag/ipf-5.1.0)
 * Fixes for [5.0.0](https://github.com/oehf/ipf/releases/tag/ipf-5.0.0)
 * Fixes for [4.8.0](https://github.com/oehf/ipf/releases/tag/ipf-4.8.0)
@@ -55,6 +56,9 @@ See the list of fixed Github issues for an overview:
 The IPF 5.x release supports java 17 and up, Spring Boot 3.x, Camel 4.x. Major new features will be developed
 primarily for IPF 5.
 
+The next major release, IPF 6.0, will move to Spring Framework 7, Spring Boot 4.x and Jakarta EE 11, and will
+remove deprecated functionality, including all FHIR STU3 support.
+
 IPF 4.x supports Java 11 and up, Spring Boot 2.x as well as Camel 3.x. We will support this branch for some more
 patch releases to support the folks that are not able (yet) to upgrade to a recent JDK.
 
@@ -65,6 +69,8 @@ and we highly recommend the upgrade to a recent JDK and new IPF releases.
 
 If you are using previous versions of IPF and want to update:
 
+* IPF 5.3 completes FHIR-based (BALP) ATNA auditing, renaming and deprecating a few audit classes, and deprecates all FHIR STU3 support. See [5.3 Update Instructions] for details.
+* IPF 5.2 is backwards-compatible with IPF 5.1, but brings stricter validation for some FHIR transactions and major Camel and Groovy updates. See [5.2 Update Instructions] for details.
 * IPF 5.1 consists primarily of bugfixes and dependency updates. See [5.1 Update Instructions] for details.
 * IPF 5.0 is not backwards-compatible with IPF 4.x, primarily because it is now based on Jakarta EE 10. See [5.0 Update Instructions] for details.
 * IPF 4.8 introduce some changes that are mention in [4.8 Update Instructions].
@@ -101,3 +107,5 @@ The javadocs can be obtained [here](apidocs/index.html).
 [4.8 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-4.8.md %}
 [5.0 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-5.0.md %}
 [5.1 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-5.1.md %}
+[5.2 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-5.2.md %}
+[5.3 Update Instructions]: {{ site.baseurl }}{% link _pages/migration/migration-5.3.md %}

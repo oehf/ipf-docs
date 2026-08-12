@@ -20,6 +20,12 @@ ALl current support for FHIR-based IHE profiles is for FHIR [R4](https://hl7.org
 
 {: .notice--info}
 
+**Deprecation**
+The remaining FHIR STU3 support (modules whose artifact id contains `fhir-stu3`) is deprecated as of
+IPF 5.3 and will be removed in IPF 6.0. Use the R4 modules instead; see the
+[5.3 Migration Guide]({{ site.baseurl }}{% link _pages/migration/migration-5.3.md %}).
+{: .notice--warning}
+
 The following IHE transactions for FHIR are currently supported:
 
 | Transaction             | Profile          | Description           | IPF Component          |  IPF Module |

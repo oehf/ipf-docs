@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "SPID Query\nService Consumer" as CON
+participant "SPID Query\nService Provider (UPI)" as UPI
+
+CON -> UPI : Query SPID (eCH-0214 request)
+activate UPI
+UPI --> CON : eCH-0214 response
+deactivate UPI
+
+@enduml

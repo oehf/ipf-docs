@@ -21,10 +21,15 @@ The transaction defines the following actors:
 /assets/images/{{tx.link}}.svg
 {% endcapture %}
 
-{% include figure image_path="/assets/images/iti61.svg" alt="ITI-61 actors" caption="ITI-61 transaction and actors " %}
+{% include figure image_path="/assets/images/iti62.svg" alt="ITI-62 actors" caption="ITI-62 transaction and actors " %}
 
 Producer side corresponds to the *{{ tx.client-actor }}* actor.
 Consumer side corresponds to the *{{ tx.server-actor }}* actor.
+
+This transaction is registered under two component names: `{{ tx.component }}` and `xds-iti62`. Both refer
+to the same implementation, so the choice is a matter of taste; `{{ tx.component }}` matches the profile the
+transaction belongs to.
+{: .notice--info}
 
 ### Dependencies
 

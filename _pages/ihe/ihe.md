@@ -55,6 +55,7 @@ IHE Profiles are grouped by their underlying technical foundation, particularly 
 * [DSMLv2-based transactions]
 * [XACML-based transactions]
 * [SVS-based transactions]
+* [eCH-based transactions] (SOAP)
 
 The table below references all supported eHealth transactions. Click on the link in the first column for details about
 required dependencies, usage and parameters.
@@ -122,3 +123,4 @@ The basic pattern for producers is to specify the component name in the URI para
 [DSMLv2-based transactions]: {{ site.baseurl }}{% link _pages/ihe/hpd/hpd.md %}
 [XACML-based transactions]: {{ site.baseurl }}{% link _pages/ihe/xacml20/xacml20.md %}
 [SVS-based transactions]: {{ site.baseurl }}{% link _pages/ihe/svs/svs.md %}
+[eCH-based transactions]: {{ site.baseurl }}{% link _pages/ihe/ech/ech.md %}

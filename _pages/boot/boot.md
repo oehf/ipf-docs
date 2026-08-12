@@ -40,9 +40,12 @@ Apart from `ipf-spring-boot-starter`, the available starter modules are:
 | [ipf-hl7-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-hl7.md %})         | for HL7v2/MLLP-based IHE transactions |
 | [ipf-hl7v3-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-hl7v3.md %})     | for HL7v3/SOAP-based IHE transactions |
 | [ipf-xds-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-xds.md %})         | for XDS/SOAP-based IHE transactions   |
-| [ipf-fhir-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-fhir.md %})       | for FHIR/REST-based IHE transactions  |
+| [ipf-fhir-r4-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-fhir.md %})    | for FHIR R4/REST-based IHE transactions |
+| [ipf-fhir-stu3-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-fhir.md %})  | for FHIR STU3/REST-based IHE transactions |
 | [ipf-hpd-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-hpd.md %})         | for DSML/SOAP-based IHE transactions  |
 | [ipf-xacml20-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-xacml20.md %}) | for XACML20-based IHE transactions    |
+| [ipf-svs-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-svs.md %})         | for SVS/SOAP-based IHE transactions   |
+| [ipf-ech-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-ech.md %})         | for eCH/SOAP-based transactions       |
 
 These IPF starter modules transitively depend on `ipf-spring-boot-starter`, so there is no need to explicitly
 depend on this module.

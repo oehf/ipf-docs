@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+
+participant "SPID Management\nService Consumer" as CON
+participant "SPID Management\nService Provider (UPI)" as UPI
+
+CON -> UPI : Manage SPID (eCH-0213 request)
+activate UPI
+UPI --> CON : eCH-0213 response
+deactivate UPI
+
+@enduml

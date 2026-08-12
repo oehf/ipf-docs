@@ -309,7 +309,7 @@ iti55:
   server-actor: Responding Gateway
   module: ipf-platform-camel-ihe-hl7v3
   section: IHE IT Infrastructure Technical Framework, Volume 2, Section 3.55
-  section-link: hhttps://profiles.ihe.net/ITI/TF/Volume2/ITI-55.html
+  section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-55.html
 iti56:
   transaction: ITI-56
   link: iti56
@@ -659,8 +659,8 @@ pcd01:
   client-actor: Device Observation Reporter
   server-actor: Device Observation Consumer
   module: ipf-platform-camel-ihe-hl7v2ws
-  section: IHE Patient Care Device Technical Framework, Volume 2, Section 3
-  section-link: https://www.ihe.net/Technical_Framework/upload/IHE_PCD_TF_Vol2.pdf
+  section: IHE Devices (formerly Patient Care Device) Technical Framework, Volume 2, Section 3
+  section-link: https://www.ihe.net/uploadedFiles/Documents/DEV/IHE_DEV_TF_Vol2.pdf
 pharm1:
   transaction: PHARM-1
   link: pharm1
@@ -686,7 +686,7 @@ chpidd:
   server-actor: Provider Information Directory
   module: ipf-platform-camel-ihe-hpd
   section: Swiss national extensions to the IHE Technical Framework
-  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
+  section-link: https://www.e-health-suisse.ch/das-epd/epd-technik/epd-spezifikationen
 chadr:
   transaction: CH-ADR
   link: chadr
@@ -699,7 +699,7 @@ chadr:
   server-actor: Authorization Decision Producer
   module: ipf-platform-camel-ihe-xacml20
   section: Swiss national extensions to the IHE Technical Framework
-  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
+  section-link: https://www.e-health-suisse.ch/das-epd/epd-technik/epd-spezifikationen
 chppq1:
   transaction: CH-PPQ-1
   link: chppq1
@@ -712,7 +712,7 @@ chppq1:
   server-actor: Policy Repository
   module: ipf-platform-camel-ihe-xacml20
   section: Swiss national extensions to the IHE Technical Framework
-  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
+  section-link: https://www.e-health-suisse.ch/das-epd/epd-technik/epd-spezifikationen
 chppq2:
   transaction: CH-PPQ-2
   link: chppq2
@@ -725,7 +725,7 @@ chppq2:
   server-actor: Policy Repository
   module: ipf-platform-camel-ihe-xacml20
   section: Swiss national extensions to the IHE Technical Framework
-  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
+  section-link: https://www.e-health-suisse.ch/das-epd/epd-technik/epd-spezifikationen
 chppq3:
   transaction: CH-PPQ-3
   link: chppq3
@@ -816,7 +816,7 @@ chciq:
   server-actor: Community Information Provider
   module: ipf-platform-camel-ihe-hpd
   section: Swiss national integration profiles
-  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
+  section-link: https://www.e-health-suisse.ch/das-epd/epd-technik/epd-spezifikationen
 chcidd:
   transaction: CH-CIDD
   link: chcidd
@@ -829,4 +829,30 @@ chcidd:
   server-actor: Community Information Provider
   module: ipf-platform-camel-ihe-hpd
   section: Swiss national integration profiles
-  section-link: https://www.e-health-suisse.ch/de/technik/technische-interoperabilitaet/epd-spezifikationen
+  section-link: https://www.e-health-suisse.ch/das-epd/epd-technik/epd-spezifikationen
+ech0213:
+  transaction: eCH-0213
+  link: ech0213
+  profile: EPR-SPID
+  description: Manage SPID
+  component: ech-0213
+  transport: SOAP/HTTP(S)
+  format: eCH
+  client-actor: SPID Management Service consumer
+  server-actor: SPID Management Service provider (UPI)
+  module: ipf-platform-camel-ihe-ech
+  section: eCH-0213 EPR-SPID Management Service, Version 1.0
+  section-link: https://www.ech.ch/de/ech/ech-0213/1.0
+ech0214:
+  transaction: eCH-0214
+  link: ech0214
+  profile: EPR-SPID
+  description: Query SPID
+  component: ech-0214
+  transport: SOAP/HTTP(S)
+  format: eCH
+  client-actor: SPID Query Service consumer
+  server-actor: SPID Query Service provider (UPI)
+  module: ipf-platform-camel-ihe-ech
+  section: eCH-0214 EPR-SPID Query Service, Version 2.0
+  section-link: https://www.ech.ch/de/ech/ech-0214/2.0

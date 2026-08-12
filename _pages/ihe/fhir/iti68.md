@@ -81,6 +81,21 @@ the unique document ID, and, if applicable in scenarios involving XDS, an option
 and home community ID in order to populate this AuditDataset with more information. This is because the 
 document retrieval URL is completely unspecified with regard to this information.
 
+## Retrieval using Binary resources
+
+Besides `{{ tx.component }}`, the same module provides a second component named `mhd-iti68-bin` for
+*Retrieve Document using Binary Resources*. It serves the document through a FHIR `Binary` resource
+instead of returning the plain document stream, and it only accepts `GET` requests. Endpoint URI format,
+dependency and URI parameters are the same as for `{{ tx.component }}`:
+
+```java
+    from("mhd-iti68-bin://service?audit=true&secure=true")
+      .process(myProcessor)
+```
+
+Choose `{{ tx.component }}` when the Document Consumer expects the document bytes at an arbitrary URL, and
+`mhd-iti68-bin` when it retrieves the document as a FHIR `Binary` resource.
+
 ## Remarks for this component
  
 Although this component is part of a FHIR-specific module, it just responds to a plain servlet
