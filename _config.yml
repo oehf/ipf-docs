@@ -11,7 +11,7 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-remote_theme: "mmistakes/minimal-mistakes@4.21.0"
+remote_theme: "mmistakes/minimal-mistakes@4.28.1"
 # minimal_mistakes_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -23,6 +23,8 @@ description              : "eHealth Standards on steroids."
 url                      : "https://oehf.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/ipf-docs" # the subpath of your site, e.g. "/blog"
 repository               : "oehf/ipf-docs" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+copyright                : "Open eHealth Foundation"
+copyright_url            : "https://oehf.github.io/ipf-docs"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -59,6 +61,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
+  hide                   : true # site has no posts, so hide the footer feed link
 search                   : true
 search_full_content      : # true, false (default)
 search_provider          : algolia # lunr (default), algolia, google
@@ -101,7 +104,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Open eHealth Foundation"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an amazing person."
   location         : "Somewhere"
@@ -154,6 +157,7 @@ include:
   - .htaccess
   - _pages
 exclude:
+  - CLAUDE.md
   - "*.sublime-project"
   - "*.sublime-workspace"
   - vendor

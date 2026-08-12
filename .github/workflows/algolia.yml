@@ -1,0 +1,40 @@
+name: Algolia Search Index
+
+# Keeps the Algolia index (see the `algolia` section in _config.yml) in sync with
+# the site content. GitHub Pages builds and deploys the site itself; only the
+# search index needs this extra step.
+#
+# Requires the repository secret ALGOLIA_API_KEY, holding an Algolia *Admin*
+# (write-enabled) API key for application P12RBMYUQ8. The search-only key in
+# _config.yml cannot write to the index.
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+# A newer commit supersedes an in-flight reindex of an older one.
+concurrency:
+  group: algolia-index
+  cancel-in-progress: true
+
+jobs:
+  reindex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          # Needs the Gemfile's github-pages "~> 232" pin: the older 222 set drags in
+          # liquid 4.0.3, which calls Object#tainted? (removed in Ruby 3.2) and makes
+          # `jekyll algolia` fail with "undefined method `tainted?'".
+          ruby-version: "3.3"
+          # Gemfile.lock is gitignored, so let setup-ruby resolve and cache it.
+          bundler-cache: true
+
+      - name: Push search index
+        run: bundle exec jekyll algolia
+        env:
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}

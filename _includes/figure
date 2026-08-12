@@ -1,16 +1,17 @@
+{%- comment -%}
+  IPF override of the Minimal Mistakes `figure` include: adds an optional
+  `width` parameter (used by the sequence diagrams, e.g. width="75%").
+  Keep in sync with the upstream include when bumping `remote_theme`.
+{%- endcomment -%}
 <figure class="{{ include.class }}">
-  <img src=
-    {% if include.image_path contains "://" %}
-      "{{ include.image_path }}"
-    {% else %}
-      "{{ include.image_path | relative_url }}"
-    {% endif %}
-    alt="{% if include.alt %}{{ include.alt }}{% endif %}"
-    {% if include.width %}
-    style="width:{{ include.width }}"
-    {% endif %}
-    >
-  {% if include.caption %}
-    <figcaption>{{ include.caption | markdownify | remove: "<p>" | remove: "</p>" }}</figcaption>
-  {% endif %}
+  {%- if include.popup -%}<a href="{{ include.image_path | relative_url }}" class="image-popup"{% if include.caption %} title="{{ include.caption | markdownify | strip_html }}"{% endif %}>{%- endif -%}
+  <img src="{{ include.image_path | relative_url }}"
+       alt="{% if include.alt %}{{ include.alt | escape_once }}{% endif %}"
+       {%- if include.width %} style="width:{{ include.width }}"{%- endif -%}>
+  {%- if include.popup -%}</a>{%- endif -%}
+  {%- if include.caption -%}
+    <figcaption>
+      {{ include.caption | markdownify | remove: "<p>" | remove: "</p>" }}
+    </figcaption>
+  {%- endif -%}
 </figure>

@@ -11,7 +11,7 @@ main:
   - title: "Javadocs"
     url: /_pages/apidocs/
   - title: "News"
-    url: /news/    
+    url: /project-info/#whats-new
   - title: "Sitemap"
     url: /sitemap/
 

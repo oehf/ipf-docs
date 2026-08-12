@@ -6,8 +6,9 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.2"
   overlay_image: /assets/images/title-unsplash.jpg
-  cta_label: "Download"
-  cta_url: "https://search.maven.org/search?q=ipf"
+  actions:
+    - label: "Download"
+      url: "https://search.maven.org/search?q=ipf"
 excerpt: "eHealth standards on steroids."
 intro: 
   - excerpt: 'The Open eHealth Integration Platform (IPF) provides interfaces for health-care related integration solutions. An prominent example of an healthcare-related use case of IPF is the implementation of interfaces for transactions specified in Integrating the Healthcare Enterprise (IHE) profiles.'
