@@ -35,6 +35,7 @@ The current version of IPF is 5.0.0
 
 See the list of fixed Github issues for an overview:
 
+* Fixes for [5.1.0](https://github.com/oehf/ipf/releases/tag/ipf-5.1.0)
 * Fixes for [5.0.0](https://github.com/oehf/ipf/releases/tag/ipf-5.0.0)
 * Fixes for [4.8.0](https://github.com/oehf/ipf/releases/tag/ipf-4.8.0)
 * Fixes for [4.7.0](https://github.com/oehf/ipf/releases/tag/ipf-4.7.0)
@@ -64,6 +65,7 @@ and we highly recommend the upgrade to a recent JDK and new IPF releases.
 
 If you are using previous versions of IPF and want to update:
 
+* IPF 5.1 consists primarily of bugfixes and dependency updates. See [5.1 Update Instructions] for details.
 * IPF 5.0 is not backwards-compatible with IPF 4.x, primarily because it is now based on Jakarta EE 10. See [5.0 Update Instructions] for details.
 * IPF 4.8 introduce some changes that are mention in [4.8 Update Instructions].
 * IPF 4.4 has reimplemented IHE MLLP component. Read the [4.4 Update Instructions] for how to update from earlier versions

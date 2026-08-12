@@ -12,3 +12,11 @@ IPF 5.1 comes with some changes that should be considered when upgrading from ea
 ## Changes in module structure
 
 Modules `ipf-commons-ihe-xacml20-model` and `ipf-commons-ihe-xacml20-impl` are joined to `ipf-commons-ihe-xacml20`.
+
+## Changes in syslog parser
+
+The Syslog parser (used for server-side parsing of ATNA events) has been rewritten, removing the dependency on simple-syslog-5424 and (transitively) ANTLR. Changes of behavior may occur in certain edge cases.
+
+## Changes in FHIR Audit ATNA
+
+AuditRecordTranslator and AbstractFhirAuditSerializationStrategy have been aligned and corrected, so that FHIR AuditEvent resources look slightly different now. 
