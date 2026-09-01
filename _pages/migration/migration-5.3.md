@@ -34,8 +34,8 @@ Unchanged: Java 17 baseline, and IPF builds and runs on JDK 21 and JDK 25 as of
 
 IPF 5.3 only refreshes dependencies within their existing lines:
 
-| Library | IPF 5.2.0 | IPF 5.3 |
-|---------|-----------|---------|
+| Library | IPF 5.2.0 | IPF 5.3.0 |
+|---------|-----------|-----------|
 | Apache Camel | 4.18.2 | 4.18.4  |
 | Apache CXF | 4.1.6 | 4.1.8   |
 | Groovy | 5.0.6 | 5.0.8   |
@@ -166,6 +166,9 @@ Expect a migration effort comparable to
 rather than to a minor release. Most of the work will be in the third-party upgrades rather
 than in IPF's own API. In addition, deprecated classes and methods — including all FHIR STU3 support — will
 be removed.
+
+The complete list of resolved issues is in the
+[5.3.0 release notes](https://github.com/oehf/ipf/releases/tag/ipf-5.3.0).
 
 [ATNA Spring Boot starter]: {{ site.baseurl }}{% link _pages/boot/boot-atna.md %}
 [FHIR deployment]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirDeployment.md %}

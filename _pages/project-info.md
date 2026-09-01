@@ -31,10 +31,11 @@ Git repository on [GitHub][ipf-github] and provide some good pull requests!
 
 ## What's New
 
-The current version of IPF is 5.2.0
+The current version of IPF is 5.3.0
 
 See the list of fixed Github issues for an overview:
 
+* Fixes for [5.3.0](https://github.com/oehf/ipf/releases/tag/ipf-5.3.0)
 * Fixes for [5.2.0](https://github.com/oehf/ipf/releases/tag/ipf-5.2.0)
 * Fixes for [5.1.0](https://github.com/oehf/ipf/releases/tag/ipf-5.1.0)
 * Fixes for [5.0.0](https://github.com/oehf/ipf/releases/tag/ipf-5.0.0)
