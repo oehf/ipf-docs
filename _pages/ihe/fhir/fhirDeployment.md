@@ -33,7 +33,7 @@ Here is an example:
         <servlet>
             <servlet-name>FhirServlet</servlet-name>
             <servlet-class>org.openehealth.ipf.commons.ihe.fhir.IpfFhirServlet</servlet-class>
-            <!-- FHIR version to be used: DSTU3, R4 -->
+            <!-- FHIR version to be used: R4 (DSTU3 is deprecated) -->
             <init-param>
                 <param-name>fhirVersion</param-name>
                 <param-value>R4</param-value>
@@ -63,7 +63,7 @@ The following servlet init parameters are supported:
 
 | Parameter name       | Type            | Default value | Short description                                                    |
 |:---------------------|:----------------|:--------------|:---------------------------------------------------------------------|
-| `fhirVersion`        | FhirVersionEnum | -             | which FHIR version to be used: STU3 or R4                            |
+| `fhirVersion`        | FhirVersionEnum | -             | which FHIR version to be used: R4 or DSTU3 (deprecated)              |
 | `logging`            | Boolean         | false         | writes incoming requests into the log                                |
 | `highlight`          | Boolean         | false         | whether responses to requests from browsers are (syntax-)highlighted |
 | `pretty`             | Boolean         | false         | whether responses are indented                                       |
@@ -103,8 +103,8 @@ The servlet definition above would match the following consumer endpoint:
 ### Embedded in Spring Boot
 
 Container deployments embedded in [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-embedded-web-servers)
-can be easily achieved by depending on [ipf-fhir-stu3-spring-boot-starter] or
-and [ipf-fhir-r4-spring-boot-starter].
+can be easily achieved by depending on [ipf-fhir-r4-spring-boot-starter]
+(or the deprecated [ipf-fhir-stu3-spring-boot-starter]).
 This starter module along with [camel-servlet-starter] sets up the necessary servlets and the servlet init parameters are mapped to
 application properties.
 

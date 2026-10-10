@@ -7,7 +7,16 @@ classes: wide
 
 `ipf-fhir-spring-boot-starter` sets up the infrastructure for FHIR-based IHE transactions
  
-The dependency on the IPF [Spring Boot] IHE FHIR starter module is for FHIR STU3:
+The dependency on the IPF [Spring Boot] IHE FHIR starter module is for FHIR R4:
+
+```xml
+    <dependency>
+        <groupId>org.openehealth.ipf.boot</groupId>
+        <artifactId>ipf-fhir-r4-spring-boot-starter</artifactId>
+    </dependency>
+```
+
+and for FHIR STU3:
 
 ```xml
     <dependency>
@@ -22,15 +31,6 @@ removed in IPF 6.0. Use `ipf-fhir-r4-spring-boot-starter` for new applications; 
 [5.3 Migration Guide]({{ site.baseurl }}{% link _pages/migration/migration-5.3.md %}).
 {: .notice--warning}
 
-and for FHIR R4:
-
-```xml
-    <dependency>
-        <groupId>org.openehealth.ipf.boot</groupId>
-        <artifactId>ipf-fhir-r4-spring-boot-starter</artifactId>
-    </dependency>
-```
-
 
 Both `ipf-fhir-spring-boot-starter` modules auto-configure by default:
  
@@ -40,7 +40,7 @@ Both `ipf-fhir-spring-boot-starter` modules auto-configure by default:
 
 You can define your own beans of this type in order to override the defaults.
 
-The modules define a mandatory instance of [`ca.uhn.fhir.context.FhirContext`](https://hapifhir.io/apidocs/ca/uhn/fhir/context/FhirContext.html) 
+The modules define a mandatory instance of [`ca.uhn.fhir.context.FhirContext`](https://hapifhir.io/hapi-fhir/apidocs/hapi-fhir-base/ca/uhn/fhir/context/FhirContext.html) 
 in the correct FHIR version, the bean name is `fhirContext`. The instance can, however, be customized by providing a 
 [`FhirContextCustomizer`](../apidocs/org/openehealth/ipf/boot/fhir/FhirContextCustomizer.html) bean:
 
@@ -60,12 +60,12 @@ in the correct FHIR version, the bean name is `fhirContext`. The instance can, h
 Furthermore, if a single `org.springframework.cache.CacheManager` bean is available and the application
 property `ipf.fhir.caching` is set to true, the following caching storage beans are set up:
 
-* a `IPagingProvider` for [paging results](http://hapifhir.io/doc_rest_server.html#Paging_Providers)
+* a `IPagingProvider` for [paging results](https://hapifhir.io/hapi-fhir/docs/server_plain/paging.html)
 
 
 `ipf-fhir-spring-boot-starter` modules do *not*  transitively depend on the respective Camel-dependent IHE FHIR
 modules as these have been split into support for IHE MHD, PIXm/PDQm, QEDm and RESTful ATNA, respectively. 
-So, e.g. in order to provide STU3 MHD endpoints, you have to include
+So, e.g. in order to provide R4 MHD endpoints, you have to include
 
 ```xml
         <dependency>

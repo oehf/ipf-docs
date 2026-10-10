@@ -70,6 +70,8 @@ sidebar:
         url: /docs/boot/
   - title: "Migration Guides"
     children:
+      - title: "IPF 6.0"
+        url: /docs/migration-6.0/
       - title: "IPF 5.3"
         url: /docs/migration-5.3/
       - title: "IPF 5.2"

@@ -110,14 +110,14 @@ Spring Boot support in [ipf-atna-spring-boot-starter] instantiates an `AuditCont
 ## Configure custom audit event queueing
 
 The delivery queue that is used as channel for the audit sender can be customized by using a different implementation 
-of the interface [`AuditMessageQueue`](../../apidocs/org/openehealth/ipf/commons/audit/queue/AuditMessageQueue.html). 
+of the interface [`AuditMessageQueue`](../apidocs/org/openehealth/ipf/commons/audit/queue/AuditMessageQueue.html). 
 There are implementations for synchronous and asynchronous delivery of string-serialized audit messages as well as a 
 queues for logging an `AuditingMessage` to a file or sending it to a Camel Endpoint (as described below).
 
 ## Configure custom audit event exception handling
 
 The exception handler that is called when transmitting audit records fails can be customized by using a different implementation 
-of the interface [`AuditExceptionHandler`](../../apidocs/org/openehealth/ipf/commons/audit/handler/AuditExceptionHandler.html). 
+of the interface [`AuditExceptionHandler`](../apidocs/org/openehealth/ipf/commons/audit/handler/AuditExceptionHandler.html). 
 The only existing implementation is to log the exception, but you can implement more elaborate solutions, 
 e.g. resending, or using a fallback transmission protocol.
 
@@ -130,7 +130,7 @@ Some updates also affect the way Audit messages are serialized (as specified in 
 As IHE ATNA does not reference a specific DICOM version, in the past there have been interoperability issues where
 the Application Node sends ATNA events that the repository actor was not (yet) capable to consume. To ensure
 a certain degree of backwards compatibility, the `serializationStrategy` can be configured to use a certain
-implementation version, where [`Current`](../../apidocs/org/openehealth/ipf/commons/audit/marshal/dicom/Current.html) 
+implementation version, where [`Current`](../apidocs/org/openehealth/ipf/commons/audit/marshal/dicom/Current.html) 
 always references the latest relevant version.
 You can also provide a custom implementation of `org.openehealth.ipf.commons.audit.marshal.SerializationStrategy`
 that creates other representations of an `AuditMessage` (there is e.g. an implementation creating JSON-serialized 

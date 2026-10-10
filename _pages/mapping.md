@@ -7,6 +7,22 @@ toc_icon: align-left
 toc_sticky: true
 ---
 
+## Deprecated as of IPF 6.0
+
+**This page describes the mapping service as it was before IPF 6.0.** If you use IPF 6.0 or later,
+read [Defining and Loading Mappings]({{ site.baseurl }}{% link _pages/mappings.md %}) instead.
+{: .notice--info}
+
+The mapping service described on this page — `MappingService`, `BidiMappingService`,
+`SpringBidiMappingService` and the Groovy `.map` DSL — is **deprecated as of IPF 6.0 and may be
+removed in IPF 7.0**. It still works with minor changes, and this page is kept for applications that still
+use it.
+
+New applications should declare their mappings in one of the validated formats and load them
+through the `Mappings` API instead. See
+[Defining and Loading Mappings]({{ site.baseurl }}{% link _pages/mappings.md %}), which also
+contains migration instructions for non-Spring, Spring and Spring Boot usage.
+{: .notice--warning}
 
 The [`org.openehealth.ipf.commons.map.MappingService`](apidocs/org/openehealth/ipf/commons/map/MappingService.html)
 interface deals with the requirement that message processing often

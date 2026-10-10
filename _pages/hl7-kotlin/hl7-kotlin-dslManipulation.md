@@ -22,7 +22,7 @@ Segments can be replaced. Currently only segments can be assigned, assignment to
     msg1["EVN"] = msg2["EVN"]
 
     // recommended equivalent
-    msg1["EVM"].from(msg2["EVN"])
+    msg1["EVN"].from(msg2["EVN"])
 ```
 
 
@@ -97,7 +97,7 @@ the following approach using the `setObx5Type()` method can be used:
     // set type 'CE' for repetitions of OBX-5 and ensure that
     // at least 2 such repetitions are available
     val obx = message["PATIENT_RESULT"]["ORDER_OBSERVATION"]["OBSERVATION"]["OBX"]
-    obx.setObx5Type("CE")
+    obx.setObx5Type("CE", 2)
 
     obx[5](0)[1] = "T57000"
     obx[5](0)[2] = "GALLBLADDER"

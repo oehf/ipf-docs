@@ -557,6 +557,19 @@ iti92:
   module: ipf-platform-camel-ihe-xds
   section: IHE IT Infrastructure Technical Framework Supplement, Restricted Metadata Update (RMU), Section 3.92
   section-link: https://profiles.ihe.net/ITI/TF/Volume2/ITI-92.html
+iti104:
+  transaction: ITI-104
+  link: iti104
+  profile: PIXm
+  description: Patient Identity Feed FHIR
+  component: pixm-iti104
+  transport: REST/HTTP(S)
+  format: FHIR
+  client-actor: Patient Identity Source
+  server-actor: Patient Identifier Cross-Reference Manager
+  module: ipf-platform-camel-ihe-fhir-r4-pixpdq
+  section: IHE IT Infrastructure Technical Framework Supplement, Patient Identifier Cross-reference for Mobile (PIXm), Section 2:3.104
+  section-link: https://profiles.ihe.net/ITI/PIXm/ITI-104.html
 iti105:
   transaction: ITI-105
   link: iti105

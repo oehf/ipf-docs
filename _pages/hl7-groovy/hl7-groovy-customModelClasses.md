@@ -31,8 +31,18 @@ These custom message structures have priority over the existing message structur
 ```
 
 The custom model classes from the given package will be picked up by the
-[`CustomModelClassFactoryConfigurer`](../apidocs/org/openehealth/ipf/modules/hl7/config/CustomModelClassFactoryConfigurer.html) and automatically
+[`CustomModelClassesRegistrar`](../apidocs/org/openehealth/ipf/modules/hl7/config/CustomModelClassesRegistrar.html) and automatically
 added to the shared [`CustomModelClassFactory`](../apidocs/org/openehealth/ipf/modules/hl7/parser/CustomModelClassFactory.html).
+Without its `customModelClassFactory` property, the registrar configures *every* `CustomModelClassFactory` bean of the
+application context. The Spring context `META-INF/spring/hl7-context.xml` shipped with `ipf-modules-hl7` declares both beans,
+and in Spring Boot applications the HL7v2 starter auto-configures them. If a Spring Boot application declares its own
+`CustomModelClassFactory` bean, it must construct it with a *mutable* map, because the registrar adds the contributed
+packages to that map.
+
+*Note*: Up to IPF 5.3, the custom model classes were picked up by the
+[`CustomModelClassFactoryConfigurer`](../apidocs/org/openehealth/ipf/modules/hl7/config/CustomModelClassFactoryConfigurer.html),
+which had to be registered with a `SpringConfigurationPostProcessor`. This is deprecated since IPF 6.0; see the
+[IPF 6.0 migration guide].
 
 It is also possible to use the`GroovyCustomModelClassFactory` and mix script-based with class-based model class definitions:
 
@@ -46,9 +56,29 @@ It is also possible to use the`GroovyCustomModelClassFactory` and mix script-bas
             class="org.openehealth.ipf.modules.hl7.parser.CustomModelClassFactory" >
       </bean>
 
+      <bean id="registrar"
+            class="org.openehealth.ipf.modules.hl7.config.CustomModelClassesRegistrar">
+        <property name="customModelClassFactory" ref="groovyCustomModelClassFactory" />
+      </bean>
+
+```
+
+Up to IPF 5.3, use a `CustomModelClassFactoryConfigurer` with the same property instead, and register it with the
+`SpringConfigurationPostProcessor`:
+
+```xml
       <bean id="configurer"
             class="org.openehealth.ipf.modules.hl7.config.CustomModelClassFactoryConfigurer">
         <property name="customModelClassFactory" ref="groovyCustomModelClassFactory" />
+      </bean>
+
+      <bean id="postProcessor"
+            class="org.openehealth.ipf.commons.spring.core.config.SpringConfigurationPostProcessor">
+          <property name="springConfigurers">
+            <list>
+              <ref bean="configurer" />
+            </list>
+          </property>
       </bean>
 
 ```
@@ -75,3 +105,5 @@ Now the custom Spring context file can have custom model classes as both scripts
       </bean>
 
 ```
+
+[IPF 6.0 migration guide]: {{ site.baseurl }}{% link _pages/migration/migration-6.0.md %}#removal-of-the-configurer-spi

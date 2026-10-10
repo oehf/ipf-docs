@@ -23,7 +23,7 @@ A convenience DSL extension provided by IPF is the `unhandled` DSL element. It r
 
 ## Exception message and object
 
-The class [`org.apache.camel.builder.ExpressionClause`](https://camel.apache.org/maven/current/camel-core/apidocs/org/apache/camel/builder/ExpressionClause.html)
+The class [`org.apache.camel.builder.ExpressionClause`](https://javadoc.io/doc/org.apache.camel/camel-core-model/latest/org/apache/camel/builder/ExpressionClause.html)
 has been extended with expressions to access the exception object
 or the exception message of an exchange. The corresponding DSL extensions are `exceptionMessage` and `exceptionObject`.
 

@@ -39,11 +39,11 @@ An alternative - slightly more concise - syntax uses the repetition as second pa
 In order to get a list of structure repetitions, simply omit the index so that it looks like a method call without parameters:
 
 ```kotlin
-    // Returns an Array containing first PATIENT groups
+    // Returns an Array containing all PATIENT_RESULT groups
     val groups = message["PATIENT_RESULT"]()
 
     // Returns an Array containing all phone numbers of the first contact
-    val phones = group.["NK1"](0)[5]()
+    val phones = group["NK1"](0)[5]()
 ```
 
 ## Counting Repetitions

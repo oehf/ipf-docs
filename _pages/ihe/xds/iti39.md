@@ -94,7 +94,7 @@ quite large. To allow for memory-efficient streaming of the document content, th
 [Apache CXF](https://cxf.apache.org/) support for binary data.
 
 CXF streams the content on disk and then provides a `DataHandler` to access the file.
-Furthermore, CXF offers some [environment properties](https://cxf.apache.org/docs/security.html#Security-Largedatastreamcaching)
+Furthermore, CXF offers some [environment properties](https://cxf.apache.org/docs/securing-cxf-services.html#SecuringCXFServices-Largedatastreamcaching)
 which can be used to configure this content caching.
 
 

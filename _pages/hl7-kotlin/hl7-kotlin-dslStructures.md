@@ -1,7 +1,7 @@
 ---
 title: Accessing groups and segments with the HL7 Kotlin DSL
 layout: single
-permalink: /docs/hl7-groovy-dslStructures/
+permalink: /docs/hl7-kotlin-dslStructures/
 classes: wide
 ---
 

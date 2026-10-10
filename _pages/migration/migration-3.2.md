@@ -105,32 +105,32 @@ See [issue #122](https://github.com/oehf/ipf/issues/122) for details
 IPF 3.2 is compatible with IHE ITI Revision 13 (published on Sep 9, 2016), including changes from the following Change Proposals:
 
 * [Ballot 38](http://wiki.ihe.net/index.php/ITI_Change_Proposals_2017#Ballot_38): Implemented CP-ITI-949 CP-ITI-961
-    * [CP-ITI-949](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2017/CPs/Ballots/ballot_38/CP-ITI-949-02.doc): Clarify Folder.lastUpdateTime
-    * [CP-ITI-961](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2017/CPs/Ballots/ballot_38/CP-ITI-961-02.doc): XCDR cleanup
+    * [CP-ITI-949](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2017#Ballot_38): Clarify Folder.lastUpdateTime
+    * [CP-ITI-961](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2017#Ballot_38): XCDR cleanup
 
 * [Ballot 37](http://wiki.ihe.net/index.php/ITI_Change_Proposals_2017#Ballot_37): Implemented CP-ITI-559 and CP-ITI-810
-    * [CP-ITI-559](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance/CPs/Ballots/2017/Ballot_37/CP-ITI-559-04.doc): Parameters is ITI-51 queries
-    * [CP-ITI-810](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance/CPs/Ballots/2017/Ballot_37/CP-ITI-810-05.doc): ATNA Audit for ITI-62
+    * [CP-ITI-559](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2017#Ballot_37): Parameters is ITI-51 queries
+    * [CP-ITI-810](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2017#Ballot_37): ATNA Audit for ITI-62
 
 * [Ballot 36](http://wiki.ihe.net/index.php/ITI_Change_Proposals_2017#Ballot_36): Implemented CP-ITI-955
-    * [CP-ITI-955](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2016/CPs/Ballots/ballot_36/CP-ITI-955-00.doc): Add DocumentEntry type to FindDocumentsByReferenceId
+    * [CP-ITI-955](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2017#Ballot_36): Add DocumentEntry type to FindDocumentsByReferenceId
 
 * [Ballot 35](http://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_35): No changes were required
 
 * [Ballot 34](http://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_34): Implemented CP-ITI-767 and CP-ITI-914
-    * [CP-ITI-767](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2016/CPs/Ballots/ballot_34/CP-ITI-767-02.doc): Fix errors in CXi datatype and referenceIdList attribute examples 
-    * [CP-ITI-914](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2016/CPs/Ballots/ballot_34/CP-ITI-914-04.doc): Value of Content-Type HTTP header action parameter 
+    * [CP-ITI-767](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_34): Fix errors in CXi datatype and referenceIdList attribute examples 
+    * [CP-ITI-914](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_34): Value of Content-Type HTTP header action parameter 
 
 * [Ballot 33](http://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_33): Implemented CP-ITI-582, CP-ITI-880, CP-ITI-889, CP-ITI-906 and CP-ITI-918
-    * [CP-ITI-582](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2016/CPs/Ballots/ballot_33/CP-ITI-582-06.doc): Metadata Update correction for associations in GetAllQuery 
-    * [CP-ITI-880](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2016/CPs/Ballots/ballot_33/CP-ITI-880-03.doc): Add new value for Study Instance UID in CXi.5 (Identifier Type Codes) 
-    * [CP-ITI-889](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2016/CPs/Ballots/ballot_33/CP-ITI-889-08.doc): Clarify Error Code used for ‘RPLC’ or ‘XFRM_RPLC’ Association Validation 
-    * [CP-ITI-582](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2016/CPs/Ballots/ballot_33/CP-ITI-906-00.doc): ITI-8 MSH message structure - Revert changes introduced in CP-ITI-786 
-    * [CP-ITI-582](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2016/CPs/Ballots/ballot_33/CP-ITI-918-01.doc): Fix workflowInstanceId specification in Vol 3 CXi datatype definition 
+    * [CP-ITI-582](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_33): Metadata Update correction for associations in GetAllQuery 
+    * [CP-ITI-880](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_33): Add new value for Study Instance UID in CXi.5 (Identifier Type Codes) 
+    * [CP-ITI-889](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_33): Clarify Error Code used for ‘RPLC’ or ‘XFRM_RPLC’ Association Validation 
+    * [CP-ITI-906](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_33): ITI-8 MSH message structure - Revert changes introduced in CP-ITI-786 
+    * [CP-ITI-918](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_33): Fix workflowInstanceId specification in Vol 3 CXi datatype definition 
     
 * [Ballot 32](http://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_32): Implemented CP-ITI-884 and CP-ITI-885
-    * [CP-ITI-582](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2016/CPs/Ballots/ballot_32/CP-ITI-884-00.doc): PIXm changes for DSTU2 
-    * [CP-ITI-880](ftp://ftp.ihe.net/IT_Infrastructure/TF_Maintenance-2016/CPs/Ballots/ballot_32/CP-ITI-885-00.doc): PDQm changes for DSTU2
+    * [CP-ITI-884](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_32): PIXm changes for DSTU2 
+    * [CP-ITI-885](https://wiki.ihe.net/index.php/ITI_Change_Proposals_2016#Ballot_32): PDQm changes for DSTU2
 
 
 ## Internal Restructuring of IHE components

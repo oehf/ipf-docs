@@ -12,7 +12,7 @@ See corresponding sections below for details.
 ## ebXML data model
 
 According to the IHE specification, XDS/XCA/XCF/RAD transactions
-use [ebXML 3.0](http://www.oasis-open.org/committees/regrep/documents/3.0/) data models for incoming and outgoing messages.
+use [ebXML 3.0](https://docs.oasis-open.org/regrep/v3.0/) data models for incoming and outgoing messages.
 IPF XDS/XCA components use Java stub classes instead of plain XML payload. All conversions are performed automatically when needed.
 
 Data types for the *request* message of the supported transactions are listed in the table below:
@@ -25,7 +25,7 @@ Data types for the *request* message of the supported transactions are listed in
 | ITI-42,57,61,92          | [`.stub.ebrs30.lcm.SubmitObjectsRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/xds/core/stub/ebrs30/lcm/SubmitObjectsRequest.html)
 | ITI-62 	               | [`.stub.ebrs30.lcm.RemoveObjectsRequest`](../../apidocs/org/openehealth/ipf/commons/ihe/xds/core/stub/ebrs30/lcm/RemoveObjectsRequest.html)
 | ITI-86                   | [`.ebxml.ebxml30.RemoveDocumentsRequestType`](../../apidocs/org/openehealth/ipf/commons/ihe/xds/core/ebxml/ebxml30/RemoveDocumentsRequestType.html) 
-| RAD-69,75 	           | [`.ebxml.ebxml30.RetrieveImagingDocumentSetRequestType`](../../apidocs/org/openehealth/ipf/commons/ihe/xds/core/ebxml/ebxml30/RetrieveImagingDocumentSetRequestType.html)
+| RAD-69,75 	           | [`.stub.xdsi.RetrieveImagingDocumentSetRequestType`](../../apidocs/org/openehealth/ipf/commons/ihe/xds/core/stub/xdsi/RetrieveImagingDocumentSetRequestType.html)
 
 
 Data types for the *response* message of the supported transactions are listed in the table below:

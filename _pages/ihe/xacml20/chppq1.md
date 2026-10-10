@@ -79,7 +79,7 @@ Additional URI parameters are optional and control special features as described
 ### Data Types
 
 Messages exchanged in the `ch-ppq1` transaction are defined in the XML Schema 
-[provided](https://www.e-health-suisse.ch/gemeinschaften-umsetzung/umsetzung/programmierhilfen.html) 
+[provided](https://www.e-health-suisse.ch/das-epd/epd-technik/programmhilfen) 
 by eHealth Suisse, which also references data types from SAML 2.0 and XACML 2.0 standards:
 
 * Request message -- either 

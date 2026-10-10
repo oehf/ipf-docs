@@ -71,4 +71,4 @@ containing all the details about the validation failure that was provided by the
 ```
 
 [Generic CDA support]: {{ site.baseurl }}{% link _pages/mdht/mdhtSupport.md %}
-[camel-groovy]: https://camel.apache.org/groovy-dsl.html
+[camel-groovy]: https://camel.apache.org/components/latest/languages/groovy-language.html

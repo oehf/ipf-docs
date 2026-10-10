@@ -53,7 +53,7 @@ See [MLLP Payload Logging] and [WS Payload Logging] for details.
 offered type conversion by directly depending on Spring's `ConversionService`. 
 The new interface [`org.openehealth.ipf.commons.core.config.TypeConverter`](../apidocs/org/openehealth/ipf/commons/core/config/TypeConverter.html) 
 lets you now choose the type converter implementation. 
-The only implementation provided by IPF is [`org.openehealth.ipf.commons.spring.core.config.SpringTypeConverter`](../apidocs/org/openehealth/ipf/commons/core/config/SpringTypeConverter.html), 
+The only implementation provided by IPF is [`org.openehealth.ipf.commons.spring.core.config.SpringTypeConverter`](../apidocs/org/openehealth/ipf/commons/spring/core/config/SpringTypeConverter.html), 
 located in the new `ipf-commons-spring` module, which realizes the previous behavior.
 
 ## ATNA Auditing and IHE components

@@ -78,10 +78,6 @@ This is an example on how to use the component on the consumer side:
       // process the incoming request and create a response
 ```
 
-## Translation into PIX
-
-IPF comes with [translators] to translate ITI-83 requests into ITI-9 requests and vice versa for the responses.
-
 ## Basic Common Component Features
 
 * [ATNA auditing][]
@@ -104,5 +100,4 @@ IPF comes with [translators] to translate ITI-83 requests into ITI-9 requests an
 [Security]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirSecurity.md %}
 [Connection Parameters]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirConnection.md %}
 [deployment container]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirDeployment.md %}
-[translators]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirPixPdqTranslators.md %}
 [Advanced FHIR Parameters]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhirAdvanced.md %}

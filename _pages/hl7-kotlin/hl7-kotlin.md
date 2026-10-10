@@ -62,7 +62,8 @@ The table below lists the most important differences
 | Construct             | Groovy HL7 DSL          | Kotlin HL7 DSL             |
 |:----------------------|:------------------------|:---------------------------|
 | Accessing structures  | `def msh = msg.MSH`     | `val msh = msg["MSH"]`     | 
-| Accessing repetitions | `def nk1 = msg.NK1(1)`  | `val nk1 = msg["NK1"](0)` or `val nk1 = msg["NK1", 0]` |
+| Accessing repetitions | `def nk1 = msg.NK1(1)`  | `val nk1 = msg["NK1"](1)` or `val nk1 = msg["NK1", 1]` |
+| Message type if MSH-9 is empty | `msg.eventType` and `msg.triggerEvent` return `null` | `msg.eventType` and `msg.triggerEvent` throw an `Hl7DslException` |
 
 
 [HAPI]: https://hapifhir.github.io/hapi-hl7v2/

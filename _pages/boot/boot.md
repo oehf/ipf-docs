@@ -41,7 +41,7 @@ Apart from `ipf-spring-boot-starter`, the available starter modules are:
 | [ipf-hl7v3-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-hl7v3.md %})     | for HL7v3/SOAP-based IHE transactions |
 | [ipf-xds-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-xds.md %})         | for XDS/SOAP-based IHE transactions   |
 | [ipf-fhir-r4-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-fhir.md %})    | for FHIR R4/REST-based IHE transactions |
-| [ipf-fhir-stu3-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-fhir.md %})  | for FHIR STU3/REST-based IHE transactions |
+| [ipf-fhir-stu3-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-fhir.md %})  | for FHIR STU3/REST-based IHE transactions (deprecated) |
 | [ipf-hpd-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-hpd.md %})         | for DSML/SOAP-based IHE transactions  |
 | [ipf-xacml20-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-xacml20.md %}) | for XACML20-based IHE transactions    |
 | [ipf-svs-spring-boot-starter]({{ site.baseurl }}{% link _pages/boot/boot-svs.md %})         | for SVS/SOAP-based IHE transactions   |
@@ -58,7 +58,7 @@ See [here]({{ site.baseurl }}{% link _pages/dynamic.md %}) for details on Custom
 
 The starter further sets up a bean of type `org.openehealth.ipf.commons.core.config.SpringRegistry`.
 
-In addition, if the properties `server.ssl.enabled` and `ipf.commons.reuse-ssl-config` are set to `true`, a bean of type `org.apache.camel.support.jsse.SSLContextParameters` with name `bootSslContextParameters` is provided, so you can reuse the Spring Boot security configuration for [FHIR](../ipf-platform-camel-ihe-fhir-core/security.html), [MLLP](../ipf-platform-camel-ihe-mllp/secureTransport.html) and [Web Service](../ipf-platform-camel-ihe-ws/secureTransport.html) IHE transaction endpoints supported by IPF.
+In addition, if the properties `server.ssl.enabled` and `ipf.commons.reuse-ssl-config` are set to `true`, a bean of type `org.apache.camel.support.jsse.SSLContextParameters` with name `bootSslContextParameters` is provided, so you can reuse the Spring Boot security configuration for [FHIR]({{ site.baseurl }}{% link _pages/ihe/fhir/fhirSecurity.md %}), [MLLP]({{ site.baseurl }}{% link _pages/ihe/mllp/hl7v2SecureTransport.md %}) and [Web Service]({{ site.baseurl }}{% link _pages/ihe/ws/wsSecureTransport.md %}) IHE transaction endpoints supported by IPF.
 
 `ipf-spring-boot-starter` provides the following application properties:
 
@@ -67,4 +67,4 @@ In addition, if the properties `server.ssl.enabled` and `ipf.commons.reuse-ssl-c
 | `reuse-ssl-config`        | false   | Whether to set up a `bootSslContextParameters` bean derived from Spring Boot SSL settings |
 
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Camel Spring Boot]: http://camel.apache.org/spring-boot.html
+[Camel Spring Boot]: https://camel.apache.org/camel-spring-boot/latest/

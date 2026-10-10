@@ -23,12 +23,12 @@ It may be released independently and is located at [https://github.com/oehf/ipf-
 
 ## Building
 
-IPF 5.x will require Java 17 for both compile time and runtime.
+IPF 6.x still requires at least Java 17, but also builds and runs with Java 21 and Java 25.
+IPF 5.x requires Java 17 for both compile time and runtime.
 IPF 4.x builds with Java 11 for both compile time and runtime.
 IPF 3.x requires Java 8 for both compile time and runtime.
 
-IPF builds using Maven 3.x. IPF and its dependencies are available at [Maven Central], 
-except for the MDHT dependencies that are provided at [https://projects.suisse-open-exchange.healthcare/artifactory/releases](https://projects.suisse-open-exchange.healthcare/artifactory/releases).
+IPF builds using Maven 3.x. IPF and its dependencies are available at [Maven Central].
 
 Before building, adjust the `MAVEN_OPTS` environment variable to assign Maven more heap space.
 
@@ -81,7 +81,7 @@ Depending on the choice of your IDE, you may need to install corresponding plugi
 ## Continuous Integration
 
 IPF is continuously built using github actions. Snapshot artifacts are uploaded to the 
-[Sonatype](https://oss.sonatype.org/content/repositories/snapshots/org/openehealth/ipf/) snapshot repository.
+[Maven Central snapshot repository](https://central.sonatype.com/repository/maven-snapshots/org/openehealth/ipf/).
 
 ## Issue Tracking
 

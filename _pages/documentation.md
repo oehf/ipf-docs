@@ -26,7 +26,7 @@ Other IPF features provide part of the underlying foundation or supporting funct
 | Feature                          | Description                                                  |
 | -------------------------------- | ------------------------------------------------------------ |
 | [Core Features][]                | Domain-neutral message processors and DSL extensions usable for general-purpose message processing. |
-| [Code System Mapping][]          | A simplistic mechanism for mapping code values between code systems |
+| [Code System Mapping][]          | A mechanism for mapping code values between code systems, declared in XML, YAML or FHIR ConceptMap files. The [deprecated mapping service][] and its Groovy DSL are still documented. |
 | [Dynamic Feature Registration][] | Aids in building up modular integration solutions where each module contributes routes, services etc. to the overall application |
 
 
@@ -42,6 +42,7 @@ in the Spring Boot runtime environment.
 [FHIR support]: {{ site.baseurl }}{% link _pages/ihe/fhir/fhir.md %}
 [CDA/MDHT Support]: {{ site.baseurl }}{% link _pages/mdht/mdhtSupport.md %}
 [Core Features]: {{ site.baseurl }}{% link _pages/groovy/extensions.md %}
-[Code System Mapping]: {{ site.baseurl }}{% link _pages/mapping.md %}
+[Code System Mapping]: {{ site.baseurl }}{% link _pages/mappings.md %}
+[deprecated mapping service]: {{ site.baseurl }}{% link _pages/mapping.md %}
 [Dynamic Feature Registration]: {{ site.baseurl }}{% link _pages/dynamic.md %}
 [Spring Boot Starters]: {{ site.baseurl }}{% link _pages/boot/boot.md %}

@@ -78,7 +78,7 @@ describing each component.
 
 An implementation of a *Patient Identity Cross-Reference Manager* actor for the *Patient Identity Feed* (PIX ITI-8) transaction
 shall be created. PIX ITI-8 is a HL7v2-based transaction using MLLP as transport protocol.
-Receiving actors are implemented as a [Camel consumer](https://camel.apache.org/maven/current/camel-core/apidocs/org/apache/camel/Consumer.html).
+Receiving actors are implemented as a [Camel consumer](https://javadoc.io/doc/org.apache.camel/camel-api/latest/org/apache/camel/Consumer.html).
 
 Thus, the following dependency must be registered in `pom.xml`:
 
@@ -102,7 +102,7 @@ The basic pattern for consumers is to specify the component name in the URI para
 While stepping through the Camel route, a proper response (or an Exception) must be generated that is sent back to the caller.
 
 On the other side of the transaction, sending actors (for ITI-8 the *Patient Identity Source*) are implemented as a
-[Camel producer](https://camel.apache.org/maven/current/camel-core/apidocs/org/apache/camel/Producer.html).
+[Camel producer](https://javadoc.io/doc/org.apache.camel/camel-api/latest/org/apache/camel/Producer.html).
 The basic pattern for producers is to specify the component name in the URI parameter of a to-clause at the end of a Camel route:
 
 ```java

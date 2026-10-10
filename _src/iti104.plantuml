@@ -1,0 +1,18 @@
+@startuml
+skin rose
+hide footbox
+
+participant "Patient Identity\nSource" as SRC
+participant "Patient Identifier\nCross-Reference Manager" as MPI
+
+SRC -> MPI : Add/Revise Patient, Resolve Duplicate Patient \nPUT /Patient?identifier=system|value
+activate MPI
+MPI --> SRC : 200 OK / 201 Created
+deactivate MPI
+
+SRC -> MPI : Remove Patient (Remove Patient Option) \nDELETE /Patient?identifier=system|value
+activate MPI
+MPI --> SRC : 200 OK / 204 No Content
+deactivate MPI
+
+@enduml

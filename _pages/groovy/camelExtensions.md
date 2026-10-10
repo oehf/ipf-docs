@@ -46,4 +46,4 @@ Some examples:
         }
 ```
 
-[camel-groovy]: https://camel.apache.org/groovy-dsl.html
+[camel-groovy]: https://camel.apache.org/components/latest/languages/groovy-language.html

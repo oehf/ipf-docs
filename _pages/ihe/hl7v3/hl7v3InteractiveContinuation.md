@@ -37,22 +37,23 @@ Interaction steps performed by the consumer are shown on the diagram below:
 Fragments are stored internally, whereby the user must provide a storage via the `continuationStorage`
 URI parameter of the consumer endpoint. This bean must implement the interface
 [`org.openehealth.ipf.commons.ihe.hl7v3.storage.Hl7v3ContinuationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/storage/Hl7v3ContinuationStorage.html).
-An [Ehcache-based implementation](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/storage/EhcacheHl7v3ContinuationStorage.html) is provided by the IPF.
-
-Here is an example of how to configure the Spring context descriptor, supposed that "interactiveContinuationCache" is defined in Ehcache configuration file:
+IPF provides a
+[Spring Cache based implementation](../../apidocs/org/openehealth/ipf/commons/ihe/hl7v3/storage/SpringCacheHl7v3ContinuationStorage.html),
+which stores the fragments in the cache named `interactiveHl7v3ContinuationCache` of a Spring `CacheManager`
+(backed by e.g. Ehcache or any other JSR-107 implementation):
 
 ```xml
-    <bean id="ehcacheManager" class="net.sf.ehcache.CacheManager" factory-method="create" />
-
     <bean id="myICStorage"
-          class="org.openehealth.ipf.commons.ihe.hl7v3.storage.EhcacheHl7v3ContinuationStorage">
-        <constructor-arg>
-            <bean factory-bean="ehcacheManager" factory-method="getCache">
-                <constructor-arg value="interactiveContinuationCache" />
-            </bean>
-        </constructor-arg>
+          class="org.openehealth.ipf.commons.ihe.hl7v3.storage.SpringCacheHl7v3ContinuationStorage">
+        <constructor-arg ref="cacheManager" />
     </bean>
 ```
+
+In Spring Boot applications, the HL7v3 starter provides such a bean named `hl7v3ContinuationStorage` if
+`ipf.hl7v3.caching` is set to `true` and the application context contains a single `CacheManager`.
+
+Up to IPF 5.3, there was also an `EhcacheHl7v3ContinuationStorage` (deprecated since IPF 5.0), which was
+constructed with an Ehcache `Cache` instance.
 
 The consumer endpoint URI can then contain parameters `"&supportContinuation=true&continuationStorage=#myICStorage"`.
 

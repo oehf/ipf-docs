@@ -49,7 +49,7 @@ that defines the contract of the transaction.
 
 The *clientAuditStrategy* and *serverAuditStrategy* within that *hl7TransactionConfig* transaction contract are mandatory unless [ATNA auditing]
 is disabled in the endpoints. The audit strategies must reference an instance of type
-[`org.openehealth.ipf.commons.ihe.core.atna.AuditStrategy`](../../apidocs/org/openehealth/ipf/commons/ihe/core/atna/MllpAuditStrategy.html).
+[`org.openehealth.ipf.commons.ihe.core.atna.AuditStrategy`](../../apidocs/org/openehealth/ipf/commons/ihe/core/atna/AuditStrategy.html).
 
 
 ## HL7v2 Codec

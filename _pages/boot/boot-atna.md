@@ -57,7 +57,7 @@ as described [here]({{ site.baseurl }}{% link _pages/ihe/atna.md %}).
 | `audit-enabled`                | false                 | Whether auditing is enabled                                           |
 | `audit-repository-host`        | localhost             | Host of the ATNA repository to send the events to                     |
 | `audit-repository-port`        | 514                   | Port of the ATNA repository to send the events to                     |
-| `audit-repository-transport`   | UDP                   | Wire transport format (UDP, TLS, NETTY-UDP, NETTY-TLS, FHIR-REST-TLS) |
+| `audit-repository-transport`   | UDP                   | Wire transport format, e.g. UDP, TLS, NETTY-TLS, REACTOR-NETTY-TLS, FHIR-REST-APACHE5-TLS, FHIR-REST-METHANOL-TLS. See [Audit Transmission Protocols] for all values and the IPF versions supporting them |
 | `audit-source-id`              | `${spring.application.name}` | Source ID for ATNA events                                             |
 | `audit-enterprise-site-id`     |                       | Enterprise Site ID for ATNA events                                    |
 | `include-participants-from-response`| false            | Whether to include (patient) participants from responses as well      |
@@ -97,3 +97,4 @@ As of IPF 4.8.0, you can audit following the IHE Basic Audit Log Patterns (BALP)
 | `oauth.acp-path`                     | extensions:ihe_bppc:acp                         |                                                              |
 
 [Spring Boot]: https://projects.spring.io/spring-boot/
+[Audit Transmission Protocols]: {{ site.baseurl }}{% link _pages/audit.md %}#audit-transmission-protocols

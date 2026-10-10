@@ -70,5 +70,5 @@ therefore the resulting count of segments can be actually greater than the value
 
 
 
-[unsolicited request fragmentation]: {{ site.baseurl }}{% link _pages/ihe/mllp/unsolicitedFragmentation.md %}
-[interactive response continuation]: {{ site.baseurl }}{% link _pages/ihe/mllp/hl7v2InteractiveContinuation.md %}
+[unsolicited message fragmentation]: {{ site.baseurl }}{% link _pages/ihe/mllp/unsolicitedFragmentation.md %}
+[interactive message continuation]: {{ site.baseurl }}{% link _pages/ihe/mllp/hl7v2InteractiveContinuation.md %}

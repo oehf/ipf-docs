@@ -49,7 +49,7 @@ In case the field is [repeating][hl7v2dslRepetitions], this simple syntax only r
 ## Field values
 
 Corresponding to [HAPI], variables render to their string encoding by implementing an appropriate `encode()` method (just like complete messages).
-String values from primitive fields are obtained by `value()`
+String values from primitive fields are obtained by the `value` property
 
 ```kotlin
 
@@ -84,9 +84,9 @@ println(event.value) // prints ADT
 
 The HL7 DSL treats explicit HL7 null values (two double quotes "", cf. HL7 2.5, Final, Section 2.5.3) in a special way.
 
-* `value()` and `encode()` returns the double quotes
-* `value2()` convert double quotes into an empty string
-* `isNullValue()` returns true, if the original value of the field is ""
+* `value` and `encode()` return the double quotes
+* `value2` converts double quotes into an empty string
+* `nullValue` is true, if the original value of the field is ""
 
 
 [HAPI]: https://hapifhir.github.io/hapi-hl7v2/

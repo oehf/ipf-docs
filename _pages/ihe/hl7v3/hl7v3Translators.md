@@ -62,6 +62,10 @@ provided by IPF (which can be accessed as a classpath resource). Here is a snipp
 </bean>
 ```
 
+Since IPF 6.0 this is a `SpringMappings` bean, and the mapping IPF provides ships as
+`classpath:META-INF/map/hl7-v2-v3-translation.mapping.xml`. The configuration above keeps working,
+but is deprecated; see [Defining and Loading Mappings].
+
 ### Translators
 
 The package `org.openehealth.ipf.commons.ihe.hl7v3.translation` contains the set of translators that is able to
@@ -186,5 +190,6 @@ class BridgeRouteBuilder extends SpringRouteBuilder {
 [ITI-47]: {{ site.baseurl }}{% link _pages/ihe/hl7v3/iti47.md %}
 
 [Mapping Service]: {{ site.baseurl }}{% link _pages/mapping.md %}
+[Defining and Loading Mappings]: {{ site.baseurl }}{% link _pages/mappings.md %}
 
 [IHE]: https://www.ihe.net

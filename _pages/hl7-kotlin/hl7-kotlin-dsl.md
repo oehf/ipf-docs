@@ -19,12 +19,12 @@ model classes. These methods are used "under the hood" by the actual DSL.
 ## Accessing HL7 messages
 
 The DSL offers a position-based navigation of HL7 structures and fields. It's all valid Kotlin Syntax,
-accomplished by operator overloading and metaclass programming, so you don't need a intermediate step that parses the
+accomplished by operator overloading and extension functions, so you don't need a intermediate step that parses the
 expressions (see the [Terser] class in HAPI).
 
 ### Accessing groups and segments
 
-Groups and segments can be accessed by name like an object property.
+Groups and segments can be accessed by name like in a map.
 
 ```kotlin
     import ca.uhn.hl7v2.model.Message

@@ -36,3 +36,6 @@ See [here]({{ site.baseurl }}{% link _pages/groovy/moduleAdapters.md %}) for det
 ## Other Camel DSL extensions
 
 Some other DSL extensions, mostly for convenience. See [here]({{ site.baseurl }}{% link _pages/groovy/other.md %}) for details.
+
+
+[camel-groovy]: https://camel.apache.org/components/latest/languages/groovy-language.html

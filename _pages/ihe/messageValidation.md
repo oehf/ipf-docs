@@ -104,7 +104,7 @@ As a result, no explicit validation processor must be provided anymore:
 ## Self-detecting message validation in FHIR consumer routes
 
 The consumer side of IPF FHIR transaction endpoints receiving FHIR resources from clients is aware of the
-IHE transaction context. The consumer endpoint can therefore initialize an [`FhirContext`](http://hapifhir.io/apidocs/ca/uhn/fhir/context/FhirContext.html)
+IHE transaction context. The consumer endpoint can therefore initialize an [`FhirContext`](https://hapifhir.io/hapi-fhir/apidocs/hapi-fhir-base/ca/uhn/fhir/context/FhirContext.html)
 that is passed into the route.
 As a result, no explicit validation processor must be provided anymore:
 

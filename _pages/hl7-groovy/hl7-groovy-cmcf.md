@@ -208,4 +208,4 @@ dynamically typed environment (e.g. Groovy classes/scripts), and particularly in
 [IPF extension mechanism].
 
 
-[IPF extension mechanism]: customModelClasses.html
+[IPF extension mechanism]: {{ site.baseurl }}{% link _pages/hl7-groovy/hl7-groovy-customModelClasses.md %}

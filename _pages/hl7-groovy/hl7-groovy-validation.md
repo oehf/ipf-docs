@@ -192,4 +192,4 @@ messages.
 
 
 [HAPI]: https://hapifhir.github.io/hapi-hl7v2/
-[HAPI Validation Examples]: https://hapifhir.github.io/hapi-hl7v2/devbyexample.html
+[HAPI Examples]: https://hapifhir.github.io/hapi-hl7v2/devbyexample.html

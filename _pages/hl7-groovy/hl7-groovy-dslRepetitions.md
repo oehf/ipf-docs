@@ -27,10 +27,10 @@ Note that, unlike field numbers, repetitions are **zero-based**.
 In order to get a repeating structure, simply omit the index so that it looks like a method call without parameters:
 
 ```groovy
-    // Returns a java.util.Iterable containing first PATIENT groups
+    // Returns a java.util.Iterable containing all PATIENT_RESULT groups
     def group = message.PATIENT_RESULT()
 
-    // Returns a java.util.Iterable containing all phone numbers of the first contact
+    // Returns an array containing all phone numbers of the first contact
     def phone = group.NK1(0)[5]()
 ```
 
@@ -39,7 +39,7 @@ In order to get a repeating structure, simply omit the index so that it looks li
 The number of repetitions are counted by simply using the `count()` method:
 
 ```
-    // Use the DSL count method for counting the field repetitions
+    // Use the DSL count method for counting the structure repetitions
     int groups = message.count('PATIENT_RESULT')
 
     // or use the HAPI structure method for counting the structure repetitions

@@ -6,13 +6,13 @@ toc: true
 toc_icon: align-left
 ---
 
-The [`org.openehealth.ipf.commons.core.modules.api`](../apidocs/org/openehealth/ipf/commons/core/modules/api/package-summary.html) package,
+The [`org.openehealth.ipf.commons.core.modules.api`][modules-api] package,
 which is part of the `ipf-commons-core` component, defines a
 number of interfaces representing typical message processors like
 
-* [`Validator`](../apidocs/org/openehealth/ipf/commons/core/modules/api/Validator.html),
-* [`Aggregator`](../apidocs/org/openehealth/ipf/commons/core/modules/api/Aggregator.html)
-* [`Transmogrifer`](../apidocs/org/openehealth/ipf/commons/core/modules/api/Transmogrifer.html) (a transformer)
+* [`Validator`][Validator],
+* [`Aggregator`][Aggregator]
+* [`Transmogrifier`][Transmogrifier] (a transformer)
 
 The intention of these interfaces was to define message processors that are independent of integration infrastructures
 like Apache Camel in order to increase their reusability in other contexts.
@@ -21,8 +21,11 @@ The integration of these message processors into IPF routes is done via generic 
 They translate from Camel-specific interfaces to the interfaces and are provided by the `ipf-platform-camel-core` component.
 
 *Note*:
-For quite some time, Camel provides [bean integration],
-a very flexible way to integrate POJOs into Camel routes.
+The Groovy DSL extensions described on this page date back to Camel 1.x, when the Camel DSL was far less expressive
+than it is today. They are thin wrappers: each one just creates a module adapter, which is an ordinary Camel
+`Processor`, `DataFormat` or `AggregationStrategy`. The adapters can therefore be used from the Java DSL (or as beans
+from XML/YAML routes) as well, and for most use cases Camel itself offers an equivalent, e.g. via [bean integration],
+lambdas or dedicated components. Each section below closes with a *Without the Groovy DSL* subsection describing these alternatives.
 
 This section is organized in the following way.
 
@@ -32,10 +35,10 @@ This section is organized in the following way.
 ## Transmogrifier
 
 The easiest way to describe the DSL extensions for IPF module adapters is to start with an example.
-Let's use the [`org.openehealth.ipf.commons.core.modules.api.Transmogrifier`](../apidocs/org/openehealth/ipf/commons/core/modules/api/Transmogrifer.html)
+Let's use the [`org.openehealth.ipf.commons.core.modules.api.Transmogrifier`][Transmogrifier]
 interface for that purpose.
 Inspired by [Calvin and Hobbes](https://en.wikipedia.org/wiki/Calvin_hobbes),
-a [transmogrifier](images/transmogrifier.png) converts anything into whatever you like.
+a transmogrifier converts anything into whatever you like.
 
 Transmogrification is accompanied by a loud *zap*:
 
@@ -162,9 +165,9 @@ is copied onto the out-message before the result is written (this is useful e.g.
 
 IPF provides three Transmogrifier implementations out of the box:
 
-* [`org.openehealth.ipf.commons.xml.XsltTransmogrifier`](../apidocs/org/openehealth/ipf/commons/xml/XsltTransmogrifier.html) for xslt transforming XML documents
-* [`org.openehealth.ipf.commons.xml.SchematronTransmogrifier`](../apidocs/org/openehealth/ipf/commons/xml/SchematronTransmogrifier.html) for creating Schematron validation reports from XML documents
-* [`org.openehealth.ipf.commons.xml.XqjTransmogrifier`](../apidocs/org/openehealth/ipf/commons/xml/XqjTransmogrifier.html) for xquering XML documents or collections
+* [`org.openehealth.ipf.commons.xml.XsltTransmogrifier`][XsltTransmogrifier] for xslt transforming XML documents
+* [`org.openehealth.ipf.commons.xml.SchematronTransmogrifier`][SchematronTransmogrifier] for creating Schematron validation reports from XML documents
+* [`org.openehealth.ipf.commons.xml.XqjTransmogrifier`][XqjTransmogrifier] for xquering XML documents or collections
 
 #### XSLT and Schematron
 
@@ -203,7 +206,7 @@ are available in the stylesheet unless you define parameters by either using `pa
 
     from('direct:input4')
         .setHeader('rules', constant('path/to/rules'))
-        .transmogrify('schematron').params().header('rules') // dynamic rules
+        .transmogrify().schematron().params().header('rules') // dynamic rules
         .to('mock:output')
 
 ```
@@ -226,7 +229,7 @@ using a Class parameter to the xslt()/schematron() extensions or with a subseque
 
 #### XQuery
 
-Additionally, an [XQuery](https://www.w3.org/TR/xquery/) implementation is provided on top of the [XQJ API](http://xqj.net/).
+Additionally, an [XQuery](https://www.w3.org/TR/xquery/) implementation is provided on top of the [XQJ API](https://www.jcp.org/en/jsr/detail?id=225).
 In the actual state it uses the Saxon's XQJ implementation. The `XqjTransmogrifier` is implemented similar to the `XsltTransmogrifier`
 and can be used to execute xqueries to the Apache Camel's exchange body.
 
@@ -255,10 +258,105 @@ collections directly from the classpath.
         .to('mock:output')
 ```
 
+### Without the Groovy DSL
+
+`transmogrify` creates a [`TransmogrifierAdapter`][TransmogrifierAdapter], which is a plain Camel `Processor`.
+It can be used in Java routes with `process(...)`, and offers the same `input(...)`, `params(...)` and `staticParams(...)`
+modifiers, taking Camel expressions instead of closures. Note that the adapter itself has no default params:
+to pass the message headers like the Groovy DSL does, set them explicitly.
+
+```java
+    import static org.openehealth.ipf.platform.camel.core.util.Expressions.headersExpression;
+    ...
+    from("direct:input1")
+        .process(new TransmogrifierAdapter(transmogrifier)
+            .params(headersExpression()))  // headers as params, like the Groovy DSL default
+        .to("mock:output");
+
+    from("direct:input2")
+        .process(new TransmogrifierAdapter(transmogrifier)
+            .input(header("foo"))
+            .params(header("bar")))
+        .to("mock:output");
+
+    from("direct:input3")
+        .process(new TransmogrifierAdapter(transmogrifier)
+            .staticParams("a", "b", "c"))
+        .to("mock:output");
+```
+
+Without any IPF adapter, a transmogrifier is just a function producing a new message body, so Camel's `transform()`
+with a lambda does the same job. The same applies to transformation logic that isn't implemented as `Transmogrifier`
+at all, which can also be integrated via [bean integration].
+
+```java
+    from("direct:input1")
+        .transform().body(String.class, body -> transmogrifier.zap(body))
+        .to("mock:output");
+
+    from("direct:input2")
+        .transform().message(m -> transmogrifier.zap(m.getHeader("foo"), m.getHeader("bar")))
+        .to("mock:output");
+```
+
+#### XSLT, Schematron and XQuery
+
+The `xslt()`, `schematron()` and `xquery()` extensions only preset the transmogrifier and convert the input
+into a `StreamSource`. In Java routes this is done explicitly:
+
+```java
+    import static org.apache.camel.builder.Builder.bodyAs;
+    ...
+    from("direct:input1")
+        .process(new TransmogrifierAdapter(new XsltTransmogrifier<>(String.class))
+            .input(bodyAs(StreamSource.class))
+            .staticParams("path/to/stylesheet", parameterMap))
+        .to("mock:output");
+
+    from("direct:input2")
+        .process(new TransmogrifierAdapter(new XqjTransmogrifier<>(String.class))
+            .input(bodyAs(StreamSource.class))
+            .staticParams("xquery/extract.xq", Map.of("id", "someid")))
+        .to("mock:output");
+```
+
+Camel's own components cover these use cases as well:
+
+* [`xslt-saxon`](https://camel.apache.org/components/latest/xslt-saxon-component.html) (or `xslt`) caches the compiled
+  stylesheet by default. Message headers, exchange properties and exchange variables are passed as stylesheet parameters;
+  there is no separate parameter map per call. A stylesheet determined at runtime is used via `toD(...)`, which creates
+  and caches one endpoint per stylesheet location.
+* [`schematron`](https://camel.apache.org/components/latest/schematron-component.html) leaves the message body
+  untouched and stores the SVRL report in the `CamelSchematronValidationReport` header, and the outcome (`SUCCESS`
+  or `FAILED`) in the `CamelSchematronValidationStatus` header.
+* [`xquery`](https://camel.apache.org/components/latest/xquery-component.html) (from `camel-saxon`) makes
+  message headers available as external variables named `in.headers.<name>` and exchange properties under their plain names.
+  The query result is a DOM node by default.
+
+```java
+    from("direct:input1")
+        .to("xslt-saxon:path/to/stylesheet")          // static stylesheet, headers as parameters
+        .to("mock:output");
+
+    from("direct:input2")
+        .toD("xslt-saxon:${header.stylesheet}")       // dynamic stylesheet
+        .to("mock:output");
+
+    from("direct:input3")
+        .to("schematron:path/to/rules")
+        .setBody(header(Constants.VALIDATION_REPORT)) // the SVRL report, like SchematronTransmogrifier
+        .to("mock:output");
+
+    from("direct:input4")
+        .to("xquery:xquery/extract.xq")               // declare variable $in.headers.id external;
+        .convertBodyTo(String.class)
+        .to("mock:output");
+```
+
 ## Validator
 
 The API in the `ipf-commons-core` module defines an
-[`org.openehealth.ipf.commons.core.modules.api.Validator`](../apidocs/org/openehealth/ipf/commons/core/modules/api/Validator.html)
+[`org.openehealth.ipf.commons.core.modules.api.Validator`][Validator]
 interface for message validation.
 
 ```java
@@ -270,7 +368,7 @@ public interface Validator<S, P> {
 ```
 
 It defines a single `validate` method that validates a message against a profile. If validation fails, an
-[`org.openehealth.ipf.commons.core.modules.api.ValidationException`](../apidocs/org/openehealth/ipf/commons/core/modules/api/ValidationException.html) is thrown.
+[`org.openehealth.ipf.commons.core.modules.api.ValidationException`][ValidationException] is thrown.
 
 The validator is included into Camel routes via the `verify` DSL extension. The `verify` extension accepts either a validator object,
 a validator bean name or a validator closure as argument. If a closure is used, a failed validation is either indicated by throwing an
@@ -347,7 +445,7 @@ The schema location value can be either a URL or a non-URL string, in the latter
 
 ```groovy
     from('direct:input1')
-         .validate().xsd().staticProfile('schema location')
+         .verify().xsd().staticProfile('schema location')
          .to('mock:output')
 ```
 
@@ -357,7 +455,7 @@ IPF also provides a `Validator` implementation that validates an XML Source agai
     import org.openehealth.ipf.commons.xml.SchematronProfile;
     ...
     from('direct:input1')
-         .validate().schematron().staticProfile(new SchematronProfile('rules location', options))
+         .verify().schematron().staticProfile(new SchematronProfile('rules location', options))
          .to('mock:output')
 ```
 
@@ -367,22 +465,76 @@ The rules location value can be either a URL or a non-URL string, in the latter 
 The options parameter is optional. If present, it must be of type `Map<String, Object>`. Its purpose is to configure
 Schematron's validation process. Please refer to the [Schematron website](http://www.schematron.com) for more details.
 
-| option key          | description                                                                  | values               | default
-|---------------------|------------------------------------------------------------------------------|----------------------|-------------------
-| phase               | Select the phase for validation. Schematron allows for staged validation by assigning phases to validation rules. | NMTOKEN or #ALL | #ALL
-| allow-foreign       | Pass non-Schematron elements and rich markup to the generated stylesheet     | 'true' or 'false'    | 'false'
-| diagnose            | Add the diagnostics to the assertion test in reports                         | 'true' or 'false'    | 'true'
-| property            | Experimental: Add properties to the assertion test in reports                | 'true' or 'false'    | 'true'
-| generate-paths      | Generate the @location attribute with XPaths                                 | 'true' or 'false'    | 'true'
-| sch.exslt.imports   | semi-colon delimited string of filenames for some EXSLT implementations      | string               | ''
-| optimize            | Use only when the schema has no attributes as the context nodes              | 'visit-no-attributes'| ''
-| generate-fired-rule | Generate fired-rule elements. Significantly increases report size 	         | 'true' or 'false'    | 'true'
+| option key          | description                                                                                                       | values                | default |
+|---------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------|---------|
+| phase               | Select the phase for validation. Schematron allows for staged validation by assigning phases to validation rules. | NMTOKEN or #ALL       | #ALL    |
+| allow-foreign       | Pass non-Schematron elements and rich markup to the generated stylesheet                                          | 'true' or 'false'     | 'false' |
+| diagnose            | Add the diagnostics to the assertion test in reports                                                              | 'true' or 'false'     | 'true'  |
+| property            | Experimental: Add properties to the assertion test in reports                                                     | 'true' or 'false'     | 'true'  |
+| generate-paths      | Generate the @location attribute with XPaths                                                                      | 'true' or 'false'     | 'true'  |
+| sch.exslt.imports   | semi-colon delimited string of filenames for some EXSLT implementations                                           | string                | ''      |
+| optimize            | Use only when the schema has no attributes as the context nodes                                                   | 'visit-no-attributes' | ''      |
+| generate-fired-rule | Generate fired-rule elements. Significantly increases report size 	                                                | 'true' or 'false'     | 'true'  |
 
+### Without the Groovy DSL
+
+`verify` creates a [`ValidatorAdapter`][ValidatorAdapter], which can be used in Java routes with `process(...)`.
+It still throws `ValidationException` and honors the header for skipping validation. Set the profile before calling
+`input(...)` or `params(...)`, as those return the more general `ProcessorAdapter` type. For XSD and Schematron
+validation, the conversion into a `StreamSource` must be configured explicitly:
+
+```java
+    import static org.apache.camel.builder.Builder.bodyAs;
+    ...
+    from("direct:input1")
+        .process(new ValidatorAdapter(new MyCustomValidator()).staticProfile("blah"))
+        .to("mock:output");
+
+    from("direct:input2")
+        .process(new ValidatorAdapter(new MyCustomValidator())
+            .profile(header("customProfile"))
+            .input(header("foo")))
+        .to("mock:output");
+
+    from("direct:input3")
+        .process(new ValidatorAdapter(new XsdValidator())
+            .staticProfile("schema location")
+            .input(bodyAs(StreamSource.class)))
+        .to("mock:output");
+
+    from("direct:input4")
+        .process(new ValidatorAdapter(new SchematronValidator())
+            .staticProfile(new SchematronProfile("rules location", options))
+            .input(bodyAs(StreamSource.class)))
+        .to("mock:output");
+```
+
+Camel provides the [validate](https://camel.apache.org/components/latest/eips/validate-eip.html) EIP for checking
+a predicate, as well as the [`validator`](https://camel.apache.org/components/latest/validator-component.html) (XSD)
+and [`schematron`](https://camel.apache.org/components/latest/schematron-component.html) components. Note that these
+throw Camel exceptions (`PredicateValidationException`, `SchemaValidationException` and the Camel
+`SchematronValidationException`, respectively) instead of IPF's `ValidationException`, so `onException(...)` clauses
+must be adapted accordingly. They also ignore the header for skipping validation; use e.g. a `filter` or `choice` for
+conditional validation.
+
+```java
+    from("direct:input1")
+        .validate(body().isEqualTo("blah"))
+        .to("mock:output");
+
+    from("direct:input2")
+        .to("validator:schema location")
+        .to("mock:output");
+
+    from("direct:input3")
+        .to("schematron:rules location?abort=true")  // without abort=true, only the result headers are set
+        .to("mock:output");
+```
 
 ## Parser
 
 The API in the `ipf-commons-core` module defines an
-[`org.openehealth.ipf.commons.core.modules.api.Parser`](../apidocs/org/openehealth/ipf/commons/core/modules/api/Parser.html) interface for parsing
+[`org.openehealth.ipf.commons.core.modules.api.Parser`][Parser] interface for parsing
 an external representation of information into an internal model.
 
 Examples:
@@ -402,10 +554,32 @@ Examples:
 
 *Note*: Prefer using Camel's [Data Format](https://camel.apache.org/data-format.html) or [bean integration] for this purpose.
 
+### Without the Groovy DSL
+
+A [`DataFormatAdapter`][DataFormatAdapter] wraps a parser into a Camel `DataFormat` that can be used with `unmarshal(...)`.
+Alternatively, `parse` creates a [`ParserAdapter`][ParserAdapter] processor, which accepts a String, `InputStream`,
+`Reader` or `Source` as input. Without IPF adapters, the parser is called from a `transform()` lambda.
+
+```java
+    from("direct:input1")
+        .unmarshal(new DataFormatAdapter(parser))
+        .to("mock:output");
+
+    from("direct:input2")
+        .process(new ParserAdapter(parser)
+            .input(header("foo"))
+            .params(header("bar")))
+        .to("mock:output");
+
+    from("direct:input3")
+        .transform().body(String.class, s -> parser.parse(s))
+        .to("mock:output");
+```
+
 ## Renderer
 
 The API in the `ipf-commons-core` module defines an
-[`org.openehealth.ipf.commons.core.modules.api.Renderer`](../apidocs/org/openehealth/ipf/commons/core/modules/api/Renderer.html) interface for
+[`org.openehealth.ipf.commons.core.modules.api.Renderer`][Renderer] interface for
 creating an external representation of an internal model.
 
 Examples:
@@ -425,9 +599,32 @@ Examples:
 
 *Note*: Prefer using Camel's [Data Format](https://camel.apache.org/data-format.html) or [bean integration] for this purpose.
 
+### Without the Groovy DSL
+
+Analogous to the parser, a renderer is used via a [`DataFormatAdapter`][DataFormatAdapter] with `marshal(...)`,
+via a [`RendererAdapter`][RendererAdapter] processor, or from a `transform()` lambda:
+
+```java
+    from("direct:input1")
+        .marshal(new DataFormatAdapter(renderer))
+        .to("mock:output");
+
+    from("direct:input2")
+        .process(new RendererAdapter(renderer)
+            .params(header("bar")))
+        .to("mock:output");
+
+    from("direct:input3")
+        .transform().body(MyModel.class, model -> renderer.render(model))
+        .to("mock:output");
+```
+
+If a parser and a renderer are implemented by the same class, `new DataFormatAdapter(parser, renderer)` creates a
+single data format for both directions.
+
 ## Aggregator
 
-The [`org.openehealth.ipf.commons.core.modules.api.Aggregator`](../apidocs/org/openehealth/ipf/commons/core/modules/api/Aggregator.html)
+The [`org.openehealth.ipf.commons.core.modules.api.Aggregator`][Aggregator]
 interface is a `transmogrifier` that combines/aggregates a
 collection of input object into a result object. The result object is the return value of the `zap` method.
 
@@ -442,8 +639,45 @@ collection of input object into a result object. The result object is the return
 
 The `aggregationStrategy` DSL extension can be used to include an `Aggregator` into Camel routes.
 The extension supports an aggregator object, a bean name or a closure as argument. The created Camel `AggregationStrategy`
-can then be used with e.g. `enrich`, `multicast` or other DSL elements that expect an `org.apache.camel.processor.aggregate.AggregationStrategy`.
+can then be used with e.g. `enrich` or `pollEnrich`, which always provide the original exchange to aggregate with.
+It does not support the first aggregation step of `multicast`, `split` or `aggregate`, where there is no previous
+exchange yet.
 
+### Without the Groovy DSL
+
+`aggregationStrategy` just creates an [`AggregatorAdapter`][AggregatorAdapter], which can be instantiated directly.
+As `AggregationStrategy` is a functional interface, a lambda is a plain Camel alternative:
+
+```java
+    from("direct:input1")
+        .enrich("direct:resource", new AggregatorAdapter(aggregator))
+        .to("mock:output");
+
+    from("direct:input2")
+        .enrich("direct:resource", (oldExchange, newExchange) -> {
+            oldExchange.getMessage().setBody(aggregator.zap(List.of(
+                oldExchange.getMessage().getBody(),
+                newExchange.getMessage().getBody())));
+            return oldExchange;
+        })
+        .to("mock:output");
+```
 
 
 [bean integration]: https://camel.apache.org/bean-integration.html
+[modules-api]: ../apidocs/org/openehealth/ipf/commons/core/modules/api/package-summary.html
+[Aggregator]: ../apidocs/org/openehealth/ipf/commons/core/modules/api/Aggregator.html
+[Parser]: ../apidocs/org/openehealth/ipf/commons/core/modules/api/Parser.html
+[Renderer]: ../apidocs/org/openehealth/ipf/commons/core/modules/api/Renderer.html
+[Transmogrifier]: ../apidocs/org/openehealth/ipf/commons/core/modules/api/Transmogrifier.html
+[ValidationException]: ../apidocs/org/openehealth/ipf/commons/core/modules/api/ValidationException.html
+[Validator]: ../apidocs/org/openehealth/ipf/commons/core/modules/api/Validator.html
+[SchematronTransmogrifier]: ../apidocs/org/openehealth/ipf/commons/xml/SchematronTransmogrifier.html
+[XqjTransmogrifier]: ../apidocs/org/openehealth/ipf/commons/xml/XqjTransmogrifier.html
+[XsltTransmogrifier]: ../apidocs/org/openehealth/ipf/commons/xml/XsltTransmogrifier.html
+[AggregatorAdapter]: ../apidocs/org/openehealth/ipf/platform/camel/core/adapter/AggregatorAdapter.html
+[DataFormatAdapter]: ../apidocs/org/openehealth/ipf/platform/camel/core/adapter/DataFormatAdapter.html
+[ParserAdapter]: ../apidocs/org/openehealth/ipf/platform/camel/core/adapter/ParserAdapter.html
+[RendererAdapter]: ../apidocs/org/openehealth/ipf/platform/camel/core/adapter/RendererAdapter.html
+[TransmogrifierAdapter]: ../apidocs/org/openehealth/ipf/platform/camel/core/adapter/TransmogrifierAdapter.html
+[ValidatorAdapter]: ../apidocs/org/openehealth/ipf/platform/camel/core/adapter/ValidatorAdapter.html

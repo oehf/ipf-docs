@@ -49,7 +49,7 @@ the first structure with a given name within the message:
 
 ```kotlin
     val phone1 = message["PATIENT_RESULT"](0)["PATIENT"](0)["NK1"](0)[5](0)[1].value
-    val phone2 = message.asIterable().find { it.name == "NK1" }[5].value    // equivalent
+    val phone2 = message.asIterable().find { it.name == "NK1" }!![5].value    // equivalent
 ```
 
 

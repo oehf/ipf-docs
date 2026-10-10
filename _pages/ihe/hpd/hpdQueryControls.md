@@ -127,12 +127,14 @@ For example:
 ```groovy
 from('hpd-iti58:hpd-service?...&supportPagination=true&paginationStorage=#myStorage&...')
 ```
-IPF provides an implementation of
-[`PaginationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/pagination/PaginationStorage.html) —
-the class
-[`EhcachePaginationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/pagination/EhcachePaginationStorage.html),
-which is backed up by Ehcache or any other javax.cache API (JSR-107) implementation and optionally 
-supports JAXB serialization of DSMLv2 Search Result Entries which is required for persistent caches.
+IPF provides two implementations of
+[`PaginationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/pagination/PaginationStorage.html):
+[`JCachePaginationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/pagination/JCachePaginationStorage.html),
+which is backed by a javax.cache API (JSR-107) cache, e.g. Ehcache, and
+[`SpringCachePaginationStorage`](../../apidocs/org/openehealth/ipf/commons/ihe/hpd/controls/pagination/SpringCachePaginationStorage.html),
+which uses a Spring `CacheManager`. Both optionally support JAXB serialization of DSMLv2 Search Result Entries,
+which is required for persistent caches. Up to IPF 5.3, there was also an `EhcachePaginationStorage`
+(deprecated since IPF 5.0), a subclass of `JCachePaginationStorage`.
 
 Consumer-side handling of paging controls is shown on the UML diagram below:
 

@@ -41,7 +41,7 @@ MDHT documents can be parsed and rendered using a MDHT-specific Camel DataFormat
 MDHT documents can be validated in routes with the `verify().mdht()` extension.
 
 The Camel predicate can be used for filters or validators, however, by design it just returns `true` or `false`, and the
-resulting [`PredicateValidationException`](https://camel.apache.org/maven/current/camel-core/apidocs/org/apache/camel/processor/validation/PredicateValidationException.html)
+resulting [`PredicateValidationException`](https://javadoc.io/doc/org.apache.camel/camel-support/latest/org/apache/camel/support/processor/PredicateValidationException.html)
 gives no details whatsoever about the details, i.e. *why* the MDHT validation has failed and the location of the failure in the document.
 
 In contrast, the IPF validator throws a [`ValidationException`](../apidocs/org/openehealth/ipf/commons/core/modules/api/ValidationException.html)
@@ -57,5 +57,5 @@ containing all the details about the validation failure that was provided by the
 ```
 
 
-[MDHT]: https://www.projects.openhealthtools.org/sf/projects/mdht/
+[MDHT]: https://projects.eclipse.org/projects/modeling.mdht
 [MDHT support]: {{ site.baseurl }}{% link _pages/mdht/mdhtSupport.md %}

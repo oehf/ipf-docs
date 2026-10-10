@@ -46,7 +46,7 @@ The URI parameter *routes* is optional and contains a comma-separated list of ro
 Each referenced route must be a consumer route of an IPF MLLP component.
 
 You can also choose to omit the routes parameter and instead provide a parameter referencing a bean of type
-[`org.openehealth.ipf.platform.camel.ihe.mllp.core.intercept.consumer.ConsumerDispatchingInterceptor`](../apidocs/org/openehealth/ipf/platform/camel/ihe/mllp/core/intercept/consumer/ConsumerDispatchingInterceptor.html) 
+[`org.openehealth.ipf.platform.camel.ihe.mllp.core.intercept.consumer.ConsumerDispatchingInterceptor`](../../apidocs/org/openehealth/ipf/platform/camel/ihe/mllp/core/intercept/consumer/ConsumerDispatchingInterceptor.html) 
 to both the dispatcher endpoint and the transaction endpoints.
 
 ## Behavior
@@ -55,7 +55,7 @@ The dispatching mechanism leverages the [MLLP interceptor machinery]. The dispat
 communication and, optionally, segment defragmentation, and then simply feeds the exchange to the appropriate transaction-specific
 interceptor chain, as shown on the figure below:
 
-![MLLP Dispatching](images/mllp-dispatching.png)
+{% include figure image_path="/assets/images/mllp-dispatching.png" alt="MLLP Dispatching" caption="MLLP Dispatching" %}
 
 Note that the transaction-specific routes served by the dispatcher still remain usable in the stand-alone mode, but their endpoints
 are not required to be accessible from the outside and thus can be bound e.g. to `localhost`, as shown in the examples below.

@@ -57,3 +57,4 @@ Details are described [here][hl7v2mapping].
 [hl7v2cmcf]: ../hl7-groovy-cmcf/
 [hl7v2creating]: ../hl7-groovy-dslCreating/
 [hl7v2mapping]: ../hl7-groovy-mapping/
+[Mapping Service]: {{ site.baseurl }}{% link _pages/mappings.md %}

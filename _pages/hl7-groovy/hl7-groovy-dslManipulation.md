@@ -43,7 +43,7 @@ Again, fields may also be assigned using the `from()` method.
 
 ```groovy
     def nk1      = message.PATIENT_RESULT(0).PATIENT.NK1(0)
-    def otherNk1 = message.PATIENT_RESULT(0).PATIENT.NK1(0)
+    def otherNk1 = message.PATIENT_RESULT(0).PATIENT.NK1(1)
 
     // assignment operator
     nk1[4]       = otherNk1[4]       // copy address

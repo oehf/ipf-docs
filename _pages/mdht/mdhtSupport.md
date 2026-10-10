@@ -55,5 +55,5 @@ Here is an example how to validate a CCD document:
    validator.validate(clinicalDocument, null);
 ```
 
-[MDHT]: https://www.projects.openhealthtools.org/sf/projects/mdht/
+[MDHT]: https://projects.eclipse.org/projects/modeling.mdht
 [MDHT-specific]: {{ site.baseurl }}{% link _pages/mdht/camelMdht.md %}
