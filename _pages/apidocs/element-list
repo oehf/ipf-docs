@@ -84,6 +84,7 @@ org.openehealth.ipf.boot.hl7v2
 org.openehealth.ipf.boot.hl7v3
 org.openehealth.ipf.boot.hpd
 org.openehealth.ipf.boot.svs
+org.openehealth.ipf.boot.ws
 org.openehealth.ipf.boot.xacml20
 org.openehealth.ipf.boot.xds
 org.openehealth.ipf.commons.audit
@@ -106,6 +107,8 @@ org.openehealth.ipf.commons.core
 org.openehealth.ipf.commons.core.config
 org.openehealth.ipf.commons.core.extend.config
 org.openehealth.ipf.commons.core.modules.api
+org.openehealth.ipf.commons.core.pool
+org.openehealth.ipf.commons.core.ssl
 org.openehealth.ipf.commons.ihe.core
 org.openehealth.ipf.commons.ihe.core.atna
 org.openehealth.ipf.commons.ihe.core.atna.codes
@@ -123,6 +126,7 @@ org.openehealth.ipf.commons.ihe.ech.stub.ech_0011._8
 org.openehealth.ipf.commons.ihe.ech.stub.ech_0021._7
 org.openehealth.ipf.commons.ihe.ech.stub.ech_0044._4
 org.openehealth.ipf.commons.ihe.ech.stub.ech_0058._5
+org.openehealth.ipf.commons.ihe.ech.stub.ech_0072._2
 org.openehealth.ipf.commons.ihe.ech.stub.ech_0135._1
 org.openehealth.ipf.commons.ihe.ech.stub.ech_0213_commons._1
 org.openehealth.ipf.commons.ihe.ech.stub.ech_0213._1
@@ -141,6 +145,7 @@ org.openehealth.ipf.commons.ihe.fhir.chppqm.chppq3
 org.openehealth.ipf.commons.ihe.fhir.chppqm.chppq4
 org.openehealth.ipf.commons.ihe.fhir.chppqm.chppq5
 org.openehealth.ipf.commons.ihe.fhir.chppqm.translation
+org.openehealth.ipf.commons.ihe.fhir.iti104
 org.openehealth.ipf.commons.ihe.fhir.iti105
 org.openehealth.ipf.commons.ihe.fhir.iti119
 org.openehealth.ipf.commons.ihe.fhir.iti65
@@ -156,9 +161,13 @@ org.openehealth.ipf.commons.ihe.fhir.mhd.model
 org.openehealth.ipf.commons.ihe.fhir.pcc44
 org.openehealth.ipf.commons.ihe.fhir.pharm5
 org.openehealth.ipf.commons.ihe.fhir.pixpdq
+org.openehealth.ipf.commons.ihe.fhir.pixpdq.model
 org.openehealth.ipf.commons.ihe.fhir.qedm
+org.openehealth.ipf.commons.ihe.fhir.streaming
 org.openehealth.ipf.commons.ihe.fhir.support
 org.openehealth.ipf.commons.ihe.fhir.support.audit.marshal
+org.openehealth.ipf.commons.ihe.fhir.support.audit.model
+org.openehealth.ipf.commons.ihe.fhir.support.map
 org.openehealth.ipf.commons.ihe.fhir.support.translation
 org.openehealth.ipf.commons.ihe.fhir.translation
 org.openehealth.ipf.commons.ihe.hl7v2
@@ -186,7 +195,6 @@ org.openehealth.ipf.commons.ihe.hl7v2.definitions.pix.v25.segment
 org.openehealth.ipf.commons.ihe.hl7v2.definitions.xpid.v25.message
 org.openehealth.ipf.commons.ihe.hl7v2.options
 org.openehealth.ipf.commons.ihe.hl7v2.storage
-org.openehealth.ipf.commons.ihe.hl7v2.tracing
 org.openehealth.ipf.commons.ihe.hl7v2ws
 org.openehealth.ipf.commons.ihe.hl7v2ws.pcd01
 org.openehealth.ipf.commons.ihe.hl7v3
@@ -242,6 +250,7 @@ org.openehealth.ipf.commons.ihe.xacml20
 org.openehealth.ipf.commons.ihe.xacml20.audit
 org.openehealth.ipf.commons.ihe.xacml20.audit.codes
 org.openehealth.ipf.commons.ihe.xacml20.chadr
+org.openehealth.ipf.commons.ihe.xacml20.chppq
 org.openehealth.ipf.commons.ihe.xacml20.chppq1
 org.openehealth.ipf.commons.ihe.xacml20.chppq2
 org.openehealth.ipf.commons.ihe.xacml20.herasaf
@@ -308,7 +317,10 @@ org.openehealth.ipf.commons.ihe.xds.rad75
 org.openehealth.ipf.commons.ihe.xds.rad75.asyncresponse
 org.openehealth.ipf.commons.map
 org.openehealth.ipf.commons.map.extend
+org.openehealth.ipf.commons.map.xml
+org.openehealth.ipf.commons.map.yaml
 org.openehealth.ipf.commons.spring.core.config
+org.openehealth.ipf.commons.spring.core.extend
 org.openehealth.ipf.commons.spring.map
 org.openehealth.ipf.commons.spring.map.config
 org.openehealth.ipf.commons.xml
@@ -357,6 +369,9 @@ org.openehealth.ipf.platform.camel.ihe.continua.hrn
 org.openehealth.ipf.platform.camel.ihe.continua.hrn.converters
 org.openehealth.ipf.platform.camel.ihe.core
 org.openehealth.ipf.platform.camel.ihe.core.ssl
+org.openehealth.ipf.platform.camel.ihe.ech
+org.openehealth.ipf.platform.camel.ihe.ech.ech0213
+org.openehealth.ipf.platform.camel.ihe.ech.ech0214
 org.openehealth.ipf.platform.camel.ihe.fhir.chppqm.chppq3
 org.openehealth.ipf.platform.camel.ihe.fhir.chppqm.chppq4
 org.openehealth.ipf.platform.camel.ihe.fhir.chppqm.chppq5
@@ -365,6 +380,8 @@ org.openehealth.ipf.platform.camel.ihe.fhir.core.custom
 org.openehealth.ipf.platform.camel.ihe.fhir.core.intercept.consumer
 org.openehealth.ipf.platform.camel.ihe.fhir.core.intercept.producer
 org.openehealth.ipf.platform.camel.ihe.fhir.datamodel
+org.openehealth.ipf.platform.camel.ihe.fhir.extend
+org.openehealth.ipf.platform.camel.ihe.fhir.iti104
 org.openehealth.ipf.platform.camel.ihe.fhir.iti105
 org.openehealth.ipf.platform.camel.ihe.fhir.iti119
 org.openehealth.ipf.platform.camel.ihe.fhir.iti65
@@ -384,6 +401,7 @@ org.openehealth.ipf.platform.camel.ihe.hl7v2.intercept.producer
 org.openehealth.ipf.platform.camel.ihe.hl7v2ws
 org.openehealth.ipf.platform.camel.ihe.hl7v2ws.pcd01
 org.openehealth.ipf.platform.camel.ihe.hl7v3
+org.openehealth.ipf.platform.camel.ihe.hl7v3.core.converters
 org.openehealth.ipf.platform.camel.ihe.hl7v3.iti44
 org.openehealth.ipf.platform.camel.ihe.hl7v3.iti45
 org.openehealth.ipf.platform.camel.ihe.hl7v3.iti46

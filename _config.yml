@@ -156,6 +156,8 @@ footer:
 include:
   - .htaccess
   - _pages
+  # generated Javadoc contains packages and classes like `_1/` or `_0272.html`, which Jekyll would otherwise skip
+  - "_[0-9]*"
 exclude:
   - CLAUDE.md
   - "*.sublime-project"
